@@ -1,139 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ingo Wolf</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <div class="flex center topflex">
-        <div class="profile">
-            <img class="profilepic" src="profilepic.png" alt="">
-            <div class="text">
-                <h1>Hi, I'm<br><span class="bluetext">Ingo Wolf</span>,<br>
-                </h1>
-                <h3>and I write words to make computers do things</h3>
-            </div>
-        </div>
-        <div class="socialbuttons">
-            <a href="https://github.com/Inglan" target="_blank" class="socialbtn">
-                <i class="fa-brands fa-github"></i>
-            </a>
-<!--             <a href="https://twitter.com/InglanW" target="_blank" class="socialbtn">
-                <i class="fa-brands fa-twitter"></i>
-            </a> -->
-            <a href="https://youtube.com/@Inglan" target="_blank" class="socialbtn">
-                <i class="fa-brands fa-youtube"></i>
-            </a>
-            <a href="https://music.youtube.com/channel/UCPcRE4nwspBX7uQta3e-SkA" target="_blank" class="socialbtn">
-                <span class="material-symbols-rounded">
-                    play_circle
-                </span>
-            </a>
-        </div>
+  <body>
+    <div class="hero">
+      <div class="content card">
+        <h1 class="name">Ingo Wolf</h1>
+        New Website Coming Soon
+      </div>
     </div>
 
-    <style>
-        * {
-            font-family: 'Roboto', sans-serif;
-            box-sizing: border-box;
-            user-select: none;
-            -webkit-user-drag: none;
-        }
-
-        .bluetext {
-            color: #248bda;
-        }
-
-        body,
-        html {
-            background-color: #222;
-            color: white;
-
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
-        .flex {
-            display: flex;
-        }
-
-        .flex.center {
-            justify-content: center;
-        }
-
-        .profile {
-            width: 550px;
-            background-color: #333;
-            display: flex;
-            border-radius: 20px;
-            padding: 10px;
-            gap: 10px;
-            height: 150px;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            max-width: 95%;
-        }
-
-        .profilepic {
-            height: 70%;
-        }
-
-        .profile>.text {
-            height: 100%;
-            flex-grow: 1;
-            font-weight: 100;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .profile>.text>h1,
-        .profile>.text>h3 {
-            padding: 0;
-            margin: 0;
-            font-weight: 100;
-        }
-
-        .topflex {
-            padding: 30px;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .socialbtn {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #323232;
-            border-radius: 10px;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-            text-decoration: none;
-            color: white;
-
-        }
-
-        .socialbuttons {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-        }
-
-    </style>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
