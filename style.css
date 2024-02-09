@@ -49,10 +49,10 @@ body {
 .hero > .content {
   text-align: center;
   width: 400px;
-  padding: 10px;
 }
 
 .hero > .content.card {
+  padding: 10px;
   background-color: #0c0c0c;
   border-radius: 10px;
 }
