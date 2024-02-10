@@ -90,5 +90,5 @@ html {
 }
 
 .hero > .content > .icnbtn > svg {
-  width: 40px;
+  max-width: 40px !important;
 }
