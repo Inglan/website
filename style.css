@@ -88,3 +88,7 @@ html {
   background-color: #0c0c0c;
   cursor: pointer;
 }
+
+.hero > .content > .icnbtn > svg {
+  width: 40px;
+}
