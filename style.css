@@ -14,6 +14,16 @@ h6 {
   font-weight: 100;
 }
 
+.horizontalflex {
+  display: flex;
+  flex-direction: row;
+}
+
+.centerflex {
+  display: flex;
+  justify-content: center;
+}
+
 body,
 html {
   background-color: black;
@@ -30,7 +40,6 @@ body {
   gap: 10px;
   flex-direction: column;
   padding: 10px;
-  background-color: #111;
   display: flex;
   width: 100%;
   height: 100%;
@@ -59,4 +68,15 @@ body {
 
 .name {
   font-size: 50px;
+}
+
+.hero > .content > .icnbtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0c0c0c;
+  cursor: pointer;
 }
