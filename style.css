@@ -33,9 +33,6 @@ html {
   height: 100%;
 }
 
-body {
-}
-
 .hero {
   gap: 10px;
   flex-direction: column;
