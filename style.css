@@ -92,3 +92,21 @@ html {
 .hero > .content > .icnbtn > svg {
   max-width: 40px !important;
 }
+
+.hero > .icnbtn {
+  width: 50px !important;
+  height: 50px !important;
+  padding: 5px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+}
+
+.hero > .icnbtn > svg {
+  max-width: 50px !important;
+}
