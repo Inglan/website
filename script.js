@@ -21,3 +21,9 @@ function scrollDown() {
   });
 }
 
+window.onscroll = function () {
+  var hero = document.querySelector(".hero");
+  var scrollPos = window.scrollY;
+  var opacity = 1 - scrollPos / 1000;
+  hero.style.opacity = opacity;
+};
