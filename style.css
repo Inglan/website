@@ -54,7 +54,7 @@ html {
   justify-content: center;
   background:
         /* top, transparent black, faked with gradient */ linear-gradient(
-      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 1)
     ),
     url("background.png");
