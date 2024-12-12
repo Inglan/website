@@ -6,6 +6,7 @@
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import '@fontsource/inter';
 </script>
 
 <Sidebar.Provider style="--sidebar-width: 19rem;">
