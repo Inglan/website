@@ -15,11 +15,12 @@
 			sidebar.toggle();
 		}
 	}
-
 	onMount(() => {
-		hideSidebar();
-		var lastScrollY = 0;
 		const sidebarScrollYThreshold = 20;
+		var lastScrollY = 0;
+		if (window.scrollY < sidebarScrollYThreshold) {
+			hideSidebar();
+		}
 		const handleScroll = () => {
 			if (!sidebar.isMobile) {
 				const currentScrollY = window.scrollY;
