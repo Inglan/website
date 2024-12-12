@@ -64,10 +64,8 @@
 <style>
 	#backgroundshapecontainer {
 		position: absolute;
-		width: 100vw;
-		max-height: 75vh;
-		height: 100vw;
-		aspect-ratio: 1;
+		width: 100%;
+		height: 80%;
 		animation: backgroundshapecontainer 10s infinite alternate linear;
 		filter: blur(1000px) brightness(0.5);
 		transition-duration: 300ms;
@@ -78,7 +76,7 @@
 		width: 100%;
 		height: 100%;
 		background-color: white;
-		border-radius: 1000px;
+		border-radius: 200px;
 	}
 
 	#backgroundshapecontainer div:nth-child(1) {
