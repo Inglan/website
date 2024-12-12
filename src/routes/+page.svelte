@@ -1,3 +1,43 @@
+<script lang="ts">
+	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+	const sidebar = useSidebar();
+
+	import { onMount } from 'svelte';
+
+	function hideSidebar() {
+		if (sidebar.state == 'expanded') {
+			sidebar.toggle();
+		}
+	}
+
+	function showSidebar() {
+		if (sidebar.state == 'collapsed') {
+			sidebar.toggle();
+		}
+	}
+
+	onMount(() => {
+		hideSidebar();
+		var lastScrollY = 0;
+		const sidebarScrollYThreshold = 20;
+		const handleScroll = () => {
+			if (!sidebar.isMobile) {
+				const currentScrollY = window.scrollY;
+				if (sidebarScrollYThreshold < currentScrollY && sidebarScrollYThreshold > lastScrollY) {
+					showSidebar();
+				} else if (
+					sidebarScrollYThreshold > currentScrollY &&
+					sidebarScrollYThreshold < lastScrollY
+				) {
+					hideSidebar();
+				}
+			}
+			lastScrollY = window.scrollY;
+		};
+
+		window.addEventListener('scroll', handleScroll);
+	});
+</script>
 
 <div class="flex h-screen p-2 pl-0"></div>
 
