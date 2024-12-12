@@ -12,6 +12,6 @@
 	<AppSidebar />
 	<Sidebar.Inset>
 		{@render children()}
-		<Sidebar.Trigger class="fixed bottom-2" />
+		<Sidebar.Trigger class="fixed bottom-2 translate-x-2" />
 	</Sidebar.Inset>
 </Sidebar.Provider>
