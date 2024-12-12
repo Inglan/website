@@ -41,7 +41,16 @@
 	});
 </script>
 
-<div class="flex h-screen p-2 pl-0"></div>
+<div class="hero flex h-screen items-center justify-center p-2 pl-0">
+	<div id="backgroundshapecontainer">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="z-10">aasdfasdfasdf asdfkas fasf sadfkl ajs ldk</div>
+</div>
 
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
@@ -51,3 +60,77 @@
 
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+
+<style>
+	#backgroundshapecontainer {
+		position: absolute;
+		width: 50vw;
+		max-height: 75vh;
+		aspect-ratio: 1;
+		animation: backgroundshapecontainer 10s infinite alternate linear;
+		background-color: black;
+		filter: blur(1000px) brightness(0.5);
+	}
+
+	#backgroundshapecontainer div {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: white;
+		border-radius: 1000px;
+	}
+
+	#backgroundshapecontainer div:nth-child(1) {
+		background: linear-gradient(45deg, #f5e0dc, #f2cdcd, #f5c2e7);
+		animation: fadeInOut 10s infinite;
+		animation-delay: 2s;
+		opacity: 0;
+	}
+
+	#backgroundshapecontainer div:nth-child(2) {
+		background: linear-gradient(45deg, #cba6f7, #f38ba8, #eba0ac);
+		animation: fadeInOut 10s infinite;
+		animation-delay: 4s;
+		opacity: 0;
+	}
+
+	#backgroundshapecontainer div:nth-child(3) {
+		background: linear-gradient(45deg, #fab387, #f9e2af, #a6e3a1);
+		animation: fadeInOut 10s infinite;
+		animation-delay: 6s;
+		opacity: 0;
+	}
+
+	#backgroundshapecontainer div:nth-child(4) {
+		background: linear-gradient(45deg, #94e2d5, #89dceb, #74c7ec);
+		animation: fadeInOut 10s infinite;
+		animation-delay: 8s;
+		opacity: 0;
+	}
+
+	#backgroundshapecontainer div:nth-child(5) {
+		background: linear-gradient(45deg, #89b4fa, #b4befe, #cba6f7);
+		animation: fadeInOut 10s infinite;
+		animation-delay: 10s;
+		opacity: 0;
+	}
+
+	@keyframes fadeInOut {
+		0%,
+		100% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes backgroundshapecontainer {
+		0% {
+			transform: scale(0.9);
+		}
+		100% {
+			transform: scale(1.3);
+		}
+	}
+</style>
