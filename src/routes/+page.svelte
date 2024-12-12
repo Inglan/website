@@ -49,7 +49,7 @@
 		<div></div>
 		<div></div>
 	</div>
-	<div class="z-10">aasdfasdfasdf asdfkas fasf sadfkl ajs ldk</div>
+	<div class="z-10 text-4xl">Hi, I'm <span id="name">Ingo Wolf</span></div>
 </div>
 
 <h1>Welcome to SvelteKit</h1>
@@ -62,12 +62,18 @@
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <style>
+	#name {
+		background: linear-gradient(45deg, #fab387, #f38ba8);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
 	#backgroundshapecontainer {
 		position: absolute;
 		width: 100%;
 		height: 100%;
 		animation: backgroundshapecontainer 20s infinite linear;
-		filter: blur(1000px);
+		filter: blur(1000px) brightness(0.5);
 		transition-duration: 300ms;
 		overflow: hidden;
 	}
