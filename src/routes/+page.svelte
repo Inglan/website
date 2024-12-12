@@ -52,7 +52,7 @@
 		<div></div>
 	</div>
 	<div class="z-10 text-4xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
-	<div class="z-10 text-xl">text here</div>
+	<div class="z-10 text-xl">and I <span id="thing">do stuff with computers</span></div>
 </div>
 
 <h1>Welcome to SvelteKit</h1>
