@@ -17,26 +17,24 @@
 	}
 	onMount(() => {
 		const sidebarScrollYThreshold = 20;
-		var lastScrollY = 0;
+		var openedSidebar = true;
 		if (window.scrollY < sidebarScrollYThreshold) {
 			hideSidebar();
 			document.getElementById('sidebar-trigger')?.classList.remove('bg-secondary');
+			openedSidebar = false;
 		}
 		const handleScroll = () => {
 			if (!sidebar.isMobile) {
-				const currentScrollY = window.scrollY;
-				if (sidebarScrollYThreshold < currentScrollY && sidebarScrollYThreshold > lastScrollY) {
+				if (window.scrollY > sidebarScrollYThreshold && !openedSidebar) {
 					showSidebar();
 					document.getElementById('sidebar-trigger')?.classList.add('bg-secondary');
-				} else if (
-					sidebarScrollYThreshold > currentScrollY &&
-					sidebarScrollYThreshold < lastScrollY
-				) {
+					openedSidebar = true;
+				} else if (window.scrollY < sidebarScrollYThreshold && openedSidebar) {
 					hideSidebar();
 					document.getElementById('sidebar-trigger')?.classList.remove('bg-secondary');
+					openedSidebar = false;
 				}
 			}
-			lastScrollY = window.scrollY;
 		};
 
 		window.addEventListener('scroll', handleScroll);
