@@ -19,3 +19,9 @@
 		/>
 	</Sidebar.Inset>
 </Sidebar.Provider>
+
+<style>
+	:global(body) {
+		font-family: 'Inter', sans-serif;
+	}
+</style>
