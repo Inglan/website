@@ -16,7 +16,6 @@
 		}
 	}
 	onMount(() => {
-		const sidebartrigger = document.getElementById('sidebar-trigger');
 		const sidebarScrollYThreshold = 20;
 		var lastScrollY = 0;
 		if (window.scrollY < sidebarScrollYThreshold) {
@@ -27,11 +26,13 @@
 				const currentScrollY = window.scrollY;
 				if (sidebarScrollYThreshold < currentScrollY && sidebarScrollYThreshold > lastScrollY) {
 					showSidebar();
+					document.getElementById('sidebar-trigger')?.classList.remove('opacity-25');
 				} else if (
 					sidebarScrollYThreshold > currentScrollY &&
 					sidebarScrollYThreshold < lastScrollY
 				) {
 					hideSidebar();
+					document.getElementById('sidebar-trigger')?.classList.add('opacity-25');
 				}
 			}
 			lastScrollY = window.scrollY;
