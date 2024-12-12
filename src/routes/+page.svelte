@@ -51,8 +51,10 @@
 		<div></div>
 		<div></div>
 	</div>
-	<div class="z-10 text-4xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
-	<div class="z-10 text-xl">and I <span id="thing">do stuff with computers</span></div>
+	<div class="z-10 w-fit drop-shadow-xl">
+		<div class="text-4xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
+		<div class="text-xl">and I <span id="thing">do stuff with computers</span></div>
+	</div>
 </div>
 
 <h1>Welcome to SvelteKit</h1>
