@@ -64,12 +64,13 @@
 <style>
 	#backgroundshapecontainer {
 		position: absolute;
-		width: 50vw;
+		width: 100vw;
 		max-height: 75vh;
+		height: 100vw;
 		aspect-ratio: 1;
 		animation: backgroundshapecontainer 10s infinite alternate linear;
-		background-color: black;
 		filter: blur(1000px) brightness(0.5);
+		transition-duration: 300ms;
 	}
 
 	#backgroundshapecontainer div {
@@ -83,35 +84,35 @@
 	#backgroundshapecontainer div:nth-child(1) {
 		background: linear-gradient(45deg, #f5e0dc, #f2cdcd, #f5c2e7);
 		animation: fadeInOut 10s infinite;
-		animation-delay: 2s;
+		animation-delay: 1s;
 		opacity: 0;
 	}
 
 	#backgroundshapecontainer div:nth-child(2) {
 		background: linear-gradient(45deg, #cba6f7, #f38ba8, #eba0ac);
 		animation: fadeInOut 10s infinite;
-		animation-delay: 4s;
+		animation-delay: 3s;
 		opacity: 0;
 	}
 
 	#backgroundshapecontainer div:nth-child(3) {
 		background: linear-gradient(45deg, #fab387, #f9e2af, #a6e3a1);
 		animation: fadeInOut 10s infinite;
-		animation-delay: 6s;
+		animation-delay: 5s;
 		opacity: 0;
 	}
 
 	#backgroundshapecontainer div:nth-child(4) {
 		background: linear-gradient(45deg, #94e2d5, #89dceb, #74c7ec);
 		animation: fadeInOut 10s infinite;
-		animation-delay: 8s;
+		animation-delay: 7s;
 		opacity: 0;
 	}
 
 	#backgroundshapecontainer div:nth-child(5) {
 		background: linear-gradient(45deg, #89b4fa, #b4befe, #cba6f7);
 		animation: fadeInOut 10s infinite;
-		animation-delay: 10s;
+		animation-delay: 9s;
 		opacity: 0;
 	}
 
@@ -127,10 +128,10 @@
 
 	@keyframes backgroundshapecontainer {
 		0% {
-			transform: scale(0.9);
+			transform: scale(0.7);
 		}
 		100% {
-			transform: scale(1.3);
+			transform: scale(1);
 		}
 	}
 </style>
