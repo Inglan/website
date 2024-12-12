@@ -65,6 +65,7 @@
 <style>
 	#name {
 		background: linear-gradient(45deg, #fab387, #f38ba8);
+		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 	}
