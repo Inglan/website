@@ -41,7 +41,7 @@
 	});
 </script>
 
-<div class="hero flex h-screen items-center justify-center p-2 pl-0">
+<div class="hero f flex h-screen flex-col items-center justify-center gap-2 p-2 pl-0">
 	<div id="backgroundshapecontainer">
 		<div></div>
 		<div></div>
@@ -49,7 +49,8 @@
 		<div></div>
 		<div></div>
 	</div>
-	<div class="z-10 text-4xl">Hi, I'm <span id="name">Ingo Wolf</span></div>
+	<div class="z-10 text-4xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
+	<div class="z-10 text-xl">text here</div>
 </div>
 
 <h1>Welcome to SvelteKit</h1>
