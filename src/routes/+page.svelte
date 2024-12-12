@@ -16,6 +16,7 @@
 		}
 	}
 	onMount(() => {
+		const sidebartrigger = document.getElementById('sidebar-trigger');
 		const sidebarScrollYThreshold = 20;
 		var lastScrollY = 0;
 		if (window.scrollY < sidebarScrollYThreshold) {
