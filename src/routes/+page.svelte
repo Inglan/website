@@ -40,6 +40,20 @@
 		};
 
 		window.addEventListener('scroll', handleScroll);
+
+		const things = ['test 1', 'test 2'];
+		let currentIndex = 0;
+		setInterval(() => {
+			const thingElement = document.getElementById('thing');
+			if (thingElement) {
+				thingElement.style.opacity = '0';
+				setTimeout(() => {
+					thingElement.textContent = things[currentIndex];
+					thingElement.style.opacity = '1';
+					currentIndex = (currentIndex + 1) % things.length;
+				}, 500);
+			}
+		}, 3000);
 	});
 </script>
 
@@ -53,7 +67,7 @@
 	</div>
 	<div class="z-10 w-fit drop-shadow-xl">
 		<div class="text-4xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
-		<div class="text-xl">and I <span id="thing"></span></div>
+		<div class="text-xl">and I <span id="thing" class="duration-500"></span></div>
 	</div>
 </div>
 
