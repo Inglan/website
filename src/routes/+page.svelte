@@ -41,7 +41,7 @@
 
 		window.addEventListener('scroll', handleScroll);
 
-		const things = ['test 1', 'use arch btw', 'code stuff'];
+		const things = ['develop websites', 'use arch btw', 'code stuff'];
 		let currentIndex = 0;
 		setInterval(() => {
 			const thingElement = document.getElementById('thing');
@@ -53,7 +53,7 @@
 					currentIndex = (currentIndex + 1) % things.length;
 				}, 500);
 			}
-		}, 3000);
+		}, 5000);
 	});
 </script>
 
