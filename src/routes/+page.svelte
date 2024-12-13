@@ -41,7 +41,7 @@
 
 		window.addEventListener('scroll', handleScroll);
 
-		const things = ['test 1', 'test 2'];
+		const things = ['test 1', 'use arch btw', 'code stuff'];
 		let currentIndex = 0;
 		setInterval(() => {
 			const thingElement = document.getElementById('thing');
