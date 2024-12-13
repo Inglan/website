@@ -67,7 +67,7 @@
 	</div>
 	<div class="z-10 w-fit drop-shadow-xl">
 		<div class="text-4xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
-		<div class="text-xl">and I <span id="thing" class="duration-500"></span></div>
+		<div class="text-xl">and I <span id="thing" class="duration-500">code stuff</span></div>
 	</div>
 </div>
 
