@@ -82,69 +82,67 @@
 <div class="flex flex-col gap-2 p-2">
 	<h2 class="colored text-center text-4xl">Projects</h2>
 
-	<div class="flex justify-center">
-		<swiper-container
-			space-between="10"
-			loop="true"
-			class="flex max-w-screen-lg flex-col items-start justify-center gap-2 p-2 md:flex-row"
-		>
-			<swiper-slide>
-				<Card.Root class="flex h-full w-full flex-col bg-transparent">
-					<Card.Header>
-						<Card.Title>Project Alpha</Card.Title>
-					</Card.Header>
-					<Card.Content>
-						<p>A revolutionary new app that changes the way you think about productivity.</p>
-					</Card.Content>
-					<div class="flex-grow"></div>
-				</Card.Root>
-			</swiper-slide>
-			<swiper-slide>
-				<Card.Root class="flex h-full w-full flex-col bg-transparent">
-					<Card.Header>
-						<Card.Title>Project Beta</Card.Title>
-					</Card.Header>
-					<Card.Content>
-						<p>An innovative platform for seamless collaboration and communication.</p>
-					</Card.Content>
-					<div class="flex-grow"></div>
-				</Card.Root>
-			</swiper-slide>
-			<swiper-slide>
-				<Card.Root class="flex h-full w-full flex-col bg-transparent">
-					<Card.Header>
-						<Card.Title>Project Gamma</Card.Title>
-					</Card.Header>
-					<Card.Content>
-						<p>A cutting-edge tool for managing your personal finances with ease.</p>
-					</Card.Content>
-					<div class="flex-grow"></div>
-				</Card.Root>
-			</swiper-slide>
-			<swiper-slide>
-				<Card.Root class="flex h-full w-full flex-col bg-transparent">
-					<Card.Header>
-						<Card.Title>Project Delta</Card.Title>
-					</Card.Header>
-					<Card.Content>
-						<p>An advanced analytics platform for gaining insights into your data.</p>
-					</Card.Content>
-					<div class="flex-grow"></div>
-				</Card.Root>
-			</swiper-slide>
-			<swiper-slide>
-				<Card.Root class="flex h-full w-full flex-col bg-transparent">
-					<Card.Header>
-						<Card.Title>Project Epsilon</Card.Title>
-					</Card.Header>
-					<Card.Content>
-						<p>A state-of-the-art solution for automating your workflow.</p>
-					</Card.Content>
-					<div class="flex-grow"></div>
-				</Card.Root>
-			</swiper-slide>
-		</swiper-container>
-	</div>
+	<swiper-container
+		space-between="10"
+		loop="true"
+		class="flex max-w-screen-lg flex-col items-start justify-center md:flex-row"
+	>
+		<swiper-slide>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Alpha</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>A revolutionary new app that changes the way you think about productivity.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</swiper-slide>
+		<swiper-slide>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Beta</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>An innovative platform for seamless collaboration and communication.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</swiper-slide>
+		<swiper-slide>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Gamma</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>A cutting-edge tool for managing your personal finances with ease.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</swiper-slide>
+		<swiper-slide>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Delta</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>An advanced analytics platform for gaining insights into your data.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</swiper-slide>
+		<swiper-slide>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Epsilon</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>A state-of-the-art solution for automating your workflow.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</swiper-slide>
+	</swiper-container>
 </div>
 
 <h1>Welcome to SvelteKit</h1>
