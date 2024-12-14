@@ -75,6 +75,29 @@
 
 <h2 class="colored text-center text-4xl">Projects</h2>
 
+<div class="flex justify-center">
+	<div class="flex max-w-screen-lg flex-col items-start justify-center gap-2 p-2 md:flex-row">
+		<Card.Root class="flex h-full w-full flex-col">
+			<Card.Header>
+				<Card.Title>Test</Card.Title>
+			</Card.Header>
+			<Card.Content>
+				<p>Test</p>
+			</Card.Content>
+			<div class="flex-grow"></div>
+		</Card.Root>
+		<Card.Root class="flex h-full w-full flex-col">
+			<Card.Header>
+				<Card.Title>Test</Card.Title>
+			</Card.Header>
+			<Card.Content>
+				<p>Test</p>
+			</Card.Content>
+			<div class="flex-grow"></div>
+		</Card.Root>
+	</div>
+</div>
+
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
