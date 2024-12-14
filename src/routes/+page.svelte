@@ -1,6 +1,7 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index.js';
-
+	import { register } from 'swiper/element/bundle';
+	register();
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	const sidebar = useSidebar();
 
@@ -77,26 +78,34 @@
 	<h2 class="colored text-center text-4xl">Projects</h2>
 
 	<div class="flex justify-center">
-		<div class="flex max-w-screen-lg flex-col items-start justify-center gap-2 p-2 md:flex-row">
-			<Card.Root class="flex h-full w-full flex-col">
-				<Card.Header>
-					<Card.Title>Test</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>Test</p>
-				</Card.Content>
-				<div class="flex-grow"></div>
-			</Card.Root>
-			<Card.Root class="flex h-full w-full flex-col">
-				<Card.Header>
-					<Card.Title>Test</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>Test</p>
-				</Card.Content>
-				<div class="flex-grow"></div>
-			</Card.Root>
-		</div>
+		<swiper-container
+			space-between="10"
+			loop="true"
+			class="flex max-w-screen-lg flex-col items-start justify-center gap-2 p-2 md:flex-row"
+		>
+			<swiper-slide>
+				<Card.Root class="flex h-full w-full flex-col bg-transparent">
+					<Card.Header>
+						<Card.Title>Test</Card.Title>
+					</Card.Header>
+					<Card.Content>
+						<p>Test</p>
+					</Card.Content>
+					<div class="flex-grow"></div>
+				</Card.Root>
+			</swiper-slide>
+			<swiper-slide>
+				<Card.Root class="flex h-full w-full flex-col bg-transparent">
+					<Card.Header>
+						<Card.Title>Test</Card.Title>
+					</Card.Header>
+					<Card.Content>
+						<p>Test</p>
+					</Card.Content>
+					<div class="flex-grow"></div>
+				</Card.Root></swiper-slide
+			>
+		</swiper-container>
 	</div>
 </div>
 
