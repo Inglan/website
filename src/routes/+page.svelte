@@ -82,11 +82,7 @@
 <div class="flex flex-col gap-2 p-2">
 	<h2 class="colored text-center text-4xl">Projects</h2>
 
-	<swiper-container
-		space-between="10"
-		loop="true"
-		class="flex max-w-prose flex-col items-start justify-center md:flex-row"
-	>
+	<swiper-container space-between="10" loop="true" class="max-w-prose">
 		<swiper-slide>
 			<Card.Root class="flex h-full w-full flex-col bg-transparent">
 				<Card.Header>
