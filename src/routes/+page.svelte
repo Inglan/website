@@ -98,10 +98,10 @@
 			<swiper-slide>
 				<Card.Root class="flex h-full w-full flex-col bg-transparent">
 					<Card.Header>
-						<Card.Title>Test</Card.Title>
+						<Card.Title>Test 1</Card.Title>
 					</Card.Header>
 					<Card.Content>
-						<p>Test</p>
+						<p>Test 1</p>
 					</Card.Content>
 					<div class="flex-grow"></div>
 				</Card.Root></swiper-slide
