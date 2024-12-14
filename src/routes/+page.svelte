@@ -70,8 +70,12 @@
 		<div></div>
 	</div>
 	<div class="z-10 flex w-fit flex-col gap-2 drop-shadow-xl">
-		<div class="text-6xl">Hi, I'm <span class="colored">Ingo Wolf</span>,</div>
-		<div class="text-4xl">and I <span id="thing" class="duration-500">code stuff</span></div>
+		<div class="text-4xl duration-500 md:text-6xl">
+			Hi, I'm <span class="colored">Ingo Wolf</span>,
+		</div>
+		<div class="text-2xl duration-500 md:text-4xl">
+			and I <span id="thing" class="duration-500">code stuff</span>
+		</div>
 	</div>
 </div>
 
