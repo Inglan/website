@@ -66,7 +66,7 @@
 		<div></div>
 	</div>
 	<div class="z-10 flex w-fit flex-col gap-2 drop-shadow-xl">
-		<div class="text-6xl">Hi, I'm <span id="name">Ingo Wolf</span>,</div>
+		<div class="text-6xl">Hi, I'm <span class="colored">Ingo Wolf</span>,</div>
 		<div class="text-4xl">and I <span id="thing" class="duration-500">code stuff</span></div>
 	</div>
 </div>
@@ -81,7 +81,7 @@
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <style>
-	#name {
+	.colored {
 		background: linear-gradient(45deg, #fab387, #f38ba8);
 		background-clip: text;
 		-webkit-background-clip: text;
