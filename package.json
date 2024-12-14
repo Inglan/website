@@ -33,6 +33,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@fontsource/inter": "^5.1.0"
+		"@fontsource/inter": "^5.1.0",
+		"swiper": "^11.1.15"
 	}
 }

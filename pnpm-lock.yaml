@@ -11,6 +11,9 @@ importers:
       '@fontsource/inter':
         specifier: ^5.1.0
         version: 5.1.0
+      swiper:
+        specifier: ^11.1.15
+        version: 11.1.15
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -1000,6 +1003,10 @@ packages:
     resolution: {integrity: sha512-kGWswlBaohYxZHML9jp8ZYXkwjKd+WTpyAK1CCDmNzsefZHQjvsa7kbrKUckcFloNmdzwQwaZq+NyunuNOE6lw==}
     engines: {node: '>=18'}
 
+  swiper@11.1.15:
+    resolution: {integrity: sha512-IzWeU34WwC7gbhjKsjkImTuCRf+lRbO6cnxMGs88iVNKDwV+xQpBCJxZ4bNH6gSrIbbyVJ1kuGzo3JTtz//CBw==}
+    engines: {node: '>= 4.7.0'}
+
   tailwind-merge@2.5.5:
     resolution: {integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==}
 
@@ -1901,6 +1908,8 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.15
       zimmerframe: 1.1.2
+
+  swiper@11.1.15: {}
 
   tailwind-merge@2.5.5: {}
 
