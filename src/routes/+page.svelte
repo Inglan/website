@@ -85,7 +85,7 @@
 	<swiper-container
 		space-between="10"
 		loop="true"
-		class="flex max-w-screen-lg flex-col items-start justify-center md:flex-row"
+		class="flex max-w-prose flex-col items-start justify-center md:flex-row"
 	>
 		<swiper-slide>
 			<Card.Root class="flex h-full w-full flex-col bg-transparent">
