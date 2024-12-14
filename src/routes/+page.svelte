@@ -1,4 +1,6 @@
 <script lang="ts">
+	import * as Card from '$lib/components/ui/card/index.js';
+
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	const sidebar = useSidebar();
 
