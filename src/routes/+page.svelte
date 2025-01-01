@@ -45,19 +45,18 @@
 
 		window.addEventListener('scroll', handleScroll);
 
-		const things = ['develop websites', 'use arch btw', 'code stuff'];
-		let currentIndex = 0;
-		setInterval(() => {
-			const thingElement = document.getElementById('thing');
-			if (thingElement) {
-				thingElement.style.opacity = '0';
-				setTimeout(() => {
-					thingElement.textContent = things[currentIndex];
-					thingElement.style.opacity = '1';
-					currentIndex = (currentIndex + 1) % things.length;
-				}, 500);
-			}
-		}, 5000);
+		// loop through the things
+		const things = document.getElementById('things');
+		const thingsChildren = things?.children;
+		if (thingsChildren) {
+			let i = 0;
+			setInterval(() => {
+				thingsChildren[i].classList.add('opacity-0');
+				thingsChildren[i].classList.add('opacity-0');
+				i = (i + 1) % thingsChildren.length;
+				thingsChildren[i].classList.remove('opacity-0');
+			}, 2000);
+		}
 	});
 </script>
 
@@ -66,8 +65,13 @@
 		<div class="text-4xl duration-500 md:text-6xl">
 			Hi, I'm <span class="colored">Ingo Wolf</span>,
 		</div>
-		<div class="text-2xl duration-500 md:text-4xl">
-			and I <span id="thing" class="duration-500">code stuff</span>
+		<div class="flex flex-row text-2xl duration-500 md:text-4xl">
+			and I&nbsp;
+			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
+				<span class="scale-50 opacity-0">develop websites</span>
+				<span class="scale-50 opacity-0">use arch btw</span>
+				<span class="scale-50 opacity-0">code stuff</span>
+			</div>
 		</div>
 	</div>
 </div>
