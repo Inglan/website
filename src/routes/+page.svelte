@@ -52,9 +52,14 @@
 			let i = 0;
 			setInterval(() => {
 				thingsChildren[i].classList.add('opacity-0');
-				thingsChildren[i].classList.add('opacity-0');
+				thingsChildren[i].classList.remove('scale-100');
+				thingsChildren[i].classList.add('blur-xl');
+				thingsChildren[i].classList.add('scale-50');
 				i = (i + 1) % thingsChildren.length;
 				thingsChildren[i].classList.remove('opacity-0');
+				thingsChildren[i].classList.remove('scale-50');
+				thingsChildren[i].classList.remove('blur-xl');
+				thingsChildren[i].classList.add('scale-100');
 			}, 2000);
 		}
 	});
@@ -68,9 +73,9 @@
 		<div class="flex flex-row text-2xl duration-500 md:text-4xl">
 			and I&nbsp;
 			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
-				<span class="scale-50 opacity-0">develop websites</span>
-				<span class="scale-50 opacity-0">use arch btw</span>
-				<span class="scale-50 opacity-0">code stuff</span>
+				<span>develop websites</span>
+				<span class="scale-50 opacity-0 blur-xl">use arch btw</span>
+				<span class="scale-50 opacity-0 blur-xl">code stuff</span>
 			</div>
 		</div>
 	</div>
