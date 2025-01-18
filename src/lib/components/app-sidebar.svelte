@@ -60,8 +60,8 @@
 							{#snippet child({ props })}
 								<a href={item.url} {...props}>
 									<item.icon />
-									{item.title}</a
-								>
+									{item.title}
+								</a>
 							{/snippet}
 						</Sidebar.MenuButton>
 					</Sidebar.MenuItem>
