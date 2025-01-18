@@ -71,8 +71,8 @@
 	</Sidebar.Content>
 	<Sidebar.Footer>
 		<Sidebar.Group>
-			<Sidebar.Menu class="gap-2">
-				<Sidebar.MenuItem class="flex flex-row justify-center gap-2">
+			<Sidebar.Menu class="gap-3">
+				<Sidebar.MenuItem class="flex flex-row justify-center gap-3">
 					<Button size="icon" variant="secondary" href="https://github.com/Inglan">
 						<Git />
 					</Button>
