@@ -78,7 +78,7 @@
 			}, 200);
 		}}
 		onclick={() => {
-			hideSidebar();
+			sidebar.toggle();
 		}}
 	>
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
