@@ -7,38 +7,32 @@
 	import { onMount } from 'svelte';
 
 	function hideSidebar() {
-		// if (sidebar.state == 'expanded') {
-		// 	sidebar.toggle();
-		// }
+		if (sidebar.state == 'expanded') {
+			sidebar.toggle();
+		}
 	}
 
 	function showSidebar() {
-		// if (sidebar.state == 'collapsed') {
-		// 	sidebar.toggle();
-		// }
+		if (sidebar.state == 'collapsed') {
+			sidebar.toggle();
+		}
 	}
 	onMount(() => {
 		register();
 
 		const sidebarScrollYThreshold = 1;
-		var openedSidebar = true;
-		if (window.scrollY < sidebarScrollYThreshold) {
-			hideSidebar();
-			document.getElementById('sidebar-trigger')?.classList.remove('bg-secondary');
-			openedSidebar = false;
-		}
+		var openedSidebar = false;
+
 		const handleScroll = () => {
 			if (window.scrollY > sidebarScrollYThreshold && !openedSidebar) {
 				if (!sidebar.isMobile) {
 					showSidebar();
 				}
-				document.getElementById('sidebar-trigger')?.classList.add('bg-secondary');
 				openedSidebar = true;
 			} else if (window.scrollY < sidebarScrollYThreshold && openedSidebar) {
 				if (!sidebar.isMobile) {
 					hideSidebar();
 				}
-				document.getElementById('sidebar-trigger')?.classList.remove('bg-secondary');
 				openedSidebar = false;
 			}
 		};
