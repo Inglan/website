@@ -73,10 +73,10 @@
 		<Sidebar.Group>
 			<Sidebar.Menu class="gap-2">
 				<Sidebar.MenuItem class="flex flex-row justify-center gap-2">
-					<Button size="icon" variant="secondary">
+					<Button size="icon" variant="secondary" href="https://github.com/Inglan">
 						<Git />
 					</Button>
-					<Button size="icon" variant="secondary">
+					<Button size="icon" variant="secondary" href="mailto:me@ingo.au">
 						<Mail />
 					</Button>
 				</Sidebar.MenuItem>
