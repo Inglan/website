@@ -7,10 +7,10 @@
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import '@fontsource/inter';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 </script>
 
-<Sidebar.Provider style="--sidebar-width: 19rem;" open={$page.url.pathname == '/' ? false : true}>
+<Sidebar.Provider style="--sidebar-width: 19rem;" open={page.url.pathname == '/' ? false : true}>
 	<AppSidebar />
 	<Sidebar.Inset>
 		{@render children()}
