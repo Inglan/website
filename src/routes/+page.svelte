@@ -7,15 +7,15 @@
 	import { onMount } from 'svelte';
 
 	function hideSidebar() {
-		if (sidebar.state == 'expanded') {
-			sidebar.toggle();
-		}
+		// if (sidebar.state == 'expanded') {
+		// 	sidebar.toggle();
+		// }
 	}
 
 	function showSidebar() {
-		if (sidebar.state == 'collapsed') {
-			sidebar.toggle();
-		}
+		// if (sidebar.state == 'collapsed') {
+		// 	sidebar.toggle();
+		// }
 	}
 	onMount(() => {
 		register();
