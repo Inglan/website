@@ -61,12 +61,14 @@
 
 <div class="hero f flex h-screen flex-col items-center justify-center gap-2 p-2 pl-0">
 	<div
-		class="absolute left-0 hidden h-full w-20 md:block"
+		class="absolute left-0 z-10 hidden h-full w-20 items-center justify-center bg-background md:flex"
 		role="none"
 		onmouseenter={() => {
 			showSidebar();
 		}}
-	></div>
+	>
+		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
+	</div>
 	<div class="z-10 flex w-fit flex-col gap-2 drop-shadow-xl">
 		<div class="text-4xl duration-500 md:text-6xl">
 			Hi, I'm <span class="coloredtext">Ingo Wolf</span>,
