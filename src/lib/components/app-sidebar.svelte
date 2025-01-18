@@ -183,6 +183,19 @@
 	</Sidebar.Header>
 	<Sidebar.Content>
 		<Sidebar.Group>
+			<Sidebar.Menu>
+				{#each navigation as item}
+					<Sidebar.MenuItem>
+						<Sidebar.MenuButton>
+							{#snippet child({ props })}
+								<a href={item.url} {...props}>{item.title}</a>
+							{/snippet}
+						</Sidebar.MenuButton>
+					</Sidebar.MenuItem>
+				{/each}
+			</Sidebar.Menu>
+		</Sidebar.Group>
+		<Sidebar.Group>
 			<Sidebar.Menu class="gap-2">
 				{#each data.navMain as mainItem (mainItem.title)}
 					<Sidebar.MenuItem>
