@@ -138,6 +138,7 @@
 	import Code from 'lucide-svelte/icons/code';
 	import User from 'lucide-svelte/icons/user';
 	import type { ComponentProps } from 'svelte';
+	import { Separator } from 'bits-ui';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
@@ -181,12 +182,13 @@
 			</Sidebar.MenuItem>
 		</Sidebar.Menu>
 	</Sidebar.Header>
+	<Sidebar.Separator />
 	<Sidebar.Content>
 		<Sidebar.Group>
 			<Sidebar.Menu>
 				{#each navigation as item}
 					<Sidebar.MenuItem>
-						<Sidebar.MenuButton>
+						<Sidebar.MenuButton size="lg">
 							{#snippet child({ props })}
 								<a href={item.url} {...props}>
 									<item.icon />
