@@ -198,33 +198,5 @@
 				{/each}
 			</Sidebar.Menu>
 		</Sidebar.Group>
-		<Sidebar.Group>
-			<Sidebar.Menu class="gap-2">
-				{#each data.navMain as mainItem (mainItem.title)}
-					<Sidebar.MenuItem>
-						<Sidebar.MenuButton class="font-medium">
-							{#snippet child({ props })}
-								<a href={mainItem.url} {...props}>
-									{mainItem.title}
-								</a>
-							{/snippet}
-						</Sidebar.MenuButton>
-						{#if mainItem.items?.length}
-							<Sidebar.MenuSub class="ml-0 border-l-0 px-1.5">
-								{#each mainItem.items as item (item.title)}
-									<Sidebar.MenuSubItem>
-										<Sidebar.MenuSubButton isActive={item.isActive}>
-											{#snippet child({ props })}
-												<a href={item.url} {...props}>{item.title}</a>
-											{/snippet}
-										</Sidebar.MenuSubButton>
-									</Sidebar.MenuSubItem>
-								{/each}
-							</Sidebar.MenuSub>
-						{/if}
-					</Sidebar.MenuItem>
-				{/each}
-			</Sidebar.Menu>
-		</Sidebar.Group>
 	</Sidebar.Content>
 </Sidebar.Root>
