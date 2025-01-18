@@ -3,7 +3,10 @@
 	import Home from 'lucide-svelte/icons/home';
 	import Code from 'lucide-svelte/icons/code';
 	import User from 'lucide-svelte/icons/user';
+	import Git from 'lucide-svelte/icons/git-branch';
+	import Mail from 'lucide-svelte/icons/mail';
 	import type { ComponentProps } from 'svelte';
+	import { Button } from '$lib/components/ui/button/index.js';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
@@ -66,4 +69,19 @@
 			</Sidebar.Menu>
 		</Sidebar.Group>
 	</Sidebar.Content>
+	<Sidebar.Footer>
+		<Sidebar.Group>
+			<Sidebar.Menu class="gap-2">
+				<Sidebar.MenuItem class="flex flex-row justify-center gap-2">
+					<Button size="icon" variant="secondary">
+						<Git />
+					</Button>
+					<Button size="icon" variant="secondary">
+						<Mail />
+					</Button>
+				</Sidebar.MenuItem>
+				<Sidebar.MenuItem class="text-center">Made with ♥️ in Svelte</Sidebar.MenuItem>
+			</Sidebar.Menu>
+		</Sidebar.Group>
+	</Sidebar.Footer>
 </Sidebar.Root>
