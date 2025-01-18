@@ -4,6 +4,8 @@
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	const sidebar = useSidebar();
 
+	let menuTargetHovered = $state(false);
+
 	import { onMount } from 'svelte';
 
 	function hideSidebar() {
@@ -60,11 +62,20 @@
 </script>
 
 <div class="hero flex h-screen flex-col items-center justify-center gap-3 p-2 pl-0">
+	<!-- svelte-ignore a11y_mouse_events_have_key_events -->
 	<div
 		class="absolute left-0 z-10 hidden h-full w-20 cursor-pointer items-center justify-center bg-background md:flex"
 		role="none"
+		onmouseout={() => {
+			menuTargetHovered = false;
+		}}
 		onmouseenter={() => {
-			showSidebar();
+			menuTargetHovered = true;
+			setTimeout(() => {
+				if (menuTargetHovered == true) {
+					showSidebar();
+				}
+			}, 200);
 		}}
 		onclick={() => {
 			hideSidebar();
