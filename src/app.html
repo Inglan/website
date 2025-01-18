@@ -31,12 +31,11 @@
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">%sveltekit.body%</div>
-		<!-- <div id="overlay"></div>
+		<div id="overlay"></div>
 		<script>
 			if (window.location.pathname == '/') {
 				document.getElementById('overlay').style.display = 'flex';
-				setTimeout(() => {
+				document.addEventListener('DOMContentLoaded', () => {
 					document.getElementById('overlay').style.filter = 'brightness(0)';
 					setTimeout(() => {
 						document.getElementById('overlay').style.opacity = 0;
@@ -44,8 +43,9 @@
 							document.getElementById('overlay').remove();
 						}, 300);
 					}, 300);
-				}, 1000);
+				});
 			}
-		</script> -->
+		</script>
+		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
