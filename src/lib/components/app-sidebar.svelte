@@ -4,7 +4,6 @@
 	import Code from 'lucide-svelte/icons/code';
 	import User from 'lucide-svelte/icons/user';
 	import type { ComponentProps } from 'svelte';
-	import { Separator } from 'bits-ui';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
