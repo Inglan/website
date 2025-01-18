@@ -60,6 +60,13 @@
 </script>
 
 <div class="hero f flex h-screen flex-col items-center justify-center gap-2 p-2 pl-0">
+	<div
+		class="absolute left-0 hidden h-full w-20 md:block"
+		role="none"
+		onmouseenter={() => {
+			showSidebar();
+		}}
+	></div>
 	<div class="z-10 flex w-fit flex-col gap-2 drop-shadow-xl">
 		<div class="text-4xl duration-500 md:text-6xl">
 			Hi, I'm <span class="coloredtext">Ingo Wolf</span>,
