@@ -59,12 +59,15 @@
 	});
 </script>
 
-<div class="hero f flex h-screen flex-col items-center justify-center gap-2 p-2 pl-0">
+<div class="hero flex h-screen flex-col items-center justify-center gap-2 p-2 pl-0">
 	<div
-		class="absolute left-0 z-10 hidden h-full w-20 items-center justify-center bg-background md:flex"
+		class="absolute left-0 z-10 hidden h-full w-20 cursor-pointer items-center justify-center bg-background md:flex"
 		role="none"
 		onmouseenter={() => {
 			showSidebar();
+		}}
+		onclick={() => {
+			hideSidebar();
 		}}
 	>
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
