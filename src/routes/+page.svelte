@@ -63,7 +63,7 @@
 <div class="hero f flex h-screen flex-col items-center justify-center gap-2 p-2 pl-0">
 	<div class="z-10 flex w-fit flex-col gap-2 drop-shadow-xl">
 		<div class="text-4xl duration-500 md:text-6xl">
-			Hi, I'm <span class="colored">Ingo Wolf</span>,
+			Hi, I'm <span class="coloredtext">Ingo Wolf</span>,
 		</div>
 		<div class="flex flex-row text-2xl duration-500 md:text-4xl">
 			and I&nbsp;
@@ -77,7 +77,7 @@
 </div>
 
 <div class="flex flex-col gap-2 p-2">
-	<h2 class="colored text-center text-4xl">Projects</h2>
+	<h2 class="coloredtext text-center text-4xl">Projects</h2>
 
 	<swiper-container
 		space-between="10"
@@ -150,7 +150,7 @@
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <style>
-	.colored {
+	.coloredtext {
 		background: linear-gradient(45deg, #fab387, #f38ba8);
 		background-clip: text;
 		-webkit-background-clip: text;
