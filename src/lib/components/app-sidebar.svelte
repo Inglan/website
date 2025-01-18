@@ -135,9 +135,29 @@
 <script lang="ts">
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import Home from 'lucide-svelte/icons/home';
+	import Code from 'lucide-svelte/icons/code';
+	import User from 'lucide-svelte/icons/user';
 	import type { ComponentProps } from 'svelte';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
+
+	const navigation = [
+		{
+			title: 'Home',
+			url: '/',
+			icon: Home
+		},
+		{
+			title: 'Projects',
+			url: '/projects',
+			icon: Code
+		},
+		{
+			title: 'About me',
+			url: '/about',
+			icon: User
+		}
+	];
 </script>
 
 <Sidebar.Root variant="sidebar" {...restProps}>
