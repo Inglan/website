@@ -39,6 +39,15 @@
 
 		window.addEventListener('scroll', handleScroll);
 
+		const sidebarTrigger = document.getElementById('sidebar-trigger');
+
+		setTimeout(() => {
+			if (sidebarTrigger) {
+				sidebarTrigger.addEventListener('mouseenter', showSidebar);
+				sidebarTrigger.addEventListener('click', sidebar.toggle);
+			}
+		}, 300);
+
 		// loop through the things
 		const things = document.getElementById('things');
 		const thingsChildren = things?.children;
@@ -69,12 +78,7 @@
 	<div
 		class="absolute left-0 z-10 hidden h-full w-20 cursor-pointer items-center justify-center bg-background md:flex"
 		role="none"
-		onmouseenter={() => {
-			showSidebar();
-		}}
-		onclick={() => {
-			sidebar.toggle();
-		}}
+		id="sidebar-trigger"
 	>
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
 	</div>
