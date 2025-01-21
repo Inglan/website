@@ -37,9 +37,7 @@
 			}
 		};
 
-		setTimeout(() => {
-			window.addEventListener('scroll', handleScroll);
-		}, 1000);
+		window.addEventListener('scroll', handleScroll);
 
 		// loop through the things
 		const things = document.getElementById('things');
