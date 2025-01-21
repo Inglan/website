@@ -1,6 +1,8 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+	import * as Carousel from '$lib/components/ui/carousel/index.js';
+
 	const sidebar = useSidebar();
 
 	import { onMount, onDestroy } from 'svelte';
@@ -76,7 +78,7 @@
 
 <div class="hero flex h-screen flex-col items-center justify-center gap-3 p-2 pl-0">
 	<div
-		class="absolute left-0 z-10 hidden h-full w-20 cursor-pointer items-center justify-center bg-background md:flex"
+		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center bg-background md:flex"
 		role="none"
 		id="sidebar-trigger"
 	>
@@ -97,7 +99,17 @@
 	</div>
 </div>
 
-<div class="flex flex-col gap-3 p-2">
+<Carousel.Root class="max-w-prose">
+	<Carousel.Content>
+		<Carousel.Item>...</Carousel.Item>
+		<Carousel.Item>...</Carousel.Item>
+		<Carousel.Item>...</Carousel.Item>
+	</Carousel.Content>
+	<Carousel.Previous />
+	<Carousel.Next />
+</Carousel.Root>
+
+<!-- <div class="flex flex-col gap-3 p-2">
 	<h2 class="coloredtext text-center text-4xl">Projects</h2>
 
 	<swiper-container
@@ -165,7 +177,7 @@
 			</Card.Root>
 		</swiper-slide>
 	</swiper-container>
-</div>
+</div> -->
 
 <h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
