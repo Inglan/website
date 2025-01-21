@@ -1,6 +1,5 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index.js';
-	import { register } from 'swiper/element/bundle';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	const sidebar = useSidebar();
 
@@ -18,8 +17,6 @@
 		}
 	}
 	onMount(() => {
-		register();
-
 		const sidebarScrollYThreshold = 1;
 		var openedSidebar = false;
 
