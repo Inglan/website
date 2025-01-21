@@ -3,7 +3,7 @@
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	const sidebar = useSidebar();
 
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	function hideSidebar() {
 		if (sidebar.state == 'expanded') {
@@ -16,11 +16,14 @@
 			sidebar.toggle();
 		}
 	}
+
+	let handleScroll = () => {};
+
 	onMount(() => {
 		const sidebarScrollYThreshold = 1;
 		var openedSidebar = false;
 
-		const handleScroll = () => {
+		handleScroll = () => {
 			if (window.scrollY > sidebarScrollYThreshold && !openedSidebar) {
 				if (!sidebar.isMobile) {
 					showSidebar();
@@ -34,7 +37,9 @@
 			}
 		};
 
-		window.addEventListener('scroll', handleScroll);
+		setTimeout(() => {
+			window.addEventListener('scroll', handleScroll);
+		}, 1000);
 
 		// loop through the things
 		const things = document.getElementById('things');
@@ -52,6 +57,12 @@
 				thingsChildren[i].classList.remove('blur-md');
 				thingsChildren[i].classList.add('scale-100');
 			}, 2000);
+		}
+	});
+
+	onDestroy(() => {
+		if (typeof window !== 'undefined') {
+			window.removeEventListener('scroll', handleScroll);
 		}
 	});
 </script>
