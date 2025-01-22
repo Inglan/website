@@ -28,13 +28,8 @@
 			links: [{ name: 'Source Code', icon: null, link: 'https://github.com/uStuff/uRun' }]
 		},
 		{
-			title: 'Project Delta',
-			description: 'An advanced analytics platform for gaining insights into your data.',
-			links: [{ name: '', icon: null, link: 'https://github.com/' }]
-		},
-		{
-			title: 'Project Epsilon',
-			description: 'A state-of-the-art solution for automating your workflow.',
+			title: 'Noe Co. Website',
+			description: "A website developed for a friend's game development company.",
 			links: [{ name: '', icon: null, link: 'https://github.com/' }]
 		}
 	];
