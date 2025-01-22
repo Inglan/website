@@ -99,11 +99,52 @@
 	</div>
 </div>
 
-<Carousel.Root class="max-w-prose">
+<Carousel.Root class="mx-auto max-w-prose">
 	<Carousel.Content>
-		<Carousel.Item>...</Carousel.Item>
-		<Carousel.Item>...</Carousel.Item>
-		<Carousel.Item>...</Carousel.Item>
+		<Carousel.Item>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Alpha</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>A revolutionary new app that changes the way you think about productivity.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</Carousel.Item>
+		<Carousel.Item>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Beta</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>An innovative platform for seamless collaboration and communication.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</Carousel.Item>
+		<Carousel.Item>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Gamma</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>A cutting-edge tool for managing your personal finances with ease.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</Carousel.Item>
+		<Carousel.Item>
+			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+				<Card.Header>
+					<Card.Title>Project Delta</Card.Title>
+				</Card.Header>
+				<Card.Content>
+					<p>An advanced analytics platform for gaining insights into your data.</p>
+				</Card.Content>
+				<div class="flex-grow"></div>
+			</Card.Root>
+		</Carousel.Item>
 	</Carousel.Content>
 	<Carousel.Previous />
 	<Carousel.Next />
