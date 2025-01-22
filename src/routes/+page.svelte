@@ -115,7 +115,7 @@
 	]}
 >
 	<Carousel.Content
-		class="[&>*:not(.is-snapped)>*]:scale-90 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
+		class="[&>*:not(.is-snapped)>*]:scale-95 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
 	>
 		<Carousel.Item class="basis-2/3">
 			<Card.Root class="h-full flex-col bg-transparent">
