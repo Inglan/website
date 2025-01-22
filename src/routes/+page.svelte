@@ -6,6 +6,9 @@
 	import Autoplay from 'embla-carousel-autoplay';
 	import ClassNames from 'embla-carousel-class-names';
 
+	import Github from 'svelte-material-icons/Github.svelte';
+	import Earth from 'svelte-material-icons/Earth.svelte';
+
 	const sidebar = useSidebar();
 
 	const projects = [
@@ -13,7 +16,9 @@
 			title: 'MemoryOverflow',
 			description:
 				'A simple platformer game written in Godot for a school project. But with some totally real memory leak issues :)',
-			links: [{ name: 'Source Code', icon: null, link: 'https://github.com/Inglan/MemoryOverflow' }]
+			links: [
+				{ name: 'Source Code', icon: Github, link: 'https://github.com/Inglan/MemoryOverflow' }
+			]
 		},
 		{
 			title: 'Star Battles',
@@ -22,23 +27,23 @@
 			links: [
 				{
 					name: 'Website',
-					icon: null,
+					icon: Earth,
 					link: 'https://smastudiosau.github.io/projects/starbattle/'
 				},
-				{ name: 'Source Code', icon: null, link: 'https://github.com/SMAStudiosAU/Star-Battles' }
+				{ name: 'Source Code', icon: Github, link: 'https://github.com/SMAStudiosAU/Star-Battles' }
 			]
 		},
 		{
 			title: 'uRun',
 			description: 'Execute arbitrary code using uBlock Origin filters.',
-			links: [{ name: 'Source Code', icon: null, link: 'https://github.com/uStuff/uRun' }]
+			links: [{ name: 'Source Code', icon: Github, link: 'https://github.com/uStuff/uRun' }]
 		},
 		{
 			title: 'Noe Co. Website',
 			description: "A website developed in Svelte for a friend's game development company.",
 			links: [
-				{ name: 'Website', icon: null, link: 'https://noeco.xyz/' },
-				{ name: 'Source Code', icon: null, link: 'https://github.com/NoeCoOfficial/www' }
+				{ name: 'Website', icon: Earth, link: 'https://noeco.xyz/' },
+				{ name: 'Source Code', icon: Github, link: 'https://github.com/NoeCoOfficial/www' }
 			]
 		}
 	];
@@ -166,7 +171,9 @@
 					<Card.Footer>
 						<div class="flex w-full flex-row justify-end gap-3">
 							{#each project.links as link}
-								<Button target="_blank" href={link.link}>{link.name}</Button>
+								<Button target="_blank" href={link.link} size="icon">
+									<link.icon />
+								</Button>
 							{/each}
 						</div>
 					</Card.Footer>
