@@ -110,12 +110,15 @@
 		Autoplay({
 			delay: 2000,
 			stopOnInteraction: false
-		})
+		}),
+		ClassNames()
 	]}
 >
-	<Carousel.Content>
-		<Carousel.Item>
-			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+	<Carousel.Content
+		class="[&>*:not(.is-snapped)>*]:scale-90 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
+	>
+		<Carousel.Item class="basis-2/3">
+			<Card.Root class="h-full flex-col bg-transparent">
 				<Card.Header>
 					<Card.Title>Project Alpha</Card.Title>
 				</Card.Header>
@@ -125,8 +128,8 @@
 				<div class="flex-grow"></div>
 			</Card.Root>
 		</Carousel.Item>
-		<Carousel.Item>
-			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+		<Carousel.Item class="basis-2/3">
+			<Card.Root class="h-full flex-col bg-transparent">
 				<Card.Header>
 					<Card.Title>Project Beta</Card.Title>
 				</Card.Header>
@@ -136,8 +139,8 @@
 				<div class="flex-grow"></div>
 			</Card.Root>
 		</Carousel.Item>
-		<Carousel.Item>
-			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+		<Carousel.Item class="basis-2/3">
+			<Card.Root class="h-full flex-col bg-transparent">
 				<Card.Header>
 					<Card.Title>Project Gamma</Card.Title>
 				</Card.Header>
@@ -147,8 +150,8 @@
 				<div class="flex-grow"></div>
 			</Card.Root>
 		</Carousel.Item>
-		<Carousel.Item>
-			<Card.Root class="flex h-full w-full flex-col bg-transparent">
+		<Carousel.Item class="basis-2/3">
+			<Card.Root class="h-full flex-col bg-transparent">
 				<Card.Header>
 					<Card.Title>Project Delta</Card.Title>
 				</Card.Header>
