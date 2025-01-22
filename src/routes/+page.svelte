@@ -144,7 +144,7 @@
 </div>
 
 <Carousel.Root
-	class="mx-auto max-w-prose"
+	class="w-[calc(100vw)] md:mx-auto md:max-w-prose"
 	opts={{
 		loop: true
 	}}
@@ -195,8 +195,8 @@
 			</Carousel.Item>
 		{/each}
 	</Carousel.Content>
-	<Carousel.Previous />
-	<Carousel.Next />
+	<Carousel.Previous class="hidden md:flex" />
+	<Carousel.Next class="hidden md:flex" />
 </Carousel.Root>
 
 <h1>Welcome to SvelteKit</h1>
