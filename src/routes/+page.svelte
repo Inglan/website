@@ -152,7 +152,8 @@
 		Autoplay({
 			delay: 2000,
 			stopOnInteraction: false,
-			stopOnFocusIn: false
+			stopOnFocusIn: false,
+			stopOnMouseEnter: true
 		}),
 		ClassNames()
 	]}
