@@ -35,6 +35,7 @@
 		"vite": "^6.0.10"
 	},
 	"dependencies": {
-		"@fontsource/inter": "^5.1.1"
+		"@fontsource/inter": "^5.1.1",
+		"embla-carousel-class-names": "^8.5.2"
 	}
 }
