@@ -47,6 +47,14 @@
 				{ name: 'Website', icon: Earth, link: 'https://noeco.xyz/' },
 				{ name: 'Source Code', icon: Github, link: 'https://github.com/NoeCoOfficial/www' }
 			]
+		},
+		{
+			title: 'This website',
+			description: 'This very website is built in Svelte by me.',
+			links: [
+				{ name: 'Website', icon: Earth, link: '/' },
+				{ name: 'Source Code', icon: Github, link: 'https://github.com/Inglan/website' }
+			]
 		}
 	];
 
