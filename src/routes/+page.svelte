@@ -10,12 +10,14 @@
 	const projects = [
 		{
 			title: 'MemoryOverflow',
-			description: 'A simple platformer game... With a twist!',
+			description:
+				'A simple platformer game written in Godot for a school project. But with some totally real memory leak issues :)',
 			links: [{ name: '', icon: null, link: 'https://github.com/Inglan/MemoryOverflow' }]
 		},
 		{
-			title: 'Project Beta',
-			description: 'An innovative platform for seamless collaboration and communication.',
+			title: 'Star Battles',
+			description:
+				'A simple 2D space shooter game created and compiled with Turbowarp. Most game logic was written by a friend, I did the UI. Also the name is not inspired from anything at all trust me bro.',
 			links: [{ name: '', icon: null, link: 'https://github.com/' }]
 		},
 		{
