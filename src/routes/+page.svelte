@@ -37,7 +37,8 @@
 		},
 		{
 			title: 'uRun',
-			description: 'Execute arbitrary code using uBlock Origin filters.',
+			description:
+				'Some scripts to let you execute arbitrary code using uBlock Origin filters. Very buggy.',
 			links: [{ name: 'Source Code', icon: Github, link: 'https://github.com/uStuff/uRun' }]
 		},
 		{
@@ -50,7 +51,8 @@
 		},
 		{
 			title: 'This website',
-			description: 'This very website is built in Svelte by me.',
+			description:
+				"This very website is built in Svelte by me. It's open source so you can check out the code if you want.",
 			links: [
 				{ name: 'Website', icon: Earth, link: '/' },
 				{ name: 'Source Code', icon: Github, link: 'https://github.com/Inglan/website' }
