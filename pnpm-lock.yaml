@@ -11,9 +11,15 @@ importers:
       '@fontsource/inter':
         specifier: ^5.1.1
         version: 5.1.1
+      embla-carousel-autoplay:
+        specifier: ^8.5.2
+        version: 8.5.2(embla-carousel@8.5.2)
       embla-carousel-class-names:
         specifier: ^8.5.2
         version: 8.5.2(embla-carousel@8.5.2)
+      svelte-material-icons:
+        specifier: ^3.0.5
+        version: 3.0.5(svelte@5.19.0)
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
@@ -33,9 +39,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      embla-carousel-autoplay:
-        specifier: ^8.5.2
-        version: 8.5.2(embla-carousel@8.5.2)
       embla-carousel-svelte:
         specifier: ^8.5.2
         version: 8.5.2(svelte@5.19.0)
@@ -1028,6 +1031,11 @@ packages:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
 
+  svelte-material-icons@3.0.5:
+    resolution: {integrity: sha512-UbhAa+Btd5y6e6DMljVccP+cbJ8lvesltMippiCOvfIUtYe2TsQqM+P6osfrVsZHV47b1tY6AmqCuSpMKnwMOQ==}
+    peerDependencies:
+      svelte: ^3.0.0 || ^4.0.0
+
   svelte-toolbelt@0.7.0:
     resolution: {integrity: sha512-i/Tv4NwAWWqJnK5H0F8y/ubDnogDYlwwyzKhrspTUFzrFuGnYshqd2g4/R43ds841wmaFiSW/HsdsdWhPOlrAA==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
@@ -1940,6 +1948,10 @@ snapshots:
       typescript: 5.7.3
     transitivePeerDependencies:
       - picomatch
+
+  svelte-material-icons@3.0.5(svelte@5.19.0):
+    dependencies:
+      svelte: 5.19.0
 
   svelte-toolbelt@0.7.0(svelte@5.19.0):
     dependencies:
