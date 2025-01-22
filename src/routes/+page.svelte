@@ -2,7 +2,8 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
-	import { Button } from '$lib/components/ui/button/index.js';
+	import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
+	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import Autoplay from 'embla-carousel-autoplay';
 	import ClassNames from 'embla-carousel-class-names';
 
@@ -171,9 +172,21 @@
 					<Card.Footer>
 						<div class="flex w-full flex-row justify-end gap-3">
 							{#each project.links as link}
-								<Button target="_blank" href={link.link} size="icon">
-									<link.icon />
-								</Button>
+								<Tooltip.Provider>
+									<Tooltip.Root>
+										<Tooltip.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
+											{#snippet child({ props })}
+												<a target="_blank" href={link.link} {...props}>
+													<div class="sr-only">{link.name}</div>
+													<link.icon />
+												</a>
+											{/snippet}
+										</Tooltip.Trigger>
+										<Tooltip.Content>
+											<p>{link.name}</p>
+										</Tooltip.Content>
+									</Tooltip.Root>
+								</Tooltip.Provider>
 							{/each}
 						</div>
 					</Card.Footer>
