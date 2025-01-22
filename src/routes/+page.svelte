@@ -136,8 +136,10 @@
 			and I&nbsp;
 			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
 				<span>develop websites</span>
-				<span class="scale-50 opacity-0 blur-md">use arch btw</span>
 				<span class="scale-50 opacity-0 blur-md">code stuff</span>
+				<span class="scale-50 opacity-0 blur-md">make games</span>
+				<span class="scale-50 opacity-0 blur-md">mess with ai</span>
+				<span class="scale-50 opacity-0 blur-md">use arch btw</span>
 			</div>
 		</div>
 	</div>
