@@ -8,13 +8,6 @@
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import '@fontsource/inter';
 	import { page } from '$app/state';
-
-	import posthog from 'posthog-js';
-
-	posthog.init('phc_1rTfejgP2wgjE7B769DxyoAaxsd2G5buNRHM9G1F2hK', {
-		api_host: 'https://us.i.posthog.com',
-		person_profiles: 'identified_only' // or 'always' to create profiles for anonymous users as well
-	});
 </script>
 
 <Sidebar.Provider style="--sidebar-width: 19rem;" open={page.url.pathname == '/' ? false : true}>
