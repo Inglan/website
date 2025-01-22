@@ -3,6 +3,7 @@
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
 	import Autoplay from 'embla-carousel-autoplay';
+	import ClassNames from 'embla-carousel-class-names';
 
 	const sidebar = useSidebar();
 
