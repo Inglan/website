@@ -29,6 +29,8 @@
 	class={cn('h-7 w-7', className)}
 	{...restProps}
 >
-	<ChevronRight class={(sidebar.open ? 'rotate-180' : '') + ' scale-125 duration-300'} />
+	<ChevronRight
+		class={(sidebar.open && !sidebar.isMobile ? 'rotate-180' : '') + ' scale-125 duration-300'}
+	/>
 	<span class="sr-only">Toggle Sidebar</span>
 </Button>
