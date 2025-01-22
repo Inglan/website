@@ -2,6 +2,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import Autoplay from 'embla-carousel-autoplay';
 
 	const sidebar = useSidebar();
 
@@ -99,7 +100,18 @@
 	</div>
 </div>
 
-<Carousel.Root class="mx-auto max-w-prose">
+<Carousel.Root
+	class="mx-auto max-w-prose"
+	opts={{
+		loop: true
+	}}
+	plugins={[
+		Autoplay({
+			delay: 200,
+			stopOnInteraction: false
+		})
+	]}
+>
 	<Carousel.Content>
 		<Carousel.Item>
 			<Card.Root class="flex h-full w-full flex-col bg-transparent">
