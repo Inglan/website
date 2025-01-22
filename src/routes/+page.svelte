@@ -6,6 +6,7 @@
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import Autoplay from 'embla-carousel-autoplay';
 	import ClassNames from 'embla-carousel-class-names';
+	import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
 
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Earth from 'svelte-material-icons/Earth.svelte';
@@ -157,7 +158,8 @@
 			stopOnFocusIn: false,
 			stopOnMouseEnter: true
 		}),
-		ClassNames()
+		ClassNames(),
+		WheelGesturesPlugin()
 	]}
 >
 	<Carousel.Content
