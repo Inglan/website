@@ -20,6 +20,9 @@ importers:
       embla-carousel-wheel-gestures:
         specifier: ^8.0.1
         version: 8.0.1(embla-carousel@8.5.2)
+      posthog-js:
+        specifier: ^1.207.2
+        version: 1.207.2
       svelte-material-icons:
         specifier: ^3.0.5
         version: 3.0.5(svelte@5.19.1)
@@ -541,6 +544,9 @@ packages:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
+  core-js@3.40.0:
+    resolution: {integrity: sha512-7vsMc/Lty6AGnn7uFpYT56QesI5D2Y/UkgKounk87OP9Z2H9Z8kj6jzcSGAxFmUtDOS0ntK6lbQz+Nsa0Jj6mQ==}
+
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
     engines: {node: '>= 8'}
@@ -642,6 +648,9 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
+
+  fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
 
   fill-range@7.1.1:
     resolution: {integrity: sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==}
@@ -869,6 +878,12 @@ packages:
   postcss@8.5.1:
     resolution: {integrity: sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==}
     engines: {node: ^10 || ^12 || >=14}
+
+  posthog-js@1.207.2:
+    resolution: {integrity: sha512-MaraHxYsuLjTFecD9LxT36ooiqpp6v/NOCjwpbhYaA5BTHJ1GE9m1xK0+Dwa4ZMA3p/QkN66PuHvFr558re7wA==}
+
+  preact@10.25.4:
+    resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
 
   prettier-plugin-svelte@3.3.3:
     resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
@@ -1159,6 +1174,9 @@ packages:
     peerDependenciesMeta:
       vite:
         optional: true
+
+  web-vitals@4.2.4:
+    resolution: {integrity: sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==}
 
   wheel-gestures@2.2.48:
     resolution: {integrity: sha512-f+Gy33Oa5Z14XY9679Zze+7VFhbsQfBFXodnU2x589l4kxGM9L5Y8zETTmcMR5pWOPQyRv4Z0lNax6xCO0NSlA==}
@@ -1538,6 +1556,8 @@ snapshots:
 
   cookie@0.6.0: {}
 
+  core-js@3.40.0: {}
+
   cross-spawn@7.0.6:
     dependencies:
       path-key: 3.1.1
@@ -1640,6 +1660,8 @@ snapshots:
       reusify: 1.0.4
 
   fdir@6.4.3: {}
+
+  fflate@0.4.8: {}
 
   fill-range@7.1.1:
     dependencies:
@@ -1824,6 +1846,15 @@ snapshots:
       nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  posthog-js@1.207.2:
+    dependencies:
+      core-js: 3.40.0
+      fflate: 0.4.8
+      preact: 10.25.4
+      web-vitals: 4.2.4
+
+  preact@10.25.4: {}
 
   prettier-plugin-svelte@3.3.3(prettier@3.4.2)(svelte@5.19.1):
     dependencies:
@@ -2076,6 +2107,8 @@ snapshots:
   vitefu@1.0.5(vite@6.0.11(jiti@1.21.7)(yaml@2.7.0)):
     optionalDependencies:
       vite: 6.0.11(jiti@1.21.7)(yaml@2.7.0)
+
+  web-vitals@4.2.4: {}
 
   wheel-gestures@2.2.48: {}
 
