@@ -12,18 +12,20 @@
 			title: 'MemoryOverflow',
 			description:
 				'A simple platformer game written in Godot for a school project. But with some totally real memory leak issues :)',
-			links: [{ name: '', icon: null, link: 'https://github.com/Inglan/MemoryOverflow' }]
+			links: [{ name: 'Source Code', icon: null, link: 'https://github.com/Inglan/MemoryOverflow' }]
 		},
 		{
 			title: 'Star Battles',
 			description:
 				'A simple 2D space shooter game created and compiled with Turbowarp. Most game logic was written by a friend, I did the UI. Also the name is not inspired from anything at all trust me bro.',
-			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+			links: [
+				{ name: 'Source Code', icon: null, link: 'https://github.com/SMAStudiosAU/Star-Battles' }
+			]
 		},
 		{
-			title: 'Project Gamma',
-			description: 'A cutting-edge tool for managing your personal finances with ease.',
-			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+			title: 'uRun',
+			description: 'Execute arbitrary code using uBlock Origin filters.',
+			links: [{ name: 'Source Code', icon: null, link: 'https://github.com/uStuff/uRun' }]
 		},
 		{
 			title: 'Project Delta',
