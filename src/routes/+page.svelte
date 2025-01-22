@@ -235,5 +235,6 @@
 		aspect-ratio: 1/1;
 		border-radius: 1000px;
 		opacity: 25%;
+		z-index: 99;
 	}
 </style>
