@@ -2,6 +2,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
 	import Autoplay from 'embla-carousel-autoplay';
 	import ClassNames from 'embla-carousel-class-names';
 
@@ -155,14 +156,20 @@
 	>
 		{#each projects as project}
 			<Carousel.Item class="basis-2/3">
-				<Card.Root class="h-full flex-col bg-transparent">
+				<Card.Root class="flex h-full flex-col bg-transparent">
 					<Card.Header>
 						<Card.Title>{project.title}</Card.Title>
 					</Card.Header>
-					<Card.Content>
+					<Card.Content class="flex-grow">
 						<p>{project.description}</p>
 					</Card.Content>
-					<div class="flex-grow"></div>
+					<Card.Footer>
+						<div class="flex w-full flex-row justify-end gap-3">
+							{#each project.links as link}
+								<Button target="_blank" href={link.link}>{link.name}</Button>
+							{/each}
+						</div>
+					</Card.Footer>
 				</Card.Root>
 			</Carousel.Item>
 		{/each}
