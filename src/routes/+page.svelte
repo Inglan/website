@@ -132,6 +132,7 @@
 </script>
 
 <div class="hero flex h-screen flex-col items-center justify-center gap-3 p-2 pl-0">
+	<div class="blurredblob"></div>
 	<div
 		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center bg-background md:flex"
 		role="none"
@@ -222,5 +223,17 @@
 		background-clip: text;
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+
+	.blurredblob {
+		filter: blur(1000px);
+		background: linear-gradient(45deg, #89b4fa, #f38ba8);
+		height: 1000px;
+		max-height: 90vh;
+		max-width: 90vw;
+		position: absolute;
+		aspect-ratio: 1/1;
+		border-radius: 1000px;
+		opacity: 25%;
 	}
 </style>
