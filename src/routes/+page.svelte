@@ -19,6 +19,11 @@
 			description:
 				'A simple 2D space shooter game created and compiled with Turbowarp. Most game logic was written by a friend, I did the UI. Also the name is not inspired from anything at all trust me bro.',
 			links: [
+				{
+					name: 'Website',
+					icon: null,
+					link: 'https://smastudiosau.github.io/projects/starbattle/'
+				},
 				{ name: 'Source Code', icon: null, link: 'https://github.com/SMAStudiosAU/Star-Battles' }
 			]
 		},
@@ -29,8 +34,11 @@
 		},
 		{
 			title: 'Noe Co. Website',
-			description: "A website developed for a friend's game development company.",
-			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+			description: "A website developed in Svelte for a friend's game development company.",
+			links: [
+				{ name: 'Website', icon: null, link: 'https://noeco.xyz/' },
+				{ name: 'Source Code', icon: null, link: 'https://github.com/NoeCoOfficial/www' }
+			]
 		}
 	];
 
