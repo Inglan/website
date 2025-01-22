@@ -7,6 +7,34 @@
 
 	const sidebar = useSidebar();
 
+	const projects = [
+		{
+			title: 'MemoryOverflow',
+			description: 'A simple platformer game... With a twist!',
+			links: [{ name: '', icon: null, link: 'https://github.com/Inglan/MemoryOverflow' }]
+		},
+		{
+			title: 'Project Beta',
+			description: 'An innovative platform for seamless collaboration and communication.',
+			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+		},
+		{
+			title: 'Project Gamma',
+			description: 'A cutting-edge tool for managing your personal finances with ease.',
+			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+		},
+		{
+			title: 'Project Delta',
+			description: 'An advanced analytics platform for gaining insights into your data.',
+			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+		},
+		{
+			title: 'Project Epsilon',
+			description: 'A state-of-the-art solution for automating your workflow.',
+			links: [{ name: '', icon: null, link: 'https://github.com/' }]
+		}
+	];
+
 	import { onMount, onDestroy } from 'svelte';
 
 	function hideSidebar() {
@@ -109,7 +137,8 @@
 	plugins={[
 		Autoplay({
 			delay: 2000,
-			stopOnInteraction: false
+			stopOnInteraction: false,
+			stopOnFocusIn: false
 		}),
 		ClassNames()
 	]}
@@ -117,50 +146,19 @@
 	<Carousel.Content
 		class="[&>*:not(.is-snapped)>*]:scale-95 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
 	>
-		<Carousel.Item class="basis-2/3">
-			<Card.Root class="h-full flex-col bg-transparent">
-				<Card.Header>
-					<Card.Title>Project Alpha</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>A revolutionary new app that changes the way you think about productivity.</p>
-				</Card.Content>
-				<div class="flex-grow"></div>
-			</Card.Root>
-		</Carousel.Item>
-		<Carousel.Item class="basis-2/3">
-			<Card.Root class="h-full flex-col bg-transparent">
-				<Card.Header>
-					<Card.Title>Project Beta</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>An innovative platform for seamless collaboration and communication.</p>
-				</Card.Content>
-				<div class="flex-grow"></div>
-			</Card.Root>
-		</Carousel.Item>
-		<Carousel.Item class="basis-2/3">
-			<Card.Root class="h-full flex-col bg-transparent">
-				<Card.Header>
-					<Card.Title>Project Gamma</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>A cutting-edge tool for managing your personal finances with ease.</p>
-				</Card.Content>
-				<div class="flex-grow"></div>
-			</Card.Root>
-		</Carousel.Item>
-		<Carousel.Item class="basis-2/3">
-			<Card.Root class="h-full flex-col bg-transparent">
-				<Card.Header>
-					<Card.Title>Project Delta</Card.Title>
-				</Card.Header>
-				<Card.Content>
-					<p>An advanced analytics platform for gaining insights into your data.</p>
-				</Card.Content>
-				<div class="flex-grow"></div>
-			</Card.Root>
-		</Carousel.Item>
+		{#each projects as project}
+			<Carousel.Item class="basis-2/3">
+				<Card.Root class="h-full flex-col bg-transparent">
+					<Card.Header>
+						<Card.Title>{project.title}</Card.Title>
+					</Card.Header>
+					<Card.Content>
+						<p>{project.description}</p>
+					</Card.Content>
+					<div class="flex-grow"></div>
+				</Card.Root>
+			</Carousel.Item>
+		{/each}
 	</Carousel.Content>
 	<Carousel.Previous />
 	<Carousel.Next />
