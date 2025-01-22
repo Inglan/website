@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ChevronRight from 'lucide-svelte/icons/chevron-right';
+	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 	import type { WithElementRef } from 'bits-ui';
 	import type { HTMLLiAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';

@@ -1,10 +1,10 @@
 <script lang="ts">
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import Home from 'lucide-svelte/icons/home';
-	import Code from 'lucide-svelte/icons/code';
-	import User from 'lucide-svelte/icons/user';
-	import Git from 'lucide-svelte/icons/git-branch';
-	import Mail from 'lucide-svelte/icons/mail';
+	import Home from 'svelte-material-icons/Home.svelte';
+	import Code from 'svelte-material-icons/CodeTags.svelte';
+	import User from 'svelte-material-icons/Account.svelte';
+	import Github from 'svelte-material-icons/Github.svelte';
+	import Mail from 'svelte-material-icons/Email.svelte';
 	import type { ComponentProps } from 'svelte';
 	import { Button } from '$lib/components/ui/button/index.js';
 
@@ -74,7 +74,7 @@
 			<Sidebar.Menu class="gap-3">
 				<Sidebar.MenuItem class="flex flex-row justify-center gap-3">
 					<Button size="icon" variant="secondary" href="https://github.com/Inglan">
-						<Git />
+						<Github />
 					</Button>
 					<Button size="icon" variant="secondary" href="mailto:me@ingo.au">
 						<Mail />

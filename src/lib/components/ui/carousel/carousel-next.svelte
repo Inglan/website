@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ArrowRight from 'lucide-svelte/icons/arrow-right';
+	import ArrowRight from 'svelte-material-icons/ChevronRight.svelte';
 	import type { WithoutChildren } from 'bits-ui';
 	import { getEmblaContext } from './context.js';
 	import { cn } from '$lib/utils.js';

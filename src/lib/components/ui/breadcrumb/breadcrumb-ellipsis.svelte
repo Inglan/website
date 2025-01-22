@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Ellipsis from 'lucide-svelte/icons/ellipsis';
+	import Ellipsis from 'svelte-material-icons/DotsHorizontal.svelte';
 	import type { WithElementRef, WithoutChildren } from 'bits-ui';
 	import type { HTMLAttributes } from 'svelte/elements';
 	import { cn } from '$lib/utils.js';
