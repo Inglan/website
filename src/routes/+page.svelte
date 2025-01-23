@@ -127,7 +127,8 @@
 		let heroTimeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.hero'
-			}
+			},
+			delay: 0.3
 		});
 
 		heroTimeline
