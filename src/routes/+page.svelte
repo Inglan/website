@@ -7,6 +7,7 @@
 	import Autoplay from 'embla-carousel-autoplay';
 	import ClassNames from 'embla-carousel-class-names';
 	import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
+	import gsap from 'gsap';
 
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Earth from 'svelte-material-icons/Earth.svelte';
@@ -122,6 +123,43 @@
 				thingsChildren[i].classList.add('scale-100');
 			}, 2000);
 		}
+
+		let heroTimeline = gsap.timeline({
+			scrollTrigger: {
+				trigger: '.hero'
+			}
+		});
+
+		heroTimeline
+			.from('.hero', {
+				opacity: 0,
+				duration: 0.7,
+				y: 100,
+				ease: 'expo.out'
+			})
+			.from(
+				'.blurredblob',
+				{
+					opacity: 0,
+					scale: 0,
+					duration: 0.5,
+					y: 100,
+					ease: 'expo.out'
+				},
+				0.2
+			)
+			.from(
+				'.herotext',
+				{
+					opacity: 0,
+					y: 50,
+					scale: 0.9,
+					duration: 0.5,
+					ease: 'expo.out',
+					stagger: 0.1
+				},
+				0.3
+			);
 	});
 
 	onDestroy(() => {
@@ -140,12 +178,15 @@
 	>
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
 	</div>
-	<div class="z-10 flex w-fit flex-col gap-3 drop-shadow-xl">
-		<div class="text-4xl duration-500 md:text-6xl">
-			Hi, I'm <span class="coloredtext">Ingo Wolf</span>,
+	<div class="z-10 flex w-fit flex-col drop-shadow-xl">
+		<div class="flex flex-row gap-3 text-4xl duration-500 md:text-6xl [&>span]:block [&>span]:py-2">
+			<span class="herotext">Hi,</span> <span class="herotext">I'm</span>
+			<span class="coloredtext herotext">Ingo Wolf,</span>
 		</div>
-		<div class="flex flex-row text-2xl duration-500 md:text-4xl">
-			and I&nbsp;
+		<div
+			class="secondaryherotext flex flex-row gap-2 text-2xl opacity-100 duration-500 md:text-4xl"
+		>
+			and I
 			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
 				<span>develop websites</span>
 				<span class="scale-50 opacity-0 blur-md">code stuff</span>
