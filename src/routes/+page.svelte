@@ -115,7 +115,7 @@
 			}
 		}, 300);
 
-		 // Loop through the things
+		// Loop through the things
 		const things = document.getElementById('things');
 		const thingsChildren = things?.children;
 		if (thingsChildren) {
