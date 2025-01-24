@@ -1,13 +1,17 @@
 <script lang="ts">
-	import '../app.css';
+	// Svelte Kit imports
+	import { page } from '$app/state';
 	let { children } = $props();
 
+	// Style imports
+	import '../app.css';
+	import '@fontsource/inter';
+
+	// UI Components
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
-	import '@fontsource/inter';
-	import { page } from '$app/state';
 </script>
 
 <Sidebar.Provider style="--sidebar-width: 19rem;" open={page.url.pathname == '/' ? false : true}>

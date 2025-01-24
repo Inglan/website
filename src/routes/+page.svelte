@@ -1,16 +1,25 @@
 <script lang="ts">
+	// UI Components
 	import * as Card from '$lib/components/ui/card/index.js';
-	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
 	import * as Carousel from '$lib/components/ui/carousel/index.js';
-	import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
+	import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
+	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+
+	// Carousel Plugins
 	import Autoplay from 'embla-carousel-autoplay';
 	import ClassNames from 'embla-carousel-class-names';
 	import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures';
+
+	// Animation Library
 	import gsap from 'gsap';
 
+	// Icons
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Earth from 'svelte-material-icons/Earth.svelte';
+
+	// Svelte Lifecycle
+	import { onMount, onDestroy } from 'svelte';
 
 	const sidebar = useSidebar();
 
@@ -60,8 +69,6 @@
 			]
 		}
 	];
-
-	import { onMount, onDestroy } from 'svelte';
 
 	function hideSidebar() {
 		if (sidebar.state == 'expanded') {

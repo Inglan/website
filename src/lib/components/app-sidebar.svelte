@@ -1,12 +1,17 @@
 <script lang="ts">
+	// UI Components
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+
+	// Icons
 	import Home from 'svelte-material-icons/Home.svelte';
 	import Code from 'svelte-material-icons/CodeTags.svelte';
 	import User from 'svelte-material-icons/Account.svelte';
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Mail from 'svelte-material-icons/Email.svelte';
+
+	// Types
 	import type { ComponentProps } from 'svelte';
-	import { Button } from '$lib/components/ui/button/index.js';
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
