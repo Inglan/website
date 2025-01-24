@@ -121,7 +121,7 @@
 				thingsChildren[i].classList.remove('scale-50');
 				thingsChildren[i].classList.remove('blur-md');
 				thingsChildren[i].classList.add('scale-100');
-			}, 2000);
+			}, 1500);
 		}
 
 		let heroTimeline = gsap.timeline({
@@ -166,7 +166,7 @@
 					ease: 'expo.out',
 					stagger: 0.1
 				},
-				1.5
+				1.2
 			);
 	});
 
