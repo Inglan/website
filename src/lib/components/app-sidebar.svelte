@@ -15,6 +15,7 @@
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
+	// Navigation items
 	const navigation = [
 		{
 			title: 'Home',

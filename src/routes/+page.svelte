@@ -23,6 +23,7 @@
 
 	const sidebar = useSidebar();
 
+	// Projects data
 	const projects = [
 		{
 			title: 'MemoryOverflow',
@@ -70,6 +71,7 @@
 		}
 	];
 
+	// Sidebar functions
 	function hideSidebar() {
 		if (sidebar.state == 'expanded') {
 			sidebar.toggle();
@@ -113,7 +115,7 @@
 			}
 		}, 300);
 
-		// loop through the things
+		 // Loop through the things
 		const things = document.getElementById('things');
 		const thingsChildren = things?.children;
 		if (thingsChildren) {
@@ -131,6 +133,7 @@
 			}, 1500);
 		}
 
+		// Hero animation
 		let heroTimeline = gsap.timeline({
 			scrollTrigger: {
 				trigger: '.hero'
@@ -139,7 +142,6 @@
 		});
 
 		heroTimeline
-
 			.from(
 				'.blurredblob',
 				{
@@ -184,6 +186,7 @@
 	});
 </script>
 
+<!-- Hero Section -->
 <div class="hero flex h-screen flex-col items-center justify-center gap-3 p-2 pl-0">
 	<div class="blurredblob"></div>
 	<div
@@ -211,6 +214,7 @@
 	</div>
 </div>
 
+<!-- Projects Carousel -->
 <Carousel.Root
 	class="w-[calc(100vw)] md:mx-auto md:max-w-prose"
 	opts={{
