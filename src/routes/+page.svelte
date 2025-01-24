@@ -132,12 +132,7 @@
 		});
 
 		heroTimeline
-			.from('.hero', {
-				opacity: 0,
-				duration: 0.7,
-				y: 100,
-				ease: 'expo.out'
-			})
+
 			.from(
 				'.blurredblob',
 				{
@@ -160,6 +155,18 @@
 					stagger: 0.1
 				},
 				0.3
+			)
+			.from(
+				'.secondaryherotext',
+				{
+					opacity: 0,
+					scale: 0.5,
+					duration: 0.5,
+					filter: 'blur(12px)',
+					ease: 'expo.out',
+					stagger: 0.1
+				},
+				1.5
 			);
 	});
 
@@ -184,12 +191,10 @@
 			<span class="herotext">Hi,</span> <span class="herotext">I'm</span>
 			<span class="coloredtext herotext">Ingo Wolf,</span>
 		</div>
-		<div
-			class="secondaryherotext flex flex-row gap-2 text-2xl opacity-100 duration-500 md:text-4xl"
-		>
-			and I
+		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 md:text-4xl">
+			<span class="secondaryherotext">and</span> <span class="secondaryherotext">I</span>
 			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
-				<span>develop websites</span>
+				<span class="scale-50 opacity-0 blur-md">develop websites</span>
 				<span class="scale-50 opacity-0 blur-md">code stuff</span>
 				<span class="scale-50 opacity-0 blur-md">make games</span>
 				<span class="scale-50 opacity-0 blur-md">mess with ai</span>
