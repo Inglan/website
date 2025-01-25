@@ -176,6 +176,16 @@
 					stagger: 0.1
 				},
 				1.2
+			)
+			.from(
+				'#sidebar-trigger',
+				{
+					opacity: 0,
+					duration: 0.5,
+					x: -50,
+					ease: 'expo.out'
+				},
+				1.6
 			);
 	});
 
