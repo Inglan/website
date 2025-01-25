@@ -88,7 +88,7 @@
 
 	onMount(() => {
 		const sidebarScrollYThreshold = 1;
-		var openedSidebar = false;
+		let openedSidebar = false;
 
 		handleScroll = () => {
 			if (window.scrollY > sidebarScrollYThreshold && !openedSidebar) {
@@ -121,14 +121,10 @@
 		if (thingsChildren) {
 			let i = 0;
 			setInterval(() => {
-				thingsChildren[i].classList.add('opacity-0');
+				thingsChildren[i].classList.add('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.remove('scale-100');
-				thingsChildren[i].classList.add('blur-md');
-				thingsChildren[i].classList.add('scale-50');
 				i = (i + 1) % thingsChildren.length;
-				thingsChildren[i].classList.remove('opacity-0');
-				thingsChildren[i].classList.remove('scale-50');
-				thingsChildren[i].classList.remove('blur-md');
+				thingsChildren[i].classList.remove('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.add('scale-100');
 			}, 1500);
 		}

@@ -17,21 +17,9 @@
 
 	// Navigation items
 	const navigation = [
-		{
-			title: 'Home',
-			url: '/',
-			icon: Home
-		},
-		{
-			title: 'Projects',
-			url: '/projects',
-			icon: Code
-		},
-		{
-			title: 'About me',
-			url: '/about',
-			icon: User
-		}
+		{ title: 'Home', url: '/', icon: Home },
+		{ title: 'Projects', url: '/projects', icon: Code },
+		{ title: 'About me', url: '/about', icon: User }
 	];
 </script>
 
