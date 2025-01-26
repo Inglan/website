@@ -184,6 +184,14 @@
 				},
 				1.6
 			);
+
+		gsap.from('.projects-carousel', {
+			opacity: 0,
+			y: 50,
+			duration: 0.5,
+			ease: 'expo.out',
+			scrollTrigger: '.projects-carousel'
+		});
 	});
 
 	onDestroy(() => {
@@ -223,7 +231,7 @@
 
 <!-- Projects Carousel -->
 <Carousel.Root
-	class="w-[calc(100vw)] md:mx-auto md:max-w-prose"
+	class="projects-carousel w-[calc(100vw)] md:mx-auto md:max-w-prose"
 	opts={{
 		loop: true
 	}}
