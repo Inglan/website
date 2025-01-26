@@ -190,7 +190,9 @@
 			y: 50,
 			duration: 0.5,
 			ease: 'expo.out',
-			scrollTrigger: '.projects-carousel'
+			scrollTrigger: {
+				trigger: '.projects-carousel'
+			}
 		});
 	});
 
