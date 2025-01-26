@@ -13,6 +13,7 @@
 
 	// Animation Library
 	import gsap from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 	// Icons
 	import Github from 'svelte-material-icons/Github.svelte';
@@ -128,6 +129,9 @@
 				thingsChildren[i].classList.add('scale-100');
 			}, 1600);
 		}
+
+		// Register scrolltrigger plugin
+		gsap.registerPlugin(ScrollTrigger);
 
 		// Hero animation
 		let heroTimeline = gsap.timeline({
