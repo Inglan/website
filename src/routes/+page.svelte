@@ -126,7 +126,7 @@
 				i = (i + 1) % thingsChildren.length;
 				thingsChildren[i].classList.remove('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.add('scale-100');
-			}, 1500);
+			}, 1600);
 		}
 
 		// Hero animation
