@@ -140,17 +140,6 @@
 
 		heroTimeline
 			.from(
-				'.blurredblob',
-				{
-					opacity: 0,
-					scale: 0,
-					duration: 0.5,
-					y: 100,
-					ease: 'expo.out'
-				},
-				0.2
-			)
-			.from(
 				'.herotext',
 				{
 					opacity: 0,
@@ -193,6 +182,18 @@
 			scrollTrigger: {
 				trigger: '.projects-carousel'
 			}
+		});
+
+		gsap.to('.blurredblob', {
+			scrollTrigger: {
+				trigger: '.hero',
+				start: '50% 50%',
+				end: '75% 50%',
+				scrub: 0.5
+				// markers: true
+			},
+			opacity: 0,
+			scale: 0.9
 		});
 	});
 
