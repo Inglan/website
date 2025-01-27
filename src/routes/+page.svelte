@@ -204,10 +204,12 @@
 </script>
 
 <!-- Hero Section -->
+
+<div class="blurredblob"></div>
+
 <div
 	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
 >
-	<div class="blurredblob"></div>
 	<div
 		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center bg-background md:flex"
 		role="none"
@@ -305,13 +307,15 @@
 	.blurredblob {
 		filter: blur(1000px);
 		background: linear-gradient(45deg, #89b4fa, #f38ba8);
-		height: 1000px;
-		max-height: 90vh;
-		max-width: 100%;
-		position: absolute;
-		aspect-ratio: 1/1;
+		/* aspect-ratio: 1/1; */
 		border-radius: 1000px;
 		opacity: 25%;
 		z-index: 99;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: min(100vw, 100vh);
+		height: min(100vw, 100vh);
+		position: fixed;
 	}
 </style>
