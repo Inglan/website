@@ -204,7 +204,9 @@
 </script>
 
 <!-- Hero Section -->
-<div class="hero flex h-screen flex-col items-center justify-center gap-3 p-2 pl-0">
+<div
+	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
+>
 	<div class="blurredblob"></div>
 	<div
 		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center bg-background md:flex"
@@ -214,11 +216,11 @@
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
 	</div>
 	<div class="z-10 flex w-fit flex-col drop-shadow-xl">
-		<div class="flex flex-row gap-3 text-4xl duration-500 md:text-6xl [&>span]:block [&>span]:py-2">
+		<div class="flex flex-row gap-3 text-4xl duration-500 lg:text-6xl [&>span]:block [&>span]:py-2">
 			<span class="herotext">Hi,</span> <span class="herotext">I'm</span>
 			<span class="coloredtext herotext">Ingo Wolf,</span>
 		</div>
-		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 md:text-4xl">
+		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 lg:text-4xl">
 			<span class="secondaryherotext">and</span> <span class="secondaryherotext">I</span>
 			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
 				<span class="scale-50 opacity-0 blur-md">develop websites</span>
@@ -305,7 +307,7 @@
 		background: linear-gradient(45deg, #89b4fa, #f38ba8);
 		height: 1000px;
 		max-height: 90vh;
-		max-width: 90vw;
+		max-width: 100%;
 		position: absolute;
 		aspect-ratio: 1/1;
 		border-radius: 1000px;
