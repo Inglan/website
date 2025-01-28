@@ -89,7 +89,7 @@
 	let handleScroll = () => {};
 
 	onMount(() => {
-		const sidebarScrollYThreshold = 1;
+		const sidebarScrollYThreshold = 100;
 		let openedSidebar = false;
 
 		handleScroll = () => {
