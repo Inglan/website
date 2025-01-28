@@ -23,7 +23,7 @@
 	];
 </script>
 
-<Sidebar.Root variant="floating" {...restProps}>
+<Sidebar.Root {...restProps}>
 	<Sidebar.Header>
 		<Sidebar.Menu>
 			<Sidebar.MenuItem>
