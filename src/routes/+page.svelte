@@ -110,11 +110,9 @@
 
 		const sidebarTrigger = document.getElementById('sidebar-trigger');
 
-		setTimeout(() => {
-			if (sidebarTrigger) {
-				sidebarTrigger.addEventListener('click', sidebar.toggle);
-			}
-		}, 300);
+		if (sidebarTrigger) {
+			sidebarTrigger.addEventListener('click', sidebar.toggle);
+		}
 
 		// Loop through the things
 		const things = document.getElementById('things');
