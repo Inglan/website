@@ -1,7 +1,7 @@
 <script lang="ts">
 	// Svelte Kit imports
 	import { page } from '$app/state';
-	let { children } = $props();
+	import { afterNavigate, disableScrollHandling } from '$app/navigation';
 
 	// Style imports
 	import '../app.css';
@@ -12,13 +12,33 @@
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
+
+	// Transitions
+	import { fade } from 'svelte/transition';
+	const transitionIn = { delay: 150, duration: 150 };
+	const transitionOut = { duration: 100 };
+
+	// Scroll handling after navigation
+	afterNavigate(() => {
+		disableScrollHandling();
+		setTimeout(() => {
+			scrollTo(0, 0);
+		}, 150);
+	});
+
+	let { children } = $props();
 </script>
 
 <Sidebar.Provider style="--sidebar-width: 19rem;" open={page.url.pathname == '/' ? false : true}>
 	<!-- Sidebar Component -->
 	<AppSidebar />
+
 	<Sidebar.Inset>
-		{@render children()}
+		{#key page.url.pathname}
+			<main id="main" tabindex="-1" in:fade|global={transitionIn} out:fade|global={transitionOut}>
+				{@render children()}
+			</main>
+		{/key}
 		<!-- Sidebar Trigger Button -->
 		<Sidebar.Trigger
 			id="sidebar-trigger"
