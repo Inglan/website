@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let size = 50;
+	let size = 40;
 
 	onMount(() => {
 		window.addEventListener('mousemove', (e) => {
@@ -18,6 +18,17 @@
 					fill: 'forwards'
 				}
 			);
+
+			if (
+				e.target &&
+				'tagName' in e.target &&
+				((e.target as HTMLElement).tagName === 'A' ||
+					(e.target as HTMLElement).tagName === 'BUTTON')
+			) {
+				size = 60;
+			} else {
+				size = 40;
+			}
 		});
 	});
 </script>
