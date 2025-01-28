@@ -4,8 +4,9 @@
 	let size = 40;
 
 	onMount(() => {
+		const cursor = document.getElementById('cursor');
+
 		window.addEventListener('mousemove', (e) => {
-			const cursor = document.getElementById('cursor');
 			cursor?.animate(
 				{
 					top: `${e.clientY - size / 2}px`,
@@ -29,6 +30,34 @@
 			} else {
 				size = 40;
 			}
+		});
+
+		window.document.body.addEventListener('mouseleave', () => {
+			size = 0;
+			cursor?.animate(
+				{
+					width: `${size}px`,
+					height: `${size}px`
+				},
+				{
+					duration: 500,
+					fill: 'forwards'
+				}
+			);
+		});
+
+		window.document.body.addEventListener('mouseenter', () => {
+			size = 40;
+			cursor?.animate(
+				{
+					width: `${size}px`,
+					height: `${size}px`
+				},
+				{
+					duration: 500,
+					fill: 'forwards'
+				}
+			);
 		});
 	});
 </script>
