@@ -308,7 +308,6 @@
 	.blurredblob {
 		filter: blur(1000px);
 		background: linear-gradient(45deg, #89b4fa, #f38ba8);
-		/* aspect-ratio: 1/1; */
 		border-radius: 1000px;
 		opacity: 25%;
 		top: 50%;
