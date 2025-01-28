@@ -22,7 +22,7 @@
 		<!-- Sidebar Trigger Button -->
 		<Sidebar.Trigger
 			id="sidebar-trigger"
-			class="fixed bottom-2 translate-x-2 bg-secondary p-6 transition-all duration-300"
+			class="fixed bottom-2 translate-x-2 bg-secondary p-6 opacity-100 transition-all"
 		/>
 	</Sidebar.Inset>
 </Sidebar.Provider>
