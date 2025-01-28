@@ -108,7 +108,7 @@
 
 		window.addEventListener('scroll', handleScroll);
 
-		const sidebarTrigger = document.getElementById('sidebar-trigger');
+		const sidebarTrigger = document.getElementById('hero-sidebar-trigger');
 
 		if (sidebarTrigger) {
 			sidebarTrigger.addEventListener('click', sidebar.toggle);
@@ -163,7 +163,7 @@
 					1.2
 				)
 				.from(
-					'#sidebar-trigger',
+					'#hero-sidebar-trigger',
 					{
 						opacity: 0,
 						duration: 0.5,
@@ -216,7 +216,7 @@
 	<div
 		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center md:flex"
 		role="none"
-		id="sidebar-trigger"
+		id="hero-sidebar-trigger"
 	>
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
 	</div>
