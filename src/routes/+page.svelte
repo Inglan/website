@@ -14,6 +14,7 @@
 	// Animation Library
 	import gsap from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	let gsapctx: gsap.Context;
 
 	// Icons
 	import Github from 'svelte-material-icons/Github.svelte';
@@ -133,73 +134,77 @@
 		// Register scrolltrigger plugin
 		gsap.registerPlugin(ScrollTrigger);
 
-		// Hero animation
-		let heroTimeline = gsap.timeline({
-			delay: 0.3
-		});
+		gsapctx = gsap.context(() => {
+			// Hero animation
+			let heroTimeline = gsap.timeline({
+				delay: 0.3
+			});
 
-		heroTimeline
-			.from(
-				'.herotext',
-				{
-					opacity: 0,
-					y: 50,
-					scale: 0.9,
-					duration: 0.5,
-					ease: 'expo.out',
-					stagger: 0.1
-				},
-				0.3
-			)
-			.from(
-				'.secondaryherotext',
-				{
-					opacity: 0,
-					scale: 0.5,
-					duration: 0.5,
-					filter: 'blur(12px)',
-					ease: 'expo.out',
-					stagger: 0.1
-				},
-				1.2
-			)
-			.from(
-				'#sidebar-trigger',
-				{
-					opacity: 0,
-					duration: 0.5,
-					x: -50,
-					ease: 'expo.out'
-				},
-				1.6
-			);
+			heroTimeline
+				.from(
+					'.herotext',
+					{
+						opacity: 0,
+						y: 50,
+						scale: 0.9,
+						duration: 0.5,
+						ease: 'expo.out',
+						stagger: 0.1
+					},
+					0.3
+				)
+				.from(
+					'.secondaryherotext',
+					{
+						opacity: 0,
+						scale: 0.5,
+						duration: 0.5,
+						filter: 'blur(12px)',
+						ease: 'expo.out',
+						stagger: 0.1
+					},
+					1.2
+				)
+				.from(
+					'#sidebar-trigger',
+					{
+						opacity: 0,
+						duration: 0.5,
+						x: -50,
+						ease: 'expo.out'
+					},
+					1.6
+				);
 
-		gsap.from('.projects-carousel', {
-			opacity: 0,
-			y: 50,
-			duration: 0.5,
-			ease: 'expo.out',
-			scrollTrigger: {
-				trigger: '.projects-carousel'
-			}
-		});
+			gsap.from('.projects-carousel', {
+				opacity: 0,
+				y: 50,
+				duration: 0.5,
+				ease: 'expo.out',
+				scrollTrigger: {
+					trigger: '.projects-carousel'
+				}
+			});
 
-		gsap.to('.blurredblob', {
-			scrollTrigger: {
-				trigger: '.hero',
-				start: '50% 50%',
-				end: '75% 50%',
-				scrub: 0.5
-				// markers: true
-			},
-			opacity: 0,
-			scale: 0.9
+			gsap.to('.blurredblob', {
+				scrollTrigger: {
+					trigger: '.hero',
+					start: '50% 50%',
+					end: '75% 50%',
+					scrub: 0.5
+					// markers: true
+				},
+				opacity: 0,
+				scale: 0.9
+			});
 		});
 	});
 
 	onDestroy(() => {
 		if (typeof window !== 'undefined') {
 			window.removeEventListener('scroll', handleScroll);
+
+			gsapctx.revert(); // Cleanup
 		}
 	});
 </script>
