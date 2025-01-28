@@ -112,7 +112,6 @@
 
 		setTimeout(() => {
 			if (sidebarTrigger) {
-				sidebarTrigger.addEventListener('mouseenter', showSidebar);
 				sidebarTrigger.addEventListener('click', sidebar.toggle);
 			}
 		}, 300);
