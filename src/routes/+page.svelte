@@ -189,7 +189,6 @@
 					start: '50% 50%',
 					end: '75% 50%',
 					scrub: 0.5
-					// markers: true
 				},
 				opacity: 0,
 				scale: 0.9
