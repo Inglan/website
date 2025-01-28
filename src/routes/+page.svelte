@@ -212,7 +212,7 @@
 	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
 >
 	<div
-		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center bg-background md:flex"
+		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center md:flex"
 		role="none"
 		id="sidebar-trigger"
 	>
@@ -311,7 +311,6 @@
 		/* aspect-ratio: 1/1; */
 		border-radius: 1000px;
 		opacity: 25%;
-		z-index: 99;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
