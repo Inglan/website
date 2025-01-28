@@ -35,7 +35,7 @@
 
 	<Sidebar.Inset>
 		{#key page.url.pathname}
-			<main id="main" tabindex="-1" in:fade|global={transitionIn} out:fade|global={transitionOut}>
+			<main tabindex="-1" in:fade|global={transitionIn} out:fade|global={transitionOut}>
 				{@render children()}
 			</main>
 		{/key}
