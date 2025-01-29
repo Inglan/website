@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let size = 40;
+	let scale = 1;
 
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
@@ -9,13 +9,12 @@
 		window.addEventListener('mousemove', (e) => {
 			cursor?.animate(
 				{
-					top: `${e.clientY - size / 2}px`,
-					left: `${e.clientX - size / 2}px`,
-					width: `${size}px`,
-					height: `${size}px`
+					top: `${e.clientY - 48 / 2}px`,
+					left: `${e.clientX - 48 / 2}px`,
+					scale: scale
 				},
 				{
-					duration: 500,
+					duration: 300,
 					fill: 'forwards'
 				}
 			);
@@ -26,43 +25,23 @@
 				((e.target as HTMLElement).tagName === 'A' ||
 					(e.target as HTMLElement).tagName === 'BUTTON')
 			) {
-				size = 60;
+				scale = 1.5;
 			} else {
-				size = 40;
+				scale = 1;
 			}
 		});
 
 		window.document.body.addEventListener('mouseleave', () => {
-			size = 0;
-			cursor?.animate(
-				{
-					width: `${size}px`,
-					height: `${size}px`
-				},
-				{
-					duration: 500,
-					fill: 'forwards'
-				}
-			);
+			cursor?.classList.add('opacity-0');
 		});
 
 		window.document.body.addEventListener('mouseenter', () => {
-			size = 40;
-			cursor?.animate(
-				{
-					width: `${size}px`,
-					height: `${size}px`
-				},
-				{
-					duration: 500,
-					fill: 'forwards'
-				}
-			);
+			cursor?.classList.remove('opacity-0');
 		});
 	});
 </script>
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-50 h-12 w-12 rounded-full bg-white mix-blend-difference"
+	class="pointer-events-none fixed z-50 h-16 w-16 rounded-full bg-white mix-blend-difference transition-opacity duration-100"
 ></div>
