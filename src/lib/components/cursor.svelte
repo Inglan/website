@@ -68,6 +68,7 @@
 
 		function updateCursor(e: MouseEvent) {
 			if (
+				cursor &&
 				e.target &&
 				'tagName' in e.target &&
 				((e.target as HTMLElement).tagName === 'A' ||
