@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let timeout: number;
-	const cursorSnapPadding = 5;
+	let cursorSnapPadding = 5;
 	const transitionDuration = 200;
 
 	onMount(() => {
@@ -66,11 +66,21 @@
 		});
 
 		window.document.body.addEventListener('mousedown', (e) => {
+			if (
+				e.target &&
+				'tagName' in e.target &&
+				((e.target as HTMLElement).tagName === 'A' ||
+					(e.target as HTMLElement).tagName === 'BUTTON')
+			) {
+				cursorSnapPadding = 0;
+			} else {
+				cursor?.classList.add('scale-90');
+			}
 			updateCursor(e);
-			cursor?.classList.add('scale-90');
 		});
 
 		window.document.body.addEventListener('mouseup', (e) => {
+			cursorSnapPadding = 5;
 			updateCursor(e);
 			cursor?.classList.remove('scale-90');
 		});
