@@ -8,26 +8,45 @@
 		const cursor = document.getElementById('cursor');
 
 		window.addEventListener('mousemove', (e) => {
-			cursor?.animate(
-				{
-					top: `${e.clientY - 48 / 2}px`,
-					left: `${e.clientX - 48 / 2}px`,
-					scale: scale
-				},
-				{
-					duration: 300,
-					fill: 'forwards'
-				}
-			);
-
 			if (
 				e.target &&
 				'tagName' in e.target &&
 				((e.target as HTMLElement).tagName === 'A' ||
 					(e.target as HTMLElement).tagName === 'BUTTON')
 			) {
+				var elementDimemsions = (e.target as HTMLElement).getBoundingClientRect();
+				var borderRadius = window.getComputedStyle(e.target as HTMLElement).borderRadius;
+				var pad = 5;
+				cursor?.animate(
+					{
+						top: `${elementDimemsions.top - pad}px`,
+						left: `${elementDimemsions.left - pad}px`,
+						width: `${elementDimemsions.width + pad * 2}px`,
+						height: `${elementDimemsions.height + pad * 2}px`,
+						scale: 1,
+						borderRadius: borderRadius
+					},
+					{
+						duration: 300,
+						fill: 'forwards'
+					}
+				);
 				scale = 1.5;
 			} else {
+				cursor?.animate(
+					{
+						top: `${e.clientY - 48 / 2}px`,
+						left: `${e.clientX - 48 / 2}px`,
+						width: '48px',
+						height: '48px',
+						borderRadius: '24px',
+						scale: scale
+					},
+					{
+						duration: 300,
+						fill: 'forwards'
+					}
+				);
 				scale = 1;
 			}
 
@@ -51,5 +70,5 @@
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-50 h-16 w-16 rounded-full bg-white mix-blend-difference transition-opacity duration-200"
+	class="pointer-events-none fixed z-50 h-16 w-16 rounded-3xl bg-white mix-blend-difference transition-opacity duration-200"
 ></div>
