@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let scale = 1;
 	let timeout: number;
 
 	onMount(() => {
@@ -31,7 +30,6 @@
 						fill: 'forwards'
 					}
 				);
-				scale = 1.5;
 			} else {
 				cursor?.animate(
 					{
@@ -39,15 +37,13 @@
 						left: `${e.clientX - 48 / 2}px`,
 						width: '48px',
 						height: '48px',
-						borderRadius: '24px',
-						scale: scale
+						borderRadius: '24px'
 					},
 					{
 						duration: 300,
 						fill: 'forwards'
 					}
 				);
-				scale = 1;
 			}
 
 			clearTimeout(timeout);
