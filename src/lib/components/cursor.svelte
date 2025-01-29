@@ -51,5 +51,5 @@
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-50 h-16 w-16 rounded-full bg-white mix-blend-difference transition-opacity duration-100"
+	class="pointer-events-none fixed z-50 h-16 w-16 rounded-full bg-white mix-blend-difference duration-200"
 ></div>
