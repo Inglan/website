@@ -3,6 +3,7 @@
 
 	let timeout: number;
 	const cursorSnapPadding = 5;
+	const transitionDuration = 200;
 
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
@@ -26,7 +27,7 @@
 						borderRadius: borderRadius
 					},
 					{
-						duration: 300,
+						duration: transitionDuration,
 						fill: 'forwards'
 					}
 				);
@@ -40,7 +41,7 @@
 						borderRadius: '24px'
 					},
 					{
-						duration: 300,
+						duration: transitionDuration,
 						fill: 'forwards'
 					}
 				);
