@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let timeout: number;
+	const cursorSnapPadding = 5;
 
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
@@ -15,13 +16,12 @@
 			) {
 				var elementDimemsions = (e.target as HTMLElement).getBoundingClientRect();
 				var borderRadius = window.getComputedStyle(e.target as HTMLElement).borderRadius;
-				var pad = 5;
 				cursor?.animate(
 					{
-						top: `${elementDimemsions.top - pad}px`,
-						left: `${elementDimemsions.left - pad}px`,
-						width: `${elementDimemsions.width + pad * 2}px`,
-						height: `${elementDimemsions.height + pad * 2}px`,
+						top: `${elementDimemsions.top - cursorSnapPadding}px`,
+						left: `${elementDimemsions.left - cursorSnapPadding}px`,
+						width: `${elementDimemsions.width + cursorSnapPadding * 2}px`,
+						height: `${elementDimemsions.height + cursorSnapPadding * 2}px`,
 						scale: 1,
 						borderRadius: borderRadius
 					},
