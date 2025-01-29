@@ -88,17 +88,94 @@
 
 	let handleScroll = () => {};
 
+	// Constants
+	const SIDEBAR_SCROLL_THRESHOLD = 100;
+	const THINGS_ROTATION_INTERVAL = 1600;
+	const HERO_ANIMATION_DELAY = 0.3;
+	const BLUR_AMOUNT = '12px';
+
+	// Animation configurations
+	const heroTextAnimation = {
+		opacity: 0,
+		y: 50,
+		scale: 0.9,
+		duration: 0.5,
+		ease: 'expo.out',
+		stagger: 0.1
+	};
+
+	const secondaryHeroTextAnimation = {
+		opacity: 0,
+		scale: 0.5,
+		duration: 0.5,
+		filter: `blur(${BLUR_AMOUNT})`,
+		ease: 'expo.out',
+		stagger: 0.1
+	};
+
+	// Helper function to setup hero animations
+	function setupHeroAnimations(timeline: gsap.core.Timeline) {
+		timeline
+			.from('.herotext', heroTextAnimation, 0.3)
+			.from('.secondaryherotext', secondaryHeroTextAnimation, 1.2)
+			.from(
+				'#hero-sidebar-trigger',
+				{
+					opacity: 0,
+					duration: 0.5,
+					x: -50,
+					ease: 'expo.out'
+				},
+				1.6
+			);
+	}
+
+	// Helper function to setup scroll triggers
+	function setupScrollTriggers() {
+		gsap.from('.projects-carousel', {
+			opacity: 0,
+			y: 50,
+			duration: 0.5,
+			ease: 'expo.out',
+			scrollTrigger: {
+				trigger: '.projects-carousel'
+			}
+		});
+
+		gsap.to('.blurredblob', {
+			scrollTrigger: {
+				trigger: '.hero',
+				start: '50% 50%',
+				end: '75% 50%',
+				scrub: 0.5
+			},
+			opacity: 0,
+			scale: 0.9
+		});
+
+		gsap.set('#sidebar-trigger', { opacity: 0 });
+
+		gsap.to('#sidebar-trigger', {
+			scrollTrigger: {
+				trigger: '.hero',
+				start: '50% 50%',
+				end: '55% 50%',
+				scrub: true
+			},
+			opacity: 1
+		});
+	}
+
 	onMount(() => {
-		const sidebarScrollYThreshold = 100;
 		let openedSidebar = false;
 
 		handleScroll = () => {
-			if (window.scrollY > sidebarScrollYThreshold && !openedSidebar) {
+			if (window.scrollY > SIDEBAR_SCROLL_THRESHOLD && !openedSidebar) {
 				if (!sidebar.isMobile) {
 					showSidebar();
 				}
 				openedSidebar = true;
-			} else if (window.scrollY < sidebarScrollYThreshold && openedSidebar) {
+			} else if (window.scrollY < SIDEBAR_SCROLL_THRESHOLD && openedSidebar) {
 				if (!sidebar.isMobile) {
 					hideSidebar();
 				}
@@ -125,86 +202,16 @@
 				i = (i + 1) % thingsChildren.length;
 				thingsChildren[i].classList.remove('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.add('scale-100');
-			}, 1600);
+			}, THINGS_ROTATION_INTERVAL);
 		}
 
 		// Register scrolltrigger plugin
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsapctx = gsap.context(() => {
-			// Hero animation
-			let heroTimeline = gsap.timeline({
-				delay: 0.3
-			});
-
-			heroTimeline
-				.from(
-					'.herotext',
-					{
-						opacity: 0,
-						y: 50,
-						scale: 0.9,
-						duration: 0.5,
-						ease: 'expo.out',
-						stagger: 0.1
-					},
-					0.3
-				)
-				.from(
-					'.secondaryherotext',
-					{
-						opacity: 0,
-						scale: 0.5,
-						duration: 0.5,
-						filter: 'blur(12px)',
-						ease: 'expo.out',
-						stagger: 0.1
-					},
-					1.2
-				)
-				.from(
-					'#hero-sidebar-trigger',
-					{
-						opacity: 0,
-						duration: 0.5,
-						x: -50,
-						ease: 'expo.out'
-					},
-					1.6
-				);
-
-			gsap.from('.projects-carousel', {
-				opacity: 0,
-				y: 50,
-				duration: 0.5,
-				ease: 'expo.out',
-				scrollTrigger: {
-					trigger: '.projects-carousel'
-				}
-			});
-
-			gsap.to('.blurredblob', {
-				scrollTrigger: {
-					trigger: '.hero',
-					start: '50% 50%',
-					end: '75% 50%',
-					scrub: 0.5
-				},
-				opacity: 0,
-				scale: 0.9
-			});
-
-			gsap.set('#sidebar-trigger', { opacity: 0 });
-
-			gsap.to('#sidebar-trigger', {
-				scrollTrigger: {
-					trigger: '.hero',
-					start: '50% 50%',
-					end: '55% 50%',
-					scrub: true
-				},
-				opacity: 1
-			});
+			let heroTimeline = gsap.timeline({ delay: HERO_ANIMATION_DELAY });
+			setupHeroAnimations(heroTimeline);
+			setupScrollTriggers();
 		});
 	});
 

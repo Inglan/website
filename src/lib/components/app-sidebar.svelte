@@ -13,13 +13,30 @@
 	// Types
 	import type { ComponentProps } from 'svelte';
 
+	interface NavigationItem {
+		title: string;
+		url: string;
+		icon: any; // Replace with proper icon component type
+	}
+
+	interface SocialLink {
+		icon: any;
+		href: string;
+		label: string;
+	}
+
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 
-	// Navigation items
-	const navigation = [
+	// Navigation Configuration
+	const navigation: NavigationItem[] = [
 		{ title: 'Home', url: '/', icon: Home },
 		{ title: 'Projects', url: '/projects', icon: Code },
 		{ title: 'About me', url: '/about', icon: User }
+	];
+
+	const socialLinks: SocialLink[] = [
+		{ icon: Github, href: 'https://github.com/Inglan', label: 'GitHub' },
+		{ icon: Mail, href: 'mailto:me@ingo.au', label: 'Email' }
 	];
 </script>
 
@@ -67,12 +84,12 @@
 		<Sidebar.Group>
 			<Sidebar.Menu class="gap-3">
 				<Sidebar.MenuItem class="flex flex-row justify-center gap-3">
-					<Button size="icon" variant="secondary" href="https://github.com/Inglan">
-						<Github />
-					</Button>
-					<Button size="icon" variant="secondary" href="mailto:me@ingo.au">
-						<Mail />
-					</Button>
+					{#each socialLinks as { icon: Icon, href, label }}
+						<Button size="icon" variant="secondary" {href}>
+							<Icon />
+							<span class="sr-only">{label}</span>
+						</Button>
+					{/each}
 				</Sidebar.MenuItem>
 				<Sidebar.MenuItem class="text-center">Made with ♥️ in Svelte</Sidebar.MenuItem>
 			</Sidebar.Menu>

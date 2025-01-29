@@ -1,9 +1,67 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	// Constants
+	const CURSOR_SIZES = {
+		default: 48,
+		enlarged: 80
+	};
+
+	const TRANSITION_DURATION = 200;
+	const HIDE_CURSOR_DELAY = 2000;
+	const DEFAULT_SNAP_PADDING = 5;
+
+	// Helper functions
+	function createCursorAnimation(options: {
+		top: number;
+		left: number;
+		width: number;
+		height: number;
+		borderRadius: string | number;
+	}) {
+		return {
+			top: `${options.top}px`,
+			left: `${options.left}px`,
+			width: `${options.width}px`,
+			height: `${options.height}px`,
+			borderRadius:
+				typeof options.borderRadius === 'number'
+					? `${options.borderRadius}px`
+					: options.borderRadius
+		};
+	}
+
+	function handleElementCursor(cursor: HTMLElement, e: MouseEvent, element: HTMLElement) {
+		if (element.dataset.cursor === 'enlarge') {
+			const size = CURSOR_SIZES.enlarged;
+			cursor.animate(
+				createCursorAnimation({
+					top: e.clientY - size / 2,
+					left: e.clientX - size / 2,
+					width: size,
+					height: size,
+					borderRadius: size / 2
+				}),
+				{ duration: TRANSITION_DURATION, fill: 'forwards' }
+			);
+		} else {
+			var elementDimemsions = element.getBoundingClientRect();
+			var borderRadius = window.getComputedStyle(element).borderRadius;
+			cursor.animate(
+				createCursorAnimation({
+					top: elementDimemsions.top - cursorSnapPadding,
+					left: elementDimemsions.left - cursorSnapPadding,
+					width: elementDimemsions.width + cursorSnapPadding * 2,
+					height: elementDimemsions.height + cursorSnapPadding * 2,
+					borderRadius: borderRadius
+				}),
+				{ duration: TRANSITION_DURATION, fill: 'forwards' }
+			);
+		}
+	}
+
 	let timeout: number;
-	let cursorSnapPadding = 5;
-	const transitionDuration = 200;
+	let cursorSnapPadding = DEFAULT_SNAP_PADDING;
 
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
@@ -15,58 +73,25 @@
 				((e.target as HTMLElement).tagName === 'A' ||
 					(e.target as HTMLElement).tagName === 'BUTTON')
 			) {
-				if ((e.target as HTMLElement).dataset.cursor === 'enlarge') {
-					cursor?.animate(
-						{
-							top: `${e.clientY - 80 / 2}px`,
-							left: `${e.clientX - 80 / 2}px`,
-							width: '80px',
-							height: '80px',
-							borderRadius: '40px'
-						},
-						{
-							duration: transitionDuration,
-							fill: 'forwards'
-						}
-					);
-				} else {
-					var elementDimemsions = (e.target as HTMLElement).getBoundingClientRect();
-					var borderRadius = window.getComputedStyle(e.target as HTMLElement).borderRadius;
-					cursor?.animate(
-						{
-							top: `${elementDimemsions.top - cursorSnapPadding}px`,
-							left: `${elementDimemsions.left - cursorSnapPadding}px`,
-							width: `${elementDimemsions.width + cursorSnapPadding * 2}px`,
-							height: `${elementDimemsions.height + cursorSnapPadding * 2}px`,
-							scale: 1,
-							borderRadius: borderRadius
-						},
-						{
-							duration: transitionDuration,
-							fill: 'forwards'
-						}
-					);
-				}
+				handleElementCursor(cursor, e, e.target as HTMLElement);
 			} else {
+				const size = CURSOR_SIZES.default;
 				cursor?.animate(
-					{
-						top: `${e.clientY - 48 / 2}px`,
-						left: `${e.clientX - 48 / 2}px`,
-						width: '48px',
-						height: '48px',
-						borderRadius: '24px'
-					},
-					{
-						duration: transitionDuration,
-						fill: 'forwards'
-					}
+					createCursorAnimation({
+						top: e.clientY - size / 2,
+						left: e.clientX - size / 2,
+						width: size,
+						height: size,
+						borderRadius: size / 2
+					}),
+					{ duration: TRANSITION_DURATION, fill: 'forwards' }
 				);
 			}
 
 			clearTimeout(timeout);
 			timeout = setTimeout(() => {
 				cursor?.classList.add('opacity-0');
-			}, 2000);
+			}, HIDE_CURSOR_DELAY);
 
 			cursor?.classList.remove('opacity-0');
 		}
@@ -96,7 +121,7 @@
 		});
 
 		window.document.body.addEventListener('mouseup', (e) => {
-			cursorSnapPadding = 5;
+			cursorSnapPadding = DEFAULT_SNAP_PADDING;
 			updateCursor(e);
 			cursor?.classList.remove('scale-90');
 		});
