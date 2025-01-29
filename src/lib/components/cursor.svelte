@@ -8,7 +8,7 @@
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
 
-		window.addEventListener('mousemove', (e) => {
+		function updateCursor(e: MouseEvent) {
 			if (
 				e.target &&
 				'tagName' in e.target &&
@@ -53,7 +53,9 @@
 			}, 2000);
 
 			cursor?.classList.remove('opacity-0');
-		});
+		}
+
+		window.addEventListener('mousemove', updateCursor);
 
 		window.document.body.addEventListener('mouseleave', () => {
 			cursor?.classList.add('opacity-0');
@@ -62,10 +64,20 @@
 		window.document.body.addEventListener('mouseenter', () => {
 			cursor?.classList.remove('opacity-0');
 		});
+
+		window.document.body.addEventListener('mousedown', (e) => {
+			updateCursor(e);
+			cursor?.classList.add('scale-90');
+		});
+
+		window.document.body.addEventListener('mouseup', (e) => {
+			updateCursor(e);
+			cursor?.classList.remove('scale-90');
+		});
 	});
 </script>
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-50 h-16 w-16 rounded-3xl bg-white mix-blend-difference transition-opacity duration-200"
+	class="pointer-events-none fixed z-50 h-16 w-16 rounded-3xl bg-white mix-blend-difference duration-200"
 ></div>
