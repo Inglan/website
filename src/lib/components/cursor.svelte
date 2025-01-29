@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let scale = 1;
+	let timeout: number;
 
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
@@ -29,6 +30,13 @@
 			} else {
 				scale = 1;
 			}
+
+			clearTimeout(timeout);
+			timeout = setTimeout(() => {
+				cursor?.classList.add('opacity-0');
+			}, 2000);
+
+			cursor?.classList.remove('opacity-0');
 		});
 
 		window.document.body.addEventListener('mouseleave', () => {
