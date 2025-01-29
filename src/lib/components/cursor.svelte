@@ -15,22 +15,38 @@
 				((e.target as HTMLElement).tagName === 'A' ||
 					(e.target as HTMLElement).tagName === 'BUTTON')
 			) {
-				var elementDimemsions = (e.target as HTMLElement).getBoundingClientRect();
-				var borderRadius = window.getComputedStyle(e.target as HTMLElement).borderRadius;
-				cursor?.animate(
-					{
-						top: `${elementDimemsions.top - cursorSnapPadding}px`,
-						left: `${elementDimemsions.left - cursorSnapPadding}px`,
-						width: `${elementDimemsions.width + cursorSnapPadding * 2}px`,
-						height: `${elementDimemsions.height + cursorSnapPadding * 2}px`,
-						scale: 1,
-						borderRadius: borderRadius
-					},
-					{
-						duration: transitionDuration,
-						fill: 'forwards'
-					}
-				);
+				if ((e.target as HTMLElement).dataset.cursor === 'enlarge') {
+					cursor?.animate(
+						{
+							top: `${e.clientY - 80 / 2}px`,
+							left: `${e.clientX - 80 / 2}px`,
+							width: '80px',
+							height: '80px',
+							borderRadius: '40px'
+						},
+						{
+							duration: transitionDuration,
+							fill: 'forwards'
+						}
+					);
+				} else {
+					var elementDimemsions = (e.target as HTMLElement).getBoundingClientRect();
+					var borderRadius = window.getComputedStyle(e.target as HTMLElement).borderRadius;
+					cursor?.animate(
+						{
+							top: `${elementDimemsions.top - cursorSnapPadding}px`,
+							left: `${elementDimemsions.left - cursorSnapPadding}px`,
+							width: `${elementDimemsions.width + cursorSnapPadding * 2}px`,
+							height: `${elementDimemsions.height + cursorSnapPadding * 2}px`,
+							scale: 1,
+							borderRadius: borderRadius
+						},
+						{
+							duration: transitionDuration,
+							fill: 'forwards'
+						}
+					);
+				}
 			} else {
 				cursor?.animate(
 					{

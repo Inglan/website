@@ -224,13 +224,14 @@
 <div
 	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
 >
-	<div
+	<a
 		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center md:flex"
 		role="none"
 		id="hero-sidebar-trigger"
+		data-cursor="enlarge"
 	>
 		<span class="-rotate-90 text-xl text-slate-500">Menu</span>
-	</div>
+	</a>
 	<div class="z-10 flex w-fit flex-col drop-shadow-xl">
 		<div class="flex flex-row gap-3 text-4xl duration-500 lg:text-6xl [&>span]:block [&>span]:py-2">
 			<span class="herotext">Hi,</span> <span class="herotext">I'm</span>
