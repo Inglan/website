@@ -131,5 +131,5 @@
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-50 h-16 w-16 rounded-3xl bg-white mix-blend-difference duration-200"
+	class="pointer-events-none fixed z-50 hidden h-16 w-16 rounded-3xl bg-white mix-blend-difference duration-200 md:block"
 ></div>
