@@ -66,6 +66,14 @@
 	onMount(() => {
 		const cursor = document.getElementById('cursor');
 
+		function hideCursor() {
+			cursor?.classList.add('opacity-0');
+		}
+
+		function showCursor() {
+			cursor?.classList.remove('opacity-0');
+		}
+
 		function updateCursor(e: MouseEvent) {
 			if (
 				cursor &&
@@ -91,20 +99,20 @@
 
 			clearTimeout(timeout);
 			timeout = setTimeout(() => {
-				cursor?.classList.add('opacity-0');
+				hideCursor();
 			}, HIDE_CURSOR_DELAY);
 
-			cursor?.classList.remove('opacity-0');
+			showCursor();
 		}
 
 		window.addEventListener('mousemove', updateCursor);
 
 		window.document.body.addEventListener('mouseleave', () => {
-			cursor?.classList.add('opacity-0');
+			hideCursor();
 		});
 
 		window.document.body.addEventListener('mouseenter', () => {
-			cursor?.classList.remove('opacity-0');
+			showCursor();
 		});
 
 		window.document.body.addEventListener('mousedown', (e) => {
