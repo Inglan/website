@@ -68,10 +68,12 @@
 
 		function hideCursor() {
 			cursor?.classList.add('opacity-0');
+			cursor?.classList.add('blur-lg');
 		}
 
 		function showCursor() {
 			cursor?.classList.remove('opacity-0');
+			cursor?.classList.remove('blur-lg');
 		}
 
 		function updateCursor(e: MouseEvent) {
