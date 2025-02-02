@@ -17,6 +17,7 @@
 		title: string;
 		url: string;
 		icon: any; // Replace with proper icon component type
+		children: NavigationItem[];
 	}
 
 	interface SocialLink {
@@ -29,9 +30,9 @@
 
 	// Navigation Configuration
 	const navigation: NavigationItem[] = [
-		{ title: 'Home', url: '/', icon: Home },
-		{ title: 'Projects', url: '/projects', icon: Code },
-		{ title: 'About me', url: '/about', icon: User }
+		{ title: 'Home', url: '/', children: [], icon: Home },
+		{ title: 'Projects', url: '/projects', children: [], icon: Code },
+		{ title: 'About me', url: '/about', children: [], icon: User }
 	];
 
 	const socialLinks: SocialLink[] = [
