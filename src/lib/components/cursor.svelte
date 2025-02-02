@@ -46,14 +46,14 @@
 			);
 		} else {
 			var elementDimemsions = element.getBoundingClientRect();
-			var borderRadius = window.getComputedStyle(element).borderRadius;
+			var borderRadius = Number(window.getComputedStyle(element).borderRadius.replace('px', ''));
 			cursor.animate(
 				createCursorAnimation({
 					top: elementDimemsions.top - cursorSnapPadding,
 					left: elementDimemsions.left - cursorSnapPadding,
 					width: elementDimemsions.width + cursorSnapPadding * 2,
 					height: elementDimemsions.height + cursorSnapPadding * 2,
-					borderRadius: borderRadius
+					borderRadius: Math.max(borderRadius, 5)
 				}),
 				{ duration: TRANSITION_DURATION, fill: 'forwards' }
 			);
