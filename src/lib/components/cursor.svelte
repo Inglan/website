@@ -119,10 +119,12 @@
 
 		window.document.body.addEventListener('mousedown', (e) => {
 			if (
+				cursor &&
 				e.target &&
 				'tagName' in e.target &&
 				((e.target as HTMLElement).tagName === 'A' ||
-					(e.target as HTMLElement).tagName === 'BUTTON')
+					(e.target as HTMLElement).tagName === 'BUTTON') &&
+				!((e.target as HTMLElement).dataset.cursor === 'enlarge')
 			) {
 				cursorSnapPadding = 0;
 			} else {
