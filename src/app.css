@@ -81,4 +81,8 @@
 	h6 {
 		font-size: 1.125rem;
 	}
+
+	.section {
+		margin-bottom: 2rem;
+	}
 }
