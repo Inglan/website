@@ -5,6 +5,7 @@
 
 	// Style imports
 	import '../app.css';
+	import '$lib/assets/stylesheets/prism-holi-theme.css'
 	import '@fontsource/inter';
 
 	// UI Components
