@@ -12,3 +12,7 @@ Test
 Test
 test
 ```
+
+```javascript
+alert('test');
+```
