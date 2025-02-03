@@ -258,6 +258,11 @@
 </div>
 
 <!-- Projects Carousel -->
+
+<div class="section">
+	<h2 class="coloredtext text-center">Projects</h2>
+</div>
+
 <Carousel.Root
 	class="projects-carousel w-[calc(100vw)] md:mx-auto md:max-w-prose"
 	opts={{
