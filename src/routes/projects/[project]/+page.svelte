@@ -2,6 +2,6 @@
 	export let data;
 </script>
 
-<article>
+<article class="max-w-screen-lg m-auto p-4">
 	<data.content />
 </article>
