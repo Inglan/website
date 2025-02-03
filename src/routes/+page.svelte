@@ -264,7 +264,7 @@
 </div>
 
 <Carousel.Root
-	class="projects-carousel w-[calc(100vw)] md:mx-auto md:max-w-prose"
+	class="projects-carousel section w-[calc(100vw)] md:mx-auto md:max-w-prose"
 	opts={{
 		loop: true
 	}}
