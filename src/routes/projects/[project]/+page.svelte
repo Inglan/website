@@ -3,5 +3,5 @@
 </script>
 
 <article>
-	<svelte:component this={data.content} />
+	<data.content />
 </article>
