@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import Check from 'svelte-material-icons/Check.svelte';
 	import Copy from 'svelte-material-icons/ContentCopy.svelte';
 	import { fade } from 'svelte/transition';
 	import { toast } from 'svelte-sonner';
@@ -156,6 +157,7 @@
 			if (e.target && (e.target as HTMLElement).tagName === 'PRE') {
 				try {
 					navigator.clipboard.writeText((e.target as HTMLElement).innerText);
+					icon = 'copied';
 					toast.success('Copied to clipboard');
 				} catch (e) {
 					toast.error('Failed to copy to clipboard', { description: String(e) });
@@ -173,6 +175,12 @@
 		<div transition:fade={{ duration: 100 }} class="flex items-center justify-center gap-2">
 			<Copy color="black" />
 			<span class="text-black">Click to copy</span>
+		</div>
+	{/if}
+	{#if icon == 'copied'}
+		<div transition:fade={{ duration: 100 }} class="flex items-center justify-center gap-2">
+			<Check color="black" />
+			<span class="text-black">Copied!</span>
 		</div>
 	{/if}
 </div>
