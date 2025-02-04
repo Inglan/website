@@ -3,6 +3,7 @@
 
 	import Copy from 'svelte-material-icons/ContentCopy.svelte';
 	import { fade } from 'svelte/transition';
+	import { toast } from 'svelte-sonner';
 
 	let icon = '';
 
@@ -153,7 +154,12 @@
 			cursor?.classList.remove('scale-90');
 
 			if (e.target && (e.target as HTMLElement).tagName === 'PRE') {
-				navigator.clipboard.writeText((e.target as HTMLElement).innerText);
+				try {
+					navigator.clipboard.writeText((e.target as HTMLElement).innerText);
+					toast.success('Copied to clipboard');
+				} catch (e) {
+					toast.error('Failed to copy to clipboard', { description: String(e) });
+				}
 			}
 		});
 	});
