@@ -30,6 +30,20 @@ pre[class*='language-'] {
 	hyphens: none;
 }
 
+@media screen and (max-width: 768px) {
+	pre[class*='language-']::before {
+		content: 'Tap to copy';
+		display: block;
+		clear: both;
+		background-color: #f0f6f6;
+		color: #1d3b54;
+		width: fit-content;
+		padding: 4px;
+		margin-bottom: 10px;
+		border-radius: calc(var(--radius) - 10px);
+	}
+}
+
 pre[class*='language-']::-moz-selection,
 pre[class*='language-'] ::-moz-selection,
 code[class*='language-']::-moz-selection,
