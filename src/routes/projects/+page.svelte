@@ -6,7 +6,7 @@
 </script>
 
 <div class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
-	<h1 class="flex items-center justify-center">Projects</h1>
+	<h1 class="coloredtext flex items-center justify-center">Projects</h1>
 	{#each data.projects as project}
 		<Card.Root>
 			<Card.Header>
