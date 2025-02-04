@@ -1,5 +1,6 @@
 ---
 title: Project 1
+excerpt: A test page
 ---
 
 # H1
