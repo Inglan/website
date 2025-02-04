@@ -5,7 +5,7 @@
 
 	// Style imports
 	import '../app.css';
-	import '$lib/assets/stylesheets/prism-holi-theme.css'
+	import '$lib/assets/stylesheets/prism-holi-theme.css';
 	import '@fontsource/inter';
 
 	// UI Components
@@ -14,6 +14,7 @@
 	import { Separator } from '$lib/components/ui/separator/index.js';
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import Cursor from '$lib/components/cursor.svelte';
+	import { Toaster } from '$lib/components/ui/sonner/index.js';
 
 	// Transitions
 	import { fade } from 'svelte/transition';
@@ -49,6 +50,7 @@
 	</Sidebar.Inset>
 </Sidebar.Provider>
 
+<Toaster />
 <Cursor />
 
 <style>

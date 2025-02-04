@@ -57,6 +57,9 @@ importers:
       mdsvex:
         specifier: ^0.12.3
         version: 0.12.3(svelte@5.19.1)
+      mode-watcher:
+        specifier: ^0.5.1
+        version: 0.5.1(svelte@5.19.1)
       prettier:
         specifier: ^3.4.2
         version: 3.4.2
@@ -72,6 +75,9 @@ importers:
       svelte-check:
         specifier: ^4.1.4
         version: 4.1.4(svelte@5.19.1)(typescript@5.7.3)
+      svelte-sonner:
+        specifier: ^0.3.28
+        version: 0.3.28(svelte@5.19.1)
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -788,6 +794,11 @@ packages:
     resolution: {integrity: sha512-qOOzS1cBTWYF4BH8fVePDBOO9iptMnGUEZwNc/cMWnTV2nVLZ7VoNWEPHkYczZA0pdoA7dl6e7FL659nX9S2aw==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  mode-watcher@0.5.1:
+    resolution: {integrity: sha512-adEC6T7TMX/kzQlaO/MtiQOSFekZfQu4MC+lXyoceQG+U5sKpJWZ4yKXqw846ExIuWJgedkOIPqAYYRk/xHm+w==}
+    peerDependencies:
+      svelte: ^4.0.0 || ^5.0.0-next.1
+
   mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -1083,6 +1094,11 @@ packages:
     resolution: {integrity: sha512-UbhAa+Btd5y6e6DMljVccP+cbJ8lvesltMippiCOvfIUtYe2TsQqM+P6osfrVsZHV47b1tY6AmqCuSpMKnwMOQ==}
     peerDependencies:
       svelte: ^3.0.0 || ^4.0.0
+
+  svelte-sonner@0.3.28:
+    resolution: {integrity: sha512-K3AmlySeFifF/cKgsYNv5uXqMVNln0NBAacOYgmkQStLa/UoU0LhfAACU6Gr+YYC8bOCHdVmFNoKuDbMEsppJg==}
+    peerDependencies:
+      svelte: ^3.0.0 || ^4.0.0 || ^5.0.0-next.1
 
   svelte-toolbelt@0.7.0:
     resolution: {integrity: sha512-i/Tv4NwAWWqJnK5H0F8y/ubDnogDYlwwyzKhrspTUFzrFuGnYshqd2g4/R43ds841wmaFiSW/HsdsdWhPOlrAA==}
@@ -1809,6 +1825,10 @@ snapshots:
 
   minipass@7.1.2: {}
 
+  mode-watcher@0.5.1(svelte@5.19.1):
+    dependencies:
+      svelte: 5.19.1
+
   mri@1.2.0: {}
 
   mrmime@2.0.0: {}
@@ -2045,6 +2065,10 @@ snapshots:
       - picomatch
 
   svelte-material-icons@3.0.5(svelte@5.19.1):
+    dependencies:
+      svelte: 5.19.1
+
+  svelte-sonner@0.3.28(svelte@5.19.1):
     dependencies:
       svelte: 5.19.1
 
