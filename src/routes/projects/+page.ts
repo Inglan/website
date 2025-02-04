@@ -5,6 +5,11 @@ export async function load() {
 		title: string;
 		excerpt: string;
 		slug: string;
+		links: {
+			name: string;
+			url: string;
+			icon: string;
+		};
 	}[] = [];
 
 	for (const path in projectPaths) {
@@ -13,11 +18,13 @@ export async function load() {
 			let excerpt = project.metadata.excerpt;
 			let splitPath = path.split('/');
 			let slug = '/projects/' + splitPath[splitPath.length - 1].replace('.md', '');
+			let links = project.metadata.links;
 
 			projects.push({
 				title,
 				excerpt,
-				slug
+				slug,
+				links
 			});
 		});
 	}
