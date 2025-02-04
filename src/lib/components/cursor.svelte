@@ -1,6 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import Copy from 'svelte-material-icons/ContentCopy.svelte';
+	import { fade } from 'svelte/transition';
+
+	let icon = '';
+
 	// Constants
 	const CURSOR_SIZES = {
 		default: 48,
@@ -58,6 +63,12 @@
 				{ duration: TRANSITION_DURATION, fill: 'forwards' }
 			);
 		}
+
+		if (element.tagName == 'PRE') {
+			icon = 'copy';
+		} else {
+			icon = '';
+		}
 	}
 
 	let timeout: number;
@@ -82,10 +93,12 @@
 				e.target &&
 				'tagName' in e.target &&
 				((e.target as HTMLElement).tagName === 'A' ||
-					(e.target as HTMLElement).tagName === 'BUTTON')
+					(e.target as HTMLElement).tagName === 'BUTTON' ||
+					(e.target as HTMLElement).tagName === 'PRE')
 			) {
 				handleElementCursor(cursor, e, e.target as HTMLElement);
 			} else {
+				icon = '';
 				const size = CURSOR_SIZES.default;
 				cursor?.animate(
 					createCursorAnimation({
@@ -123,6 +136,7 @@
 				e.target &&
 				'tagName' in e.target &&
 				((e.target as HTMLElement).tagName === 'A' ||
+					(e.target as HTMLElement).tagName === 'PRE' ||
 					(e.target as HTMLElement).tagName === 'BUTTON') &&
 				!((e.target as HTMLElement).dataset.cursor === 'enlarge')
 			) {
@@ -137,11 +151,22 @@
 			cursorSnapPadding = DEFAULT_SNAP_PADDING;
 			updateCursor(e);
 			cursor?.classList.remove('scale-90');
+
+			if (e.target && (e.target as HTMLElement).tagName === 'PRE') {
+				navigator.clipboard.writeText((e.target as HTMLElement).innerText);
+			}
 		});
 	});
 </script>
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-50 hidden h-16 w-16 rounded-3xl bg-white mix-blend-difference duration-200 md:block"
-></div>
+	class="pointer-events-none fixed z-50 hidden h-16 w-16 items-center justify-center rounded-3xl bg-white mix-blend-difference duration-200 md:flex [&>*]:absolute"
+>
+	{#if icon == 'copy'}
+		<div transition:fade={{ duration: 100 }} class="flex items-center justify-center gap-2">
+			<Copy color="black" />
+			<span class="text-black">Click to copy</span>
+		</div>
+	{/if}
+</div>
