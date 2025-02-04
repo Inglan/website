@@ -324,13 +324,6 @@
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
 
 <style>
-	.coloredtext {
-		background: linear-gradient(45deg, #fab387, #f38ba8);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-
 	.blurredblob {
 		filter: blur(1000px);
 		background: linear-gradient(45deg, #89b4fa, #f38ba8);
