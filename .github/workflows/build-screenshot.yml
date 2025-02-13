@@ -1,0 +1,35 @@
+name: Build and Screenshot
+
+on:
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container:
+      image: 'archlinux:latest'
+    permissions: write-all
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install packages
+        run: pacman -Sy pnpm nodejs npm chromium --noconfirm
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: |
+          pnpm run build
+
+      - name: Take screenshot
+        run: |
+          sh -c "pnpm preview & sleep 10 && chromium --headless --disable-gpu --screenshot --window-size=1920,1080 http://localhost:4173/ --no-sandbox && pkill node"
+
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshot
+          path: screenshot.png
