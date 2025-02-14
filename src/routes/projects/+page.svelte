@@ -1,23 +1,20 @@
 <script lang="ts">
-	export let data;
-
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 </script>
 
-<div class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
+<div class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2">
 	<h1 class="coloredtext flex items-center justify-center">Projects</h1>
-	{#each data.projects as project}
-		<Card.Root>
-			<Card.Header>
-				<Card.Title>{project.title}</Card.Title>
-			</Card.Header>
-			<Card.Content>
-				{project.excerpt}
-			</Card.Content>
-			<Card.Footer>
-				<Button href={project.slug}>Read More</Button>
-			</Card.Footer>
-		</Card.Root>
-	{/each}
+	<Card.Root>
+		<Card.Header>
+			<Card.Title>MemoryOverflow</Card.Title>
+		</Card.Header>
+		<Card.Content>
+			A simple platformer game written in Godot for a school project. But with some totally real
+			memory leak issues :)
+		</Card.Content>
+		<Card.Footer>
+			<Button href="memoryoverflow">Read More</Button>
+		</Card.Footer>
+	</Card.Root>
 </div>
