@@ -32,7 +32,7 @@
 	// Navigation Configuration
 	const navigation: NavigationItem[] = [
 		{ title: 'Home', url: '/', children: [], icon: Home },
-		{ title: 'Projects', url: '/projects', children: [], icon: Code },
+		// { title: 'Projects', url: '/projects', children: [], icon: Code },
 		{ title: 'About me', url: '/about', children: [], icon: User },
 		{ title: 'Shop', url: 'https://shop.ingo.au', children: [], icon: Shop }
 	];
