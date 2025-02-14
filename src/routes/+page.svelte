@@ -23,6 +23,8 @@
 	// Svelte Lifecycle
 	import { onMount, onDestroy } from 'svelte';
 
+	import SvelteSeo from 'svelte-seo';
+
 	const sidebar = useSidebar();
 
 	// Projects data
@@ -223,6 +225,8 @@
 		}
 	});
 </script>
+
+<SvelteSeo title="Ingo" />
 
 <!-- Hero Section -->
 

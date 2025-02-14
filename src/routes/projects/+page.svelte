@@ -1,7 +1,11 @@
 <script lang="ts">
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+
+	import SvelteSeo from 'svelte-seo';
 </script>
+
+<SvelteSeo title="Projects - Ingo" />
 
 <div class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2">
 	<h1 class="coloredtext flex items-center justify-center">Projects</h1>
