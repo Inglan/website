@@ -9,6 +9,7 @@
 	import User from 'svelte-material-icons/Account.svelte';
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Mail from 'svelte-material-icons/Email.svelte';
+	import Shop from 'svelte-material-icons/Basket.svelte';
 
 	// Types
 	import type { ComponentProps } from 'svelte';
@@ -32,7 +33,8 @@
 	const navigation: NavigationItem[] = [
 		{ title: 'Home', url: '/', children: [], icon: Home },
 		{ title: 'Projects', url: '/projects', children: [], icon: Code },
-		{ title: 'About me', url: '/about', children: [], icon: User }
+		{ title: 'About me', url: '/about', children: [], icon: User },
+		{ title: 'Shop', url: 'https://shop.ingo.au', children: [], icon: Shop }
 	];
 
 	const socialLinks: SocialLink[] = [
