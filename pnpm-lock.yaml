@@ -24,8 +24,8 @@ importers:
         specifier: ^3.12.7
         version: 3.12.7
       posthog-js:
-        specifier: ^1.217.1
-        version: 1.217.1
+        specifier: ^1.217.4
+        version: 1.217.4
       svelte-material-icons:
         specifier: ^3.0.5
         version: 3.0.5(svelte@5.19.10)
@@ -907,8 +907,8 @@ packages:
     resolution: {integrity: sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.217.1:
-    resolution: {integrity: sha512-qttaRWe3WW7VL/MIG1Usg65Dzohw9Ylf8IVWyX36oHH9k0kzriPUl4Nx08P+oV0esbWWaCsljRzIiww4p+HOMQ==}
+  posthog-js@1.217.4:
+    resolution: {integrity: sha512-ZIOb75F1pdMZl6e7C4mgH2accKArLA2RG3zMEjeils+3J/cylwgcr2Iw0QtzSLqQVvR7AFRRbXMZXUWsiB2zyA==}
 
   preact@10.25.4:
     resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
@@ -1908,7 +1908,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.217.1:
+  posthog-js@1.217.4:
     dependencies:
       core-js: 3.40.0
       fflate: 0.4.8
