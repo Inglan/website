@@ -8,6 +8,7 @@ const config = {
 	// for more information about preprocessors
 	preprocess: [vitePreprocess(), mdsvex({
 		extensions: ['.md'],
+		layout: './src/lib/layouts/markdown.svelte',
 	})],
 
 	extensions: ['.svelte', '.md'],
