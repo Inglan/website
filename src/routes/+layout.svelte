@@ -32,26 +32,33 @@
 	let { children } = $props();
 </script>
 
-<Sidebar.Provider style="--sidebar-width: 19rem;" open={page.url.pathname == '/' ? false : true}>
-	<!-- Sidebar Component -->
-	<AppSidebar />
+<div data-vaul-drawer-wrapper="">
+	<div class="relative flex min-h-screen flex-col bg-background">
+		<Sidebar.Provider
+			style="--sidebar-width: 19rem;"
+			open={page.url.pathname == '/' ? false : true}
+		>
+			<!-- Sidebar Component -->
+			<AppSidebar />
 
-	<Sidebar.Inset>
-		{#key page.url.pathname}
-			<main tabindex="-1" in:fade|global={transitionIn} out:fade|global={transitionOut}>
-				{@render children()}
-			</main>
-		{/key}
-		<!-- Sidebar Trigger Button -->
-		<Sidebar.Trigger
-			id="sidebar-trigger"
-			class="fixed bottom-2 translate-x-2 bg-transparent p-6 opacity-100 transition-all"
-		/>
-	</Sidebar.Inset>
-</Sidebar.Provider>
+			<Sidebar.Inset>
+				{#key page.url.pathname}
+					<main tabindex="-1" in:fade|global={transitionIn} out:fade|global={transitionOut}>
+						{@render children()}
+					</main>
+				{/key}
+				<!-- Sidebar Trigger Button -->
+				<Sidebar.Trigger
+					id="sidebar-trigger"
+					class="fixed bottom-2 translate-x-2 bg-transparent p-6 opacity-100 transition-all"
+				/>
+			</Sidebar.Inset>
+		</Sidebar.Provider>
 
-<Toaster />
-<Cursor />
+		<Toaster />
+		<Cursor />
+	</div>
+</div>
 
 <style>
 	:global(body) {
