@@ -224,7 +224,7 @@
 	});
 </script>
 
-<SvelteSeo title="Ingo" />
+<SvelteSeo title="Ingo" description="Hi, I'm Ingo, and I develop websites" />
 
 <!-- Hero Section -->
 
