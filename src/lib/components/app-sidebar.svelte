@@ -50,11 +50,7 @@
 				<Sidebar.MenuButton size="lg">
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<div
-								class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground"
-							>
-								In
-							</div>
+							<img src="/pfp/circle.png" class="aspect-square size-8" alt="Ingo Logo" />
 							<div class="flex flex-col gap-0.5 leading-none">
 								<span class="font-semibold">Ingo Wolf</span>
 							</div>
