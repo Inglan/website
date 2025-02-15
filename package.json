@@ -15,7 +15,7 @@
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^4.0.0",
 		"@sveltejs/adapter-cloudflare": "^5.0.3",
-		"@sveltejs/kit": "^2.17.1",
+		"@sveltejs/kit": "^2.17.2",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"autoprefixer": "^10.4.20",
 		"bits-ui": "1.0.0-next.95",
@@ -24,10 +24,10 @@
 		"lucide-svelte": "^0.475.0",
 		"mdsvex": "^0.12.3",
 		"mode-watcher": "^0.5.1",
-		"prettier": "^3.5.0",
+		"prettier": "^3.5.1",
 		"prettier-plugin-svelte": "^3.3.3",
 		"prettier-plugin-tailwindcss": "^0.6.11",
-		"svelte": "^5.19.10",
+		"svelte": "^5.20.1",
 		"svelte-check": "^4.1.4",
 		"svelte-seo": "^1.6.1",
 		"svelte-sonner": "^0.3.28",
@@ -45,7 +45,7 @@
 		"embla-carousel-class-names": "^8.5.2",
 		"embla-carousel-wheel-gestures": "^8.0.1",
 		"gsap": "^3.12.7",
-		"posthog-js": "^1.217.4",
+		"posthog-js": "^1.218.1",
 		"svelte-material-icons": "^3.0.5"
 	}
 }
