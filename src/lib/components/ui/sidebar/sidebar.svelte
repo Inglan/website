@@ -40,7 +40,6 @@
 			data-sidebar="sidebar"
 			data-mobile="true"
 			class="w-full bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
-			{side}
 		>
 			<div class="flex h-full w-full flex-col">
 				{@render children?.()}
