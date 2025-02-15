@@ -2,6 +2,8 @@
 	// UI Components
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+	const sidebar = useSidebar();
 
 	// Icons
 	import Home from 'svelte-material-icons/Home.svelte';
@@ -47,7 +49,12 @@
 	<Sidebar.Header>
 		<Sidebar.Menu>
 			<Sidebar.MenuItem>
-				<Sidebar.MenuButton size="lg">
+				<Sidebar.MenuButton
+					onclick={() => {
+						sidebar.setOpenMobile(false);
+					}}
+					size="lg"
+				>
 					{#snippet child({ props })}
 						<a href="/" {...props}>
 							<img src="/pfp/circle.png" class="aspect-square size-8" alt="Ingo Logo" />
@@ -66,7 +73,12 @@
 			<Sidebar.Menu>
 				{#each navigation as item}
 					<Sidebar.MenuItem>
-						<Sidebar.MenuButton size="lg">
+						<Sidebar.MenuButton
+							onclick={() => {
+								sidebar.setOpenMobile(false);
+							}}
+							size="lg"
+						>
 							{#snippet child({ props })}
 								<a href={item.url} {...props}>
 									<item.icon />
