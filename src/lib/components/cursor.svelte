@@ -169,7 +169,7 @@
 
 <div
 	id="cursor"
-	class="pointer-events-none fixed z-[999999999999999999] hidden h-16 w-16 items-center justify-center rounded-3xl bg-white mix-blend-difference duration-200 md:flex [&>*]:absolute"
+	class="opactiy-0 pointer-events-none fixed z-[999999999999999999] hidden h-0 w-0 items-center justify-center rounded-3xl bg-white mix-blend-difference duration-200 md:flex [&>*]:absolute"
 >
 	{#if icon == 'copy'}
 		<div transition:fade={{ duration: 100 }} class="flex items-center justify-center gap-2">
