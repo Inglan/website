@@ -239,7 +239,7 @@
 		id="hero-sidebar-trigger"
 		data-cursor="enlarge"
 	>
-		<span class="pointer-events-none -rotate-90 select-none text-xl text-slate-500">Menu</span>
+		<span class="pointer-events-none -rotate-90 select-none text-xl">Menu</span>
 	</a>
 	<div class="z-10 flex w-fit flex-col drop-shadow-xl">
 		<div class="flex flex-row gap-3 text-4xl duration-500 lg:text-6xl [&>span]:block [&>span]:py-2">
