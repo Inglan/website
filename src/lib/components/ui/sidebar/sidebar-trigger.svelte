@@ -30,7 +30,9 @@
 	{...restProps}
 >
 	<ChevronRight
-		class={(sidebar.open && !sidebar.isMobile ? 'rotate-180' : '') + ' scale-125 duration-300'}
+		class={(sidebar.open && !sidebar.isMobile ? 'rotate-180' : '') +
+			(sidebar.isMobile ? ' -rotate-90' : '') +
+			' scale-125 duration-300'}
 	/>
 	<span class="sr-only">Toggle Sidebar</span>
 </Button>
