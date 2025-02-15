@@ -155,8 +155,6 @@
 			scale: 0.9
 		});
 
-		gsap.set('#sidebar-trigger', { opacity: 0 });
-
 		gsap.to('#sidebar-trigger', {
 			scrollTrigger: {
 				trigger: '.hero',
