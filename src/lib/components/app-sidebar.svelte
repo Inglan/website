@@ -57,7 +57,11 @@
 				>
 					{#snippet child({ props })}
 						<a href="/" {...props}>
-							<img src="/pfp/circle.png" class="aspect-square size-8" alt="Ingo Logo" />
+							<enhanced:img
+								src="$lib/images/pfp/circle.png"
+								class="aspect-square size-8"
+								alt="Ingo Logo"
+							/>
 							<div class="flex flex-col gap-0.5 leading-none">
 								<span class="font-semibold">Ingo Wolf</span>
 							</div>
