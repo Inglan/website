@@ -37,37 +37,28 @@
 	let { children } = $props();
 </script>
 
-<div data-vaul-drawer-wrapper="">
-	<div class="relative flex min-h-screen flex-col bg-background">
-		<Sidebar.Provider
-			style="--sidebar-width: 19rem;"
-			open={page.url.pathname == '/' ? false : true}
-		>
-			<!-- Sidebar Component -->
-			<AppSidebar />
+<Sidebar.Provider style="--sidebar-width: 19rem;" open={page.url.pathname == '/' ? false : true}>
+	<!-- Sidebar Component -->
+	<AppSidebar />
 
-			<Sidebar.Inset>
-				{#key page.url.pathname}
-					<main tabindex="-1" in:fly|global={transitionIn} out:fly|global={transitionOut}>
-						{@render children()}
-					</main>
-				{/key}
-				<!-- Sidebar Trigger Button -->
-				<div
-					class="fixed bottom-2 z-50 flex translate-x-2 flex-row gap-2 *:p-6 *:backdrop-blur-2xl"
-				>
-					<Sidebar.Trigger id="sidebar-trigger" />
-					<Button type="button" variant="ghost" size="icon" href="/">
-						<Home />
-					</Button>
-				</div>
-			</Sidebar.Inset>
-		</Sidebar.Provider>
+	<Sidebar.Inset>
+		{#key page.url.pathname}
+			<main tabindex="-1" in:fly|global={transitionIn} out:fly|global={transitionOut}>
+				{@render children()}
+			</main>
+		{/key}
+		<!-- Sidebar Trigger Button -->
+		<div class="fixed bottom-2 z-50 flex translate-x-2 flex-row gap-2 *:p-6 *:backdrop-blur-2xl">
+			<Sidebar.Trigger id="sidebar-trigger" />
+			<Button type="button" variant="ghost" size="icon" href="/">
+				<Home />
+			</Button>
+		</div>
+	</Sidebar.Inset>
+</Sidebar.Provider>
 
-		<Toaster />
-		<Cursor />
-	</div>
-</div>
+<Toaster />
+<Cursor />
 
 <style>
 	:global(body) {
