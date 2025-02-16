@@ -99,4 +99,8 @@
 	.section {
 		margin-bottom: 2rem;
 	}
+
+	main a {
+		text-decoration: underline;
+	}
 }
