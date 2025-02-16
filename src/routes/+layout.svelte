@@ -17,9 +17,10 @@
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 
 	// Transitions
-	import { fade, scale, fly } from 'svelte/transition';
-	const transitionIn = { delay: 300, duration: 300, y: 20 };
-	const transitionOut = { duration: 300, y: -20 };
+	import { fly } from 'svelte/transition';
+	import { cubicIn, cubicOut } from 'svelte/easing';
+	const transitionIn = { delay: 300, duration: 300, y: 20, easing: cubicOut };
+	const transitionOut = { duration: 300, y: -20, easing: cubicIn };
 
 	// Scroll handling after navigation
 	afterNavigate(() => {
