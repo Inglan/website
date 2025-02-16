@@ -49,12 +49,18 @@
 		{/key}
 		<!-- Sidebar Trigger Button -->
 		<div
-			class="fixed bottom-2 z-50 flex translate-x-[calc(50vw-50%)] flex-row gap-2 duration-300 *:p-6 *:backdrop-blur-2xl md:translate-x-2"
+			class="fixed bottom-2 z-50 flex translate-x-[calc(50vw-50%)] flex-row gap-2 duration-300 md:translate-x-2 [&>div>*]:p-6 [&>div>*]:backdrop-blur-2xl"
 		>
-			<Sidebar.Trigger id="sidebar-trigger" />
-			<Button type="button" variant="ghost" size="icon" href="/">
-				<Home />
-			</Button>
+			<div>
+				<Sidebar.Trigger id="sidebar-trigger" />
+			</div>
+			{#if page.url.pathname != '/'}
+				<div in:fly|global={transitionIn} out:fly|global={transitionOut}>
+					<Button type="button" variant="ghost" size="icon" href="/">
+						<Home />
+					</Button>
+				</div>
+			{/if}
 		</div>
 	</Sidebar.Inset>
 </Sidebar.Provider>
