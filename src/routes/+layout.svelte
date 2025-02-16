@@ -27,7 +27,7 @@
 		disableScrollHandling();
 		setTimeout(() => {
 			scrollTo(0, 0);
-		}, 150);
+		}, 300);
 	});
 
 	let { children } = $props();
