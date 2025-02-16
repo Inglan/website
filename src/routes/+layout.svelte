@@ -23,8 +23,8 @@
 	// Transitions
 	import { fly } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
-	const transitionIn = { delay: 300, duration: 300, y: 50, easing: cubicOut };
-	const transitionOut = { duration: 300, y: -50, easing: cubicIn };
+	const transitionIn = { delay: 300, duration: 300, y: 20, easing: cubicOut };
+	const transitionOut = { duration: 300, y: -20, easing: cubicIn };
 
 	// Scroll handling after navigation
 	afterNavigate(() => {
