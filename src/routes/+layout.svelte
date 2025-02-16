@@ -48,7 +48,9 @@
 			</main>
 		{/key}
 		<!-- Sidebar Trigger Button -->
-		<div class="fixed bottom-2 z-50 flex translate-x-2 flex-row gap-2 *:p-6 *:backdrop-blur-2xl">
+		<div
+			class="fixed bottom-2 z-50 flex translate-x-[calc(50vw-50%)] flex-row gap-2 duration-300 *:p-6 *:backdrop-blur-2xl md:translate-x-2"
+		>
 			<Sidebar.Trigger id="sidebar-trigger" />
 			<Button type="button" variant="ghost" size="icon" href="/">
 				<Home />
