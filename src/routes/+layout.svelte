@@ -9,6 +9,7 @@
 	import '@fontsource/inter';
 
 	// UI Components
+	import { Button } from '$lib/components/ui/button/index.js';
 	import AppSidebar from '$lib/components/app-sidebar.svelte';
 	import * as Breadcrumb from '$lib/components/ui/breadcrumb/index.js';
 	import { Separator } from '$lib/components/ui/separator/index.js';
@@ -49,10 +50,10 @@
 					</main>
 				{/key}
 				<!-- Sidebar Trigger Button -->
-				<Sidebar.Trigger
-					id="sidebar-trigger"
-					class="fixed bottom-2 translate-x-2 bg-transparent p-6 opacity-100 transition-all"
-				/>
+				<div class="fixed bottom-2 flex translate-x-2 flex-row gap-2 [&>button]:p-6">
+					<Sidebar.Trigger id="sidebar-trigger" />
+					<Button type="button" variant="ghost" size="icon"></Button>
+				</div>
 			</Sidebar.Inset>
 		</Sidebar.Provider>
 
