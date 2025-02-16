@@ -242,59 +242,61 @@
 	<h2 class="coloredtext text-center">Projects</h2>
 </div>
 
-<Carousel.Root
-	class="projects-carousel section w-[calc(100vw)] md:mx-auto md:max-w-prose"
-	opts={{
-		loop: true
-	}}
-	plugins={[
-		Autoplay({
-			delay: 2000,
-			stopOnInteraction: false,
-			stopOnFocusIn: false,
-			stopOnMouseEnter: true
-		}),
-		ClassNames(),
-		WheelGesturesPlugin()
-	]}
->
-	<Carousel.Content
-		class="[&>*:not(.is-snapped)>*]:scale-95 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
+<div class="max-w-full overflow-hidden">
+	<Carousel.Root
+		class="projects-carousel section w-[calc(100vw)] max-w-full md:mx-auto md:max-w-prose"
+		opts={{
+			loop: true
+		}}
+		plugins={[
+			Autoplay({
+				delay: 2000,
+				stopOnInteraction: false,
+				stopOnFocusIn: false,
+				stopOnMouseEnter: true
+			}),
+			ClassNames(),
+			WheelGesturesPlugin()
+		]}
 	>
-		{#each projects as project}
-			<Carousel.Item class="basis-2/3">
-				<Card.Root class="flex h-full flex-col bg-transparent">
-					<Card.Header>
-						<Card.Title>{project.title}</Card.Title>
-					</Card.Header>
-					<Card.Content class="flex-grow">
-						<p>{project.description}</p>
-					</Card.Content>
-					<Card.Footer>
-						<div class="flex w-full flex-row justify-end gap-3">
-							{#each project.links as link}
-								<Tooltip.Provider>
-									<Tooltip.Root>
-										<Tooltip.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
-											{#snippet child({ props })}
-												<a target="_blank" href={link.link} {...props}>
-													<div class="sr-only">{link.name}</div>
-													<link.icon />
-												</a>
-											{/snippet}
-										</Tooltip.Trigger>
-										<Tooltip.Content>
-											<p>{link.name}</p>
-										</Tooltip.Content>
-									</Tooltip.Root>
-								</Tooltip.Provider>
-							{/each}
-						</div>
-					</Card.Footer>
-				</Card.Root>
-			</Carousel.Item>
-		{/each}
-	</Carousel.Content>
-	<Carousel.Previous class="hidden md:flex" />
-	<Carousel.Next class="hidden md:flex" />
-</Carousel.Root>
+		<Carousel.Content
+			class="[&>*:not(.is-snapped)>*]:scale-95 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
+		>
+			{#each projects as project}
+				<Carousel.Item class="basis-2/3">
+					<Card.Root class="flex h-full flex-col bg-transparent">
+						<Card.Header>
+							<Card.Title>{project.title}</Card.Title>
+						</Card.Header>
+						<Card.Content class="flex-grow">
+							<p>{project.description}</p>
+						</Card.Content>
+						<Card.Footer>
+							<div class="flex w-full flex-row justify-end gap-3">
+								{#each project.links as link}
+									<Tooltip.Provider>
+										<Tooltip.Root>
+											<Tooltip.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
+												{#snippet child({ props })}
+													<a target="_blank" href={link.link} {...props}>
+														<div class="sr-only">{link.name}</div>
+														<link.icon />
+													</a>
+												{/snippet}
+											</Tooltip.Trigger>
+											<Tooltip.Content>
+												<p>{link.name}</p>
+											</Tooltip.Content>
+										</Tooltip.Root>
+									</Tooltip.Provider>
+								{/each}
+							</div>
+						</Card.Footer>
+					</Card.Root>
+				</Carousel.Item>
+			{/each}
+		</Carousel.Content>
+		<Carousel.Previous class="hidden xl:flex" />
+		<Carousel.Next class="hidden xl:flex" />
+	</Carousel.Root>
+</div>
