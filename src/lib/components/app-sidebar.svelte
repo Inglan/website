@@ -3,6 +3,7 @@
 	import * as Sidebar from '$lib/components/ui/sidebar/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+	import { page } from '$app/state';
 	const sidebar = useSidebar();
 
 	// Icons
@@ -78,6 +79,7 @@
 				{#each navigation as item}
 					<Sidebar.MenuItem>
 						<Sidebar.MenuButton
+							isActive={item.url === page.url.pathname}
 							onclick={() => {
 								sidebar.setOpenMobile(false);
 							}}
