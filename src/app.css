@@ -64,7 +64,13 @@
 		font-size: 1.25rem;
 	}
 
-	.coloredtext {
+	.coloredtext,
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		background: linear-gradient(45deg, #fab387, #f38ba8);
 		background-clip: text;
 		-webkit-background-clip: text;
