@@ -83,7 +83,7 @@
 							<Tooltip.Root>
 								<Tooltip.Trigger class={buttonVariants({ variant: 'default', size: 'icon' })}>
 									{#snippet child({ props })}
-										<a target="_blank" href={`projects/${project.slug}`} {...props}>
+										<a href={`projects/${project.slug}`} {...props}>
 											<div class="sr-only">Read More</div>
 											<Document />
 										</a>
