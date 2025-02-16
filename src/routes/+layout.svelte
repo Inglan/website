@@ -53,9 +53,7 @@
 					</main>
 				{/key}
 				<!-- Sidebar Trigger Button -->
-				<div
-					class="fixed bottom-2 flex translate-x-2 flex-row gap-2 [&>button]:p-6 [&>button]:backdrop-blur-2xl"
-				>
+				<div class="fixed bottom-2 flex translate-x-2 flex-row gap-2 *:p-6 *:backdrop-blur-2xl">
 					<Sidebar.Trigger id="sidebar-trigger" />
 					<Button type="button" variant="ghost" size="icon" href="/">
 						<Home />
