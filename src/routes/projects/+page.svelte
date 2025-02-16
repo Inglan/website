@@ -8,6 +8,7 @@
 	// Icons
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Earth from 'svelte-material-icons/Earth.svelte';
+	import Document from 'svelte-material-icons/FileDocument.svelte';
 
 	const projects = [
 		{
@@ -78,7 +79,21 @@
 			<Card.Footer>
 				<div class="flex w-full flex-row gap-3">
 					{#if project.slug}
-						<Button href={`projects/${project.slug}`}>Read More</Button>
+						<Tooltip.Provider>
+							<Tooltip.Root>
+								<Tooltip.Trigger class={buttonVariants({ variant: 'default', size: 'icon' })}>
+									{#snippet child({ props })}
+										<a target="_blank" href={`projects/${project.slug}`} {...props}>
+											<div class="sr-only">Read More</div>
+											<Document />
+										</a>
+									{/snippet}
+								</Tooltip.Trigger>
+								<Tooltip.Content>
+									<p>Read More</p>
+								</Tooltip.Content>
+							</Tooltip.Root>
+						</Tooltip.Provider>
 					{/if}
 					{#each project.links as link}
 						<Tooltip.Provider>
