@@ -49,7 +49,7 @@
 		{/key}
 		<!-- Sidebar Trigger Button -->
 		<div
-			class="fixed bottom-2 z-50 flex translate-x-[calc(50vw-50%)] flex-row gap-2 duration-300 md:translate-x-2 [&>div>*]:p-6 [&>div>*]:backdrop-blur-2xl"
+			class="fixed bottom-2 z-50 flex translate-x-2 flex-row gap-2 duration-300 [&>div>*]:p-6 [&>div>*]:backdrop-blur-2xl"
 		>
 			<div>
 				<Sidebar.Trigger id="sidebar-trigger" />
