@@ -143,16 +143,6 @@
 				trigger: '.projects-carousel'
 			}
 		});
-
-		gsap.to('#sidebar-trigger', {
-			scrollTrigger: {
-				trigger: '.hero',
-				start: '50% 50%',
-				end: '55% 50%',
-				scrub: true
-			},
-			opacity: 1
-		});
 	}
 
 	onMount(() => {
