@@ -144,17 +144,6 @@
 			}
 		});
 
-		gsap.to('.blurredblob', {
-			scrollTrigger: {
-				trigger: '.hero',
-				start: '50% 50%',
-				end: '75% 50%',
-				scrub: 0.5
-			},
-			opacity: 0,
-			scale: 0.9
-		});
-
 		gsap.to('#sidebar-trigger', {
 			scrollTrigger: {
 				trigger: '.hero',
@@ -227,8 +216,6 @@
 <SvelteSeo title="Ingo" description="Hi, I'm Ingo, and I develop websites" />
 
 <!-- Hero Section -->
-
-<div class="blurredblob"></div>
 
 <div
 	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
@@ -321,18 +308,3 @@
 	<Carousel.Previous class="hidden md:flex" />
 	<Carousel.Next class="hidden md:flex" />
 </Carousel.Root>
-
-<style>
-	.blurredblob {
-		filter: blur(1000px);
-		background: linear-gradient(45deg, #89b4fa, #f38ba8);
-		border-radius: 1000px;
-		opacity: 25%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: min(100vw, 100vh);
-		height: min(100vw, 100vh);
-		position: fixed;
-	}
-</style>
