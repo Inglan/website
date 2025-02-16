@@ -26,7 +26,7 @@
 	data-sidebar="trigger"
 	variant="ghost"
 	size="icon"
-	class={cn('h-7 w-7 bg-opacity-50 backdrop-blur-2xl', className)}
+	class={className}
 	{...restProps}
 >
 	<ChevronRight
