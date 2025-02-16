@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { goto } from '$app/navigation';
 
 	import Check from 'svelte-material-icons/Check.svelte';
 	import Copy from 'svelte-material-icons/ContentCopy.svelte';
@@ -71,6 +72,12 @@
 		} else {
 			icon = '';
 		}
+
+		if (element.id == 'name') {
+			icon = 'about';
+		} else {
+			icon = '';
+		}
 	}
 
 	let timeout: number;
@@ -96,7 +103,8 @@
 				'tagName' in e.target &&
 				((e.target as HTMLElement).tagName === 'A' ||
 					(e.target as HTMLElement).tagName === 'BUTTON' ||
-					(e.target as HTMLElement).tagName === 'PRE')
+					(e.target as HTMLElement).tagName === 'PRE' ||
+					(e.target as HTMLElement).id === 'name')
 			) {
 				handleElementCursor(cursor, e, e.target as HTMLElement);
 			} else {
@@ -163,6 +171,10 @@
 					toast.error('Failed to copy to clipboard', { description: String(e) });
 				}
 			}
+
+			if (e.target && (e.target as HTMLElement).id === 'name') {
+				goto('/about');
+			}
 		});
 	});
 </script>
@@ -181,6 +193,11 @@
 		<div transition:fade={{ duration: 100 }} class="flex items-center justify-center gap-2">
 			<Check color="black" />
 			<span class="text-black">Copied!</span>
+		</div>
+	{/if}
+	{#if icon == 'about'}
+		<div transition:fade={{ duration: 100 }} class="flex h-full items-start justify-center gap-2">
+			<span class="-translate-y-12 rounded bg-white p-1 text-black">About me</span>
 		</div>
 	{/if}
 </div>

@@ -221,7 +221,7 @@
 	<div class="z-10 flex w-fit flex-col drop-shadow-xl">
 		<div class="flex flex-row gap-3 text-4xl duration-500 lg:text-6xl [&>span]:block [&>span]:py-2">
 			<span class="herotext">Hi,</span> <span class="herotext">I'm</span>
-			<span class="coloredtext herotext">Ingo Wolf,</span>
+			<span class="coloredtext herotext" id="name">Ingo Wolf,</span>
 		</div>
 		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 lg:text-4xl">
 			<span class="secondaryherotext">and</span> <span class="secondaryherotext">I</span>
