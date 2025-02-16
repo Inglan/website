@@ -46,7 +46,7 @@
 		"embla-carousel-class-names": "^8.5.2",
 		"embla-carousel-wheel-gestures": "^8.0.1",
 		"gsap": "^3.12.7",
-		"posthog-js": "^1.218.1",
+		"posthog-js": "^1.218.2",
 		"svelte-material-icons": "^3.0.5"
 	}
 }
