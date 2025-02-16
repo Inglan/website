@@ -17,6 +17,9 @@
 	import Cursor from '$lib/components/cursor.svelte';
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 
+	// Icons
+	import Home from 'svelte-material-icons/Home.svelte';
+
 	// Transitions
 	import { fly } from 'svelte/transition';
 	import { cubicIn, cubicOut } from 'svelte/easing';
@@ -54,7 +57,9 @@
 					class="fixed bottom-2 flex translate-x-2 flex-row gap-2 [&>button]:p-6 [&>button]:backdrop-blur-2xl"
 				>
 					<Sidebar.Trigger id="sidebar-trigger" />
-					<Button type="button" variant="ghost" size="icon"></Button>
+					<Button type="button" variant="ghost" size="icon" href="/">
+						<Home />
+					</Button>
 				</div>
 			</Sidebar.Inset>
 		</Sidebar.Provider>
