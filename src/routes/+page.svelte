@@ -211,7 +211,7 @@
 	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
 >
 	<a
-		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center md:flex"
+		class="absolute left-0 z-10 hidden h-screen w-20 cursor-pointer items-center justify-center no-underline md:flex"
 		role="none"
 		id="hero-sidebar-trigger"
 		data-cursor="enlarge"
