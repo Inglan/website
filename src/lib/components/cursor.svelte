@@ -69,11 +69,7 @@
 
 		if (element.tagName == 'PRE') {
 			icon = 'copy';
-		} else {
-			icon = '';
-		}
-
-		if (element.id == 'name') {
+		} else if (element.id == 'name') {
 			icon = 'about';
 		} else {
 			icon = '';
