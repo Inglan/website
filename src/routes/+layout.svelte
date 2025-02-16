@@ -17,9 +17,9 @@
 	import { Toaster } from '$lib/components/ui/sonner/index.js';
 
 	// Transitions
-	import { fade } from 'svelte/transition';
-	const transitionIn = { delay: 150, duration: 150 };
-	const transitionOut = { duration: 100 };
+	import { fade, scale, fly } from 'svelte/transition';
+	const transitionIn = { delay: 300, duration: 300, y: 20 };
+	const transitionOut = { duration: 300, y: -20 };
 
 	// Scroll handling after navigation
 	afterNavigate(() => {
@@ -43,7 +43,7 @@
 
 			<Sidebar.Inset>
 				{#key page.url.pathname}
-					<main tabindex="-1" in:fade|global={transitionIn} out:fade|global={transitionOut}>
+					<main tabindex="-1" in:fly|global={transitionIn} out:fly|global={transitionOut}>
 						{@render children()}
 					</main>
 				{/key}
