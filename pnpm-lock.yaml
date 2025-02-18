@@ -24,8 +24,8 @@ importers:
         specifier: ^3.12.7
         version: 3.12.7
       posthog-js:
-        specifier: ^1.218.2
-        version: 1.218.2
+        specifier: ^1.219.1
+        version: 1.219.1
       svelte-material-icons:
         specifier: ^3.0.5
         version: 3.0.5(svelte@5.20.1)
@@ -1343,11 +1343,11 @@ packages:
     resolution: {integrity: sha512-MjOadfU3Ys9KYoX0AdkBlFEF1Vx37uCCeN4ZHnmwm9FfpbsGWMZeBLMmmpY+6Ocqod7mkdZ0DT31OlbsFrLlkA==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.218.2:
-    resolution: {integrity: sha512-C3IRqrdeYdFPiUmj2wI+k+Skr56Co9vhXufv3LirNQC6kAc5FVq//VQVK1i4Xf8PlZYsaqREl0QI5M/CihU3wA==}
+  posthog-js@1.219.1:
+    resolution: {integrity: sha512-38hjrycka7pP8gcMXf4y+c062eWSFfEdECa6VaK6eHcKqaYD+L6nck5aqTdpF4R5b0M55GPaqLntsJpK0gG/tw==}
 
-  preact@10.25.4:
-    resolution: {integrity: sha512-jLdZDb+Q+odkHJ+MpW/9U5cODzqnB+fy2EiHSZES7ldV5LK7yjlVzTp7R8Xy6W6y75kfK8iWYtFVH7lvjwrCMA==}
+  preact@10.26.0:
+    resolution: {integrity: sha512-6ugi/Mb7lyV5RA6KlnijFyDLMU253i7L0RRiObIzDoqj59KT9iTeNJbA/YGw6M7jP4vxaab0DOA8DgodTOA6EQ==}
 
   prettier-plugin-svelte@3.3.3:
     resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
@@ -2796,14 +2796,14 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.218.2:
+  posthog-js@1.219.1:
     dependencies:
       core-js: 3.40.0
       fflate: 0.4.8
-      preact: 10.25.4
+      preact: 10.26.0
       web-vitals: 4.2.4
 
-  preact@10.25.4: {}
+  preact@10.26.0: {}
 
   prettier-plugin-svelte@3.3.3(prettier@3.5.1)(svelte@5.20.1):
     dependencies:
