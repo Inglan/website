@@ -24,8 +24,8 @@ importers:
         specifier: ^3.12.7
         version: 3.12.7
       posthog-js:
-        specifier: ^1.222.0
-        version: 1.222.0(@rrweb/types@2.0.0-alpha.17)
+        specifier: ^1.223.3
+        version: 1.223.3(@rrweb/types@2.0.0-alpha.17)
       svelte-material-icons:
         specifier: ^3.0.5
         version: 3.0.5(svelte@5.20.4)
@@ -1346,8 +1346,8 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.222.0:
-    resolution: {integrity: sha512-NlywJSjaIdh3umdBicrXzMpaPEdpUC9/XYwaNEYjz+/dPUGiARTC6MEAMv0dOvqID9Zc+GJvKo0oWBQyrCvyaA==}
+  posthog-js@1.223.3:
+    resolution: {integrity: sha512-ZQTc17M21IzkQmECJa2Xjont4tZrvIn252uGT3sTfmahTqZoW4j+kBj4eOJt9SNR6hOheFNkg7MSiI/rA6FaDA==}
     peerDependencies:
       '@rrweb/types': 2.0.0-alpha.17
 
@@ -2808,7 +2808,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.222.0(@rrweb/types@2.0.0-alpha.17):
+  posthog-js@1.223.3(@rrweb/types@2.0.0-alpha.17):
     dependencies:
       '@rrweb/types': 2.0.0-alpha.17
       core-js: 3.40.0
