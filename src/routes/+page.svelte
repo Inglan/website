@@ -20,6 +20,7 @@
 	// Icons
 	import Github from 'svelte-material-icons/Github.svelte';
 	import Earth from 'svelte-material-icons/Earth.svelte';
+	import ChevronRight from 'svelte-material-icons/ChevronRight.svelte';
 
 	// Svelte Lifecycle
 	import { onMount, onDestroy } from 'svelte';
@@ -238,67 +239,47 @@
 	</div>
 </div>
 
-<!-- Projects Carousel -->
+<!-- Projects -->
 
 <div class="section">
 	<h2 class="coloredtext text-center">Projects</h2>
-</div>
 
-<div class="max-w-full overflow-hidden">
-	<Carousel.Root
-		class="projects-carousel section w-[calc(100vw)] max-w-full md:mx-auto md:max-w-prose"
-		opts={{
-			loop: true
-		}}
-		plugins={[
-			Autoplay({
-				delay: 2000,
-				stopOnInteraction: false,
-				stopOnFocusIn: false,
-				stopOnMouseEnter: true
-			}),
-			ClassNames(),
-			WheelGesturesPlugin()
-		]}
-	>
-		<Carousel.Content
-			class="[&>*:not(.is-snapped)>*]:scale-95 [&>*:not(.is-snapped)]:opacity-50 [&>*]:transition-opacity [&>*]:duration-300"
-		>
+	<div class="max-w-full overflow-hidden">
+		<div class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
 			{#each projects as project}
-				<Carousel.Item class="basis-2/3">
-					<Card.Root class="flex h-full flex-col bg-transparent">
-						<Card.Header>
-							<Card.Title>{project.title}</Card.Title>
-						</Card.Header>
-						<Card.Content class="flex-grow">
-							<p>{project.description}</p>
-						</Card.Content>
-						<Card.Footer>
-							<div class="flex w-full flex-row justify-end gap-3">
-								{#each project.links as link}
-									<Tooltip.Provider>
-										<Tooltip.Root>
-											<Tooltip.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
-												{#snippet child({ props })}
-													<a target="_blank" href={link.link} {...props}>
-														<div class="sr-only">{link.name}</div>
-														<link.icon />
-													</a>
-												{/snippet}
-											</Tooltip.Trigger>
-											<Tooltip.Content>
-												<p>{link.name}</p>
-											</Tooltip.Content>
-										</Tooltip.Root>
-									</Tooltip.Provider>
-								{/each}
-							</div>
-						</Card.Footer>
-					</Card.Root>
-				</Carousel.Item>
+				<Card.Root class="flex h-full flex-col bg-transparent">
+					<Card.Header>
+						<Card.Title>{project.title}</Card.Title>
+					</Card.Header>
+					<Card.Content class="flex-grow">
+						<p>{project.description}</p>
+					</Card.Content>
+					<Card.Footer>
+						<div class="flex w-full flex-row justify-end gap-3">
+							{#each project.links as link}
+								<Tooltip.Provider>
+									<Tooltip.Root>
+										<Tooltip.Trigger class={buttonVariants({ variant: 'outline', size: 'icon' })}>
+											{#snippet child({ props })}
+												<a target="_blank" href={link.link} {...props}>
+													<div class="sr-only">{link.name}</div>
+													<link.icon />
+												</a>
+											{/snippet}
+										</Tooltip.Trigger>
+										<Tooltip.Content>
+											<p>{link.name}</p>
+										</Tooltip.Content>
+									</Tooltip.Root>
+								</Tooltip.Provider>
+							{/each}
+						</div>
+					</Card.Footer>
+				</Card.Root>
 			{/each}
-		</Carousel.Content>
-		<Carousel.Previous class="hidden xl:flex" />
-		<Carousel.Next class="hidden xl:flex" />
-	</Carousel.Root>
+			<Button class="h-full w-full no-underline" variant="outline" href="/projects"
+				>More<ChevronRight /></Button
+			>
+		</div>
+	</div>
 </div>
