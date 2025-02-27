@@ -40,33 +40,6 @@
 			]
 		},
 		{
-			title: 'Star Battles',
-			description:
-				'A simple 2D space shooter game created and compiled with Turbowarp. Most game logic was written by a friend, I did the UI. Also the name is not inspired from anything at all trust me bro.',
-			links: [
-				{
-					name: 'Website',
-					icon: Earth,
-					link: 'https://smastudiosau.github.io/projects/starbattle/'
-				},
-				{ name: 'Source Code', icon: Github, link: 'https://github.com/SMAStudiosAU/Star-Battles' }
-			]
-		},
-		{
-			title: 'uRun',
-			description:
-				'Some scripts to let you execute arbitrary code using uBlock Origin filters. Very buggy.',
-			links: [{ name: 'Source Code', icon: Github, link: 'https://github.com/uStuff/uRun' }]
-		},
-		{
-			title: 'Noe Co. Website',
-			description: "A website developed in Svelte for a friend's game development company.",
-			links: [
-				{ name: 'Website', icon: Earth, link: 'https://noeco.xyz/' },
-				{ name: 'Source Code', icon: Github, link: 'https://github.com/NoeCoOfficial/www' }
-			]
-		},
-		{
 			title: 'This website',
 			description:
 				"This very website is built in Svelte by me. It's open source so you can check out the code if you want.",
@@ -277,7 +250,11 @@
 					</Card.Footer>
 				</Card.Root>
 			{/each}
-			<Button class="h-full w-full no-underline" variant="outline" href="/projects">
+			<Button
+				class="col-span-1 h-full w-full no-underline md:col-span-2 lg:col-span-1"
+				variant="outline"
+				href="/projects"
+			>
 				More
 				<ChevronRight />
 			</Button>
