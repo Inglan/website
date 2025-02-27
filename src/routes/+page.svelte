@@ -277,9 +277,10 @@
 					</Card.Footer>
 				</Card.Root>
 			{/each}
-			<Button class="h-full w-full no-underline" variant="outline" href="/projects"
-				>More<ChevronRight /></Button
-			>
+			<Button class="h-full w-full no-underline" variant="outline" href="/projects">
+				More
+				<ChevronRight />
+			</Button>
 		</div>
 	</div>
 </div>
