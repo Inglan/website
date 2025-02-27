@@ -26,7 +26,7 @@
 {#if collapsible === 'none'}
 	<div
 		class={cn(
-			'flex h-full w-[--sidebar-width] flex-col bg-sidebar text-sidebar-foreground',
+			'bg-sidebar text-sidebar-foreground flex h-full w-[--sidebar-width] flex-col',
 			className
 		)}
 		bind:this={ref}
@@ -39,7 +39,7 @@
 		<Drawer.Content
 			data-sidebar="sidebar"
 			data-mobile="true"
-			class="w-full bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
+			class="bg-sidebar text-sidebar-foreground w-full p-0 [&>button]:hidden"
 		>
 			<div class="flex h-full w-full flex-col">
 				{@render children?.()}
@@ -49,7 +49,7 @@
 {:else}
 	<div
 		bind:this={ref}
-		class="group peer hidden text-sidebar-foreground md:block"
+		class="group peer text-sidebar-foreground hidden md:block"
 		data-state={sidebar.state}
 		data-collapsible={sidebar.state === 'collapsed' ? collapsible : ''}
 		data-variant={variant}
@@ -82,7 +82,7 @@
 		>
 			<div
 				data-sidebar="sidebar"
-				class="flex h-full w-full flex-col bg-black bg-opacity-15 group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
+				class="bg-opacity-15 group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col bg-black group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow"
 			>
 				{@render children?.()}
 			</div>
