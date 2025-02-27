@@ -5,6 +5,7 @@
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
 	import { Button, buttonVariants } from '$lib/components/ui/button/index.js';
 	import { useSidebar } from '$lib/components/ui/sidebar/index.js';
+	import Blurredbackground from '$lib/components/blurredbackground.svelte';
 
 	// Carousel Plugins
 	import Autoplay from 'embla-carousel-autoplay';
@@ -207,6 +208,7 @@
 
 <!-- Hero Section -->
 
+<Blurredbackground />
 <div
 	class="hero flex h-screen max-w-full flex-col items-center justify-center gap-3 overflow-hidden p-2 pl-0"
 >
