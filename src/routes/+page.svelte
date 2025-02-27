@@ -109,13 +109,15 @@
 
 	// Helper function to setup scroll triggers
 	function setupScrollTriggers() {
-		gsap.from('.projects-carousel', {
+		gsap.from('#projects > *', {
 			opacity: 0,
 			y: 50,
 			duration: 0.5,
 			ease: 'expo.out',
+			stagger: 0.1,
 			scrollTrigger: {
-				trigger: '.projects-carousel'
+				trigger: '#projects',
+				scrub: true
 			}
 		});
 	}
@@ -218,7 +220,10 @@
 	<h2 class="coloredtext text-center">Projects</h2>
 
 	<div class="max-w-full overflow-hidden">
-		<div class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
+		<div
+			class="m-auto grid max-w-screen-lg grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3"
+			id="projects"
+		>
 			{#each projects as project}
 				<Card.Root class="flex h-full flex-col bg-transparent">
 					<Card.Header>
@@ -260,4 +265,18 @@
 			</Button>
 		</div>
 	</div>
+</div>
+
+<div class="section">
+	I'm gonna put some text here at some point
+	<br />
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit lacus vel lectus sagittis,
+	consectetur interdum est ornare. Etiam accumsan, orci eu porta congue, mi eros vestibulum arcu, quis
+	gravida risus nibh nec lorem. Maecenas posuere, risus sit amet pretium ultrices, purus lacus vulputate
+	elit, eu sollicitudin libero tortor sit amet leo. Vestibulum tincidunt et enim nec lobortis. Morbi
+	nibh dolor, facilisis sit amet maximus ac, dignissim non nunc. Donec sodales mi ut erat porta faucibus
+	sit amet at odio. Proin porta pellentesque libero, a faucibus velit convallis vitae. Suspendisse non
+	justo nisl. Vivamus volutpat feugiat lacus non faucibus. Duis dictum faucibus mi, nec euismod lorem
+	tristique vitae. Sed dapibus, nibh fermentum interdum dapibus, neque felis fermentum est, vitae semper
+	felis libero quis nunc. Donec sagittis scelerisque semper. Mauris posuere dolor a orci dapibus scelerisque.
 </div>
