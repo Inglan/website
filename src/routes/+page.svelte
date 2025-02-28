@@ -90,38 +90,6 @@
 		stagger: 0.1
 	};
 
-	// Helper function to setup hero animations
-	function setupHeroAnimations(timeline: gsap.core.Timeline) {
-		timeline
-			.from('.herotext', heroTextAnimation, 0.3)
-			.from('.secondaryherotext', secondaryHeroTextAnimation, 1.2)
-			.from(
-				'#hero-sidebar-trigger',
-				{
-					opacity: 0,
-					duration: 0.5,
-					x: -50,
-					ease: 'expo.out'
-				},
-				0
-			);
-	}
-
-	// Helper function to setup scroll triggers
-	function setupScrollTriggers() {
-		gsap.from('#projects > *', {
-			opacity: 0,
-			y: 50,
-			duration: 0.5,
-			ease: 'expo.out',
-			stagger: 0.1,
-			scrollTrigger: {
-				trigger: '#projects',
-				scrub: true
-			}
-		});
-	}
-
 	onMount(() => {
 		let openedSidebar = false;
 
@@ -165,9 +133,32 @@
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsapctx = gsap.context(() => {
-			let heroTimeline = gsap.timeline({ delay: HERO_ANIMATION_DELAY });
-			setupHeroAnimations(heroTimeline);
-			setupScrollTriggers();
+			gsap
+				.timeline({ delay: HERO_ANIMATION_DELAY })
+				.from('.herotext', heroTextAnimation, 0.3)
+				.from('.secondaryherotext', secondaryHeroTextAnimation, 1.2)
+				.from(
+					'#hero-sidebar-trigger',
+					{
+						opacity: 0,
+						duration: 0.5,
+						x: -50,
+						ease: 'expo.out'
+					},
+					0
+				);
+
+			gsap.from('#projects > *', {
+				opacity: 0,
+				y: 50,
+				duration: 0.5,
+				ease: 'expo.out',
+				stagger: 0.1,
+				scrollTrigger: {
+					trigger: '#projects',
+					scrub: true
+				}
+			});
 		});
 	});
 
