@@ -171,7 +171,7 @@
 	});
 </script>
 
-<SvelteSeo title="Ingo" description="Hi, I'm Ingo, and I develop websites" />
+<SvelteSeo title="Ingo" description="Hi, I'm Ingo, and I build for the web" />
 
 <!-- Hero Section -->
 
@@ -195,10 +195,11 @@
 		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 lg:text-4xl">
 			<span class="secondaryherotext">and</span> <span class="secondaryherotext">I</span>
 			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
-				<span class="scale-50 opacity-0 blur-md">develop websites</span>
 				<span class="scale-50 opacity-0 blur-md">code stuff</span>
+				<span class="scale-50 opacity-0 blur-md">build for the web</span>
 				<span class="scale-50 opacity-0 blur-md">make games</span>
 				<span class="scale-50 opacity-0 blur-md">mess with ai</span>
+				<span class="scale-50 opacity-0 blur-md">take photos</span>
 				<span class="scale-50 opacity-0 blur-md">use arch btw</span>
 			</div>
 		</div>
