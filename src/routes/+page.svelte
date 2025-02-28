@@ -64,10 +64,11 @@
 	}
 
 	let handleScroll = () => {};
+	let nextThing = () => {};
 
 	// Constants
 	const SIDEBAR_SCROLL_THRESHOLD = 100;
-	const THINGS_ROTATION_INTERVAL = 1600;
+	const THINGS_ROTATION_INTERVAL = 3000;
 	const HERO_ANIMATION_DELAY = 0.3;
 	const BLUR_AMOUNT = '12px';
 
@@ -116,18 +117,27 @@
 		}
 
 		// Loop through the things
-		const things = document.getElementById('things');
-		const thingsChildren = things?.children;
-		if (thingsChildren) {
-			let i = 0;
-			setInterval(() => {
+
+		let i = 0;
+
+		nextThing = () => {
+			const things = document.getElementById('things');
+			const thingsChildren = things?.children;
+
+			if (thingsChildren) {
 				thingsChildren[i].classList.add('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.remove('scale-100');
 				i = (i + 1) % thingsChildren.length;
 				thingsChildren[i].classList.remove('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.add('scale-100');
-			}, THINGS_ROTATION_INTERVAL);
-		}
+			}
+		};
+
+		setTimeout(() => {
+			nextThing();
+
+			setInterval(nextThing, THINGS_ROTATION_INTERVAL);
+		}, 1600);
 
 		// Register scrolltrigger plugin
 		gsap.registerPlugin(ScrollTrigger);
@@ -194,14 +204,21 @@
 		</div>
 		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 lg:text-4xl">
 			<span class="secondaryherotext">and</span> <span class="secondaryherotext">I</span>
-			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
+			<a
+				id="things"
+				class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300"
+				onclick={nextThing}
+				onkeydown={(e) => e.key === 'Enter' && nextThing()}
+				role="button"
+				tabindex="0"
+			>
 				<span class="scale-50 opacity-0 blur-md">code stuff</span>
 				<span class="scale-50 opacity-0 blur-md">build for the web</span>
 				<span class="scale-50 opacity-0 blur-md">make games</span>
 				<span class="scale-50 opacity-0 blur-md">mess with ai</span>
 				<span class="scale-50 opacity-0 blur-md">take photos</span>
 				<span class="scale-50 opacity-0 blur-md">use arch btw</span>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
