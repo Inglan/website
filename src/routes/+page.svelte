@@ -64,10 +64,11 @@
 	}
 
 	let handleScroll = () => {};
+	let nextThing = () => {};
 
 	// Constants
 	const SIDEBAR_SCROLL_THRESHOLD = 100;
-	const THINGS_ROTATION_INTERVAL = 1600;
+	const THINGS_ROTATION_INTERVAL = 3000;
 	const HERO_ANIMATION_DELAY = 0.3;
 	const BLUR_AMOUNT = '12px';
 
@@ -89,38 +90,6 @@
 		ease: 'expo.out',
 		stagger: 0.1
 	};
-
-	// Helper function to setup hero animations
-	function setupHeroAnimations(timeline: gsap.core.Timeline) {
-		timeline
-			.from('.herotext', heroTextAnimation, 0.3)
-			.from('.secondaryherotext', secondaryHeroTextAnimation, 1.2)
-			.from(
-				'#hero-sidebar-trigger',
-				{
-					opacity: 0,
-					duration: 0.5,
-					x: -50,
-					ease: 'expo.out'
-				},
-				0
-			);
-	}
-
-	// Helper function to setup scroll triggers
-	function setupScrollTriggers() {
-		gsap.from('#projects > *', {
-			opacity: 0,
-			y: 50,
-			duration: 0.5,
-			ease: 'expo.out',
-			stagger: 0.1,
-			scrollTrigger: {
-				trigger: '#projects',
-				scrub: true
-			}
-		});
-	}
 
 	onMount(() => {
 		let openedSidebar = false;
@@ -148,26 +117,58 @@
 		}
 
 		// Loop through the things
-		const things = document.getElementById('things');
-		const thingsChildren = things?.children;
-		if (thingsChildren) {
-			let i = 0;
-			setInterval(() => {
+
+		let i = 0;
+
+		nextThing = () => {
+			const things = document.getElementById('things');
+			const thingsChildren = things?.children;
+
+			if (thingsChildren) {
 				thingsChildren[i].classList.add('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.remove('scale-100');
 				i = (i + 1) % thingsChildren.length;
 				thingsChildren[i].classList.remove('opacity-0', 'blur-md', 'scale-50');
 				thingsChildren[i].classList.add('scale-100');
-			}, THINGS_ROTATION_INTERVAL);
-		}
+			}
+		};
+
+		setTimeout(() => {
+			nextThing();
+
+			setInterval(nextThing, THINGS_ROTATION_INTERVAL);
+		}, 1600);
 
 		// Register scrolltrigger plugin
 		gsap.registerPlugin(ScrollTrigger);
 
 		gsapctx = gsap.context(() => {
-			let heroTimeline = gsap.timeline({ delay: HERO_ANIMATION_DELAY });
-			setupHeroAnimations(heroTimeline);
-			setupScrollTriggers();
+			gsap
+				.timeline({ delay: HERO_ANIMATION_DELAY })
+				.from('.herotext', heroTextAnimation, 0.3)
+				.from('.secondaryherotext', secondaryHeroTextAnimation, 1.2)
+				.from(
+					'#hero-sidebar-trigger',
+					{
+						opacity: 0,
+						duration: 0.5,
+						x: -50,
+						ease: 'expo.out'
+					},
+					0
+				);
+
+			gsap.from('#projects > *', {
+				opacity: 0,
+				y: 50,
+				duration: 0.5,
+				ease: 'expo.out',
+				stagger: 0.1,
+				scrollTrigger: {
+					trigger: '#projects',
+					scrub: true
+				}
+			});
 		});
 	});
 
@@ -180,7 +181,7 @@
 	});
 </script>
 
-<SvelteSeo title="Ingo" description="Hi, I'm Ingo, and I develop websites" />
+<SvelteSeo title="Ingo" description="Hi, I'm Ingo, and I build for the web" />
 
 <!-- Hero Section -->
 
@@ -203,13 +204,21 @@
 		</div>
 		<div class="flex flex-row gap-2 text-2xl opacity-100 duration-500 lg:text-4xl">
 			<span class="secondaryherotext">and</span> <span class="secondaryherotext">I</span>
-			<div id="things" class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300">
-				<span class="scale-50 opacity-0 blur-md">develop websites</span>
+			<a
+				id="things"
+				class="[&>*]:filter-blur-5 [&>*]:absolute [&>*]:duration-300"
+				onclick={nextThing}
+				onkeydown={(e) => e.key === 'Enter' && nextThing()}
+				role="button"
+				tabindex="0"
+			>
 				<span class="scale-50 opacity-0 blur-md">code stuff</span>
+				<span class="scale-50 opacity-0 blur-md">build for the web</span>
 				<span class="scale-50 opacity-0 blur-md">make games</span>
 				<span class="scale-50 opacity-0 blur-md">mess with ai</span>
+				<span class="scale-50 opacity-0 blur-md">take photos</span>
 				<span class="scale-50 opacity-0 blur-md">use arch btw</span>
-			</div>
+			</a>
 		</div>
 	</div>
 </div>
