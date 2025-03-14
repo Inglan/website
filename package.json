@@ -38,7 +38,7 @@
 		"tailwindcss-animate": "^1.0.7",
 		"typescript": "^5.8.2",
 		"vaul-svelte": "1.0.0-next.6",
-		"vite": "^6.2.0"
+		"vite": "^6.2.2"
 	},
 	"dependencies": {
 		"@fontsource/inter": "^5.2.5",
