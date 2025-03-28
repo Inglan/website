@@ -24,8 +24,8 @@ importers:
         specifier: ^3.12.7
         version: 3.12.7
       posthog-js:
-        specifier: ^1.231.2
-        version: 1.231.2(@rrweb/types@2.0.0-alpha.17)
+        specifier: ^1.234.1
+        version: 1.234.1(@rrweb/types@2.0.0-alpha.17)
       svelte-material-icons:
         specifier: ^3.0.5
         version: 3.0.5(svelte@5.23.0)
@@ -1506,8 +1506,8 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.231.2:
-    resolution: {integrity: sha512-KTOZTvPbVZoZYC4vqZUmPoG/brbyNqqeeUllH4MZBIW0gyC6JJJYsU+za1of9La73F4KBN1ZM3O0tXpFrLSAww==}
+  posthog-js@1.234.1:
+    resolution: {integrity: sha512-uti2QwG9XDRdo91436CgiE58/kKU02+DgzA1m7W/BUkmMMOF98qNWCMnUiVb4oTkYUXLTx3CbeYG76TNU+YX3g==}
     peerDependencies:
       '@rrweb/types': 2.0.0-alpha.17
       rrweb-snapshot: 2.0.0-alpha.17
@@ -1823,8 +1823,8 @@ packages:
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
-  undici@5.28.5:
-    resolution: {integrity: sha512-zICwjrDrcrUE0pyyJc1I2QzBkLM8FINsgOrt6WjA+BgajVq9Nxu2PbFFXUrAggLfDXlZGZBVZYw7WNV5KiBiBA==}
+  undici@5.29.0:
+    resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
     engines: {node: '>=14.0'}
 
   unenv@2.0.0-rc.1:
@@ -2953,7 +2953,7 @@ snapshots:
       exit-hook: 2.2.1
       glob-to-regexp: 0.4.1
       stoppable: 1.1.0
-      undici: 5.28.5
+      undici: 5.29.0
       workerd: 1.20250204.0
       ws: 8.18.0
       youch: 3.2.3
@@ -3077,7 +3077,7 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.231.2(@rrweb/types@2.0.0-alpha.17):
+  posthog-js@1.234.1(@rrweb/types@2.0.0-alpha.17):
     dependencies:
       core-js: 3.41.0
       fflate: 0.4.8
@@ -3403,7 +3403,7 @@ snapshots:
 
   ufo@1.5.4: {}
 
-  undici@5.28.5:
+  undici@5.29.0:
     dependencies:
       '@fastify/busboy': 2.1.1
 
