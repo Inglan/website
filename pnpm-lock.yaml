@@ -18,8 +18,8 @@ importers:
         specifier: ^8.5.2
         version: 8.5.2(embla-carousel@8.5.2)
       embla-carousel-wheel-gestures:
-        specifier: ^8.0.1
-        version: 8.0.1(embla-carousel@8.5.2)
+        specifier: ^8.0.2
+        version: 8.0.2(embla-carousel@8.5.2)
       gsap:
         specifier: ^3.12.7
         version: 3.12.7
@@ -1145,8 +1145,8 @@ packages:
     peerDependencies:
       svelte: ^3.49.0 || ^4.0.0 || ^5.0.0
 
-  embla-carousel-wheel-gestures@8.0.1:
-    resolution: {integrity: sha512-LMAnruDqDmsjL6UoQD65aLotpmfO49Fsr3H0bMi7I+BH6jbv9OJiE61kN56daKsVtCQEt0SU1MrJslbhtgF3yQ==}
+  embla-carousel-wheel-gestures@8.0.2:
+    resolution: {integrity: sha512-gtE8xHRwMGsfsMAgco/QoYhvcxNoMLmFF0DaWH7FXJJWk8RlEZyiZHZRZL6TZVCgooo9/hKyYWITLaSZLIvkbQ==}
     engines: {node: '>=10'}
     peerDependencies:
       embla-carousel: ^8.0.0 || ~8.0.0-rc03
@@ -2699,7 +2699,7 @@ snapshots:
       embla-carousel-reactive-utils: 8.5.2(embla-carousel@8.5.2)
       svelte: 5.25.7
 
-  embla-carousel-wheel-gestures@8.0.1(embla-carousel@8.5.2):
+  embla-carousel-wheel-gestures@8.0.2(embla-carousel@8.5.2):
     dependencies:
       embla-carousel: 8.5.2
       wheel-gestures: 2.2.48
