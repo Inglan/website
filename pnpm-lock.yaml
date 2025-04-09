@@ -103,8 +103,8 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       vaul-svelte:
-        specifier: 1.0.0-next.6
-        version: 1.0.0-next.6(svelte@5.25.7)
+        specifier: 1.0.0-next.7
+        version: 1.0.0-next.7(svelte@5.25.7)
       vite:
         specifier: ^6.2.5
         version: 6.2.5(jiti@1.21.7)(yaml@2.7.0)
@@ -1847,8 +1847,8 @@ packages:
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
-  vaul-svelte@1.0.0-next.6:
-    resolution: {integrity: sha512-leEKb9Qoj7JOrC0wLnqoczLhHZcwo7UHKBJ7SWBRhdFn0o+x9W1XioUK2OeiZHb5Bp7LyYKtUUjVWO3uJULUCw==}
+  vaul-svelte@1.0.0-next.7:
+    resolution: {integrity: sha512-7zN7Bi3dFQixvvbUJY9uGDe7Ws/dGZeBQR2pXdXmzQiakjrxBvWo0QrmsX3HK+VH+SZOltz378cmgmCS9f9rSg==}
     engines: {node: '>=18', pnpm: '>=8.7.0'}
     peerDependencies:
       svelte: ^5.0.0
@@ -3436,7 +3436,7 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vaul-svelte@1.0.0-next.6(svelte@5.25.7):
+  vaul-svelte@1.0.0-next.7(svelte@5.25.7):
     dependencies:
       runed: 0.23.4(svelte@5.25.7)
       svelte: 5.25.7
