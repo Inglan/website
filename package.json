@@ -42,7 +42,7 @@
 	},
 	"dependencies": {
 		"@fontsource/inter": "^5.2.5",
-		"embla-carousel-autoplay": "^8.5.2",
+		"embla-carousel-autoplay": "^8.6.0",
 		"embla-carousel-class-names": "^8.5.2",
 		"embla-carousel-wheel-gestures": "^8.0.2",
 		"gsap": "^3.12.7",
