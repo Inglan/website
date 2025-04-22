@@ -46,10 +46,10 @@
 			background-color 1s 1s;
 	}
 	#menubackground.open {
-		width: calc(max(100vw, 100vh) * 4);
-		height: calc(max(100vw, 100vh) * 4);
-		top: calc((0px - max(100vw, 100vh) * 2) + 20px);
-		right: calc((0px - max(100vw, 100vh) * 2) + 20px);
+		width: calc(max(100vw, 100vh) * 3);
+		height: calc(max(100vw, 100vh) * 3);
+		top: calc((0px - max(100vw, 100vh) * 1.5) + 20px);
+		right: calc((0px - max(100vw, 100vh) * 1.5) + 20px);
 		transition:
 			width 1s,
 			height 1s,
