@@ -6,3 +6,15 @@
 	class="bg-surface1/50 fixed top-5 right-5 flex h-15 w-15 rounded-full backdrop-blur-lg"
 	id="menu"
 ></div>
+
+<div class="fixed top-5 right-5 flex h-15 w-15 items-center justify-center" id="menutrigger">
+	<div class="group open flex flex-col items-center justify-center gap-[3px]" id="menuicon">
+		<div
+			class="bg-text h-[2px] w-[18px] rounded-full duration-200 group-[.open]:translate-y-[5px] group-[.open]:rotate-45"
+		></div>
+		<div class="bg-text h-[2px] w-[18px] rounded-full duration-200 group-[.open]:w-0"></div>
+		<div
+			class="bg-text h-[2px] w-[18px] rounded-full duration-200 group-[.open]:-translate-y-[5px] group-[.open]:-rotate-45"
+		></div>
+	</div>
+</div>
