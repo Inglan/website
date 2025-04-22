@@ -7,7 +7,7 @@
 <div
 	class={clsx(
 		'fixed top-5 right-5 flex h-20 w-20 rounded-full ',
-		menuState.open && 'bg-base/95 open'
+		menuState.open && 'bg-crust/95 open'
 	)}
 	id="menubackground"
 ></div>
