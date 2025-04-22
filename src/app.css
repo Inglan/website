@@ -31,6 +31,6 @@
 }
 
 body {
-	background-color: black;
-	color: white;
+	background-color: var(--color-base);
+	color: var(--color-text);
 }
