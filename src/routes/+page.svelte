@@ -38,9 +38,9 @@
 
 <style>
 	#menubackground.open {
-		width: calc(max(100vw, 100vh) * 2);
-		height: calc(max(100vw, 100vh) * 2);
-		top: calc((0px - max(100vw, 100vh)) + 20px);
-		right: calc((0px - max(100vw, 100vh)) + 20px);
+		width: calc(max(100vw, 100vh) * 4);
+		height: calc(max(100vw, 100vh) * 4);
+		top: calc((0px - max(100vw, 100vh) * 2) + 20px);
+		right: calc((0px - max(100vw, 100vh) * 2) + 20px);
 	}
 </style>
