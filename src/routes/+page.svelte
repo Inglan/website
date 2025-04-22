@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Menu from '$lib/components/Menu.svelte';
+	import { menuOpen } from '$lib/state.svelte';
 </script>
 
 <div class="fixed top-5 right-5 flex h-15 w-15 rounded-full backdrop-blur-lg" id="menu"></div>
