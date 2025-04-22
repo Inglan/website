@@ -38,8 +38,8 @@
 <style>
 	#menubackground {
 		transition:
-			all 1s,
-			background-color 1s 1s;
+			all 0.5s,
+			background-color 0.5s 0.5s;
 	}
 	#menubackground.open {
 		width: calc(max(100vw, 100vh) * 3);
@@ -47,7 +47,7 @@
 		top: calc((0px - max(100vw, 100vh) * 1.5) + 20px);
 		right: calc((0px - max(100vw, 100vh) * 1.5) + 20px);
 		transition:
-			all 1s,
+			all 0.5s,
 			background-color 0s;
 	}
 </style>
