@@ -1,1 +1,1 @@
-export let menuOpen = $state(false);
+export let menuState = $state({ open: false });
