@@ -8,14 +8,14 @@
 <div class="fixed top-5 right-5 flex h-15 w-15 rounded-full backdrop-blur-lg" id="menu"></div>
 
 <button
-	class="bg-surface1/50 fixed top-5 right-5 flex h-15 w-15 items-center justify-center rounded-full backdrop-blur-lg duration-200 hover:scale-[1.1] active:scale-[0.95]"
+	class="bg-surface1/50 fixed top-5 right-5 flex h-20 w-20 items-center justify-center rounded-full backdrop-blur-lg duration-200 hover:scale-[1.1] active:scale-[0.95]"
 	onclick={() => (menuState.open = !menuState.open)}
 	id="menutrigger"
 	aria-label="Menu"
 >
 	<div
 		class={clsx(
-			'group menuicon flex flex-col items-center justify-center gap-[3px]',
+			'group menuicon flex scale-200 flex-col items-center justify-center gap-[3px]',
 			menuState.open && 'open'
 		)}
 		id="menuicon"
