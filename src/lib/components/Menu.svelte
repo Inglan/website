@@ -1,7 +1,20 @@
 <script lang="ts">
 	import clsx from 'clsx';
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+	let gsapctx: gsap.Context;
+
+	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger);
+		gsapctx = gsap.context(() => {});
+	});
+	onDestroy(() => {
+		gsapctx.revert();
+	});
 
 	import { menuState } from '$lib/state.svelte';
+	import { onMount, onDestroy } from 'svelte';
 </script>
 
 <div
