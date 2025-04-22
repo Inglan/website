@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
     devDependencies:
       '@iconify-json/material-symbols':
         specifier: ^1.2.20
