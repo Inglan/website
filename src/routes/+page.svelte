@@ -2,20 +2,21 @@
 	import clsx from 'clsx';
 
 	import Menu from '$lib/components/Menu.svelte';
-	import { menuOpen } from '$lib/state.svelte';
+	import { menuState } from '$lib/state.svelte';
 </script>
 
 <div class="fixed top-5 right-5 flex h-15 w-15 rounded-full backdrop-blur-lg" id="menu"></div>
 
-<div
+<button
 	class="bg-surface1/50 fixed top-5 right-5 flex h-15 w-15 items-center justify-center rounded-full backdrop-blur-lg duration-200 hover:scale-[1.1] active:scale-[0.95]"
-	onclick={() => (menuOpen = !menuOpen)}
+	onclick={() => (menuState.open = !menuState.open)}
 	id="menutrigger"
+	aria-label="Menu"
 >
 	<div
 		class={clsx(
 			'group menuicon flex flex-col items-center justify-center gap-[3px]',
-			menuOpen && 'open'
+			menuState.open && 'open'
 		)}
 		id="menuicon"
 	>
@@ -27,4 +28,4 @@
 			class="bg-text h-[2px] w-[18px] rounded-full duration-200 group-[.open]:-translate-y-[5px] group-[.open]:-rotate-45"
 		></div>
 	</div>
-</div>
+</button>
