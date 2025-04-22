@@ -7,16 +7,10 @@
 
 	onMount(() => {
 		gsap.registerPlugin(ScrollTrigger);
-		gsapctx = gsap.context(() => {});
-	});
-	onDestroy(() => {
-		if (typeof window !== 'undefined') {
-			gsapctx.revert();
-		}
 	});
 
 	import { menuState } from '$lib/state.svelte';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 </script>
 
 <div
