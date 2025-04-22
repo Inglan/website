@@ -11,6 +11,38 @@
 
 	import { menuState } from '$lib/state.svelte';
 	import { onMount } from 'svelte';
+
+	$effect(() => {
+		if (menuState.open) {
+			gsap.set('#menu', {
+				display: 'flex',
+				opacity: 1,
+				x: 0,
+				y: 0,
+				scale: 1,
+				delay: 0.1
+			});
+			gsap.from('#menu > a', {
+				delay: 0.1,
+				duration: 0.2,
+				x: 10,
+				opacity: 0,
+				ease: 'power2.out',
+				stagger: 0.1
+			});
+		} else if (!menuState.open) {
+			gsap.to('#menu', {
+				duration: 0.2,
+				x: 10,
+				opacity: 0,
+				ease: 'power2.out'
+			});
+			gsap.set('#menu', {
+				delay: 0.2,
+				display: 'none'
+			});
+		}
+	});
 </script>
 
 <div
@@ -20,6 +52,14 @@
 	)}
 	id="menubackground"
 ></div>
+
+<div id="menu" class="fixed top-0 right-0 hidden h-full w-lg max-w-full flex-col gap-3 p-3">
+	<a href="/">home</a>
+	<a href="/">home</a>
+	<a href="/">home</a>
+	<a href="/">home</a>
+	<a href="/">home</a>
+</div>
 
 <button
 	class="bg-surface1/50 fixed top-5 right-5 flex h-20 w-20 items-center justify-center rounded-full backdrop-blur-lg duration-200 hover:scale-[1.1] active:scale-[0.95]"
