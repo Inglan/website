@@ -1,2 +1,7 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+body {
+	background-color: black;
+	color: white;
+}
