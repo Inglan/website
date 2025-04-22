@@ -6,8 +6,8 @@
 
 <div
 	class={clsx(
-		'fixed top-5 right-5 flex h-20 w-20 rounded-full backdrop-blur-lg',
-		menuState.open && 'bg-surface1/50 open'
+		'fixed top-5 right-5 flex h-20 w-20 rounded-full ',
+		menuState.open && 'bg-base/95 open'
 	)}
 	id="menubackground"
 ></div>
