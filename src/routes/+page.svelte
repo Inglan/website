@@ -35,3 +35,12 @@
 		></div>
 	</div>
 </button>
+
+<style>
+	#menubackground.open {
+		width: calc(max(100vw, 100vh) * 2);
+		height: calc(max(100vw, 100vh) * 2);
+		top: calc((0px - max(100vw, 100vh)) + 20px);
+		right: calc((0px - max(100vw, 100vh)) + 20px);
+	}
+</style>
