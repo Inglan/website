@@ -5,7 +5,7 @@
 	import { menuState } from '$lib/state.svelte';
 </script>
 
-<div class="fixed top-5 right-5 flex h-15 w-15 rounded-full backdrop-blur-lg" id="menu"></div>
+<div class="fixed top-5 right-5 flex h-20 w-20 rounded-full backdrop-blur-lg" id="menu"></div>
 
 <button
 	class="bg-surface1/50 fixed top-5 right-5 flex h-20 w-20 items-center justify-center rounded-full backdrop-blur-lg duration-200 hover:scale-[1.1] active:scale-[0.95]"
