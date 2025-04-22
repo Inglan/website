@@ -10,7 +10,9 @@
 		gsapctx = gsap.context(() => {});
 	});
 	onDestroy(() => {
-		gsapctx.revert();
+		if (typeof window !== 'undefined') {
+			gsapctx.revert();
+		}
 	});
 
 	import { menuState } from '$lib/state.svelte';
