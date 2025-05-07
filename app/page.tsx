@@ -83,7 +83,7 @@ export default function Home() {
         </div>
         <div className="flex flex-row gap-3 grow">
           <Link
-            href="/"
+            href="/about"
             className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
           >
             <div className="relative z-10">About</div>
@@ -92,7 +92,7 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="/"
+            href="/contact"
             className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
           >
             <div className="relative z-10">Contact</div>
@@ -101,7 +101,7 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="/"
+            href="/projects"
             className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
           >
             <div className="relative z-10">Projects</div>
@@ -110,7 +110,7 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="/"
+            href="/more"
             className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
           >
             <div className="relative z-10">More</div>
