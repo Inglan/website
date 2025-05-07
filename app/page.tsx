@@ -1,5 +1,7 @@
 import { MdSportsEsports, MdCameraAlt } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
+import img_0305 from "../public/assets/photos/IMG_0305.jpg";
 
 function Turbulence() {
   return (
@@ -55,11 +57,20 @@ export default function Home() {
             </div>
             <div className="flex flex-row gap-3 grow">
               <div className="bg-base rounded-xl grow h-40 relative overflow-hidden text-4xl flex p-4">
-                <div className="absolute top-0 left-0 w-full h-full opacity-30">
+                <div className="absolute top-0 left-0 w-full h-full opacity-30 z-20">
                   <Turbulence />
                 </div>
-                <div className="z-10 relative">I take photos</div>
-                <MdCameraAlt className="z-10 h-24 w-24 absolute -bottom-5 -left-3 rotate-5" />
+                <div className="absolute top-0 left-0 w-full h-full from-base to-transparent bg-gradient-to-r z-10"></div>
+
+                <Image
+                  src={img_0305}
+                  width={6000}
+                  height={4000}
+                  className="absolute top-0 left-0 z-0 scale-200 translate-x-[20%]"
+                  alt=""
+                />
+                <div className="z-30 relative">I take photos</div>
+                <MdCameraAlt className="z-30 h-24 w-24 absolute -bottom-5 -left-3 rotate-5" />
               </div>
               <div className="bg-mantle justify-center items-center text-4xl flex flex-col rounded-xl w-56 h-40">
                 <div className="flex flex-col">
