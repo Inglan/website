@@ -1,3 +1,22 @@
+function Turbulence() {
+  return (
+    <svg
+      className="absolute top-0 left-0 w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <filter id="noiseFilter">
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.65"
+          numOctaves="3"
+          stitchTiles="stitch"
+        />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen">
@@ -7,21 +26,7 @@ export default function Home() {
             <div className="z-10">Hi,</div>
             <div className="z-10">I'm Ingo</div>
 
-            <svg
-              className="absolute top-0 left-0 w-full h-full"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <filter id="noiseFilter">
-                <feTurbulence
-                  type="fractalNoise"
-                  baseFrequency="0.65"
-                  numOctaves="3"
-                  stitchTiles="stitch"
-                />
-              </filter>
-
-              <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-            </svg>
+            <Turbulence />
           </div>
           <div className="flex flex-col gap-3 grow">
             <div className="flex flex-row gap-3 grow">
@@ -30,21 +35,7 @@ export default function Home() {
                   <div className="z-10">I build for</div>
                   <div className="z-10">the web</div>
                 </div>
-                <svg
-                  className="absolute top-0 left-0 w-full h-full"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <filter id="noiseFilter">
-                    <feTurbulence
-                      type="fractalNoise"
-                      baseFrequency="0.65"
-                      numOctaves="3"
-                      stitchTiles="stitch"
-                    />
-                  </filter>
-
-                  <rect width="100%" height="100%" filter="url(#noiseFilter)" />
-                </svg>
+                <Turbulence />
                 <div className="absolute top-0 left-0 w-[125%] h-full wrap-anywhere text-right">{`<div className="flex flex-col gap-3 grow"><div className="flex flex-row gap-3 grow"><div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative"><div className="z-10 from-surface0 to-transparent text-4xl bg-gradient-to-r w-full h-full flex flex-col pl-4 justify-center">
                 `}</div>
               </div>
