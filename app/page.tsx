@@ -36,7 +36,7 @@ export default function Home() {
                   <div className="z-10">the web</div>
                 </div>
                 <Turbulence />
-                <div className="absolute top-0 left-0 w-[125%] h-full wrap-anywhere text-right">{`<div className="flex flex-col gap-3 grow"><div className="flex flex-row gap-3 grow"><div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative"><div className="z-10 from-surface0 to-transparent text-4xl bg-gradient-to-r w-full h-full flex flex-col pl-4 justify-center">
+                <div className="absolute top-0 left-0 w-[125%] h-full wrap-anywhere text-right select-none">{`<div className="flex flex-col gap-3 grow"><div className="flex flex-row gap-3 grow"><div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative"><div className="z-10 from-surface0 to-transparent text-4xl bg-gradient-to-r w-full h-full flex flex-col pl-4 justify-center">
                 `}</div>
               </div>
               <div className="bg-white rounded-xl w-64 h-40"></div>
