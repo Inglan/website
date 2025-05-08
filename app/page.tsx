@@ -2,6 +2,8 @@ import { MdOutlineSportsEsports, MdOutlineCameraAlt } from "react-icons/md";
 import Link from "next/link";
 import Image from "next/image";
 import img_0305 from "../public/assets/photos/IMG_0305.jpg";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function Turbulence() {
   return (
