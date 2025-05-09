@@ -23,7 +23,7 @@
 		"clsx": "^2.1.1",
 		"embla-carousel-svelte": "^8.6.0",
 		"lucide-svelte": "^0.501.0",
-		"mdsvex": "^0.12.3",
+		"mdsvex": "^0.12.6",
 		"mode-watcher": "^1.0.2",
 		"prettier": "^3.5.3",
 		"prettier-plugin-svelte": "^3.3.3",
