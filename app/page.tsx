@@ -72,16 +72,11 @@ export default function Home() {
       left: 0,
     });
 
-    loadTimeline.from(".box", {
+    loadTimeline.from(".box, .links > a", {
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
       stagger: 0.1,
-      scale: 0.9,
-    });
-    loadTimeline.from(".links > a", {
-      opacity: 0,
-      duration: 1,
-      stagger: 0.1,
+      ease: "expo.out",
       scale: 0.9,
     });
   });
