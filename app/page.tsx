@@ -6,7 +6,10 @@ import Image from "next/image";
 import img_0305 from "../public/assets/photos/IMG_0305.jpg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(SplitText);
 import { useRef } from "react";
+import { relative } from "path";
 
 gsap.registerPlugin(useGSAP);
 
@@ -30,10 +33,43 @@ function Turbulence() {
 }
 
 export default function Home() {
-  const hero = useRef(null);
+  const hero = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const loadTimeline = gsap.timeline();
+
+    loadTimeline.from(hero.current, {
+      opacity: 0,
+      duration: 1,
+    });
+
+    if (hero.current) {
+      loadTimeline.from(hero.current.querySelectorAll("div"), {
+        duration: 0.6,
+        x: -100,
+        opacity: 0,
+        stagger: 0.1,
+        ease: "expo.out",
+      });
+    }
+
+    loadTimeline.to(hero.current, {
+      width: document.getElementById("hero-position")?.offsetWidth,
+      height: document.getElementById("hero-position")?.offsetHeight,
+      top: document.getElementById("hero-position")?.offsetTop,
+      left: document.getElementById("hero-position")?.offsetLeft,
+      ease: "expo.out",
+      duration: 1,
+      onComplete: () => {
+        document.getElementById("hero-position")?.remove();
+      },
+    });
+
+    loadTimeline.set(hero.current, {
+      position: "relative",
+      top: 0,
+      left: 0,
+    });
 
     loadTimeline.from(".box", {
       opacity: 0,
@@ -41,13 +77,20 @@ export default function Home() {
       stagger: 0.1,
       scale: 0.9,
     });
+    loadTimeline.from(".links > a", {
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      scale: 0.9,
+    });
   });
+
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen">
       <div className="flex flex-col gap-3">
         <div className="flex flex-row gap-3 grow">
           <div
-            className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br text-white p-6 text-6xl gap-3 rounded-xl w-80 h-full relative overflow-hidden"
+            className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br text-white p-6 text-6xl gap-3 rounded-xl z-30 h-full w-full fixed top-0 left-0 overflow-hidden"
             ref={hero}
           >
             <div className="z-10">Hi,</div>
@@ -55,6 +98,10 @@ export default function Home() {
 
             <Turbulence />
           </div>
+          <div
+            className="flex flex-col  w-80 h-full relative overflow-hidden"
+            id="hero-position"
+          ></div>
           <div className="flex flex-col gap-3 grow">
             <div className="flex flex-row gap-3 grow">
               <div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative box">
