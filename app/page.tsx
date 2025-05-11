@@ -82,9 +82,9 @@ export default function Home() {
   });
 
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen">
+    <div className="flex flex-col items-center md:justify-center w-screen h-screen p-3">
       <div className="flex flex-col gap-3">
-        <div className="flex flex-row gap-3 grow">
+        <div className="flex md:flex-row flex-col gap-3 grow">
           <div
             className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br text-white p-16 text-6xl gap-3 rounded-xl z-30 h-full w-full fixed top-0 left-0 overflow-hidden"
             ref={hero}
@@ -95,18 +95,18 @@ export default function Home() {
             <Turbulence />
           </div>
           <div
-            className="flex flex-col  w-80 h-full relative overflow-hidden"
+            className="flex flex-col  w-80 h-full relative overflow-hidden min-h-56"
             id="hero-position"
           ></div>
           <div className="flex flex-col gap-3 grow">
-            <div className="flex flex-row gap-3 grow">
+            <div className="flex md:flex-row flex-col gap-3 grow">
               <div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative box">
                 <div className="z-10 from-surface0 to-surface0/75 text-4xl bg-gradient-to-r w-full h-full flex flex-col pl-4 justify-center">
                   <div className="z-10">I build for</div>
                   <div className="z-10">the web</div>
                 </div>
                 <Turbulence />
-                <div className="absolute top-0 left-0 w-[125%] h-full wrap-anywhere text-right select-none">{`<div className="flex flex-col gap-3 grow"><div className="flex flex-row gap-3 grow"><div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative"><div className="z-10 from-surface0 to-transparent text-4xl bg-gradient-to-r w-full h-full flex flex-col pl-4 justify-center">
+                <div className="absolute top-0 left-0 w-[125%] h-full wrap-anywhere text-right select-none">{`<div className="flex flex-col gap-3 grow"><div className="flex md:flex-row flex-col gap-3 grow"><div className="rounded-xl w-64 h-40 flex flex-col overflow-hidden relative"><div className="z-10 from-surface0 to-transparent text-4xl bg-gradient-to-r w-full h-full flex flex-col pl-4 justify-center">
                 `}</div>
               </div>
               <div className="from-crust to-base bg-gradient-to-br rounded-xl w-64 h-40 relative overflow-hidden text-3xl p-4 box">
@@ -120,7 +120,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-row gap-3 grow">
+            <div className="flex md:flex-row flex-col gap-3 grow">
               <div className="bg-base rounded-xl grow h-40 relative overflow-hidden text-4xl flex p-4 box">
                 <div className="absolute top-0 left-0 w-full h-full opacity-30 z-20">
                   <Turbulence />
@@ -146,7 +146,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row gap-3 grow links">
+        <div className="flex md:flex-row flex-col gap-3 grow links">
           <Link
             href="/about"
             className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
