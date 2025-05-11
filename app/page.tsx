@@ -40,7 +40,7 @@ export default function Home() {
 
     loadTimeline.from(hero.current, {
       opacity: 0,
-      duration: 1,
+      duration: 0.6,
     });
 
     if (hero.current) {
@@ -58,6 +58,7 @@ export default function Home() {
       height: document.getElementById("hero-position")?.offsetHeight,
       top: document.getElementById("hero-position")?.offsetTop,
       left: document.getElementById("hero-position")?.offsetLeft,
+      padding: 24,
       ease: "expo.out",
       duration: 1,
       onComplete: () => {
@@ -90,7 +91,7 @@ export default function Home() {
       <div className="flex flex-col gap-3">
         <div className="flex flex-row gap-3 grow">
           <div
-            className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br text-white p-6 text-6xl gap-3 rounded-xl z-30 h-full w-full fixed top-0 left-0 overflow-hidden"
+            className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br text-white p-16 text-6xl gap-3 rounded-xl z-30 h-full w-full fixed top-0 left-0 overflow-hidden"
             ref={hero}
           >
             <div className="z-10">Hi,</div>
