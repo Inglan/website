@@ -10,6 +10,7 @@ import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
 import { useRef } from "react";
 import { relative } from "path";
+import { getEnabledCategories } from "trace_events";
 
 gsap.registerPlugin(useGSAP);
 
@@ -38,6 +39,23 @@ export default function Home() {
   useGSAP(() => {
     const loadTimeline = gsap.timeline();
 
+    const heroPosition = document.getElementById("hero-position");
+    if (heroPosition) {
+      heroPosition.style.display = "flex";
+    }
+    if (hero.current) {
+      hero.current.style.position = "fixed";
+      hero.current.style.top = "0";
+      hero.current.style.left = "0";
+      hero.current.style.width = "100%";
+      hero.current.style.height = "100%";
+      hero.current.style.padding = "64px";
+      hero.current.style.borderRadius = "0";
+    }
+    loadTimeline.set("#hero-position", {
+      display: "flex",
+    });
+
     loadTimeline.from(hero.current, {
       opacity: 0,
       duration: 0.6,
@@ -63,6 +81,7 @@ export default function Home() {
       top: document.getElementById("hero-position")?.offsetTop,
       left: document.getElementById("hero-position")?.offsetLeft,
       padding: 24,
+      borderRadius: "14px",
       ease: "expo.out",
       duration: 1,
       onComplete: () => {
@@ -94,7 +113,7 @@ export default function Home() {
       <div className="flex flex-col gap-3">
         <div className="flex md:flex-row flex-col gap-3 grow">
           <div
-            className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br text-white p-16 text-6xl gap-3 rounded-xl z-30 h-full w-full fixed top-0 left-0 overflow-hidden"
+            className="flex flex-col justify-end from-mauve to-blue bg-gradient-to-br relative text-white p-6 text-6xl gap-3 rounded-xl z-30 h-full w-80 min-h-56 overflow-hidden"
             ref={hero}
           >
             <div className="z-10">Hi,</div>
@@ -103,7 +122,7 @@ export default function Home() {
             <Turbulence />
           </div>
           <div
-            className="flex flex-col  w-80 h-full relative overflow-hidden min-h-56"
+            className="hidden w-80 h-full relative overflow-hidden min-h-56"
             id="hero-position"
           ></div>
           <div className="flex flex-col gap-3 grow">
