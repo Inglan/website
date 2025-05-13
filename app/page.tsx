@@ -44,13 +44,17 @@ export default function Home() {
     });
 
     if (hero.current) {
-      loadTimeline.from(hero.current.querySelectorAll("div"), {
-        duration: 0.6,
-        x: -100,
-        opacity: 0,
-        stagger: 0.3,
-        ease: "expo.out",
-      });
+      loadTimeline.from(
+        hero.current.querySelectorAll("div"),
+        {
+          duration: 0.6,
+          x: -100,
+          opacity: 0,
+          stagger: 0.3,
+          ease: "expo.out",
+        },
+        0
+      );
     }
 
     loadTimeline.to(hero.current, {
@@ -72,13 +76,17 @@ export default function Home() {
       left: 0,
     });
 
-    loadTimeline.from(".box, .links > a", {
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.1,
-      ease: "expo.out",
-      scale: 0.9,
-    });
+    loadTimeline.from(
+      ".box, .links > a",
+      {
+        opacity: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "expo.out",
+        scale: 0.9,
+      },
+      1.2
+    );
   });
 
   return (
