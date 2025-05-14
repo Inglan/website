@@ -7,10 +7,9 @@ import img_0305 from "../public/assets/photos/IMG_0305.jpg";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(SplitText);
 import { useRef } from "react";
 
-gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(useGSAP, SplitText);
 
 function Turbulence() {
   return (
