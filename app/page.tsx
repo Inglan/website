@@ -104,7 +104,7 @@ export default function Home() {
         ease: "expo.out",
         scale: 0.9,
       },
-      1.2
+      1.6
     );
   });
 
