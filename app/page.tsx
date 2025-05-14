@@ -9,8 +9,6 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 gsap.registerPlugin(SplitText);
 import { useRef } from "react";
-import { relative } from "path";
-import { getEnabledCategories } from "trace_events";
 
 gsap.registerPlugin(useGSAP);
 
