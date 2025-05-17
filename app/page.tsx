@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
+import { useMenu } from "@/context/MenuContext";
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -31,6 +32,7 @@ function Turbulence() {
 }
 
 export default function Home() {
+  const { setMenuOpen } = useMenu();
   const hero = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -68,7 +70,7 @@ export default function Home() {
           stagger: 0.3,
           ease: "expo.out",
         },
-        0
+        0,
       );
     }
 
@@ -101,7 +103,7 @@ export default function Home() {
         ease: "expo.out",
         scale: 0.9,
       },
-      1.6
+      1.6,
     );
   });
 
@@ -198,15 +200,15 @@ export default function Home() {
               <Turbulence />
             </div>
           </Link>
-          <Link
-            href="/more"
-            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
+          <a
+            onClick={() => setMenuOpen(true)}
+            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full cursor-pointer"
           >
             <div className="relative z-10">More</div>
             <div className="absolute top-0 left-0 w-full h-full opacity-30">
               <Turbulence />
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

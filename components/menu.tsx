@@ -12,10 +12,10 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useMenu } from "@/context/MenuContext";
 
 export default function SiteMenu() {
-  let [menuOpen, setMenuOpen] = useState(false);
+  const { menuOpen, setMenuOpen, toggleMenu } = useMenu();
 
   return (
     <>
@@ -23,9 +23,7 @@ export default function SiteMenu() {
         className="top-3 right-3 fixed"
         size="icon"
         variant="ghost"
-        onClick={() => {
-          setMenuOpen(!menuOpen);
-        }}
+        onClick={toggleMenu}
       >
         <Menu />
       </Button>
