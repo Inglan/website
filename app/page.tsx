@@ -21,12 +21,17 @@ function Turbulence() {
       <filter id="noiseFilter">
         <feTurbulence
           type="fractalNoise"
-          baseFrequency="0.65"
-          numOctaves="3"
+          baseFrequency="0.8"
+          numOctaves="4"
           stitchTiles="stitch"
         />
       </filter>
-      <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+      <rect
+        width="100%"
+        height="100%"
+        opacity="0.75"
+        filter="url(#noiseFilter)"
+      />
     </svg>
   );
 }
