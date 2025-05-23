@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 import { useMenu } from "@/context/MenuContext";
+import { User, Mail, Code, Ellipsis } from "lucide-react";
 
 gsap.registerPlugin(useGSAP, SplitText);
 
@@ -180,36 +181,48 @@ export default function Home() {
         <div className="flex md:flex-row flex-col gap-3 grow links">
           <Link
             href="/about"
-            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
+            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-3xl justify-center items-center w-full"
           >
-            <div className="relative z-10">About</div>
+            <div className="relative z-10 flex flex-row gap-3 justify-center items-center">
+              <User />
+              About
+            </div>
             <div className="absolute top-0 left-0 w-full h-full opacity-30">
               <Turbulence />
             </div>
           </Link>
           <Link
             href="/contact"
-            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
+            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-3xl justify-center items-center w-full"
           >
-            <div className="relative z-10">Contact</div>
+            <div className="relative z-10 flex flex-row gap-3 justify-center items-center">
+              <Mail />
+              Contact
+            </div>
             <div className="absolute top-0 left-0 w-full h-full opacity-30">
               <Turbulence />
             </div>
           </Link>
           <Link
             href="/projects"
-            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full"
+            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-3xl justify-center items-center w-full"
           >
-            <div className="relative z-10">Projects</div>
+            <div className="relative z-10 flex flex-row gap-3 justify-center items-center">
+              <Code />
+              Projects
+            </div>
             <div className="absolute top-0 left-0 w-full h-full opacity-30">
               <Turbulence />
             </div>
           </Link>
           <a
             onClick={() => setMenuOpen(true)}
-            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-4xl justify-center items-center w-full cursor-pointer"
+            className="flex bg-surface0 rounded-xl grow h-32 overflow-hidden relative text-3xl justify-center items-center w-full cursor-pointer"
           >
-            <div className="relative z-10">More</div>
+            <div className="relative z-10 flex flex-row gap-3 justify-center items-center">
+              <Ellipsis />
+              More
+            </div>
             <div className="absolute top-0 left-0 w-full h-full opacity-30">
               <Turbulence />
             </div>
