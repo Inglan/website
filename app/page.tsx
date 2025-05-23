@@ -10,32 +10,9 @@ import { SplitText } from "gsap/SplitText";
 import { useRef } from "react";
 import { useMenu } from "@/context/MenuContext";
 import { User, Mail, Code, Ellipsis } from "lucide-react";
+import Turbulence from "@/components/turbulence";
 
 gsap.registerPlugin(useGSAP, SplitText);
-
-function Turbulence() {
-  return (
-    <svg
-      className="absolute top-0 left-0 w-full h-full"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <filter id="noiseFilter">
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.8"
-          numOctaves="4"
-          stitchTiles="stitch"
-        />
-      </filter>
-      <rect
-        width="100%"
-        height="100%"
-        opacity="0.75"
-        filter="url(#noiseFilter)"
-      />
-    </svg>
-  );
-}
 
 export default function Home() {
   const { setMenuOpen } = useMenu();
