@@ -24,8 +24,8 @@ importers:
         specifier: ^3.12.7
         version: 3.12.7
       posthog-js:
-        specifier: ^1.236.2
-        version: 1.236.2(@rrweb/types@2.0.0-alpha.17)
+        specifier: ^1.249.1
+        version: 1.249.1(@rrweb/types@2.0.0-alpha.17)
       svelte-material-icons:
         specifier: ^3.0.5
         version: 3.0.5(svelte@5.28.1)
@@ -1077,8 +1077,8 @@ packages:
     resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
     engines: {node: '>= 0.6'}
 
-  core-js@3.41.0:
-    resolution: {integrity: sha512-SJ4/EHwS36QMJd6h/Rg+GyR4A5xE0FSI3eZ+iBVpfqf1x0eTSg1smWLHrA+2jQThZSh97fmSgFSU8B61nxosxA==}
+  core-js@3.42.0:
+    resolution: {integrity: sha512-Sz4PP4ZA+Rq4II21qkNqOEDTDrCvcANId3xpIgB34NDkWc3UduWj2dqEtN9yZIq8Dk3HyPI33x9sqqU5C8sr0g==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1511,8 +1511,12 @@ packages:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
-  posthog-js@1.236.2:
-    resolution: {integrity: sha512-dSPRp/2/IWxtNuNeqevJ+ueGxJfLr67YrRWfemivJ0fJseArnZp4nWvj0Qz+qIMv7TU6a0lq6dEuAoERQDb1jQ==}
+  postcss@8.5.4:
+    resolution: {integrity: sha512-QSa9EBe+uwlGTFmHsPKokv3B/oEMQZxfqW0QqNCyhpa6mB1afzulwn8hihglqAb2pOw+BJgNlmXQ8la2VeHB7w==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  posthog-js@1.249.1:
+    resolution: {integrity: sha512-gRqoD7umCMBQwP27gFArQWSJ5WXmrmNi+kcH8Yu2CmRX3twSYkTSVBzDhXtSW6NGqyLXbkS+vH4JW5xZJPK5uw==}
     peerDependencies:
       '@rrweb/types': 2.0.0-alpha.17
       rrweb-snapshot: 2.0.0-alpha.17
@@ -1522,8 +1526,8 @@ packages:
       rrweb-snapshot:
         optional: true
 
-  preact@10.26.5:
-    resolution: {integrity: sha512-fmpDkgfGU6JYux9teDWLhj9mKN55tyepwYbxHgQuIxbWQzgFg5vk7Mrrtfx7xRxq798ynkY4DDDxZr235Kk+4w==}
+  preact@10.26.8:
+    resolution: {integrity: sha512-1nMfdFjucm5hKvq0IClqZwK4FJkGXhRrQstOQ3P4vp8HxKrJEMFcY6RdBRVTdfQS/UlnX6gfbPuTvaqx/bDoeQ==}
 
   prettier-plugin-svelte@3.3.3:
     resolution: {integrity: sha512-yViK9zqQ+H2qZD1w/bH7W8i+bVfKrD8GIFjkFe4Thl6kCT9SlAsXVNmt3jCvQOCsnOhcvYgsoVlRV/Eu6x5nNw==}
@@ -2664,7 +2668,7 @@ snapshots:
 
   cookie@0.6.0: {}
 
-  core-js@3.41.0: {}
+  core-js@3.42.0: {}
 
   cross-spawn@7.0.6:
     dependencies:
@@ -3099,16 +3103,23 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  posthog-js@1.236.2(@rrweb/types@2.0.0-alpha.17):
+  postcss@8.5.4:
     dependencies:
-      core-js: 3.41.0
+      nanoid: 3.3.11
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+    optional: true
+
+  posthog-js@1.249.1(@rrweb/types@2.0.0-alpha.17):
+    dependencies:
+      core-js: 3.42.0
       fflate: 0.4.8
-      preact: 10.26.5
+      preact: 10.26.8
       web-vitals: 4.2.4
     optionalDependencies:
       '@rrweb/types': 2.0.0-alpha.17
 
-  preact@10.26.5: {}
+  preact@10.26.8: {}
 
   prettier-plugin-svelte@3.3.3(prettier@3.5.3)(svelte@5.28.1):
     dependencies:
@@ -3193,7 +3204,7 @@ snapshots:
 
   rrweb-snapshot@2.0.0-alpha.18:
     dependencies:
-      postcss: 8.5.3
+      postcss: 8.5.4
     optional: true
 
   run-parallel@1.2.0:
