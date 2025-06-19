@@ -1,4 +1,0 @@
-name = "ingo"
-pages_build_output_dir = ".svelte-kit/cloudflare"
-[vars]
-NODE_VERSION = "22"
