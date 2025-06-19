@@ -4,7 +4,13 @@
 </script>
 
 {#snippet menuItem(url: string, label: string)}
-	<a href={url} class="text-7xl text-foreground/50 hover:text-foreground duration-100">{label}</a>
+	<a
+		href={url}
+		class={clsx(
+			'text-7xl hover:text-foreground duration-300',
+			page.url.pathname === url ? 'text-primary' : 'text-muted'
+		)}>{label}</a
+	>
 {/snippet}
 
 <div class="min-w-96 h-screen sticky top-0 left-0 flex justify-center p-4 px-10 flex-col gap-4">
