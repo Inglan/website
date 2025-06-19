@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import clsx from 'clsx';
+
+	const menuItems = [
+		{ url: '/', label: 'Home' },
+		{ url: '/about', label: 'About' },
+		{ url: '/projects', label: 'Projects' },
+		{ url: '/blog', label: 'Blog' },
+		{ url: '/contact', label: 'Contact' }
+	];
 </script>
 
 {#snippet menuItem(url: string, label: string)}
@@ -14,9 +22,7 @@
 {/snippet}
 
 <div class="min-w-96 h-screen sticky top-0 left-0 flex justify-center p-4 px-10 flex-col gap-4">
-	{@render menuItem('/', 'Home')}
-	{@render menuItem('/about', 'About')}
-	{@render menuItem('/projects', 'Projects')}
-	{@render menuItem('/blog', 'Blog')}
-	{@render menuItem('/contact', 'Contact')}
+	{#each menuItems as item}
+		{@render menuItem(item.url, item.label)}
+	{/each}
 </div>
