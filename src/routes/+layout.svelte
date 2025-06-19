@@ -8,7 +8,7 @@
 <div class="flex flex-row w-full">
 	<Menu />
 	<div class="w-full">
-		<main class="p-4 container mx-auto">
+		<main class="container mx-auto">
 			{@render children()}
 		</main>
 	</div>
