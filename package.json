@@ -40,6 +40,7 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/geist": "^5.2.6",
-		"@fontsource-variable/geist-mono": "^5.2.6"
+		"@fontsource-variable/geist-mono": "^5.2.6",
+		"mdsvex": "^0.12.6"
 	}
 }
