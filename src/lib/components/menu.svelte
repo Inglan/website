@@ -21,7 +21,9 @@
 	>
 {/snippet}
 
-<div class="min-w-96 h-screen sticky top-0 left-0 flex justify-center p-4 px-10 flex-col gap-4">
+<div
+	class="min-w-96 h-screen sticky top-0 left-0 flex justify-center p-4 px-10 flex-col gap-4 border-r border-dashed"
+>
 	{#each menuItems as item}
 		{@render menuItem(item.url, item.label)}
 	{/each}
