@@ -4,6 +4,9 @@
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
 
+	import Mail from '@lucide/svelte/icons/Mail';
+	import Signal from '@lucide/svelte/icons/Signal';
+
 	const id = $props.id();
 </script>
 
@@ -31,11 +34,20 @@
 		</form>
 		<div class="flex flex-col gap-3 w-full">
 			<div class="flex p-3 justify-center h-full border border-dashed rounded flex-col gap-3">
-				<a href="mailto:me@ingo.au" class="text-4xl hover:underline">me@ingo.au</a>
+				<a
+					href="mailto:me@ingo.au"
+					class="text-4xl hover:underline flex flex-row gap-2 items-center"
+				>
+					<Mail class="size-10" />
+					me@ingo.au
+				</a>
 				<a
 					href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
 					target="_blank"
-					class="text-4xl hover:underline">ingo.392</a
+					class="text-4xl hover:underline flex flex-row gap-2 items-center"
+				>
+					<Signal class="size-10" />
+					ingo.392</a
 				>
 			</div>
 		</div>
