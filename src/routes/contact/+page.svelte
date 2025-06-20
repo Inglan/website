@@ -33,7 +33,7 @@
 			<Button type="submit" class="ml-auto">Send</Button>
 		</form>
 		<div class="flex flex-col gap-3 w-full">
-			<div class="flex p-3 justify-center h-full border border-dashed rounded flex-col gap-3">
+			<div class="flex p-10 justify-center h-full border border-dashed rounded flex-col gap-3">
 				<a
 					href="mailto:me@ingo.au"
 					class="text-4xl hover:underline flex flex-row gap-2 items-center"
