@@ -6,6 +6,7 @@
 
 	import IconMail from '~icons/material-symbols/mail-rounded';
 	import IconSignal from '~icons/fa6-brands/signal-messenger';
+	import { enhance } from '$app/forms';
 
 	const id = $props.id();
 </script>
@@ -26,8 +27,8 @@
 			ingo.392</a
 		>
 	</div>
-	<h2 class="text-4xl">Contact form</h2>
-	<form class="flex rounded gap-3 flex-col max-w-full">
+	<!-- <h2 class="text-4xl">Contact form</h2> -->
+	<!-- <form class="flex rounded gap-3 flex-col max-w-full" method="POST" use:enhance>
 		<div class="flex flex-row gap-3">
 			<div class="flex w-full flex-col gap-1.5">
 				<Label for="name-{id}">Name</Label>
@@ -45,5 +46,5 @@
 		</div>
 
 		<Button type="submit" class="ml-auto">Send</Button>
-	</form>
+	</form> -->
 </div>
