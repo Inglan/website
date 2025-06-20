@@ -3,6 +3,9 @@
 	import clsx from 'clsx';
 
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
+	import { Button } from '$lib/components/ui/button/index.js';
+
+	import IconKeyboardArrowUp from '~icons/material-symbols/keyboard-arrow-up-rounded';
 
 	const menuItems = [
 		{ url: '/', label: 'Home' },
@@ -45,3 +48,12 @@
 		</div>
 	</Drawer.Content>
 </Drawer.Root>
+
+<Button
+	class="fixed bottom-3 left-3 text-2xl size-15 md:hidden"
+	size="icon"
+	variant="outline"
+	onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
+>
+	<IconKeyboardArrowUp class="size-10" />
+</Button>
