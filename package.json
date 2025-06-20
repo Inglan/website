@@ -14,6 +14,7 @@
 		"lint": "prettier --check ."
 	},
 	"devDependencies": {
+		"@iconify-json/material-symbols": "^1.2.27",
 		"@internationalized/date": "^3.8.2",
 		"@lucide/svelte": "^0.518.0",
 		"@sveltejs/adapter-auto": "^6.0.0",
@@ -32,6 +33,7 @@
 		"tailwindcss": "^4.0.0",
 		"tw-animate-css": "^1.3.4",
 		"typescript": "^5.0.0",
+		"unplugin-icons": "^22.1.0",
 		"vite": "^6.2.6",
 		"vite-plugin-devtools-json": "^0.2.0"
 	},
