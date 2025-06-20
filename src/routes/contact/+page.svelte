@@ -17,17 +17,17 @@
 			<div class="flex flex-row gap-3">
 				<div class="flex w-full max-w-sm flex-col gap-1.5">
 					<Label for="name-{id}">Name</Label>
-					<Input type="text" id="name-{id}" />
+					<Input required type="text" id="name-{id}" />
 				</div>
 				<div class="flex w-full max-w-sm flex-col gap-1.5">
 					<Label for="email-{id}">Email</Label>
-					<Input type="email" id="email-{id}" />
+					<Input required type="email" id="email-{id}" />
 				</div>
 			</div>
 
 			<div class="flex w-full flex-col gap-1.5">
-				<Label for="message">Your message</Label>
-				<Textarea class="resize-none h-72" placeholder="Type your message here." id="message" />
+				<Label for="message">Message</Label>
+				<Textarea required class="resize-none h-72" id="message" />
 			</div>
 
 			<Button type="submit" class="ml-auto">Send</Button>
