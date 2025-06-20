@@ -29,6 +29,15 @@
 
 			<Button type="submit" class="ml-auto">Send</Button>
 		</form>
-		<div class="flex flex-col gap-3 w-full">test</div>
+		<div class="flex flex-col gap-3 w-full">
+			<div class="flex p-3 justify-center h-full border border-dashed rounded flex-col gap-3">
+				<a href="mailto:me@ingo.au" class="text-4xl hover:underline">me@ingo.au</a>
+				<a
+					href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
+					target="_blank"
+					class="text-4xl hover:underline">ingo.392</a
+				>
+			</div>
+		</div>
 	</div>
 </div>
