@@ -35,6 +35,7 @@
 		"tw-animate-css": "^1.3.4",
 		"typescript": "^5.0.0",
 		"unplugin-icons": "^22.1.0",
+		"vaul-svelte": "1.0.0-next.7",
 		"vite": "^6.2.6",
 		"vite-plugin-devtools-json": "^0.2.0"
 	},
