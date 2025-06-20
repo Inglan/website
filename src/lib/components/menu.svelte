@@ -2,6 +2,8 @@
 	import { page } from '$app/state';
 	import clsx from 'clsx';
 
+	import * as Drawer from '$lib/components/ui/drawer/index.js';
+
 	const menuItems = [
 		{ url: '/', label: 'Home' },
 		{ url: '/about', label: 'About' },
@@ -9,6 +11,8 @@
 		{ url: '/blog', label: 'Blog' },
 		{ url: '/contact', label: 'Contact' }
 	];
+
+	let mobileMenuOpen = $state(true);
 </script>
 
 {#snippet menuItem(url: string, label: string)}
@@ -28,3 +32,13 @@
 		{@render menuItem(item.url, item.label)}
 	{/each}
 </div>
+
+<Drawer.Root bind:open={mobileMenuOpen}>
+	<Drawer.Content>
+		<div class="flex flex-col gap-4 p-5">
+			{#each menuItems as item}
+				{@render menuItem(item.url, item.label)}
+			{/each}
+		</div>
+	</Drawer.Content>
+</Drawer.Root>
