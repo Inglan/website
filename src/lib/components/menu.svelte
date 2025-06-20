@@ -18,6 +18,9 @@
 {#snippet menuItem(url: string, label: string)}
 	<a
 		href={url}
+		onclick={() => {
+			mobileMenuOpen = false;
+		}}
 		class={clsx(
 			'text-7xl hover:text-foreground duration-300',
 			page.url.pathname === url ? 'text-primary' : 'text-muted'
