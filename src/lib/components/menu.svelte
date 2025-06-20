@@ -12,7 +12,7 @@
 		{ url: '/contact', label: 'Contact' }
 	];
 
-	let mobileMenuOpen = $state(true);
+	let mobileMenuOpen = $state(false);
 </script>
 
 {#snippet menuItem(url: string, label: string)}
