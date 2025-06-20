@@ -4,8 +4,8 @@
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import { Label } from '$lib/components/ui/label/index.js';
 
-	import Mail from '@lucide/svelte/icons/Mail';
-	import Signal from '@lucide/svelte/icons/Signal';
+	import IconMail from '~icons/material-symbols/mail-rounded';
+	import IconSignal from '~icons/fa6-brands/signal-messenger';
 
 	const id = $props.id();
 </script>
@@ -38,7 +38,7 @@
 					href="mailto:me@ingo.au"
 					class="text-4xl hover:underline flex flex-row gap-2 items-center"
 				>
-					<Mail class="size-10" />
+					<IconMail class="size-10" />
 					me@ingo.au
 				</a>
 				<a
@@ -46,7 +46,7 @@
 					target="_blank"
 					class="text-4xl hover:underline flex flex-row gap-2 items-center"
 				>
-					<Signal class="size-10" />
+					<IconSignal class="size-10" />
 					ingo.392</a
 				>
 			</div>
