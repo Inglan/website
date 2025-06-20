@@ -10,46 +10,40 @@
 	const id = $props.id();
 </script>
 
-<div class="container mx-auto p-3 flex flex-col gap-3">
+<div class="container max-w-full mx-auto p-3 flex flex-col gap-5">
 	<h1 class="text-6xl">Contact me</h1>
-	<div class="flex md:flex-row gap-3 w-full flex-col">
-		<form class="flex w-full rounded gap-3 flex-col p-3">
-			<div class="flex flex-row gap-3">
-				<div class="flex w-full max-w-sm flex-col gap-1.5">
-					<Label for="name-{id}">Name</Label>
-					<Input required type="text" id="name-{id}" />
-				</div>
-				<div class="flex w-full max-w-sm flex-col gap-1.5">
-					<Label for="email-{id}">Email</Label>
-					<Input required type="email" id="email-{id}" />
-				</div>
-			</div>
-
+	<div class="flex h-full rounded flex-col gap-3">
+		<a href="mailto:me@ingo.au" class="text-4xl hover:underline flex flex-row gap-2 items-center">
+			<IconMail class="size-10" />
+			me@ingo.au
+		</a>
+		<a
+			href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
+			target="_blank"
+			class="text-4xl hover:underline flex flex-row gap-2 items-center"
+		>
+			<IconSignal class="size-10" />
+			ingo.392</a
+		>
+	</div>
+	<h2 class="text-4xl">Contact form</h2>
+	<form class="flex rounded gap-3 flex-col max-w-full">
+		<div class="flex flex-row gap-3">
 			<div class="flex w-full flex-col gap-1.5">
-				<Label for="message">Message</Label>
-				<Textarea required class="resize-none h-72" id="message" />
+				<Label for="name-{id}">Name</Label>
+				<Input required type="text" id="name-{id}" />
 			</div>
-
-			<Button type="submit" class="ml-auto">Send</Button>
-		</form>
-		<div class="flex flex-col gap-3 w-full">
-			<div class="flex pl-10 h-full rounded flex-col gap-3">
-				<a
-					href="mailto:me@ingo.au"
-					class="text-4xl hover:underline flex flex-row gap-2 items-center"
-				>
-					<IconMail class="size-10" />
-					me@ingo.au
-				</a>
-				<a
-					href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
-					target="_blank"
-					class="text-4xl hover:underline flex flex-row gap-2 items-center"
-				>
-					<IconSignal class="size-10" />
-					ingo.392</a
-				>
+			<div class="flex w-full flex-col gap-1.5">
+				<Label for="email-{id}">Email</Label>
+				<Input required type="email" id="email-{id}" />
 			</div>
 		</div>
-	</div>
+
+		<div class="flex w-full flex-col gap-1.5">
+			<Label for="message">Message</Label>
+			<Textarea required class="resize-none h-72" id="message" />
+		</div>
+
+		<Button type="submit" class="ml-auto">Send</Button>
+	</form>
 </div>
