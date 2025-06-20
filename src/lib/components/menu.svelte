@@ -5,7 +5,6 @@
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 
-	import IconChevronRight from '~icons/material-symbols/chevron-right-rounded';
 	import IconMenu from '~icons/material-symbols/menu-rounded';
 
 	const menuItems = [
