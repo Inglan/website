@@ -5,7 +5,8 @@
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
 	import { Button } from '$lib/components/ui/button/index.js';
 
-	import IconKeyboardArrowUp from '~icons/material-symbols/keyboard-arrow-up-rounded';
+	import IconChevronRight from '~icons/material-symbols/chevron-right-rounded';
+	import IconMenu from '~icons/material-symbols/menu-rounded';
 
 	const menuItems = [
 		{ url: '/', label: 'Home' },
@@ -39,9 +40,9 @@
 	{/each}
 </div>
 
-<Drawer.Root bind:open={mobileMenuOpen}>
+<Drawer.Root bind:open={mobileMenuOpen} direction="left">
 	<Drawer.Content>
-		<div class="flex flex-col gap-4 p-5">
+		<div class="flex flex-col gap-4 p-5 h-full justify-end">
 			{#each menuItems as item}
 				{@render menuItem(item.url, item.label)}
 			{/each}
@@ -55,5 +56,5 @@
 	variant="outline"
 	onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 >
-	<IconKeyboardArrowUp class="size-10" />
+	<IconMenu class="size-7" />
 </Button>
