@@ -13,7 +13,7 @@
 <div class="container mx-auto p-3 flex flex-col gap-3">
 	<h1 class="text-6xl">Contact me</h1>
 	<div class="flex md:flex-row gap-3 w-full flex-col">
-		<form class="flex w-full border rounded gap-3 flex-col p-3">
+		<form class="flex w-full border rounded gap-3 flex-col p-3 border-dashed">
 			<div class="flex flex-row gap-3">
 				<div class="flex w-full max-w-sm flex-col gap-1.5">
 					<Label for="name-{id}">Name</Label>
