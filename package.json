@@ -14,6 +14,7 @@
 		"lint": "prettier --check ."
 	},
 	"devDependencies": {
+		"@iconify-json/fa6-brands": "^1.2.5",
 		"@iconify-json/material-symbols": "^1.2.27",
 		"@internationalized/date": "^3.8.2",
 		"@lucide/svelte": "^0.518.0",

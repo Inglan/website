@@ -18,6 +18,9 @@ importers:
         specifier: ^0.12.6
         version: 0.12.6(svelte@5.34.6)
     devDependencies:
+      '@iconify-json/fa6-brands':
+        specifier: ^1.2.5
+        version: 1.2.5
       '@iconify-json/material-symbols':
         specifier: ^1.2.27
         version: 1.2.27
@@ -261,6 +264,9 @@ packages:
 
   '@fontsource-variable/geist@5.2.6':
     resolution: {integrity: sha512-Bt9pdD55Fojq4h9yFKQAzh5+Xj4tKFpwbcDzK6t5PPSH2GrjPoPqm6N8y+tK6vzwKZ9hHyaOz/tAbO9cQd9UFQ==}
+
+  '@iconify-json/fa6-brands@1.2.5':
+    resolution: {integrity: sha512-U/iFfziz6jSN9zArOJZYTtoj2tQyh6MxPdI8M84DQ2kEulPaj8j+h9bqvjmzszNHmD7v+kmmKd/MLkMKk+3Zuw==}
 
   '@iconify-json/material-symbols@1.2.27':
     resolution: {integrity: sha512-Xu1IXCczB7ubTmFQZaqQI7qlMstVdBpQyQYo1y1ZrWrCT1oKylMcZfJKKuTV6OGJu/KyO6J0Da0pb5aawyz8CA==}
@@ -1157,6 +1163,10 @@ snapshots:
   '@fontsource-variable/geist-mono@5.2.6': {}
 
   '@fontsource-variable/geist@5.2.6': {}
+
+  '@iconify-json/fa6-brands@1.2.5':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/material-symbols@1.2.27':
     dependencies:
