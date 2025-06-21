@@ -6,6 +6,7 @@
 	import { Button } from '$lib/components/ui/button/index.js';
 
 	import IconMenu from '~icons/material-symbols/menu-rounded';
+	import IconChevronRight from '~icons/material-symbols/chevron-right-rounded';
 
 	const menuItems = [
 		{ url: '/', label: 'Home' },
@@ -25,9 +26,21 @@
 			mobileMenuOpen = false;
 		}}
 		class={clsx(
-			'text-7xl hover:text-foreground duration-300',
-			'/' + page.url.pathname.split('/')[1] == url ? 'text-primary' : 'text-muted'
-		)}>{label}</a
+			'text-[0px] hover:text-foreground duration-300',
+			page.url.pathname === url ? 'text-primary' : 'text-muted'
+		)}
+	>
+		<span class="text-7xl">{label}</span>
+		<span
+			class={clsx(
+				'text-primary text-7xl',
+				'/' + page.url.pathname.split('/')[1] == url && !(page.url.pathname == url)
+					? 'inline'
+					: 'hidden'
+			)}
+		>
+			/
+		</span></a
 	>
 {/snippet}
 
