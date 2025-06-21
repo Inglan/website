@@ -11,10 +11,17 @@
 </script>
 
 <div class="prose prose-lg md:prose-xl prose-invert mx-auto p-3">
-	<div class="flex flex-col">
-		<img src={image} class="w-full h-96 object-cover rounded-xl" alt="" />
-		<div class="flex flex-row gap-3">
-			<h1>{title}</h1>
+	<div class="flex h-96 items-end relative p-5">
+		<img
+			src={image}
+			class="object-cover w-full h-full absolute top-0 left-0 -z-20 !m-0 rounded-t-xl"
+			alt=""
+		/>
+		<div class="flex flex-row gap-3 w-full h-fit items-end">
+			<div
+				class="absolute top-0 left-0 w-full h-full from-transparent to-background bg-gradient-to-b -z-10"
+			></div>
+			<h1 class="!m-0">{title}</h1>
 			<div class="grow"></div>
 			<div class="flex flex-col p-3 bg-muted rounded-xl h-fit">
 				<div class="flex flex-row gap-1 items-center">
