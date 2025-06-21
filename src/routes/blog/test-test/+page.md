@@ -1,6 +1,6 @@
 ---
 title: Test page
-image: https://example.com/image.jpg
+image: https://picsum.photos/1200/600
 posted: 1750492830
 updated:
 ---
