@@ -26,7 +26,7 @@
 		}}
 		class={clsx(
 			'text-7xl hover:text-foreground duration-300',
-			page.url.pathname === url ? 'text-primary' : 'text-muted'
+			'/' + page.url.pathname.split('/')[1] == url ? 'text-primary' : 'text-muted'
 		)}>{label}</a
 	>
 {/snippet}
