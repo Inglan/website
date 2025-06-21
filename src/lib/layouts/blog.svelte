@@ -19,7 +19,7 @@
 		class="object-cover w-full h-full absolute top-0 left-0 -z-20 opacity-50 md:opacity-100"
 		alt=""
 	/>
-	<div class="mx-auto w-full max-w-prose prose-lg md:prose-xl">
+	<div class="mx-auto w-full max-w-prose prose-lg md:prose-xl px-3">
 		<Button variant="outline" class="bg-background/75 backdrop-blur-xl" href="/blog"
 			><IconChevronLeft />Back</Button
 		>
