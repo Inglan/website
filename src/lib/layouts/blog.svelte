@@ -36,7 +36,7 @@
 		<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
 			<div class="flex flex-row gap-1 items-center">
 				<IconCalendar class="size-6" />
-				{dayjs.unix(posted).format('D MMM YY')}
+				{dayjs.unix(posted).format('DD/MM/YY')}
 			</div>
 			{dayjs.unix(posted).fromNow()}
 		</div>
@@ -44,7 +44,7 @@
 			<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
 				<div class="flex flex-row gap-1 items-center">
 					<IconEdit class="size-6" />
-					{dayjs.unix(updated).format('D MMM YY')}
+					{dayjs.unix(updated).format('DD/MM/YY')}
 				</div>
 
 				{dayjs.unix(updated).fromNow()}
