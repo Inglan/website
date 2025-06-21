@@ -6,11 +6,18 @@
 
 	dayjs.extend(relativeTime);
 
+	import { Button } from '$lib/components/ui/button/index.js';
+
 	import IconCalendar from '~icons/material-symbols/calendar-month-rounded';
 	import IconEdit from '~icons/material-symbols/edit-rounded';
+	import IconChevronLeft from '~icons/material-symbols/chevron-left-rounded';
 </script>
 
 <div class="prose prose-lg md:prose-xl prose-invert mx-auto p-3">
+	<Button variant="outline" class="mb-5" href="/blog">
+		<IconChevronLeft />
+		Back
+	</Button>
 	<div class="flex min-h-96 pt-20 items-end relative p-5">
 		<img
 			src={image}
