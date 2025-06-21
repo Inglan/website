@@ -11,13 +11,13 @@
 </script>
 
 <div class="prose prose-lg md:prose-xl prose-invert mx-auto p-3">
-	<div class="flex h-96 items-end relative p-5">
+	<div class="flex min-h-96 pt-20 items-end relative p-5">
 		<img
 			src={image}
 			class="object-cover w-full h-full absolute top-0 left-0 -z-20 !m-0 rounded-t-xl"
 			alt=""
 		/>
-		<div class="flex flex-row gap-3 w-full h-fit items-end">
+		<div class="flex flex-col md:flex-row gap-3 w-full h-fit justify-end md:items-end">
 			<div
 				class="absolute top-0 left-0 w-full h-full from-transparent to-background bg-gradient-to-b -z-10"
 			></div>
