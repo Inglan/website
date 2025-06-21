@@ -23,7 +23,7 @@
 			></div>
 			<h1 class="!m-0">{title}</h1>
 			<div class="grow"></div>
-			<div class="flex flex-col p-3 bg-muted rounded-xl h-fit">
+			<div class="flex flex-col p-3 bg-muted rounded-xl h-fit text-nowrap">
 				<div class="flex flex-row gap-1 items-center">
 					<IconCalendar class="size-6" />
 					{dayjs.unix(posted).format('D MMM YYYY')}
@@ -31,7 +31,7 @@
 				{dayjs.unix(posted).fromNow()}
 			</div>
 			{#if updated}
-				<div class="flex flex-col p-3 bg-muted rounded-xl h-fit">
+				<div class="flex flex-col p-3 bg-muted rounded-xl h-fit text-nowrap">
 					<div class="flex flex-row gap-1 items-center">
 						<IconEdit class="size-6" />
 						{dayjs.unix(updated).format('D MMM YYYY')}
