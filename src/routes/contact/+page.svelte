@@ -11,7 +11,7 @@
 	const id = $props.id();
 </script>
 
-<div class="container max-w-full mx-auto p-5 flex flex-col gap-5">
+<div class="container mx-auto p-5 flex flex-col gap-5">
 	<h1 class="text-6xl">Contact me</h1>
 	<div class="flex h-full rounded flex-col gap-3">
 		<a href="mailto:me@ingo.au" class="text-4xl hover:underline flex flex-row gap-2 items-center">
