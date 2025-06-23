@@ -1,6 +1,11 @@
-import adapter from '@sveltejs/adapter-cloudflare';
+import adapter from '@sveltejs/adapter-auto';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,15 +14,13 @@ const config = {
 	preprocess: [
 		vitePreprocess(),
 		mdsvex({
-			extensions: ['.md'],
+			extensions: ['.svx', '.md'],
 			layout: {
-				projects: './src/lib/layouts/project.svelte',
-				_: './src/lib/layouts/markdown.svelte'
+				blog: join(__dirname, './src/lib/layouts/blog.svelte')
 			}
 		})
 	],
-
-	extensions: ['.svelte', '.md'],
+	extensions: ['.svelte', '.svx', '.md'],
 
 	kit: {
 		// adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
