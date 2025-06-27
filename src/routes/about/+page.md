@@ -1,5 +1,4 @@
-<div class="prose prose-lg md:prose-xl prose-invert mx-auto p-3">
-	<h1>About Me</h1>
+# About Me
 	I am a web developer but also know a bit of game development
 	<h2>I know</h2>
 	<ul>
@@ -12,4 +11,3 @@
 		<li>Python</li>
 		<li>Docker</li>
 	</ul>
-</div>
