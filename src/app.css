@@ -4,6 +4,7 @@
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/geist-mono';
 @plugin "@tailwindcss/typography";
+@config "../tailwind.config.js";
 
 @custom-variant dark (&: is(.dark *));
 

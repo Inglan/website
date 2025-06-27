@@ -16,7 +16,8 @@ const config = {
 		mdsvex({
 			extensions: ['.svx', '.md'],
 			layout: {
-				blog: join(__dirname, './src/lib/layouts/blog.svelte')
+				blog: join(__dirname, './src/lib/layouts/blog.svelte'),
+				_: join(__dirname, './src/lib/layouts/default.svelte')
 			}
 		})
 	],
