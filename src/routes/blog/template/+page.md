@@ -2,8 +2,8 @@
 title: Template
 image:
 description:
-posted: 0
-updated: 0
+posted:
+updated:
 draft: true
 tags: []
 ---
