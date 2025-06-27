@@ -7,6 +7,10 @@
 	const { data }: PageProps = $props();
 </script>
 
+<svelte:head>
+	<title>Blog - Ingo's Site</title>
+</svelte:head>
+
 <Content>
 	<h1>Blog</h1>
 	<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 not-prose">

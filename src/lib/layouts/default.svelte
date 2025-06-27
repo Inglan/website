@@ -5,7 +5,7 @@
 
 <svelte:head>
 	{#if title}
-		<title>{title}</title>
+		<title>{title + " - Ingo's Site"}</title>
 	{/if}
 </svelte:head>
 

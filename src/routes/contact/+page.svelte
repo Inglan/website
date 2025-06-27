@@ -12,6 +12,10 @@
 	const id = $props.id();
 </script>
 
+<svelte:head>
+	<title>Contact - Ingo's Site</title>
+</svelte:head>
+
 <Content>
 	<h1>Contact me</h1>
 	<a href="mailto:me@ingo.au" class="text-4xl hover:underline flex flex-row gap-2 items-center">

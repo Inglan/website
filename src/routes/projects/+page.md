@@ -1,1 +1,4 @@
+---
+title: Projects
+---
 # Coming Soon :)

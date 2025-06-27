@@ -14,6 +14,10 @@
 	import Content from '$lib/components/content.svelte';
 </script>
 
+<svelte:head>
+	<title>{title + " - Ingo's Site"}</title>
+</svelte:head>
+
 <div class="flex min-h-96 relative p-5 flex-col">
 	<img
 		src={image}
