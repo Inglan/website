@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { children, title, image, posted, updated, draft } = $props();
+	let { children, title, image, posted, updated } = $props();
 
 	import dayjs from 'dayjs';
 	import relativeTime from 'dayjs/plugin/relativeTime';
@@ -38,13 +38,22 @@
 		></div>
 		<h1 class="!m-0">{title}</h1>
 		<div class="grow"></div>
-		<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
-			<div class="flex flex-row gap-1 items-center">
-				<IconCalendar class="size-6" />
-				{dayjs.unix(posted).format('DD/MM/YY')}
+		{#if posted}
+			<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
+				<div class="flex flex-row gap-1 items-center">
+					<IconCalendar class="size-6" />
+					{dayjs.unix(posted).format('DD/MM/YY')}
+				</div>
+				{dayjs.unix(posted).fromNow()}
 			</div>
-			{dayjs.unix(posted).fromNow()}
-		</div>
+		{:else}
+			<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
+				<div class="flex flex-row gap-1 items-center">
+					<IconEdit class="size-6" />
+					Draft
+				</div>
+			</div>
+		{/if}
 		{#if updated}
 			<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
 				<div class="flex flex-row gap-1 items-center">
@@ -53,14 +62,6 @@
 				</div>
 
 				{dayjs.unix(updated).fromNow()}
-			</div>
-		{/if}
-		{#if draft}
-			<div class="flex flex-col p-3 border border-dashed rounded-xl h-fit text-nowrap">
-				<div class="flex flex-row gap-1 items-center">
-					<IconEdit class="size-6" />
-					Draft
-				</div>
 			</div>
 		{/if}
 	</div>

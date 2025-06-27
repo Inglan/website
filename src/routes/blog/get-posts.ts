@@ -8,7 +8,6 @@ export async function getPosts() {
 					image: string;
 					posted: number;
 					updated: number;
-					draft: boolean;
 					tags: string[];
 				};
 			};
@@ -18,7 +17,7 @@ export async function getPosts() {
 	);
 
 	// Filter out draft posts
-	const filteredPosts = posts.filter((post) => !post.draft);
+	const filteredPosts = posts.filter((post) => !(post.posted == undefined));
 
 	let sortedPosts = filteredPosts.sort((a, b) => b.posted - a.posted);
 

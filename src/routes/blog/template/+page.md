@@ -4,7 +4,6 @@ image:
 description:
 posted:
 updated:
-draft: true
 tags: []
 ---
 
