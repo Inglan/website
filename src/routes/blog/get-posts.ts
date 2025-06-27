@@ -8,6 +8,7 @@ export async function getPosts({ offset = 0, limit = 100 }) {
 					image: string;
 					posted: number;
 					updated: number;
+					draft: boolean;
 					tags: string[];
 				};
 			};
@@ -16,7 +17,10 @@ export async function getPosts({ offset = 0, limit = 100 }) {
 		})
 	);
 
-	let sortedPosts = posts.sort();
+	// Filter out draft posts
+	const filteredPosts = posts.filter((post) => !post.draft);
+
+	let sortedPosts = filteredPosts.sort((a, b) => b.posted - a.posted);
 
 	if (offset) {
 		sortedPosts = sortedPosts.slice(offset);
