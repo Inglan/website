@@ -11,6 +11,7 @@
 	import IconCalendar from '~icons/material-symbols/calendar-month-rounded';
 	import IconEdit from '~icons/material-symbols/edit-rounded';
 	import IconChevronLeft from '~icons/material-symbols/chevron-left-rounded';
+	import Content from '$lib/components/content.svelte';
 </script>
 
 <div class="flex min-h-96 relative p-5 flex-col">
@@ -52,6 +53,6 @@
 		{/if}
 	</div>
 </div>
-<div class="prose prose-lg md:prose-xl prose-invert mx-auto p-3">
+<Content>
 	{@render children()}
-</div>
+</Content>
