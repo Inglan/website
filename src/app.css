@@ -4,6 +4,7 @@
 @import '@fontsource-variable/geist';
 @import '@fontsource-variable/geist-mono';
 @plugin "@tailwindcss/typography";
+@config "../tailwind.config.js";
 
 @custom-variant dark (&: is(.dark *));
 
@@ -113,5 +114,14 @@
 	body {
 		@apply bg-background text-foreground;
 		letter-spacing: var(--tracking-normal);
+	}
+
+	html {
+		-ms-overflow-style: none;
+		scrollbar-width: none;
+	}
+
+	html::-webkit-scrollbar {
+		display: none;
 	}
 }

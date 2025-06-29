@@ -1,4 +1,4 @@
-export async function getPosts({ offset = 0, limit = 100 }) {
+export async function getPosts() {
 	const posts = await Promise.all(
 		Object.entries(import.meta.glob('./**/*.md')).map(async ([path, resolver]) => {
 			const { metadata } = (await resolver()) as {
@@ -16,15 +16,10 @@ export async function getPosts({ offset = 0, limit = 100 }) {
 		})
 	);
 
-	let sortedPosts = posts.sort();
+	// Filter out draft posts
+	const filteredPosts = posts.filter((post) => !(post.posted == undefined));
 
-	if (offset) {
-		sortedPosts = sortedPosts.slice(offset);
-	}
-
-	if (limit && limit < sortedPosts.length && limit != -1) {
-		sortedPosts = sortedPosts.slice(0, limit);
-	}
+	let sortedPosts = filteredPosts.sort((a, b) => b.posted - a.posted);
 
 	let finalPosts = sortedPosts.map((post) => ({
 		title: post.title,
