@@ -3,6 +3,7 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { createHighlighter } from '@bitmachina/highlighter';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,6 +19,12 @@ const config = {
 			layout: {
 				blog: join(__dirname, './src/lib/layouts/blog.svelte'),
 				_: join(__dirname, './src/lib/layouts/default.svelte')
+			},
+			highlight: {
+				highlighter: await createHighlighter({
+					theme: 'catppuccin-mocha'
+					// langs: ['javascript', 'typescript', 'css', 'html']
+				})
 			}
 		})
 	],

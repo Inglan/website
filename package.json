@@ -45,6 +45,7 @@
 		]
 	},
 	"dependencies": {
+		"@bitmachina/highlighter": "1.0.0-alpha.5",
 		"@fontsource-variable/geist": "^5.2.6",
 		"@fontsource-variable/geist-mono": "^5.2.6",
 		"dayjs": "^1.11.13",

@@ -124,4 +124,12 @@
 	html::-webkit-scrollbar {
 		display: none;
 	}
+
+	code > span {
+		display: block !important;
+	}
+
+	pre {
+		background-color: var(--muted) !important;
+	}
 }

@@ -14,3 +14,10 @@ I am a web developer but also know a bit of game development
 * Godot
 * Python
 * Docker
+
+```javascript
+while (true) {
+  code()
+  // sleep()
+}
+````
