@@ -14,6 +14,8 @@ import {
 } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { motion } from "motion/react";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -75,6 +77,7 @@ function MenuItem({
   label: string;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
+  const pathname = usePathname();
   return (
     <Link
       href={url}
@@ -82,7 +85,12 @@ function MenuItem({
         setMobileMenuOpen(false);
       }}
     >
-      <span className="sm:text-7xl text-6xl">{label}</span>
+      <motion.span
+        animate={{ color: pathname == url ? "var(--primary)" : "var(--muted)" }}
+        className="sm:text-7xl text-6xl text-muted"
+      >
+        {label}
+      </motion.span>
     </Link>
   );
 }
