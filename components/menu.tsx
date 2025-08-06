@@ -29,7 +29,7 @@ export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <>
-      <div className="min-w-96 h-screen sticky top-0 left-0 justify-center p-4 px-10 flex-col gap-4 border-r border-dashed hidden md:flex">
+      <div className="h-screen sticky top-0 left-0 justify-center p-4 px-10 flex-col gap-4 border-r border-dashed hidden md:flex">
         {menuItems.map((item) => (
           <MenuItem
             key={item.url}
