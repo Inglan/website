@@ -4,9 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Menu from "@/components/menu";
 
-const geist = Geist({
-  subsets: ["latin"],
-});
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--geist-mono",
