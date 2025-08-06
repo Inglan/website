@@ -44,6 +44,7 @@ export default function Menu() {
         direction="left"
       >
         <DrawerContent>
+          <DrawerTitle className="sr-only">Menu</DrawerTitle>
           <div className="flex flex-col gap-4 p-5 h-full justify-end">
             {menuItems.map((item) => (
               <MenuItem
