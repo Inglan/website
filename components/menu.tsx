@@ -29,7 +29,12 @@ export default function Menu() {
     <>
       <div className="min-w-96 h-screen sticky top-0 left-0 justify-center p-4 px-10 flex-col gap-4 border-r border-dashed hidden md:flex">
         {menuItems.map((item) => (
-          <MenuItem key={item.url} url={item.url} label={item.label} />
+          <MenuItem
+            key={item.url}
+            url={item.url}
+            label={item.label}
+            setMobileMenuOpen={setMobileMenuOpen}
+          />
         ))}
       </div>
 
@@ -41,7 +46,12 @@ export default function Menu() {
         <DrawerContent>
           <div className="flex flex-col gap-4 p-5 h-full justify-end">
             {menuItems.map((item) => (
-              <MenuItem key={item.url} url={item.url} label={item.label} />
+              <MenuItem
+                key={item.url}
+                url={item.url}
+                label={item.label}
+                setMobileMenuOpen={setMobileMenuOpen}
+              />
             ))}
           </div>
         </DrawerContent>
@@ -59,15 +69,23 @@ export default function Menu() {
   );
 }
 
-function MenuItem({ url, label }: { url: string; label: string }) {
+function MenuItem({
+  url,
+  label,
+  setMobileMenuOpen,
+}: {
+  url: string;
+  label: string;
+  setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   return (
     <Link
       href={url}
-      onClick={() => {}}
-      className={clsx("text-[0px] hover:text-foreground duration-300")}
+      onClick={() => {
+        setMobileMenuOpen(false);
+      }}
     >
       <span className="text-7xl">{label}</span>
-      <span>/</span>
     </Link>
   );
 }
