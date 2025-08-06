@@ -6,7 +6,13 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate:types": "payload generate:types"
+  },
+  "pnpm": {
+    "overrides": {
+      "undici": "^5.28.4"
+    }
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -36,6 +42,8 @@
     "vaul": "^1.1.2"
   },
   "devDependencies": {
+    "@swc-node/register": "^1.10.10",
+    "@swc/core": "^1.13.3",
     "@tailwindcss/postcss": "^4",
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
