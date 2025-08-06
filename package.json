@@ -16,6 +16,7 @@
     "@payloadcms/next": "^3.50.0",
     "@payloadcms/payload-cloud": "^3.50.0",
     "@payloadcms/richtext-lexical": "^3.50.0",
+    "@payloadcms/storage-vercel-blob": "^3.50.0",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-slot": "^1.2.3",
