@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
+import { MenuIcon } from "lucide-react";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -62,7 +63,7 @@ export default function Menu() {
         variant="outline"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
-        -
+        <MenuIcon />
       </Button>
     </>
   );
