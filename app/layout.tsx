@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import Menu from "@/components/menu";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -25,7 +26,10 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          {children}
+          <div className="flex flex-row w-full">
+            <Menu />
+            <div className="w-full">{children}</div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

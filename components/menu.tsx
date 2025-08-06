@@ -1,0 +1,73 @@
+"use client";
+
+import clsx from "clsx";
+import Link from "next/link";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+
+const menuItems = [
+  { url: "/", label: "Home" },
+  { url: "/about", label: "About" },
+  { url: "/projects", label: "Projects" },
+  { url: "/blog", label: "Blog" },
+  { url: "/contact", label: "Contact" },
+];
+
+export default function Menu() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  return (
+    <>
+      <div className="min-w-96 h-screen sticky top-0 left-0 justify-center p-4 px-10 flex-col gap-4 border-r border-dashed hidden md:flex">
+        {menuItems.map((item) => (
+          <MenuItem key={item.url} url={item.url} label={item.label} />
+        ))}
+      </div>
+
+      <Drawer
+        open={mobileMenuOpen}
+        onOpenChange={setMobileMenuOpen}
+        direction="left"
+      >
+        <DrawerContent>
+          <div className="flex flex-col gap-4 p-5 h-full justify-end">
+            {menuItems.map((item) => (
+              <MenuItem key={item.url} url={item.url} label={item.label} />
+            ))}
+          </div>
+        </DrawerContent>
+      </Drawer>
+
+      <Button
+        className="fixed bottom-3 left-3 text-2xl size-15 md:hidden"
+        size="icon"
+        variant="outline"
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+      >
+        -
+      </Button>
+    </>
+  );
+}
+
+function MenuItem({ url, label }: { url: string; label: string }) {
+  return (
+    <Link
+      href={url}
+      onClick={() => {}}
+      className={clsx("text-[0px] hover:text-foreground duration-300")}
+    >
+      <span className="text-7xl">{label}</span>
+      <span>/</span>
+    </Link>
+  );
+}
