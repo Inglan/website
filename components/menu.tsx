@@ -38,11 +38,7 @@ export default function Menu() {
         ))}
       </div>
 
-      <Drawer
-        open={mobileMenuOpen}
-        onOpenChange={setMobileMenuOpen}
-        direction="left"
-      >
+      <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
         <DrawerContent>
           <DrawerTitle className="sr-only">Menu</DrawerTitle>
           <div className="flex flex-col gap-4 p-5 h-full justify-end">
@@ -86,7 +82,7 @@ function MenuItem({
         setMobileMenuOpen(false);
       }}
     >
-      <span className="text-7xl">{label}</span>
+      <span className="sm:text-7xl text-6xl">{label}</span>
     </Link>
   );
 }
