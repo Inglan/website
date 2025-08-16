@@ -60,7 +60,7 @@ export default function Menu() {
               key={item.url}
               url={item.url}
               label={item.label}
-              className="mx-4"
+              className="mx-10"
               setMobileMenuOpen={setMobileMenuOpen}
             />
           ))}
