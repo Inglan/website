@@ -111,7 +111,7 @@ function User() {
   return (
     <div
       className={clsx(
-        "flex w-full items-center border border-dashed rounded p-3 gap-3",
+        "flex w-full items-center border border-dashed rounded p-2 gap-2",
         me?.role == "write" ? "border-primary" : "",
       )}
     >
