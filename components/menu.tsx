@@ -44,18 +44,7 @@ export default function Menu() {
           />
         ))}
         <Authenticated>
-          <div className="flex w-full items-center border border-dashed rounded p-3">
-            <div className="flex flex-col grow">
-              <span>{me?.name}</span>
-              <span>{me?.email}</span>
-            </div>
-            <Button variant="ghost" size="icon">
-              <Settings />
-            </Button>
-            <Button variant="ghost" size="icon">
-              <LogOut />
-            </Button>
-          </div>
+          <User />
         </Authenticated>
       </div>
 
@@ -71,6 +60,9 @@ export default function Menu() {
                 setMobileMenuOpen={setMobileMenuOpen}
               />
             ))}
+            <Authenticated>
+              <User />
+            </Authenticated>
           </div>
         </DrawerContent>
       </Drawer>
@@ -111,5 +103,23 @@ function MenuItem({
         {label}
       </motion.span>
     </Link>
+  );
+}
+
+function User() {
+  const me = useQuery(api.auth.getMe);
+  return (
+    <div className="flex w-full items-center border border-dashed rounded p-3">
+      <div className="flex flex-col grow">
+        <span>{me?.name}</span>
+        <span>{me?.email}</span>
+      </div>
+      <Button variant="ghost" size="icon">
+        <Settings />
+      </Button>
+      <Button variant="ghost" size="icon">
+        <LogOut />
+      </Button>
+    </div>
   );
 }
