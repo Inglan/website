@@ -16,8 +16,10 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import { MenuIcon } from "lucide-react";
+import { LogOut, MenuIcon, Settings } from "lucide-react";
 import { Authenticated, Unauthenticated } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
+import { api } from "@/convex/_generated/api";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -29,6 +31,7 @@ const menuItems = [
 
 export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const me = useQuery(api.auth.getMe);
   return (
     <>
       <div className="h-screen sticky top-0 left-0 justify-center p-4 px-10 flex-col gap-4 border-r border-dashed hidden md:flex">
@@ -40,7 +43,20 @@ export default function Menu() {
             setMobileMenuOpen={setMobileMenuOpen}
           />
         ))}
-        <Authenticated>Signed in</Authenticated>
+        <Authenticated>
+          <div className="flex w-full items-center border border-dashed rounded p-3">
+            <div className="flex flex-col grow">
+              <span>{me?.name}</span>
+              <span>{me?.email}</span>
+            </div>
+            <Button variant="ghost" size="icon">
+              <Settings />
+            </Button>
+            <Button variant="ghost" size="icon">
+              <LogOut />
+            </Button>
+          </div>
+        </Authenticated>
       </div>
 
       <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
