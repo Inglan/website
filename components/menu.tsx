@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/drawer";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useState } from "react";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import {
   LogOut,
@@ -53,18 +53,27 @@ export default function Menu() {
   const me = useQuery(api.auth.getMe);
   return (
     <>
-      <div className="h-screen sticky top-0 left-0 justify-center p-4 px-10 flex-col gap-4 border-r border-dashed hidden md:flex">
-        {menuItems.map((item) => (
-          <MenuItem
-            key={item.url}
-            url={item.url}
-            label={item.label}
-            setMobileMenuOpen={setMobileMenuOpen}
-          />
-        ))}
-        <Authenticated>
-          <User />
-        </Authenticated>
+      <div className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden">
+        <AnimatePresence>
+          {menuItems.map((item) => (
+            <MenuItem
+              key={item.url}
+              url={item.url}
+              label={item.label}
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
+          ))}
+          {me && (
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              className="absolute bottom-0 w-full left-0 p-2 border-t border-dashed"
+            >
+              <User />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       <Drawer
@@ -84,7 +93,9 @@ export default function Menu() {
               />
             ))}
             <Authenticated>
-              <User setMobileMenuOpen={setMobileMenuOpen} />
+              <div className="border border-dashed rounded p-2 ">
+                <User setMobileMenuOpen={setMobileMenuOpen} />
+              </div>
             </Authenticated>
           </div>
         </DrawerContent>
@@ -141,12 +152,7 @@ function User({
   const { signOut } = useAuthActions();
 
   return (
-    <div
-      className={clsx(
-        "flex w-full items-center border border-dashed rounded p-2 gap-2",
-        me?.role == "write" ? "border-primary" : "",
-      )}
-    >
+    <div className="flex w-full items-center gap-2">
       {me?.role == "write" && <Pen className="size-4" />}
       <div className="flex flex-col grow">
         <span>{me?.name}</span>
