@@ -36,6 +36,7 @@ import {
   DropdownMenuRadioItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -150,46 +151,54 @@ function User() {
           <MoreVertical />
         </DrawerTrigger>
         <DrawerContent>
-          <DrawerTitle>
-            <p>{me?.name}</p>
-            <p className="text-foreground/75 text-xs">{me?.email}</p>
+          <DrawerTitle className="flex flex-row gap-2 p-2 items-center w-full max-w-lg mx-auto">
+            <Avatar>
+              <AvatarImage src={me?.img} />
+              <AvatarFallback>{me?.name?.charAt(0)}</AvatarFallback>
+            </Avatar>
+            <div className="flex flex-col">
+              <p>{me?.name}</p>
+              <p className="text-foreground/75 text-xs">{me?.email}</p>
+            </div>
           </DrawerTitle>
-          <NestedDrawer
-            open={profileDrawerOpen}
-            onOpenChange={setProfileDrawerOpen}
-            shouldScaleBackground
-          >
-            <DrawerTrigger className={buttonVariants({})}>
-              <Pen />
-              Edit profile
-            </DrawerTrigger>
-            <DrawerContent>
-              <DrawerHeader>
-                <DrawerTitle>Edit Profile</DrawerTitle>
-              </DrawerHeader>
-              Not implemented
-            </DrawerContent>
-          </NestedDrawer>
-          <Button>
-            <LogOut />
-            Logout
-          </Button>
-          <NestedDrawer
-            open={deleteAccountDrawerOpen}
-            onOpenChange={setDeleteAccountDrawerOpen}
-            shouldScaleBackground
-          >
-            <DrawerTrigger className={buttonVariants({})}>
-              <Trash />
-              Delete account
-            </DrawerTrigger>
-            <DrawerContent>
-              <DrawerHeader>
-                <DrawerTitle>Delete Account</DrawerTitle>
-              </DrawerHeader>
-              Not implemented
-            </DrawerContent>
-          </NestedDrawer>
+          <div className="mx-auto w-full max-w-lg p-2 flex flex-col gap-2">
+            <NestedDrawer
+              open={profileDrawerOpen}
+              onOpenChange={setProfileDrawerOpen}
+              shouldScaleBackground
+            >
+              <DrawerTrigger className={buttonVariants({})}>
+                <Pen />
+                Edit profile
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle>Edit Profile</DrawerTitle>
+                </DrawerHeader>
+                Not implemented
+              </DrawerContent>
+            </NestedDrawer>
+            <Button>
+              <LogOut />
+              Logout
+            </Button>
+            <NestedDrawer
+              open={deleteAccountDrawerOpen}
+              onOpenChange={setDeleteAccountDrawerOpen}
+              shouldScaleBackground
+            >
+              <DrawerTrigger className={buttonVariants({})}>
+                <Trash />
+                Delete account
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle>Delete Account</DrawerTitle>
+                </DrawerHeader>
+                Not implemented
+              </DrawerContent>
+            </NestedDrawer>
+          </div>
         </DrawerContent>
       </NestedDrawer>
     </div>
