@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import { LogOut, MenuIcon, Settings } from "lucide-react";
+import { LogOut, MenuIcon, Pen, Settings } from "lucide-react";
 import { Authenticated, Unauthenticated } from "convex/react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
@@ -109,7 +109,13 @@ function MenuItem({
 function User() {
   const me = useQuery(api.auth.getMe);
   return (
-    <div className="flex w-full items-center border border-dashed rounded p-3">
+    <div
+      className={clsx(
+        "flex w-full items-center border border-dashed rounded p-3 gap-3",
+        me?.role == "write" ? "border-primary" : "",
+      )}
+    >
+      {me?.role == "write" && <Pen className="size-4" />}
       <div className="flex flex-col grow">
         <span>{me?.name}</span>
         <span>{me?.email}</span>
