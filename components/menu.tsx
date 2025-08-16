@@ -167,7 +167,7 @@ function User() {
               onOpenChange={setProfileDrawerOpen}
               shouldScaleBackground
             >
-              <DrawerTrigger className={buttonVariants({})}>
+              <DrawerTrigger className={buttonVariants({ variant: "default" })}>
                 <Pen />
                 Edit profile
               </DrawerTrigger>
@@ -178,7 +178,7 @@ function User() {
                 Not implemented
               </DrawerContent>
             </NestedDrawer>
-            <Button>
+            <Button variant="outline">
               <LogOut />
               Logout
             </Button>
@@ -187,7 +187,9 @@ function User() {
               onOpenChange={setDeleteAccountDrawerOpen}
               shouldScaleBackground
             >
-              <DrawerTrigger className={buttonVariants({})}>
+              <DrawerTrigger
+                className={buttonVariants({ variant: "destructive" })}
+              >
                 <Trash />
                 Delete account
               </DrawerTrigger>
