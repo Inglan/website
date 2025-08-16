@@ -69,6 +69,7 @@ export default function Menu() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
+              transition={{ ease: "easeOut" }}
               className="absolute bottom-0 w-full left-0 p-2 border-t border-dashed"
             >
               <User />
