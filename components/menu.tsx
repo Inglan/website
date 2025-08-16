@@ -11,6 +11,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
+  NestedDrawer,
 } from "@/components/ui/drawer";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useState } from "react";
@@ -127,6 +128,9 @@ function MenuItem({
 
 function User() {
   const me = useQuery(api.auth.getMe);
+  const [deleteAccountDrawerOpen, setDeleteAccountDrawerOpen] = useState(false);
+  const [profileDrawerOpen, setProfileDrawerOpen] = useState(false);
+
   return (
     <div
       className={clsx(
@@ -139,31 +143,55 @@ function User() {
         <span>{me?.name}</span>
         <span>{me?.email}</span>
       </div>
-      <DropdownMenu>
-        <DropdownMenuTrigger
+      <NestedDrawer shouldScaleBackground>
+        <DrawerTrigger
           className={buttonVariants({ variant: "ghost", size: "icon" })}
         >
           <MoreVertical />
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>
+        </DrawerTrigger>
+        <DrawerContent>
+          <DrawerTitle>
             <p>{me?.name}</p>
             <p className="text-foreground/75 text-xs">{me?.email}</p>
-          </DropdownMenuLabel>
-          <DropdownMenuItem>
-            <Pen />
-            Edit profile
-          </DropdownMenuItem>
-          <DropdownMenuItem>
+          </DrawerTitle>
+          <NestedDrawer
+            open={profileDrawerOpen}
+            onOpenChange={setProfileDrawerOpen}
+            shouldScaleBackground
+          >
+            <DrawerTrigger className={buttonVariants({})}>
+              <Pen />
+              Edit profile
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>Edit Profile</DrawerTitle>
+              </DrawerHeader>
+              Not implemented
+            </DrawerContent>
+          </NestedDrawer>
+          <Button>
             <LogOut />
             Logout
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Trash />
-            Delete account
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+          </Button>
+          <NestedDrawer
+            open={deleteAccountDrawerOpen}
+            onOpenChange={setDeleteAccountDrawerOpen}
+            shouldScaleBackground
+          >
+            <DrawerTrigger className={buttonVariants({})}>
+              <Trash />
+              Delete account
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>Delete Account</DrawerTitle>
+              </DrawerHeader>
+              Not implemented
+            </DrawerContent>
+          </NestedDrawer>
+        </DrawerContent>
+      </NestedDrawer>
     </div>
   );
 }
