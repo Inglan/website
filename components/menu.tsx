@@ -17,6 +17,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { MenuIcon } from "lucide-react";
+import { Authenticated, Unauthenticated } from "convex/react";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -39,6 +40,8 @@ export default function Menu() {
             setMobileMenuOpen={setMobileMenuOpen}
           />
         ))}
+        <Authenticated>Signed in</Authenticated>
+        <Unauthenticated>Signed out</Unauthenticated>
       </div>
 
       <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
