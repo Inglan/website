@@ -12,14 +12,29 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
-import { LogOut, MenuIcon, Pen, Settings } from "lucide-react";
+import {
+  LogOut,
+  MenuIcon,
+  MoreVertical,
+  Pen,
+  Settings,
+  Trash,
+} from "lucide-react";
 import { Authenticated, Unauthenticated } from "convex/react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -120,12 +135,31 @@ function User() {
         <span>{me?.name}</span>
         <span>{me?.email}</span>
       </div>
-      <Button variant="ghost" size="icon">
-        <Settings />
-      </Button>
-      <Button variant="ghost" size="icon">
-        <LogOut />
-      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger
+          className={buttonVariants({ variant: "ghost", size: "icon" })}
+        >
+          <MoreVertical />
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>
+            <p>{me?.name}</p>
+            <p className="text-foreground/75 text-xs">{me?.email}</p>
+          </DropdownMenuLabel>
+          <DropdownMenuItem>
+            <Pen />
+            Edit profile
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <LogOut />
+            Logout
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Trash />
+            Delete account
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   );
 }
