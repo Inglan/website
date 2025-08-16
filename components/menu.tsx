@@ -37,6 +37,8 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { useAuthActions } from "@convex-dev/auth/react";
+import { toast } from "sonner";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -129,8 +131,10 @@ function MenuItem({
 
 function User() {
   const me = useQuery(api.auth.getMe);
+  const [accountDrawerOpen, setAccountDrawerOpen] = useState(false);
   const [deleteAccountDrawerOpen, setDeleteAccountDrawerOpen] = useState(false);
   const [profileDrawerOpen, setProfileDrawerOpen] = useState(false);
+  const { signOut } = useAuthActions();
 
   return (
     <div
@@ -144,7 +148,11 @@ function User() {
         <span>{me?.name}</span>
         <span>{me?.email}</span>
       </div>
-      <NestedDrawer shouldScaleBackground>
+      <NestedDrawer
+        open={accountDrawerOpen}
+        onOpenChange={setAccountDrawerOpen}
+        shouldScaleBackground
+      >
         <DrawerTrigger
           className={buttonVariants({ variant: "ghost", size: "icon" })}
         >
@@ -178,7 +186,17 @@ function User() {
                 Not implemented
               </DrawerContent>
             </NestedDrawer>
-            <Button variant="outline">
+            <Button
+              variant="outline"
+              onClick={() => {
+                setAccountDrawerOpen(false);
+                toast.promise(signOut, {
+                  loading: "Logging out...",
+                  success: "Logged out!",
+                  error: "Failed to log out",
+                });
+              }}
+            >
               <LogOut />
               Logout
             </Button>
