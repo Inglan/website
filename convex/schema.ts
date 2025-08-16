@@ -12,6 +12,7 @@ const schema = defineSchema({
     phone: v.optional(v.string()),
     phoneVerificationTime: v.optional(v.float64()),
     isAnonymous: v.optional(v.boolean()),
+    displayName: v.optional(v.string()),
 
     /*
      * must be optional because OAuth providers don't return a role
