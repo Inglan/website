@@ -16,9 +16,7 @@ const schema = defineSchema({
     /*
      * must be optional because OAuth providers don't return a role
      */
-    role: v.optional(
-      v.union(v.literal("read"), v.literal("write"), v.literal("admin")),
-    ),
+    role: v.optional(v.union(v.literal("read"), v.literal("write"))),
   })
     .index("email", ["email"])
     .index("phone", ["phone"]),
