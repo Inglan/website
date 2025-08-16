@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Menu from "@/components/menu";
 import { ConvexClientProvider } from "./ConvexClientProvider";
+import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -23,21 +24,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${geistMono.className} antialiased`}>
-        <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="dark"
-            disableTransitionOnChange
-          >
-            <div className="flex flex-row w-full">
-              <Menu />
-              <div className="w-full">{children}</div>
-            </div>
-          </ThemeProvider>
-        </ConvexClientProvider>
-      </body>
-    </html>
+    <ConvexAuthNextjsServerProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${geistMono.className} antialiased`}>
+          <ConvexClientProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="dark"
+              disableTransitionOnChange
+            >
+              <div className="flex flex-row w-full">
+                <Menu />
+                <div className="w-full">{children}</div>
+              </div>
+            </ThemeProvider>
+          </ConvexClientProvider>
+        </body>
+      </html>{" "}
+    </ConvexAuthNextjsServerProvider>
   );
 }
