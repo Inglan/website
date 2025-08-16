@@ -63,7 +63,11 @@ export default function Menu() {
         </Authenticated>
       </div>
 
-      <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+      <Drawer
+        open={mobileMenuOpen}
+        onOpenChange={setMobileMenuOpen}
+        shouldScaleBackground
+      >
         <DrawerContent>
           <DrawerTitle className="sr-only">Menu</DrawerTitle>
           <div className="flex flex-col gap-4 p-5 h-full justify-end">

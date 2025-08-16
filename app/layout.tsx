@@ -33,7 +33,10 @@ export default function RootLayout({
               defaultTheme="dark"
               disableTransitionOnChange
             >
-              <div className="flex flex-row w-full">
+              <div
+                vaul-drawer-wrapper=""
+                className="flex flex-row w-full bg-background"
+              >
                 <Menu />
                 <div className="w-full">{children}</div>
               </div>
