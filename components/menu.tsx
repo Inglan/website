@@ -25,7 +25,6 @@ import {
   Settings,
   Trash,
 } from "lucide-react";
-import { Authenticated, Unauthenticated } from "convex/react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import {
@@ -94,11 +93,11 @@ export default function Menu() {
                 setMobileMenuOpen={setMobileMenuOpen}
               />
             ))}
-            <Authenticated>
+            {me && (
               <div className="border border-dashed rounded p-2 ">
                 <User setMobileMenuOpen={setMobileMenuOpen} />
               </div>
-            </Authenticated>
+            )}
           </div>
         </DrawerContent>
       </Drawer>
