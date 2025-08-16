@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Menu from "@/components/menu";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import { ConvexAuthNextjsServerProvider } from "@convex-dev/auth/nextjs/server";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
                 <Menu />
                 <div className="w-full">{children}</div>
               </div>
+              <Toaster />
             </ThemeProvider>
           </ConvexClientProvider>
         </body>
