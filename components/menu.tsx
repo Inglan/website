@@ -41,7 +41,6 @@ export default function Menu() {
           />
         ))}
         <Authenticated>Signed in</Authenticated>
-        <Unauthenticated>Signed out</Unauthenticated>
       </div>
 
       <Drawer open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
