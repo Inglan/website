@@ -8,8 +8,11 @@ export const { auth, signIn, signOut, store, isAuthenticated } = convexAuth({
     async afterUserCreatedOrUpdated(ctx, args) {
       if (args.existingUserId) return;
 
+      const user = await ctx.db.get(args.userId);
+
       await ctx.db.patch(args.userId, {
         role: "read",
+        displayName: user.name || "",
       });
     },
   },
