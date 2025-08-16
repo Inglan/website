@@ -26,6 +26,7 @@ export const getMe = query({
       name: user?.name || "Unknown",
       email: user?.email || "unknown",
       role: user?.role || "read",
+      img: user?.image || "",
     };
   },
 });
