@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { LoaderCircle } from "lucide-react";
 import { useAuthActions } from "@convex-dev/auth/react";
 
-export default async function Login() {
+export default function Login() {
   const { signIn } = useAuthActions();
   useEffect(() => {
     signIn("github");
