@@ -53,13 +53,14 @@ export default function Menu() {
   const me = useQuery(api.auth.getMe);
   return (
     <>
-      <div className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden">
+      <div className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden min-w-fit">
         <AnimatePresence>
           {menuItems.map((item) => (
             <MenuItem
               key={item.url}
               url={item.url}
               label={item.label}
+              className="mx-4"
               setMobileMenuOpen={setMobileMenuOpen}
             />
           ))}
@@ -117,10 +118,12 @@ function MenuItem({
   url,
   label,
   setMobileMenuOpen,
+  className = "",
 }: {
   url: string;
   label: string;
   setMobileMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  className?: string;
 }) {
   const pathname = usePathname();
   return (
@@ -132,7 +135,10 @@ function MenuItem({
     >
       <motion.span
         animate={{ color: pathname == url ? "var(--primary)" : "var(--muted)" }}
-        className="sm:text-7xl text-6xl text-muted"
+        className={clsx(
+          "sm:text-7xl text-6xl text-muted flex-shrink-0 whitespace-nowrap",
+          className,
+        )}
       >
         {label}
       </motion.span>
