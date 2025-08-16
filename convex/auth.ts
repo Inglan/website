@@ -21,6 +21,11 @@ export const getMe = query({
     const userId = await getAuthUserId(ctx);
     if (!userId) return null;
 
-    return await ctx.db.get(userId);
+    const user = await ctx.db.get(userId);
+    return {
+      name: user?.name || "Unknown",
+      email: user?.email || "unknown",
+      role: user?.role || "read",
+    };
   },
 });
