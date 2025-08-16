@@ -10,7 +10,7 @@ export default function Login() {
   });
 
   return (
-    <div className="w-full h-full flex justify-center items-center gap-3">
+    <div className="w-full h-screen flex justify-center items-center gap-3">
       <LoaderCircle className="animate-spin text-primary" />
       Redirecting to GitHub
     </div>
