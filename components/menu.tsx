@@ -84,7 +84,7 @@ export default function Menu() {
               />
             ))}
             <Authenticated>
-              <User />
+              <User setMobileMenuOpen={setMobileMenuOpen} />
             </Authenticated>
           </div>
         </DrawerContent>
@@ -129,7 +129,11 @@ function MenuItem({
   );
 }
 
-function User() {
+function User({
+  setMobileMenuOpen,
+}: {
+  setMobileMenuOpen?: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
   const me = useQuery(api.auth.getMe);
   const [accountDrawerOpen, setAccountDrawerOpen] = useState(false);
   const [deleteAccountDrawerOpen, setDeleteAccountDrawerOpen] = useState(false);
@@ -190,6 +194,9 @@ function User() {
               variant="outline"
               onClick={() => {
                 setAccountDrawerOpen(false);
+                if (setMobileMenuOpen) {
+                  setMobileMenuOpen(false);
+                }
                 toast.promise(signOut, {
                   loading: "Logging out...",
                   success: "Logged out!",
