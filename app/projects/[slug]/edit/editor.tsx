@@ -175,6 +175,7 @@ export default function ProjectEditor(props: {
                 description,
                 content,
                 tags,
+                links,
               }),
               {
                 loading: "Saving...",
