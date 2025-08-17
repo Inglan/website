@@ -14,10 +14,17 @@ import {
 import Link from "next/link";
 import Content from "@/components/content";
 import { ChevronDown, LoaderCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { AnimatePresence, stagger } from "motion/react";
 import { motion } from "motion/react";
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export default function ProjectsPage() {
   const {
@@ -81,7 +88,18 @@ export default function ProjectsPage() {
                   )}
                   More
                 </Button>
-                {me?.role === "write" && <Button>Create</Button>}
+                {me?.role === "write" && (
+                  <Dialog>
+                    <DialogTrigger className={buttonVariants()}>
+                      Create
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Create Project</DialogTitle>
+                      </DialogHeader>
+                    </DialogContent>
+                  </Dialog>
+                )}
               </motion.div>
             )}
           </div>
