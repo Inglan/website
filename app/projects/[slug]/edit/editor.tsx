@@ -187,6 +187,7 @@ export default function ProjectEditor(props: {
                 content,
                 tags,
                 links,
+                show,
               }),
               {
                 loading: "Saving...",
