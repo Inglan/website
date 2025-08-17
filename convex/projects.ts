@@ -33,7 +33,7 @@ export const create = mutation({
         name: args.name,
         slug,
       });
-      return id;
+      return slug;
     } else {
       throw new Error("Unauthorized");
     }
