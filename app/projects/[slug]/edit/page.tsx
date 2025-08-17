@@ -1,5 +1,3 @@
-"use client";
-
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -15,89 +13,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import ProjectEditor from "./editor";
+import { preloadQuery } from "convex/nextjs";
+import { api } from "@/convex/_generated/api";
 
-export default function EditProject() {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [content, setContent] = useState("");
+export default async function EditProject({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const preloadedProjectData = await preloadQuery(api.projects.get, {
+    slug,
+  });
 
-  const [inputtedTag, setInputtedTag] = useState("");
-
-  const [tags, setTags] = useState<string[]>([]);
-
-  return (
-    <Content>
-      <h1>Edit Project</h1>
-      <div className="grid gap-2">
-        <Label htmlFor="name">Name:</Label>
-        <Input
-          type="text"
-          id="name"
-          name="name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <Label htmlFor="description">Description:</Label>
-        <Input
-          type="text"
-          id="description"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <Label htmlFor="content">Content:</Label>
-        <Textarea
-          id="content"
-          name="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
-        />
-        <Label>Tags:</Label>
-        <div className="flex flex-row gap-2 flex-wrap">
-          {tags.map((tag, index) => (
-            <Badge
-              variant="outline"
-              key={index}
-              onClick={() => {
-                setTags(tags.filter((_, i) => i !== index));
-              }}
-            >
-              {tag}
-            </Badge>
-          ))}
-          <Dialog>
-            <DialogTrigger asChild>
-              <Badge>Add</Badge>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Add Tag</DialogTitle>
-              </DialogHeader>
-              <Input
-                type="text"
-                id="tag"
-                name="tag"
-                value={inputtedTag}
-                onChange={(e) => setInputtedTag(e.target.value)}
-              />
-              <DialogFooter>
-                <DialogClose asChild>
-                  <Button
-                    onClick={() => {
-                      setInputtedTag("");
-                      setTags([...tags, inputtedTag]);
-                    }}
-                  >
-                    Add
-                  </Button>
-                </DialogClose>
-              </DialogFooter>
-            </DialogContent>
-          </Dialog>
-        </div>
-        <Button>Save</Button>
-      </div>
-    </Content>
-  );
+  return <ProjectEditor preloadedProjectData={preloadedProjectData} />;
 }
