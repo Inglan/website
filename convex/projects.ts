@@ -2,6 +2,7 @@ import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
 import { paginationOptsValidator } from "convex/server";
 import { getAuthUserId } from "@convex-dev/auth/server";
+import Showdown from "showdown";
 
 export const list = query({
   args: { paginationOpts: paginationOptsValidator },
@@ -24,7 +25,9 @@ export const get = query({
       .withIndex("by_slug", (q) => q.eq("slug", args.slug))
       .first();
     if (!project) throw new Error("Project not found");
-    return project;
+    let converter = new Showdown.Converter();
+    const contenthtml = converter.makeHtml(project.content || "");
+    return { ...project, contenthtml };
   },
 });
 
