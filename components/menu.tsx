@@ -50,9 +50,29 @@ const menuItems = [
 export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const me = useQuery(api.auth.getMe);
+  const pathname = usePathname();
   return (
     <>
-      <div className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden min-w-fit">
+      <motion.div
+        initial={{ x: -500 }}
+        animate={
+          pathname.startsWith("/projects/")
+            ? {
+                filter: "brightness(0.5)",
+                x: -300,
+                position: "fixed",
+                boxShadow: "0 0 100px var(--primary)",
+              }
+            : { x: 0 }
+        }
+        whileHover={{
+          x: 0,
+          filter: "brightness(1)",
+          boxShadow: "0 0 0px var(--primary)",
+        }}
+        transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
+        className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden min-w-fit bg-background z-30"
+      >
         <AnimatePresence>
           {menuItems.map((item) => (
             <MenuItem
@@ -75,7 +95,7 @@ export default function Menu() {
             </motion.div>
           )}
         </AnimatePresence>
-      </div>
+      </motion.div>
 
       <Drawer
         open={mobileMenuOpen}
