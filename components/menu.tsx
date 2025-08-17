@@ -70,7 +70,7 @@ export default function Menu() {
           filter: "brightness(1)",
         }}
         transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
-        className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden min-w-fit bg-background z-30"
+        className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden lg:flex overflow-hidden min-w-fit bg-background z-30"
       >
         <AnimatePresence>
           {menuItems.map((item) => (
@@ -122,7 +122,7 @@ export default function Menu() {
       </Drawer>
 
       <Button
-        className="fixed bottom-3 left-3 text-2xl size-15 md:hidden"
+        className="fixed bottom-3 left-3 text-2xl size-15 lg:hidden"
         size="icon"
         variant="outline"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
