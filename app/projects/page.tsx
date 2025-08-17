@@ -1,6 +1,6 @@
 "use client";
 import { api } from "@/convex/_generated/api";
-import { usePaginatedQuery, usePreloadedQuery } from "convex/react";
+import { usePaginatedQuery, usePreloadedQuery, useQuery } from "convex/react";
 import { preloadQuery } from "convex/nextjs";
 import {
   Card,
@@ -26,6 +26,7 @@ export default function ProjectsPage() {
     loadMore,
   } = usePaginatedQuery(api.projects.list, {}, { initialNumItems: 10 });
   const [lastLoadedCount, setLastLoadedCount] = useState(0);
+  const me = useQuery(api.auth.getMe);
 
   return (
     <Content>
@@ -64,6 +65,7 @@ export default function ProjectsPage() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                className="flex flex-row gap-2"
               >
                 <Button
                   disabled={!(status === "CanLoadMore")}
@@ -79,6 +81,7 @@ export default function ProjectsPage() {
                   )}
                   More
                 </Button>
+                {me?.role === "write" && <Button>Create</Button>}
               </motion.div>
             )}
           </div>
