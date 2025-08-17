@@ -64,6 +64,7 @@ export const update = mutation({
     name: v.string(),
     description: v.optional(v.string()),
     content: v.optional(v.string()),
+    show: v.optional(v.boolean()),
     links: v.optional(
       v.array(
         v.object({
@@ -89,6 +90,7 @@ export const update = mutation({
         name: args.name,
         description: args.description,
         content: args.content,
+        show: args.show,
         links: args.links,
         tags: args.tags,
       });
