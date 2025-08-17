@@ -62,6 +62,7 @@ export default function ProjectEditor(props: {
         />
         <Label htmlFor="content">Content:</Label>
         <Textarea
+          className="min-h-96"
           id="content"
           name="content"
           value={content}
