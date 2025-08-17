@@ -61,14 +61,13 @@ export default function Menu() {
                 filter: "brightness(0.5)",
                 x: -300,
                 position: "fixed",
-                boxShadow: "0 0 100px var(--primary)",
+                boxShadow: "0 0 100px rgba(0, 0, 0, 0.5)",
               }
             : { x: 0 }
         }
         whileHover={{
           x: 0,
           filter: "brightness(1)",
-          boxShadow: "0 0 0px var(--primary)",
         }}
         transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
         className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden md:flex overflow-hidden min-w-fit bg-background z-30"
