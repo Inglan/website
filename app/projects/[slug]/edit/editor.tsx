@@ -1,7 +1,7 @@
 "use client";
 
 import Content from "@/components/content";
-import { Preloaded, usePreloadedQuery } from "convex/react";
+import { Preloaded, useMutation, usePreloadedQuery } from "convex/react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -24,6 +24,7 @@ export default function ProjectEditor(props: {
   preloadedProjectData: Preloaded<typeof api.projects.get>;
 }) {
   const projectData = usePreloadedQuery(props.preloadedProjectData);
+  const save = useMutation(api.projects.update);
 
   const [name, setName] = useState(projectData.name);
   const [description, setDescription] = useState(projectData.description);
@@ -103,7 +104,19 @@ export default function ProjectEditor(props: {
             </DialogContent>
           </Dialog>
         </div>
-        <Button>Save</Button>
+        <Button
+          onClick={() => {
+            save({
+              id: projectData._id,
+              name,
+              description,
+              content,
+              tags,
+            });
+          }}
+        >
+          Save
+        </Button>
       </div>
     </Content>
   );
