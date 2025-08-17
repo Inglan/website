@@ -16,6 +16,7 @@ const schema = defineSchema({
         }),
       ),
     ),
+    show: v.optional(v.boolean()),
     tags: v.optional(v.array(v.string())),
     images: v.optional(v.array(v.id("_storage"))),
   })

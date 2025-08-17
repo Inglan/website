@@ -21,6 +21,7 @@ import { preloadQuery } from "convex/nextjs";
 import { api } from "@/convex/_generated/api";
 import { useState } from "react";
 import { toast } from "sonner";
+import { Checkbox } from "@/components/ui/checkbox";
 export default function ProjectEditor(props: {
   preloadedProjectData: Preloaded<typeof api.projects.get>;
 }) {
@@ -30,6 +31,7 @@ export default function ProjectEditor(props: {
   const [name, setName] = useState(projectData.name);
   const [description, setDescription] = useState(projectData.description);
   const [content, setContent] = useState(projectData.content);
+  const [show, setShow] = useState(projectData.show || false);
 
   const [inputtedTag, setInputtedTag] = useState("");
   const [inputtedLinkTitle, setInputtedLinkTitle] = useState("");
@@ -44,6 +46,14 @@ export default function ProjectEditor(props: {
     <Content>
       <h1>Edit Project</h1>
       <div className="grid gap-2">
+        <div className="flex items-center gap-3">
+          <Checkbox
+            id="show"
+            checked={show}
+            onCheckedChange={(checked) => setShow(checked === true)}
+          />
+          <Label htmlFor="show">Show</Label>
+        </div>
         <Label htmlFor="name">Name:</Label>
         <Input
           type="text"
