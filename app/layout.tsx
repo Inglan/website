@@ -36,7 +36,7 @@ export default function RootLayout({
             >
               <div
                 vaul-drawer-wrapper=""
-                className="flex flex-row w-full bg-background"
+                className="flex flex-row w-full bg-background min-h-screen"
               >
                 <Menu />
                 <div className="w-full">{children}</div>
