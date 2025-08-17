@@ -20,11 +20,15 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 export default function ProjectsPage() {
   const {
@@ -90,13 +94,37 @@ export default function ProjectsPage() {
                 </Button>
                 {me?.role === "write" && (
                   <Dialog>
-                    <DialogTrigger className={buttonVariants()}>
-                      Create
+                    <DialogTrigger asChild>
+                      <Button>Create</Button>
                     </DialogTrigger>
                     <DialogContent>
-                      <DialogHeader>
-                        <DialogTitle>Create Project</DialogTitle>
-                      </DialogHeader>
+                      <form
+                        className="grid w-full gap-4"
+                        onSubmit={(event) => {
+                          event.preventDefault();
+                        }}
+                      >
+                        <DialogHeader>
+                          <DialogTitle>Create Project</DialogTitle>
+                        </DialogHeader>
+                        <div className="grid gap-4">
+                          <div className="grid gap-3">
+                            <Label htmlFor="project-name">Project Name</Label>
+                            <Input
+                              required
+                              id="project-name"
+                              name="project-name"
+                              defaultValue=""
+                            />
+                          </div>
+                        </div>
+                        <DialogFooter>
+                          <DialogClose asChild>
+                            <Button variant="outline">Cancel</Button>
+                          </DialogClose>
+                          <Button type="submit">Create</Button>
+                        </DialogFooter>
+                      </form>
                     </DialogContent>
                   </Dialog>
                 )}
