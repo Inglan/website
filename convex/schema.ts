@@ -6,8 +6,8 @@ const schema = defineSchema({
   projects: defineTable({
     name: v.string(),
     slug: v.string(),
-    description: v.string(),
-    content: v.string(),
+    description: v.optional(v.string()),
+    content: v.optional(v.string()),
     links: v.array(
       v.object({
         title: v.string(),
@@ -20,7 +20,7 @@ const schema = defineSchema({
   posts: defineTable({
     title: v.string(),
     slug: v.string(),
-    content: v.string(),
+    content: v.optional(v.string()),
     tags: v.array(v.string()),
     images: v.array(v.id("_storage")),
   }),
