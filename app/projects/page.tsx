@@ -1,6 +1,11 @@
 "use client";
 import { api } from "@/convex/_generated/api";
-import { usePaginatedQuery, usePreloadedQuery, useQuery } from "convex/react";
+import {
+  useMutation,
+  usePaginatedQuery,
+  usePreloadedQuery,
+  useQuery,
+} from "convex/react";
 import { preloadQuery } from "convex/nextjs";
 import {
   Card,
@@ -29,6 +34,8 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 export default function ProjectsPage() {
   const {
@@ -38,6 +45,8 @@ export default function ProjectsPage() {
   } = usePaginatedQuery(api.projects.list, {}, { initialNumItems: 10 });
   const [lastLoadedCount, setLastLoadedCount] = useState(0);
   const me = useQuery(api.auth.getMe);
+  const create = useMutation(api.projects.create);
+  const router = useRouter();
 
   return (
     <Content>
@@ -102,6 +111,29 @@ export default function ProjectsPage() {
                         className="grid w-full gap-4"
                         onSubmit={(event) => {
                           event.preventDefault();
+                          const form = event.target as HTMLFormElement;
+                          const nameInput = form.elements.namedItem(
+                            "name",
+                          ) as HTMLInputElement | null;
+                          toast.promise(
+                            new Promise((resolve, reject) => {
+                              create({
+                                name: nameInput?.value ?? "",
+                              })
+                                .then((slug) => {
+                                  router.push(`/projects/${slug}/edit`);
+                                  resolve("Project created!");
+                                })
+                                .catch(() => {
+                                  reject("Failed to create project");
+                                });
+                            }),
+                            {
+                              loading: "Creating project...",
+                              success: "Project created!",
+                              error: "Failed to create project",
+                            },
+                          );
                         }}
                       >
                         <DialogHeader>
@@ -113,7 +145,7 @@ export default function ProjectsPage() {
                             <Input
                               required
                               id="project-name"
-                              name="project-name"
+                              name="name"
                               defaultValue=""
                             />
                           </div>
