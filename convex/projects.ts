@@ -56,3 +56,43 @@ export const create = mutation({
     }
   },
 });
+
+export const update = mutation({
+  args: {
+    id: v.id("projects"),
+    name: v.string(),
+    description: v.optional(v.string()),
+    content: v.optional(v.string()),
+    links: v.optional(
+      v.array(
+        v.object({
+          title: v.string(),
+          url: v.string(),
+        }),
+      ),
+    ),
+    tags: v.optional(v.array(v.string())),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) throw new Error("Unauthorized");
+
+    const user = await ctx.db.get(userId);
+
+    if (user?.role == "write") {
+      const project = await ctx.db.get(args.id);
+
+      if (!project) throw new Error("Project not found");
+
+      await ctx.db.patch(args.id, {
+        name: args.name,
+        description: args.description,
+        content: args.content,
+        links: args.links,
+        tags: args.tags,
+      });
+    } else {
+      throw new Error("Unauthorized");
+    }
+  },
+});
