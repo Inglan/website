@@ -54,7 +54,10 @@ export default function Menu() {
   return (
     <>
       <motion.div
-        initial={{ x: -500 }}
+        initial={{
+          x: -500,
+          position: pathname.startsWith("/projects/") ? "fixed" : "sticky",
+        }}
         animate={
           pathname.startsWith("/projects/")
             ? {
