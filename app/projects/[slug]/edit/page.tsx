@@ -16,6 +16,7 @@ import { Textarea } from "@/components/ui/textarea";
 import ProjectEditor from "./editor";
 import { preloadQuery } from "convex/nextjs";
 import { api } from "@/convex/_generated/api";
+import { notFound } from "next/navigation";
 
 export default async function EditProject({
   params,
@@ -23,9 +24,13 @@ export default async function EditProject({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const preloadedProjectData = await preloadQuery(api.projects.get, {
-    slug,
-  });
+  try {
+    const preloadedProjectData = await preloadQuery(api.projects.get, {
+      slug,
+    });
 
-  return <ProjectEditor preloadedProjectData={preloadedProjectData} />;
+    return <ProjectEditor preloadedProjectData={preloadedProjectData} />;
+  } catch (error) {
+    notFound();
+  }
 }
