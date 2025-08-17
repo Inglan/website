@@ -20,6 +20,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { preloadQuery } from "convex/nextjs";
 import { api } from "@/convex/_generated/api";
 import { useState } from "react";
+import { toast } from "sonner";
 export default function ProjectEditor(props: {
   preloadedProjectData: Preloaded<typeof api.projects.get>;
 }) {
@@ -106,13 +107,20 @@ export default function ProjectEditor(props: {
         </div>
         <Button
           onClick={() => {
-            save({
-              id: projectData._id,
-              name,
-              description,
-              content,
-              tags,
-            });
+            toast.promise(
+              save({
+                id: projectData._id,
+                name,
+                description,
+                content,
+                tags,
+              }),
+              {
+                loading: "Saving...",
+                success: "Project saved!",
+                error: "Failed to save project",
+              },
+            );
           }}
         >
           Save
