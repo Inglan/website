@@ -23,7 +23,7 @@ export default function ProjectsPage() {
     results: projects,
     status,
     loadMore,
-  } = usePaginatedQuery(api.projects.list, {}, { initialNumItems: 1 });
+  } = usePaginatedQuery(api.projects.list, {}, { initialNumItems: 5 });
   return (
     <Content>
       <h1>Projects</h1>
