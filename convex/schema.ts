@@ -15,7 +15,6 @@ const schema = defineSchema({
       }),
     ),
     tags: v.array(v.string()),
-    image: v.id("_storage"),
     images: v.array(v.id("_storage")),
   }),
   posts: defineTable({
@@ -23,7 +22,6 @@ const schema = defineSchema({
     slug: v.string(),
     content: v.string(),
     tags: v.array(v.string()),
-    image: v.id("_storage"),
     images: v.array(v.id("_storage")),
   }),
 
