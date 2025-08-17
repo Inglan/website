@@ -14,6 +14,20 @@ export const list = query({
   },
 });
 
+export const get = query({
+  args: {
+    slug: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const project = await ctx.db
+      .query("projects")
+      .withIndex("by_slug", (q) => q.eq("slug", args.slug))
+      .first();
+    if (!project) throw new Error("Project not found");
+    return project;
+  },
+});
+
 export const create = mutation({
   args: {
     name: v.string(),
