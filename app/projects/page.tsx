@@ -28,10 +28,10 @@ export default function ProjectsPage() {
     <Content>
       <h1>Projects</h1>
       <div className="not-prose flex gap-2 flex-col">
-        <div className="grid lg:grid-cols-2 container min-w-full gap-2">
+        <div className="columns-1 lg:columns-2 min-w-full gap-2">
           {projects.map((project) => (
             <Link href={`/projects/${project.slug}`} key={project._id}>
-              <Card>
+              <Card className="mb-2">
                 <CardHeader>
                   <CardTitle>{project.name}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
