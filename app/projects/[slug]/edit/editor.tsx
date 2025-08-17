@@ -32,8 +32,13 @@ export default function ProjectEditor(props: {
   const [content, setContent] = useState(projectData.content);
 
   const [inputtedTag, setInputtedTag] = useState("");
+  const [inputtedLinkTitle, setInputtedLinkTitle] = useState("");
+  const [inputtedLinkUrl, setInputtedLinkUrl] = useState("");
 
   const [tags, setTags] = useState<string[]>(projectData.tags || []);
+  const [links, setLinks] = useState<{ title: string; url: string }[]>(
+    projectData.links || [],
+  );
 
   return (
     <Content>
@@ -94,8 +99,64 @@ export default function ProjectEditor(props: {
                 <DialogClose asChild>
                   <Button
                     onClick={() => {
-                      setInputtedTag("");
                       setTags([...tags, inputtedTag]);
+                      setInputtedTag("");
+                    }}
+                  >
+                    Add
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+        </div>
+        <Label>Links</Label>
+        <div className="flex flex-row gap-2 flex-wrap">
+          {links.map((link, index) => (
+            <Badge
+              variant="outline"
+              key={index}
+              onClick={() => {
+                setLinks(links.filter((_, i) => i !== index));
+              }}
+            >
+              {link.title} - {link.url}
+            </Badge>
+          ))}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Badge>Add</Badge>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>Add Link</DialogTitle>
+              </DialogHeader>
+              <Label htmlFor="url">URL</Label>
+              <Input
+                type="text"
+                id="url"
+                name="url"
+                value={inputtedLinkUrl}
+                onChange={(e) => setInputtedLinkUrl(e.target.value)}
+              />
+              <Label htmlFor="title">Title</Label>
+              <Input
+                type="text"
+                id="title"
+                name="title"
+                value={inputtedLinkTitle}
+                onChange={(e) => setInputtedLinkTitle(e.target.value)}
+              />
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button
+                    onClick={() => {
+                      setLinks([
+                        ...links,
+                        { url: inputtedLinkUrl, title: inputtedLinkTitle },
+                      ]);
+                      setInputtedLinkTitle("");
+                      setInputtedLinkUrl("");
                     }}
                   >
                     Add
