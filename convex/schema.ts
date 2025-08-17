@@ -21,7 +21,8 @@ const schema = defineSchema({
     images: v.optional(v.array(v.id("_storage"))),
   })
     .index("by_slug", ["slug"])
-    .index("by_tags", ["tags"]),
+    .index("by_tags", ["tags"])
+    .index("by_show", ["show"]),
   posts: defineTable({
     title: v.string(),
     slug: v.string(),

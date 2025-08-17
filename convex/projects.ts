@@ -9,6 +9,7 @@ export const list = query({
   handler: async (ctx, args) => {
     const projects = await ctx.db
       .query("projects")
+      .withIndex("by_show", (q) => q.eq("show", true))
       .order("desc")
       .paginate(args.paginationOpts);
     return projects;
