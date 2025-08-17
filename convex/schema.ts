@@ -8,21 +8,23 @@ const schema = defineSchema({
     slug: v.string(),
     description: v.optional(v.string()),
     content: v.optional(v.string()),
-    links: v.array(
-      v.object({
-        title: v.string(),
-        url: v.string(),
-      }),
+    links: v.optional(
+      v.array(
+        v.object({
+          title: v.string(),
+          url: v.string(),
+        }),
+      ),
     ),
-    tags: v.array(v.string()),
-    images: v.array(v.id("_storage")),
+    tags: v.optional(v.array(v.string())),
+    images: v.optional(v.array(v.id("_storage"))),
   }),
   posts: defineTable({
     title: v.string(),
     slug: v.string(),
     content: v.optional(v.string()),
-    tags: v.array(v.string()),
-    images: v.array(v.id("_storage")),
+    tags: v.optional(v.array(v.string())),
+    images: v.optional(v.array(v.id("_storage"))),
   }),
 
   ...authTables,
