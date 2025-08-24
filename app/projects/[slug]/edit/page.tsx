@@ -17,6 +17,7 @@ import ProjectEditor from "./editor";
 import { preloadQuery } from "convex/nextjs";
 import { api } from "@/convex/_generated/api";
 import { notFound } from "next/navigation";
+import { convexAuthNextjsToken } from "@convex-dev/auth/nextjs/server";
 
 export default async function EditProject({
   params,
@@ -25,9 +26,13 @@ export default async function EditProject({
 }) {
   const { slug } = await params;
   try {
-    const preloadedProjectData = await preloadQuery(api.projects.get, {
-      slug,
-    });
+    const preloadedProjectData = await preloadQuery(
+      api.projects.get,
+      {
+        slug,
+      },
+      { token: await convexAuthNextjsToken() },
+    );
 
     return <ProjectEditor preloadedProjectData={preloadedProjectData} />;
   } catch (error) {
