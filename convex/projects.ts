@@ -7,12 +7,25 @@ import Showdown from "showdown";
 export const list = query({
   args: { paginationOpts: paginationOptsValidator },
   handler: async (ctx, args) => {
-    const projects = await ctx.db
-      .query("projects")
-      .withIndex("by_show", (q) => q.eq("show", true))
-      .order("desc")
-      .paginate(args.paginationOpts);
-    return projects;
+    const userId = await getAuthUserId(ctx);
+    let user;
+    if (userId) {
+      user = await ctx.db.get(userId);
+    }
+    if (user?.role == "write") {
+      const projects = await ctx.db
+        .query("projects")
+        .order("desc")
+        .paginate(args.paginationOpts);
+      return projects;
+    } else {
+      const projects = await ctx.db
+        .query("projects")
+        .withIndex("by_show", (q) => q.eq("show", true))
+        .order("desc")
+        .paginate(args.paginationOpts);
+      return projects;
+    }
   },
 });
 
