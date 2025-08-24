@@ -22,6 +22,7 @@ import { api } from "@/convex/_generated/api";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 export default function ProjectEditor(props: {
   preloadedProjectData: Preloaded<typeof api.projects.get>;
 }) {
@@ -44,6 +45,12 @@ export default function ProjectEditor(props: {
 
   return (
     <Content>
+      <div className="flex flex-row gap-2 p-2 not-prose">
+        <Button asChild>
+          <Link href={`/projects/${projectData.slug}`}>Back</Link>
+        </Button>
+      </div>
+
       <h1>Edit Project</h1>
       <div className="grid gap-2">
         <div className="flex items-center gap-3">
