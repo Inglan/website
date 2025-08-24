@@ -121,3 +121,25 @@ export const update = mutation({
     }
   },
 });
+
+export const remove = mutation({
+  args: {
+    id: v.id("projects"),
+  },
+  handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+    if (!userId) throw new Error("Unauthorized");
+
+    const user = await ctx.db.get(userId);
+
+    if (user?.role == "write") {
+      const project = await ctx.db.get(args.id);
+
+      if (!project) throw new Error("Project not found");
+
+      await ctx.db.delete(args.id);
+    } else {
+      throw new Error("Unauthorized");
+    }
+  },
+});
