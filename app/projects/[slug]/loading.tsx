@@ -6,7 +6,7 @@ export default function Loading() {
   return (
     <Content>
       <div className="not-prose mb-4">
-        <Skeleton className="h-[20px] w-[300px] rounded-full" />
+        <Skeleton className="h-[20px] w-[200px] rounded-full" />
       </div>
       <h1>
         <Skeleton className="h-[50px] w-[300px] rounded-full" />
