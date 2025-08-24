@@ -36,6 +36,7 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import clsx from "clsx";
 
 export default function ProjectsPage() {
   const {
@@ -66,7 +67,12 @@ export default function ProjectsPage() {
                 }}
               >
                 <Link href={`/projects/${project.slug}`}>
-                  <Card className="mb-2 h-full">
+                  <Card
+                    className={clsx(
+                      "mb-2 h-full",
+                      !project.show && "border-dashed bg-transparent",
+                    )}
+                  >
                     <CardHeader>
                       <CardTitle>{project.name}</CardTitle>
                       <CardDescription>{project.description}</CardDescription>
