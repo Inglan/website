@@ -23,7 +23,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 export default function ProjectEditor(props: {
   preloadedProjectData: Preloaded<typeof api.projects.get>;
 }) {
@@ -45,6 +45,8 @@ export default function ProjectEditor(props: {
     projectData.links || [],
   );
 
+  const router = useRouter();
+
   return (
     <Content>
       <div className="flex flex-row gap-2 p-2 not-prose">
@@ -53,8 +55,12 @@ export default function ProjectEditor(props: {
         </Button>
         <Button
           onClick={async () => {
-            await remove({ id: projectData._id });
-            // await router.push("/projects");
+            router.push("/projects");
+            toast.promise(remove({ id: projectData._id }), {
+              loading: "Deleting...",
+              success: "Project deleted!",
+              error: "Failed to delete project",
+            });
           }}
         >
           Delete
