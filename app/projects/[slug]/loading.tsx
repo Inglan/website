@@ -5,6 +5,9 @@ export default function Loading() {
   // Or a custom loading skeleton component
   return (
     <Content>
+      <div className="not-prose mb-4">
+        <Skeleton className="h-[20px] w-[300px] rounded-full" />
+      </div>
       <h1>
         <Skeleton className="h-[50px] w-[300px] rounded-full" />
       </h1>

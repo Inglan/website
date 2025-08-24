@@ -22,7 +22,7 @@ export function ProjectContent(props: {
   return (
     <>
       <Content>
-        <Breadcrumb className="not-prose">
+        <Breadcrumb className="not-prose mb-4">
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
