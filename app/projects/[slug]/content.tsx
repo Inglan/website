@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 import { Preloaded, usePreloadedQuery, useQuery } from "convex/react";
 import Link from "next/link";
+import { motion } from "motion/react";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -20,7 +21,7 @@ export function ProjectContent(props: {
 
   const projectData = usePreloadedQuery(props.preloadedProject);
   return (
-    <>
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Content>
         <Breadcrumb className="not-prose mb-4">
           <BreadcrumbList>
@@ -45,6 +46,6 @@ export function ProjectContent(props: {
         <h1>{projectData.name}</h1>
         <div dangerouslySetInnerHTML={{ __html: projectData.contenthtml }} />
       </Content>
-    </>
+    </motion.div>
   );
 }
