@@ -34,11 +34,20 @@ export const get = query({
     slug: v.string(),
   },
   handler: async (ctx, args) => {
+    const userId = await getAuthUserId(ctx);
+    let user;
+    if (userId) {
+      user = await ctx.db.get(userId);
+    }
+
     const project = await ctx.db
       .query("projects")
       .withIndex("by_slug", (q) => q.eq("slug", args.slug))
       .first();
     if (!project) throw new Error("Project not found");
+    if (!(user?.role == "write") && !project.show) {
+      throw new Error("Project not found");
+    }
     let converter = new Showdown.Converter();
     const contenthtml = converter.makeHtml(project.content || "");
     return { ...project, contenthtml };
