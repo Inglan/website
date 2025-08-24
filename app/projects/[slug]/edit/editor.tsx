@@ -23,11 +23,13 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
+import { useRouter } from "next/router";
 export default function ProjectEditor(props: {
   preloadedProjectData: Preloaded<typeof api.projects.get>;
 }) {
   const projectData = usePreloadedQuery(props.preloadedProjectData);
   const save = useMutation(api.projects.update);
+  const remove = useMutation(api.projects.remove);
 
   const [name, setName] = useState(projectData.name);
   const [description, setDescription] = useState(projectData.description);
@@ -49,7 +51,14 @@ export default function ProjectEditor(props: {
         <Button asChild>
           <Link href={`/projects/${projectData.slug}`}>Back</Link>
         </Button>
-        <Button asChild>Delete</Button>
+        <Button
+          onClick={async () => {
+            await remove({ id: projectData._id });
+            // await router.push("/projects");
+          }}
+        >
+          Delete
+        </Button>
       </div>
 
       <h1>Edit Project</h1>
