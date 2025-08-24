@@ -49,6 +49,7 @@ export default function ProjectEditor(props: {
         <Button asChild>
           <Link href={`/projects/${projectData.slug}`}>Back</Link>
         </Button>
+        <Button asChild>Delete</Button>
       </div>
 
       <h1>Edit Project</h1>
