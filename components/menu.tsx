@@ -51,92 +51,94 @@ export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const me = useQuery(api.auth.getMe);
   const pathname = usePathname();
-  return (
-    <>
-      <motion.div
-        initial={{
-          x: -500,
-          position:
+  if (!pathname.startsWith("/studio")) {
+    return (
+      <>
+        <motion.div
+          initial={{
+            x: -500,
+            position:
+              pathname.startsWith("/projects") || pathname.startsWith("/blog")
+                ? "fixed"
+                : "sticky",
+          }}
+          animate={
             pathname.startsWith("/projects") || pathname.startsWith("/blog")
-              ? "fixed"
-              : "sticky",
-        }}
-        animate={
-          pathname.startsWith("/projects") || pathname.startsWith("/blog")
-            ? {
-                filter: "brightness(0.5)",
-                x: -300,
-                position: "fixed",
-                boxShadow: "0 0 100px rgba(0, 0, 0, 0.5)",
-              }
-            : { x: 0 }
-        }
-        whileHover={{
-          x: 0,
-          filter: "brightness(1)",
-        }}
-        transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
-        className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden lg:flex overflow-hidden min-w-fit bg-background z-30"
-      >
-        <AnimatePresence>
-          {menuItems.map((item) => (
-            <MenuItem
-              key={item.url}
-              url={item.url}
-              label={item.label}
-              className="mx-10"
-              setMobileMenuOpen={setMobileMenuOpen}
-            />
-          ))}
-          {me && (
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 10 }}
-              transition={{ ease: "easeOut" }}
-              className="absolute bottom-0 w-full left-0 p-2 border-t border-dashed"
-            >
-              <User />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.div>
-
-      <Drawer
-        open={mobileMenuOpen}
-        onOpenChange={setMobileMenuOpen}
-        shouldScaleBackground
-      >
-        <DrawerContent>
-          <DrawerTitle className="sr-only">Menu</DrawerTitle>
-          <div className="flex flex-col gap-4 p-5 h-full justify-end">
+              ? {
+                  filter: "brightness(0.5)",
+                  x: -300,
+                  position: "fixed",
+                  boxShadow: "0 0 100px rgba(0, 0, 0, 0.5)",
+                }
+              : { x: 0 }
+          }
+          whileHover={{
+            x: 0,
+            filter: "brightness(1)",
+          }}
+          transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
+          className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden lg:flex overflow-hidden min-w-fit bg-background z-30"
+        >
+          <AnimatePresence>
             {menuItems.map((item) => (
               <MenuItem
                 key={item.url}
                 url={item.url}
                 label={item.label}
+                className="mx-10"
                 setMobileMenuOpen={setMobileMenuOpen}
               />
             ))}
             {me && (
-              <div className="border border-dashed rounded p-2 ">
-                <User setMobileMenuOpen={setMobileMenuOpen} />
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ ease: "easeOut" }}
+                className="absolute bottom-0 w-full left-0 p-2 border-t border-dashed"
+              >
+                <User />
+              </motion.div>
             )}
-          </div>
-        </DrawerContent>
-      </Drawer>
+          </AnimatePresence>
+        </motion.div>
 
-      <Button
-        className="fixed bottom-3 left-3 text-2xl size-15 lg:hidden"
-        size="icon"
-        variant="outline"
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        <MenuIcon />
-      </Button>
-    </>
-  );
+        <Drawer
+          open={mobileMenuOpen}
+          onOpenChange={setMobileMenuOpen}
+          shouldScaleBackground
+        >
+          <DrawerContent>
+            <DrawerTitle className="sr-only">Menu</DrawerTitle>
+            <div className="flex flex-col gap-4 p-5 h-full justify-end">
+              {menuItems.map((item) => (
+                <MenuItem
+                  key={item.url}
+                  url={item.url}
+                  label={item.label}
+                  setMobileMenuOpen={setMobileMenuOpen}
+                />
+              ))}
+              {me && (
+                <div className="border border-dashed rounded p-2 ">
+                  <User setMobileMenuOpen={setMobileMenuOpen} />
+                </div>
+              )}
+            </div>
+          </DrawerContent>
+        </Drawer>
+
+        <Button
+          className="fixed bottom-3 left-3 text-2xl size-15 lg:hidden"
+          size="icon"
+          variant="outline"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <MenuIcon />
+        </Button>
+      </>
+    );
+  }
 }
 
 function MenuItem({
