@@ -48,7 +48,7 @@ export const get = query({
     if (!(user?.role == "write") && !project.show) {
       throw new Error("Project not found");
     }
-    let converter = new Showdown.Converter();
+    let converter = new Showdown.Converter({ openLinksInNewWindow: true });
     const contenthtml = converter.makeHtml(project.content || "");
     return { ...project, contenthtml };
   },
