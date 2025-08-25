@@ -3,34 +3,6 @@ import { authTables } from "@convex-dev/auth/server";
 import { v } from "convex/values";
 
 const schema = defineSchema({
-  projects: defineTable({
-    name: v.string(),
-    slug: v.string(),
-    description: v.optional(v.string()),
-    content: v.optional(v.string()),
-    links: v.optional(
-      v.array(
-        v.object({
-          title: v.string(),
-          url: v.string(),
-        }),
-      ),
-    ),
-    show: v.optional(v.boolean()),
-    tags: v.optional(v.array(v.string())),
-    images: v.optional(v.array(v.id("_storage"))),
-  })
-    .index("by_slug", ["slug"])
-    .index("by_tags", ["tags"])
-    .index("by_show", ["show"]),
-  posts: defineTable({
-    title: v.string(),
-    slug: v.string(),
-    content: v.optional(v.string()),
-    tags: v.optional(v.array(v.string())),
-    images: v.optional(v.array(v.id("_storage"))),
-  }),
-
   ...authTables,
   users: defineTable({
     name: v.optional(v.string()),
