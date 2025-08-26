@@ -1,11 +1,11 @@
-import { DocumentTextIcon } from "@sanity/icons";
+import { File } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const postType = defineType({
   name: "post",
   title: "Post",
   type: "document",
-  icon: DocumentTextIcon,
+  icon: File,
   fields: [
     defineField({
       name: "title",
