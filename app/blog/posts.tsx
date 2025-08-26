@@ -38,6 +38,7 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
                     {new Date(post.publishedAt).toLocaleDateString("en-AU", {
                       day: "numeric",
                       month: "long",
+                      year: "numeric",
                     })}
                     {post.description && " - " + post.description}
                   </CardDescription>
