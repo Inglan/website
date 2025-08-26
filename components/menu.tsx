@@ -58,12 +58,12 @@ export default function Menu() {
           initial={{
             x: -500,
             position:
-              pathname.startsWith("/projects") || pathname.startsWith("/blog")
+              pathname.startsWith("/projects/") || pathname.startsWith("/blog/")
                 ? "fixed"
                 : "sticky",
           }}
           animate={
-            pathname.startsWith("/projects") || pathname.startsWith("/blog")
+            pathname.startsWith("/projects/") || pathname.startsWith("/blog/")
               ? {
                   filter: "brightness(0.5)",
                   x: -300,
