@@ -40,7 +40,9 @@ export default async function PostPage({
           height="310"
         />
       )}*/}
-      <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+      <div className="w-full min-h-96 bg-white">
+        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+      </div>
       <div className="prose prose-custom">
         <p>
           Published:{" "}
