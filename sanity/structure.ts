@@ -8,4 +8,5 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("post"),
       S.documentTypeListItem("postCategory"),
       S.divider(),
+      S.documentTypeListItem("redirect"),
     ]);
