@@ -2,6 +2,7 @@
 import {
   Card,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -12,12 +13,12 @@ import { motion } from "motion/react";
 import clsx from "clsx";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import { Badge } from "@/components/ui/badge";
 
 export default function Posts({ posts }: { posts: SanityDocument[] }) {
   return (
     <Content>
       <h1>Blog</h1>
-
       <div className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-2 not-prose">
         {posts.map((post, index) => (
           <motion.div
@@ -43,6 +44,14 @@ export default function Posts({ posts }: { posts: SanityDocument[] }) {
                     {post.description && " - " + post.description}
                   </CardDescription>
                 </CardHeader>
+                <CardFooter className="flex flex-row flex-wrap gap-1">
+                  {post.tags &&
+                    (post.tags as { title: string }[]).map((tag) => (
+                      <Badge variant="outline" key={tag.title}>
+                        {tag.title}
+                      </Badge>
+                    ))}
+                </CardFooter>
               </Card>
             </Link>
           </motion.div>
