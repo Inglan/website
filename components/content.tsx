@@ -11,7 +11,7 @@ export default function Content({ children }: { children: React.ReactNode }) {
       transition={{
         ease: [0.165, 0.84, 0.44, 1.0],
       }}
-      className="prose prose-custom mx-auto p-3 prose-headings:font-normal"
+      className="prose prose-custom mx-auto p-2 prose-headings:font-normal"
     >
       {children}
     </motion.div>
