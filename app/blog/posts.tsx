@@ -11,7 +11,7 @@ import { AnimatePresence } from "motion/react";
 import { motion } from "motion/react";
 import clsx from "clsx";
 import { type SanityDocument } from "next-sanity";
-import { client } from "@/sanity/client";
+import { client } from "@/sanity/lib/client";
 
 export default function Posts({ posts }: { posts: SanityDocument[] }) {
   return (
