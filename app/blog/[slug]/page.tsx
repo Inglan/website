@@ -4,8 +4,9 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import Content from "@/components/content";
+import { Badge } from "@/components/ui/badge";
 
-const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, slug, image, tags[]-> { title, slug }, body, publishedAt}`;
 
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
@@ -30,20 +31,36 @@ export default async function PostPage({
     : null;
 
   return (
-    <Content>
-      {/*{postImageUrl && (
-        <img
-          src={postImageUrl}
-          alt={post.title}
-          className="aspect-video rounded-xl"
-          width="550"
-          height="310"
-        />
-      )}*/}
-      <div className="w-full min-h-96 bg-white">
-        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
+    <>
+      <div className="w-full min-h-72 flex items-end not-prose rounded-md justify-center p-4 relative">
+        {postImageUrl && (
+          <img
+            src={postImageUrl}
+            alt={post.title}
+            className="aspect-video rounded-xl"
+            width="550"
+            height="310"
+          />
+        )}
+        <div className="w-full max-w-prose p-2 flex flex-row gap-2">
+          <div className="flex flex-col gap-2">
+            <h1 className="text-6xl">{post.title}</h1>
+            <div className="flex flex-row gap-1">
+              {post.tags &&
+                (
+                  post.tags as { title: string; slug: { current: string } }[]
+                ).map((tag) => (
+                  <Badge key={tag.title} asChild>
+                    <Link href={`/blog/tag/${tag.slug.current}`}>
+                      {tag.title}
+                    </Link>
+                  </Badge>
+                ))}
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="prose prose-custom">
+      <Content>
         <p>
           Published:{" "}
           {new Date(post.publishedAt).toLocaleDateString("en-AU", {
@@ -53,7 +70,7 @@ export default async function PostPage({
           })}
         </p>
         {Array.isArray(post.body) && <PortableText value={post.body} />}
-      </div>
-    </Content>
+      </Content>
+    </>
   );
 }
