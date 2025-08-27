@@ -6,7 +6,7 @@ import Link from "next/link";
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
 
-const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, slug, image, tags[]-> { title, slug }, body, publishedAt}`;
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
 const { projectId, dataset } = client.config();
 const urlFor = (source: SanityImageSource) =>
@@ -26,8 +26,8 @@ export default async function PostPage({
     await params,
     options,
   );
-  const postImageUrl = post.image
-    ? urlFor(post.image)?.width(550).height(310).url()
+  const postImageUrl = post.mainImage
+    ? urlFor(post.mainImage)?.width(550).height(310).url()
     : null;
 
   return (
@@ -37,12 +37,12 @@ export default async function PostPage({
           <img
             src={postImageUrl}
             alt={post.title}
-            className="aspect-video rounded-xl"
+            className="w-full h-full absolute top-0 left-0 object-cover"
             width="550"
             height="310"
           />
         )}
-        <div className="w-full max-w-prose p-2 flex flex-row gap-2">
+        <div className="w-full max-w-prose p-2 flex flex-row gap-2 z-10">
           <div className="flex flex-col gap-2">
             <h1 className="text-6xl">{post.title}</h1>
             <div className="flex flex-row gap-1">
