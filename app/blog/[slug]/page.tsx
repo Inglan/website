@@ -5,6 +5,7 @@ import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
@@ -32,35 +33,47 @@ export default async function PostPage({
 
   return (
     <>
-      <div className="w-full min-h-72 flex items-end not-prose rounded-md justify-center p-4 relative">
-        {postImageUrl && (
-          <img
-            src={postImageUrl}
-            alt={post.title}
-            className="w-full h-full absolute top-0 left-0 object-cover"
-            width="550"
-            height="310"
-          />
-        )}
-        <div className="w-full max-w-prose p-2 flex flex-row gap-2 z-10">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-6xl">{post.title}</h1>
-            <div className="flex flex-row gap-1">
-              {post.tags &&
-                (
-                  post.tags as { title: string; slug: { current: string } }[]
-                ).map((tag) => (
-                  <Badge key={tag.title} asChild>
-                    <Link href={`/blog/tag/${tag.slug.current}`}>
-                      {tag.title}
-                    </Link>
-                  </Badge>
-                ))}
+      <Content>
+        <div className="w-full min-h-72 rounded-t-md relative overflow-hidden not-prose">
+          {postImageUrl && (
+            <img
+              src={postImageUrl}
+              alt={post.title}
+              className="w-full h-full absolute top-0 left-0 object-cover"
+              width="550"
+              height="310"
+            />
+          )}
+          <div className="w-full h-full z-10 absolute top-0 left-0 from-transparent to-background bg-gradient-to-b"></div>
+          <div className="w-full h-full top-0 bottom-0 p-2 flex flex-col z-20 absolute">
+            <div>
+              <Button asChild>
+                <Link href="/blog">Back</Link>
+              </Button>
+            </div>
+            <div className="grow"></div>
+            <div className="flex flex-row gap-2 w-full">
+              <div className="flex flex-col gap-2">
+                <h1 className="text-6xl">{post.title}</h1>
+                <div className="flex flex-row gap-1">
+                  {post.tags &&
+                    (
+                      post.tags as {
+                        title: string;
+                        slug: { current: string };
+                      }[]
+                    ).map((tag) => (
+                      <Badge key={tag.title} asChild>
+                        <Link href={`/blog/tag/${tag.slug.current}`}>
+                          {tag.title}
+                        </Link>
+                      </Badge>
+                    ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Content>
         <p>
           Published:{" "}
           {new Date(post.publishedAt).toLocaleDateString("en-AU", {
