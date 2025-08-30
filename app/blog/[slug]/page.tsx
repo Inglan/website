@@ -55,7 +55,7 @@ export default async function PostPage({
                 </Link>
               </Button>
             </div>
-            <div className="grow"></div>
+            <div className="grow min-h-10"></div>
             <div className="flex flex-row gap-2 w-full">
               <div className="flex flex-col gap-2">
                 <h1 className="text-6xl">{post.title}</h1>
