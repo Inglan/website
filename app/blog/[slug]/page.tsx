@@ -6,6 +6,7 @@ import Link from "next/link";
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft } from "lucide-react";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
@@ -47,8 +48,11 @@ export default async function PostPage({
           <div className="w-full h-full z-10 absolute top-0 left-0 from-transparent to-background bg-gradient-to-b"></div>
           <div className="w-full h-full top-0 bottom-0 p-2 flex flex-col z-20 absolute">
             <div>
-              <Button asChild>
-                <Link href="/blog">Back</Link>
+              <Button variant="secondary" asChild>
+                <Link href="/blog">
+                  <ChevronLeft />
+                  Back
+                </Link>
               </Button>
             </div>
             <div className="grow"></div>
