@@ -59,21 +59,23 @@ export default async function PostPage({
             <div className="flex flex-row gap-2 w-full">
               <div className="flex flex-col gap-2">
                 <h1 className="text-6xl">{post.title}</h1>
-                <h2 className="text-xl">{post.description}</h2>
-                <div className="flex flex-row gap-1">
-                  {post.tags &&
-                    (
-                      post.tags as {
-                        title: string;
-                        slug: { current: string };
-                      }[]
-                    ).map((tag) => (
-                      <Badge key={tag.title} asChild>
-                        <Link href={`/blog/tag/${tag.slug.current}`}>
-                          {tag.title}
-                        </Link>
-                      </Badge>
-                    ))}
+                <div className="flex flex-row gap-2 flex-wrap">
+                  <div className="flex flex-row gap-1 flex-wrap">
+                    {post.tags &&
+                      (
+                        post.tags as {
+                          title: string;
+                          slug: { current: string };
+                        }[]
+                      ).map((tag) => (
+                        <Badge key={tag.title} asChild>
+                          <Link href={`/blog/tag/${tag.slug.current}`}>
+                            {tag.title}
+                          </Link>
+                        </Badge>
+                      ))}
+                  </div>
+                  <h2 className="text-xl">{post.description}</h2>
                 </div>
               </div>
             </div>
