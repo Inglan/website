@@ -75,9 +75,9 @@ export default async function PostPage({
                         </Badge>
                       ))}
                   </div>
-                  <h2 className="text-xl">{post.description}</h2>
-                  <h2 className="text-xl">-</h2>
                   <h2 className="text-xl">
+                    {post.description}
+                    {" - "}
                     {new Date(post.publishedAt).toLocaleDateString("en-AU", {
                       day: "numeric",
                       month: "long",
