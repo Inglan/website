@@ -47,7 +47,7 @@ export default async function PostPage({
           )}
           <div className="w-full h-full z-10 absolute top-0 left-0 from-transparent to-background bg-gradient-to-b"></div>
           <div className="w-full h-full top-0 bottom-0 p-2 flex flex-col z-20 absolute">
-            <div>
+            <div className="flex flex-row gap-2">
               <Button variant="secondary" asChild>
                 <Link href="/blog">
                   <ChevronLeft />
