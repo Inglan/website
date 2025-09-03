@@ -5,8 +5,7 @@ import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
+import BackButton from "./backButton";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, description, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
@@ -48,12 +47,7 @@ export default async function PostPage({
           <div className="w-full h-full absolute top-0 left-0 from-transparent to-background bg-gradient-to-b"></div>
           <div className="w-full min-h-72 p-4 flex flex-col relative z-20">
             <div className="flex flex-row gap-2">
-              <Button variant="secondary" asChild>
-                <Link href="/blog">
-                  <ChevronLeft />
-                  Back
-                </Link>
-              </Button>
+              <BackButton />
             </div>
             <div className="grow min-h-10"></div>
             <div className="flex flex-row gap-2 w-full">
