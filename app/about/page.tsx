@@ -9,16 +9,23 @@ export default function AboutPage() {
       <h1>About Me</h1>
       <p>I am a web developer but also know a bit of game development</p>
       <h2>I know</h2>
-      <ul>
-        <li>NodeJS</li>
-        <li>React</li>
-        <li>NextJS</li>
-        <li>Svelte</li>
-        <li>TypeScript</li>
-        <li>Godot</li>
-        <li>Python</li>
-        <li>Docker</li>
-      </ul>
+      <div className="not-prose grid grid-cols-3 gap-2">
+        {[
+          { name: "React" },
+          { name: "NextJS" },
+          { name: "Svelte" },
+          { name: "TypeScript" },
+          { name: "Python" },
+          { name: "Godot" },
+        ].map((item, index) => (
+          <div
+            className="bg-card p-2 rounded-md flex flex-col justify-center items-center"
+            key={index}
+          >
+            {item.name}
+          </div>
+        ))}
+      </div>
     </Content>
   );
 }
