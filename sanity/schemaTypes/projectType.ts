@@ -1,4 +1,4 @@
-import { File } from "lucide-react";
+import { File, Link2 } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const projectType = defineType({
@@ -39,6 +39,7 @@ export const projectType = defineType({
       of: [
         defineArrayMember({
           type: "object",
+          icon: Link2,
           fields: [
             { name: "Title", type: "string" },
             { name: "URL", type: "url" },
