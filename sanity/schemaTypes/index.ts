@@ -6,6 +6,7 @@ import { postType } from "./postType";
 import { redirectType } from "./redirectType";
 import { projectType } from "./projectType";
 import { projectTagType } from "./projectTagType";
+import { photoType } from "./photo";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -15,5 +16,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     redirectType,
     projectType,
     projectTagType,
+    photoType,
   ],
 };

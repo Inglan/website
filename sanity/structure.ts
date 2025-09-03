@@ -11,5 +11,7 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("project").title("Projects"),
       S.documentTypeListItem("projectTag").title("Project Tags"),
       S.divider(),
+      S.documentTypeListItem("photo").title("Photos"),
+      S.divider(),
       S.documentTypeListItem("redirect").title("Redirects"),
     ]);
