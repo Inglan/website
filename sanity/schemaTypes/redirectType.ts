@@ -1,16 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { defineType, defineField, SlugRule } from "sanity";
 
-// Shared validation for our redirect slugs
-const slugValidator = (rule: SlugRule) =>
-  rule.required().custom((value) => {
-    if (!value || !value.current) return "Can't be blank";
-    if (!value.current.startsWith("/")) {
-      return "The path must start with a /";
-    }
-    return true;
-  });
-
 export const redirectType = defineType({
   name: "redirect",
   title: "Redirect",
@@ -21,12 +11,10 @@ export const redirectType = defineType({
     defineField({
       name: "source",
       type: "slug",
-      validation: (rule) => slugValidator(rule),
     }),
     defineField({
       name: "destination",
       type: "slug",
-      validation: (rule) => slugValidator(rule),
     }),
     defineField({
       name: "permanent",
