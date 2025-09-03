@@ -52,7 +52,8 @@ export default function Menu() {
   const pathname = usePathname();
   const hideSidebar =
     pathname.startsWith("/projects/") ||
-    (pathname.startsWith("/blog/") && !pathname.startsWith("/blog/tag"));
+    (pathname.startsWith("/blog/") && !pathname.startsWith("/blog/tag")) ||
+    pathname == "/";
   if (!pathname.startsWith("/studio")) {
     return (
       <>
