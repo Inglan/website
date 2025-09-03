@@ -7,6 +7,7 @@ import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
 import BackButton from "../../../components/backButton";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, description, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
@@ -17,6 +18,25 @@ const urlFor = (source: SanityImageSource) =>
     : null;
 
 const options = { next: { revalidate: 30 } };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const post = await client.fetch<SanityDocument>(
+    POST_QUERY,
+    await params,
+    options,
+  );
+  if (!post) {
+    notFound();
+  }
+
+  return {
+    title: post.title,
+  };
+}
 
 export default async function PostPage({
   params,
