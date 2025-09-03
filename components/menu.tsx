@@ -41,7 +41,6 @@ import { toast } from "sonner";
 
 const menuItems = [
   { url: "/", label: "Home" },
-  { url: "/about", label: "About" },
   { url: "/projects", label: "Projects" },
   { url: "/blog", label: "Blog" },
   { url: "/contact", label: "Contact" },
