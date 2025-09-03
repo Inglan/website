@@ -71,7 +71,7 @@ export default async function PostPage({
                   </div>
                   <h2 className="text-xl">
                     {post.description}
-                    {" - "}
+                    {post.description && " - "}
                     {new Date(post.publishedAt).toLocaleDateString("en-AU", {
                       day: "numeric",
                       month: "long",
