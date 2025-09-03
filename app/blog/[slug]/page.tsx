@@ -62,7 +62,7 @@ export default async function PostPage({
                           slug: { current: string };
                         }[]
                       ).map((tag) => (
-                        <Badge key={tag.title} asChild>
+                        <Badge key={tag.title} variant="outline" asChild>
                           <Link href={`/blog/tag/${tag.slug.current}`}>
                             {tag.title}
                           </Link>
