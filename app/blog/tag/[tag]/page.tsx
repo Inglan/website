@@ -22,5 +22,5 @@ export default async function TagIndexPage({
   );
 
   // return <div>{JSON.stringify(tag)}</div>;
-  return <Posts posts={tag.posts} />;
+  return <Posts posts={tag.posts} tag={tag.title} />;
 }

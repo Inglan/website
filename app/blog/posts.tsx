@@ -14,11 +14,32 @@ import clsx from "clsx";
 import { type SanityDocument } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
-export default function Posts({ posts }: { posts: SanityDocument[] }) {
+export default function Posts({
+  posts,
+  tag,
+}: {
+  posts: SanityDocument[];
+  tag?: string;
+}) {
   return (
     <Content>
-      <h1>Blog</h1>
+      <h1>
+        Blog
+        <br />
+        {tag && (
+          <div className="text-sm p-1 pl-4 flex flex-row gap-2 justify-center items-center w-fit border rounded-md my-2">
+            {tag}
+            <Button variant="ghost" size="icon" asChild>
+              <Link href="/blog">
+                <X />
+              </Link>
+            </Button>
+          </div>
+        )}
+      </h1>
       <div className="min-w-full grid grid-cols-1 lg:grid-cols-2 gap-2 not-prose">
         {posts.map((post, index) => (
           <motion.div
