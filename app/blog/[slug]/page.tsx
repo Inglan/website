@@ -6,6 +6,7 @@ import Link from "next/link";
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
 import BackButton from "../../../components/backButton";
+import { notFound } from "next/navigation";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, description, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
@@ -27,6 +28,9 @@ export default async function PostPage({
     await params,
     options,
   );
+  if (!post) {
+    notFound();
+  }
   const postImageUrl = post.mainImage
     ? urlFor(post.mainImage)?.width(550).height(310).url()
     : null;
