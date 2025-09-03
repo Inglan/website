@@ -18,9 +18,5 @@ export const postTagType = defineType({
         source: "title",
       },
     }),
-    defineField({
-      name: "description",
-      type: "text",
-    }),
   ],
 });

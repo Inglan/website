@@ -18,9 +18,5 @@ export const projectTagType = defineType({
         source: "title",
       },
     }),
-    defineField({
-      name: "description",
-      type: "text",
-    }),
   ],
 });
