@@ -23,7 +23,7 @@ export const photoType = defineType({
     }),
     defineField({
       name: "description",
-      type: "string",
+      type: "text",
     }),
     defineField({
       name: "info",
