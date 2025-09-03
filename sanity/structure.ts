@@ -8,5 +8,8 @@ export const structure: StructureResolver = (S) =>
       S.documentTypeListItem("post").title("Posts"),
       S.documentTypeListItem("postTag").title("Tags"),
       S.divider(),
+      S.documentTypeListItem("project").title("Projects"),
+      S.documentTypeListItem("projectTag").title("Project Tags"),
+      S.divider(),
       S.documentTypeListItem("redirect").title("Redirects"),
     ]);
