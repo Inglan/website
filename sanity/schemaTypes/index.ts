@@ -6,7 +6,7 @@ import { postType } from "./postType";
 import { redirectType } from "./redirectType";
 import { projectType } from "./projectType";
 import { projectTagType } from "./projectTagType";
-import { photoType } from "./photo";
+import { photoType } from "./photoType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
