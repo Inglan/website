@@ -14,7 +14,7 @@ export const redirectType = defineType({
     }),
     defineField({
       name: "destination",
-      type: "slug",
+      type: "string",
     }),
     defineField({
       name: "permanent",
@@ -28,7 +28,7 @@ export const redirectType = defineType({
   preview: {
     select: {
       source: "source.current",
-      destination: "destination.current",
+      destination: "destination",
       permanent: "permanent",
     },
     prepare({ source, destination, permanent }) {
