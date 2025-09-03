@@ -83,7 +83,6 @@ export default async function PostPage({
             </div>
           </div>
         </div>
-        <p>Published: </p>
         {Array.isArray(post.body) && <PortableText value={post.body} />}
       </Content>
     </>
