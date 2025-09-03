@@ -51,19 +51,18 @@ export default function Menu() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const me = useQuery(api.auth.getMe);
   const pathname = usePathname();
+  const hideSidebar =
+    pathname.startsWith("/projects/") || pathname.startsWith("/blog/");
   if (!pathname.startsWith("/studio")) {
     return (
       <>
         <motion.div
           initial={{
             x: -500,
-            position:
-              pathname.startsWith("/projects/") || pathname.startsWith("/blog/")
-                ? "fixed"
-                : "sticky",
+            position: hideSidebar ? "fixed" : "sticky",
           }}
           animate={
-            pathname.startsWith("/projects/") || pathname.startsWith("/blog/")
+            hideSidebar
               ? {
                   filter: "brightness(0.5)",
                   x: -300,
