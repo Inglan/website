@@ -23,20 +23,6 @@ export const projectType = defineType({
       type: "string",
     }),
     defineField({
-      name: "mainImage",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        defineField({
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-        }),
-      ],
-    }),
-    defineField({
       name: "tags",
       type: "array",
       of: [
@@ -46,6 +32,19 @@ export const projectType = defineType({
     defineField({
       name: "publishedAt",
       type: "datetime",
+    }),
+    defineField({
+      name: "links",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "object",
+          fields: [
+            { name: "Title", type: "string" },
+            { name: "URL", type: "url" },
+          ],
+        }),
+      ],
     }),
     defineField({
       name: "body",
