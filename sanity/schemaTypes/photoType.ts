@@ -34,6 +34,7 @@ export const photoType = defineType({
         { name: "fStop", type: "string", title: "F-Stop" },
         { name: "shutterSpeed", type: "string", title: "Shutter Speed" },
         { name: "lens", type: "string", title: "Lens" },
+        { name: "focalLength", type: "string", title: "Focal Length" },
         { name: "camera", type: "string", title: "Camera" },
       ],
     }),
