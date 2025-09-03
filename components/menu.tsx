@@ -52,7 +52,8 @@ export default function Menu() {
   const me = useQuery(api.auth.getMe);
   const pathname = usePathname();
   const hideSidebar =
-    pathname.startsWith("/projects/") || pathname.startsWith("/blog/");
+    pathname.startsWith("/projects/") ||
+    (pathname.startsWith("/blog/") && !pathname.startsWith("/blog/tag"));
   if (!pathname.startsWith("/studio")) {
     return (
       <>
