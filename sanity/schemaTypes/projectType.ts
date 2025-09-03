@@ -1,11 +1,11 @@
-import { File, Link2 } from "lucide-react";
+import { File, Folder, Link2 } from "lucide-react";
 import { defineArrayMember, defineField, defineType } from "sanity";
 
 export const projectType = defineType({
   name: "project",
   title: "Project",
   type: "document",
-  icon: File,
+  icon: Folder,
   fields: [
     defineField({
       name: "title",
