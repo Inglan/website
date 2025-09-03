@@ -5,7 +5,7 @@ import { client } from "@/sanity/lib/client";
 import Link from "next/link";
 import Content from "@/components/content";
 import { Badge } from "@/components/ui/badge";
-import BackButton from "./backButton";
+import BackButton from "../../../components/backButton";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{_id, title, description, slug, mainImage, tags[]-> { title, slug }, body, publishedAt}`;
 
