@@ -40,13 +40,13 @@ export const photoType = defineType({
   ],
   preview: {
     select: {
-      title: "title",
-      description: "description",
-      media: "mainImage",
+      fileName: "image.asset.originalFilename",
+      subtitle: "description",
+      media: "image",
     },
     prepare(selection) {
-      const { description } = selection;
-      return { ...selection, subtitle: description };
+      const { fileName } = selection;
+      return { ...selection, title: fileName };
     },
   },
 });
