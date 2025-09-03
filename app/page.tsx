@@ -12,8 +12,6 @@ export default function Home() {
         </div>
       </div>
       <Content>
-        <h1>About Me</h1>
-        <p>I am a web developer but also know a bit of game development</p>
         <h2>I know</h2>
         <div className="not-prose grid grid-cols-3 gap-2">
           {[
