@@ -12,7 +12,6 @@ export const photoType = defineType({
       type: "image",
       options: {
         hotspot: true,
-        metadata: ["exif", "image"],
       },
       fields: [
         defineField({
