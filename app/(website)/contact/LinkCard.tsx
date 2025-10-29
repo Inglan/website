@@ -1,6 +1,9 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
 import { ReactNode } from "react";
+import { motion } from "motion/react";
 
 interface LinkCardProps {
   href: string;
@@ -10,7 +13,7 @@ interface LinkCardProps {
 
 export default function LinkCard({ href, children, colSpan }: LinkCardProps) {
   return (
-    <div className={clsx(colSpan && `col-span-${colSpan}`)}>
+    <motion.div className={clsx(colSpan && `col-span-${colSpan}`)}>
       <Link
         href={href}
         target="_blank"
@@ -19,6 +22,6 @@ export default function LinkCard({ href, children, colSpan }: LinkCardProps) {
       >
         {children}
       </Link>
-    </div>
+    </motion.div>
   );
 }
