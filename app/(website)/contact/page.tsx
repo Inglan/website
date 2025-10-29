@@ -1,8 +1,16 @@
 import { Badge } from "@/components/ui/badge";
 import clsx from "clsx";
 import Link from "next/link";
+import { motion } from "motion/react";
+import ContactMethod from "./ContactMethod";
 
 const contactMethods = [
+  {
+    title: "Signal",
+    subtitle: "ingo.392",
+    url: "https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB",
+    preferred: true,
+  },
   {
     title: "Email",
     subtitle: "me@ingo.au",
@@ -98,59 +106,63 @@ const socials = [
 
 export default function Contact() {
   return (
-    <div className="max-w-4xl p-2 w-full mx-auto space-y-2">
-      <h1 className="text-6xl text-primary">Contact</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-        <Link
-          href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="col-span-2 p-4 border rounded-xl bg-card flex flex-col"
-        >
-          <div className="text-2xl inline-flex gap-2 items-center">
-            Signal <Badge>Preferred</Badge>
-          </div>
-          <div className="text-xl inline-flex gap-2 items-center">ingo.392</div>
-        </Link>
-        {contactMethods.map((method, index) => (
-          <Link
-            href={method.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={index}
-            className="p-4 border rounded-xl bg-card flex flex-col"
-          >
-            <div className="text-2xl inline-flex gap-2 items-center">
-              {method.title}
+    <div className="max-w-4xl px-2 w-full mx-auto">
+      <div>
+        <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed border-x">
+          <h1 className="text-6xl text-primary">Contact</h1>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 border-l border-dashed">
+          {contactMethods.map((method, index) => (
+            <div key={index} className={clsx(method.preferred && "col-span-2")}>
+              <Link
+                href={method.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 border-b border-r border-dashed hover:bg-card flex flex-col"
+              >
+                <div className="text-2xl inline-flex gap-2 items-center">
+                  {method.title}
+                </div>
+                <div className="text-xl inline-flex gap-2 items-center">
+                  {method.subtitle}
+                </div>
+              </Link>
             </div>
-            <div className="text-xl inline-flex gap-2 items-center">
-              {method.subtitle}
+          ))}
+        </div>
+        <div className="flex flex-col border-b border-x p-4 border-dashed bg-card">
+          <h2 className="text-4xl">Socials</h2>
+          <div>(Sorted by order of importance)</div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 border-l border-dashed">
+          {socials.map((social, index) => (
+            <div key={index}>
+              <Link
+                href={social.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 border-b border-r border-dashed hover:bg-card flex flex-col"
+              >
+                <div
+                  className={clsx(
+                    "text-2xl inline-flex gap-2 items-center",
+                    social.unimportant && "text-foreground/50",
+                  )}
+                >
+                  {social.name}
+                </div>
+                <div
+                  className={clsx(
+                    "text-xl inline-flex gap-2 items-center",
+                    social.unimportant && "text-foreground/50",
+                  )}
+                >
+                  {social.username}
+                </div>
+              </Link>
             </div>
-          </Link>
-        ))}
-      </div>
-      <h2 className="text-4xl">Socials</h2>
-      <div>(Sorted by order of importance)</div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-        {socials.map((social, index) => (
-          <Link
-            href={social.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={index}
-            className={clsx(
-              "p-4 border rounded-xl bg-card flex flex-col",
-              social.unimportant ? "border-dashed bg-transparent" : "",
-            )}
-          >
-            <div className="text-2xl inline-flex gap-2 items-center">
-              {social.name}
-            </div>
-            <div className="text-xl inline-flex gap-2 items-center">
-              {social.username}
-            </div>
-          </Link>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
