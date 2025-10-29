@@ -1,5 +1,5 @@
-import clsx from "clsx";
-import Link from "next/link";
+import ContactMethodCard from "./ContactMethodCard";
+import SocialCard from "./SocialCard";
 
 const contactMethods = [
   {
@@ -110,21 +110,13 @@ export default function Contact() {
         </div>
         <div className="grid grid-cols-2 border-l border-dashed">
           {contactMethods.map((method, index) => (
-            <div key={index} className={clsx(method.preferred && "col-span-2")}>
-              <Link
-                href={method.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 border-b border-r border-dashed hover:bg-card flex flex-col"
-              >
-                <div className="text-2xl inline-flex gap-2 items-center">
-                  {method.title}
-                </div>
-                <div className="text-xl inline-flex gap-2 items-center">
-                  {method.subtitle}
-                </div>
-              </Link>
-            </div>
+            <ContactMethodCard
+              key={index}
+              title={method.title}
+              subtitle={method.subtitle}
+              url={method.url}
+              preferred={method.preferred}
+            />
           ))}
         </div>
         <div className="flex flex-col border-b border-x p-4 border-dashed bg-card">
@@ -133,31 +125,13 @@ export default function Contact() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 border-l border-dashed">
           {socials.map((social, index) => (
-            <div key={index}>
-              <Link
-                href={social.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-4 border-b border-r border-dashed hover:bg-card flex flex-col"
-              >
-                <div
-                  className={clsx(
-                    "text-2xl inline-flex gap-2 items-center",
-                    social.unimportant && "text-foreground/50",
-                  )}
-                >
-                  {social.name}
-                </div>
-                <div
-                  className={clsx(
-                    "text-xl inline-flex gap-2 items-center",
-                    social.unimportant && "text-foreground/50",
-                  )}
-                >
-                  {social.username}
-                </div>
-              </Link>
-            </div>
+            <SocialCard
+              key={index}
+              name={social.name}
+              username={social.username}
+              link={social.link}
+              unimportant={social.unimportant}
+            />
           ))}
         </div>
       </div>
