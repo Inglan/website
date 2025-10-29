@@ -17,6 +17,61 @@ const contactMethods = [
 const socials = [
   { name: "GitHub", username: "@Inglan", link: "https://github.com/Inglan" },
   {
+    name: "Spotify",
+    username: "Ingo Wolf",
+    link: "https://open.spotify.com/user/31fo6w35yvebzqgz53cczfuro3bi",
+  },
+  {
+    name: "Last.fm",
+    username: "ingoau",
+    link: "https://last.fm/user/ingoau",
+  },
+  {
+    name: "stats.fm",
+    username: "ingowolf",
+    link: "https://stats.fm/ingowolf",
+  },
+  {
+    name: "Monkeytype",
+    username: "ingow",
+    link: "https://monkeytype.com/profile/ingow",
+  },
+  {
+    name: "Scrapbook",
+    username: "ingo",
+    link: "https://scrapbook.hackclub.com/ingo",
+  },
+  {
+    name: "Hack Club Slack",
+    username: "Ingo",
+    link: "https://hackclub.slack.com/team/U0923H02Y3B",
+  },
+  {
+    name: "Nitrotype",
+    username: "ingowolf",
+    link: "https://www.nitrotype.com/racer/ingowolf",
+  },
+  {
+    name: "Youtube",
+    username: "@ingoau",
+    link: "https://youtube.com/@ingoau",
+  },
+  {
+    name: "Apple Music",
+    username: "ingo_wolf",
+    link: "https://music.apple.com/profile/ingo_wolf",
+  },
+  {
+    name: "Wikipedia",
+    username: "Ingowolfau",
+    link: "https://en.wikipedia.org/wiki/User:Ingowolfau",
+  },
+  {
+    name: "Samsung Members",
+    username: "ingowolf",
+    link: "https://r1.community.samsung.com/t5/user/viewprofilepage/user-id/162878944",
+  },
+  {
     name: "Twitter",
     username: "@IngoWolfAU",
     link: "https://twitter.com/IngoWolfAU",
@@ -25,6 +80,11 @@ const socials = [
     name: "Bluesky",
     username: "@ingo.au",
     link: "https://bsky.app/profile/ingo.au",
+  },
+  {
+    name: "Roblox",
+    username: "ingowolfau",
+    link: "https://www.roblox.com/users/9763303750/profile",
   },
 ];
 
