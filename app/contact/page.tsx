@@ -122,7 +122,7 @@ export default function Contact() {
         ))}
       </div>
       <h2 className="text-4xl">Socials</h2>
-
+      <div>(Sorted by order of importance)</div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
         {socials.map((social, index) => (
           <Link
