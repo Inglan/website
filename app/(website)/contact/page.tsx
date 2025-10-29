@@ -106,12 +106,12 @@ const socials = [
 
 export default function Contact() {
   return (
-    <div className="max-w-4xl px-2 w-full mx-auto">
+    <div className="max-w-4xl p-4 w-full mx-auto">
       <div>
-        <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed border-x">
+        <div className="w-full mx-auto flex h-fit p-4 border border-dashed">
           <h1 className="text-6xl text-primary">Contact</h1>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 border-l border-dashed">
+        <div className="grid grid-cols-2 border-l border-dashed">
           {contactMethods.map((method, index) => (
             <div key={index} className={clsx(method.preferred && "col-span-2")}>
               <Link
