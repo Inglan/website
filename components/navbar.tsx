@@ -113,8 +113,9 @@ function MenuItem({
     >
       <motion.span
         animate={{ color: pathname == url ? "var(--primary)" : "var(--muted)" }}
+        whileHover={{ color: "var(--border)" }}
         className={clsx(
-          "sm:text-7xl text-6xl text-muted flex-shrink-0 whitespace-nowrap",
+          "sm:text-7xl text-6xl text-muted shrink-0 whitespace-nowrap",
           className,
         )}
       >
