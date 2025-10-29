@@ -9,6 +9,7 @@ import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { MenuIcon } from "lucide-react";
 import { NICE_EASE } from "@/lib/constants";
+import SearchTrigger from "./search-trigger";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -48,6 +49,7 @@ export default function Navbar() {
           transition={{ ease: NICE_EASE }}
           className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden lg:flex overflow-hidden min-w-fit bg-background z-30"
         >
+          <SearchTrigger className="p-4 w-full absolute top-0 left-0 border-b border-dashed cursor-pointer text-xl" />
           {menuItems.map((item) => (
             <MenuItem
               key={item.url}
