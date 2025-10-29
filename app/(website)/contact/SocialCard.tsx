@@ -1,5 +1,5 @@
+import LinkCard from "./LinkCard";
 import clsx from "clsx";
-import Link from "next/link";
 
 interface SocialCardProps {
   name: string;
@@ -15,30 +15,23 @@ export default function SocialCard({
   unimportant = false,
 }: SocialCardProps) {
   return (
-    <div>
-      <Link
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-4 border-b border-r border-dashed hover:bg-card flex flex-col"
+    <LinkCard href={link}>
+      <div
+        className={clsx(
+          "text-2xl inline-flex gap-2 items-center",
+          unimportant && "text-foreground/50",
+        )}
       >
-        <div
-          className={clsx(
-            "text-2xl inline-flex gap-2 items-center",
-            unimportant && "text-foreground/50",
-          )}
-        >
-          {name}
-        </div>
-        <div
-          className={clsx(
-            "text-xl inline-flex gap-2 items-center",
-            unimportant && "text-foreground/50",
-          )}
-        >
-          {username}
-        </div>
-      </Link>
-    </div>
+        {name}
+      </div>
+      <div
+        className={clsx(
+          "text-xl inline-flex gap-2 items-center",
+          unimportant && "text-foreground/50",
+        )}
+      >
+        {username}
+      </div>
+    </LinkCard>
   );
 }
