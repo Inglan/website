@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { MenuIcon } from "lucide-react";
 
@@ -48,17 +48,15 @@ export default function Navbar() {
           transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
           className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden lg:flex overflow-hidden min-w-fit bg-background z-30"
         >
-          <AnimatePresence>
-            {menuItems.map((item) => (
-              <MenuItem
-                key={item.url}
-                url={item.url}
-                label={item.label}
-                className="mx-10"
-                setMobileMenuOpen={setMobileMenuOpen}
-              />
-            ))}
-          </AnimatePresence>
+          {menuItems.map((item) => (
+            <MenuItem
+              key={item.url}
+              url={item.url}
+              label={item.label}
+              className="mx-10"
+              setMobileMenuOpen={setMobileMenuOpen}
+            />
+          ))}
         </motion.div>
 
         <Drawer
