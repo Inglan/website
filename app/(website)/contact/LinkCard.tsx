@@ -9,13 +9,13 @@ import { NICE_EASE } from "@/lib/constants";
 interface LinkCardProps {
   href: string;
   children: ReactNode;
-  colSpan?: number;
+  span?: boolean;
 }
 
-export default function LinkCard({ href, children, colSpan }: LinkCardProps) {
+export default function LinkCard({ href, children, span }: LinkCardProps) {
   return (
     <motion.div
-      className={clsx(colSpan && `col-span-${colSpan}`)}
+      className={clsx(span && `col-span-2`)}
       initial={{ backgroundColor: "var(--background)" }}
       animate={{ backgroundColor: "var(--background)" }}
       whileHover={{ backgroundColor: "var(--card)" }}

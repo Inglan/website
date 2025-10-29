@@ -14,7 +14,7 @@ export default function ContactMethodCard({
   preferred = false,
 }: ContactMethodCardProps) {
   return (
-    <LinkCard href={url} colSpan={preferred ? 2 : undefined}>
+    <LinkCard href={url} span={preferred}>
       <div className="text-2xl inline-flex gap-2 items-center">{title}</div>
       <div className="text-xl inline-flex gap-2 items-center">{subtitle}</div>
     </LinkCard>
