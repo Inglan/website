@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/navbar";
+import Search from "@/components/search";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -17,12 +18,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      vaul-drawer-wrapper=""
-      className="flex flex-row w-full bg-background min-h-screen"
-    >
-      <Navbar />
-      {children}
-    </div>
+    <>
+      <div
+        vaul-drawer-wrapper=""
+        className="flex flex-row w-full bg-background min-h-screen"
+      >
+        <Navbar />
+        {children}
+      </div>
+      <Search />
+    </>
   );
 }
