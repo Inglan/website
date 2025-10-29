@@ -22,8 +22,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const hideSidebar =
     pathname.startsWith("/projects/") ||
-    (pathname.startsWith("/blog/") && !pathname.startsWith("/blog/tag")) ||
-    pathname == "/";
+    (pathname.startsWith("/blog/") && !pathname.startsWith("/blog/tag"));
   if (!pathname.startsWith("/studio")) {
     return (
       <>
