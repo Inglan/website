@@ -8,6 +8,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import { MenuIcon } from "lucide-react";
+import { NICE_EASE } from "@/lib/constants";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -45,7 +46,7 @@ export default function Navbar() {
             x: 0,
             filter: "brightness(1)",
           }}
-          transition={{ ease: [0.165, 0.84, 0.44, 1.0] }}
+          transition={{ ease: NICE_EASE }}
           className="h-screen sticky top-0 left-0 justify-center flex-col gap-4 border-r border-dashed hidden lg:flex overflow-hidden min-w-fit bg-background z-30"
         >
           {menuItems.map((item) => (
@@ -111,16 +112,20 @@ function MenuItem({
         setMobileMenuOpen(false);
       }}
     >
-      <motion.span
+      <motion.div
         animate={{ color: pathname == url ? "var(--primary)" : "var(--muted)" }}
-        whileHover={{ color: "var(--border)" }}
+        whileHover={{
+          color: pathname != url ? "var(--border)" : "var(--primary)",
+        }}
+        whileTap={{ filter: "brightness(0.7)" }}
+        transition={{ ease: NICE_EASE }}
         className={clsx(
           "sm:text-7xl text-6xl text-muted shrink-0 whitespace-nowrap",
           className,
         )}
       >
         {label}
-      </motion.span>
+      </motion.div>
     </Link>
   );
 }
