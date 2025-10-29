@@ -1,8 +1,5 @@
-import { Badge } from "@/components/ui/badge";
 import clsx from "clsx";
 import Link from "next/link";
-import { motion } from "motion/react";
-import ContactMethod from "./ContactMethod";
 
 const contactMethods = [
   {
@@ -134,7 +131,7 @@ export default function Contact() {
           <h2 className="text-4xl">Socials</h2>
           <div>(Sorted by order of importance)</div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 border-l border-dashed">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 border-l border-dashed">
           {socials.map((social, index) => (
             <div key={index}>
               <Link
