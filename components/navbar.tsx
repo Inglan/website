@@ -22,7 +22,7 @@ export default function Navbar() {
           containerClassName="border-l-0 border-r"
           animation={false}
         >
-          Ingo&apos;s Site
+          Ingo Wolf
         </MenuLink>
         <div className="grow"></div>
         {menuItems.map((item) => (
