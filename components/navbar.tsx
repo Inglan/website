@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import clsx from "clsx";
+import { usePathname } from "next/navigation";
+import { NICE_EASE } from "@/lib/constants";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -38,16 +40,25 @@ function MenuLink({
   href: string;
   className?: string;
 }) {
+  const pathname = usePathname();
+
   return (
-    <Link href={href}>
-      <motion.div
-        className={clsx(
-          "border-l border-dashed h-full px-8 py-4 block w-fit",
-          className,
-        )}
-      >
-        {children}
-      </motion.div>
-    </Link>
+    <div className="border-l border-dashed">
+      <Link href={href}>
+        <motion.div
+          className={clsx("h-full px-8 py-4 block w-fit", className)}
+          animate={{
+            color: pathname == href ? "var(--primary)" : "var(--foreground)",
+          }}
+          whileHover={{
+            color: "var(--primary)",
+          }}
+          whileTap={{ filter: "brightness(0.5)" }}
+          transition={{ ease: NICE_EASE }}
+        >
+          {children}
+        </motion.div>
+      </Link>
+    </div>
   );
 }
