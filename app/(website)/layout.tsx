@@ -3,6 +3,7 @@ import { Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/sidebar";
 import Search from "@/components/search";
+import Navbar from "@/components/navbar";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -21,9 +22,10 @@ export default function RootLayout({
     <>
       <div
         vaul-drawer-wrapper=""
-        className="flex flex-row w-full bg-background min-h-screen"
+        className="flex flex-col w-full bg-background min-h-screen"
       >
-        <Sidebar />
+        {/*<Sidebar />*/}
+        <Navbar />
         {children}
       </div>
       <Search />
