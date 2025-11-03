@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import Navbar from "@/components/navbar";
+import Sidebar from "@/components/sidebar";
 import Search from "@/components/search";
 
 const geistMono = Geist_Mono({
@@ -23,7 +23,7 @@ export default function RootLayout({
         vaul-drawer-wrapper=""
         className="flex flex-row w-full bg-background min-h-screen"
       >
-        <Navbar />
+        <Sidebar />
         {children}
       </div>
       <Search />

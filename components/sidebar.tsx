@@ -18,7 +18,7 @@ const menuItems = [
   { url: "/contact", label: "Contact" },
 ];
 
-export default function Navbar() {
+export default function Sidebar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const hideSidebar =
