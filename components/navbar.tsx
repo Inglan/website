@@ -17,7 +17,11 @@ export default function Navbar() {
   return (
     <div className="w-full">
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
-        <MenuLink href="/" containerClassName="border-l-0 border-r">
+        <MenuLink
+          href="/"
+          containerClassName="border-l-0 border-r"
+          animation={false}
+        >
           Ingo&apos;s Website
         </MenuLink>
         <div className="grow"></div>
@@ -36,11 +40,13 @@ function MenuLink({
   href,
   className,
   containerClassName,
+  animation = true,
 }: {
   children: React.ReactNode;
   href: string;
   className?: string;
   containerClassName?: string;
+  animation?: boolean;
 }) {
   const pathname = usePathname();
 
@@ -49,9 +55,14 @@ function MenuLink({
       <Link href={href}>
         <motion.div
           className={clsx("h-full px-8 py-4 block w-fit", className)}
-          animate={{
-            color: pathname == href ? "var(--primary)" : "var(--foreground)",
-          }}
+          animate={
+            animation
+              ? {
+                  color:
+                    pathname == href ? "var(--primary)" : "var(--foreground)",
+                }
+              : {}
+          }
           whileHover={{
             color: "var(--primary)",
           }}
