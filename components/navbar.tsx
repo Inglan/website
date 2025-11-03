@@ -20,6 +20,7 @@ export default function Navbar() {
         <MenuLink
           href="/"
           containerClassName="border-l-0 border-r"
+          className="text-xl"
           animation={false}
         >
           Ingo Wolf
