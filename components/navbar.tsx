@@ -6,7 +6,7 @@ import clsx from "clsx";
 
 export default function Navbar() {
   return (
-    <div className="w-full p-4 pb-0">
+    <div className="w-full">
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
         <MenuLink href="/" className="border-l-0 border-r">
           Ingo&apos;s Website
