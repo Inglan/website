@@ -4,6 +4,13 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import clsx from "clsx";
 
+const menuItems = [
+  { url: "/", label: "Home" },
+  { url: "/projects", label: "Projects" },
+  { url: "/blog", label: "Blog" },
+  { url: "/contact", label: "Contact" },
+];
+
 export default function Navbar() {
   return (
     <div className="w-full">
@@ -12,10 +19,11 @@ export default function Navbar() {
           Ingo&apos;s Website
         </MenuLink>
         <div className="grow"></div>
-        <MenuLink href="/">Home</MenuLink>
-        <MenuLink href="/projects">Projects</MenuLink>
-        <MenuLink href="/blog">Blog</MenuLink>
-        <MenuLink href="/contact">Contact</MenuLink>
+        {menuItems.map((item) => (
+          <MenuLink key={item.url} href={item.url}>
+            {item.label}
+          </MenuLink>
+        ))}
       </nav>
     </div>
   );
