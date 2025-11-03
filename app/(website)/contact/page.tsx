@@ -93,12 +93,6 @@ const socials = [
     link: "https://bsky.app/profile/ingo.au",
     unimportant: true,
   },
-  {
-    name: "Roblox",
-    username: "ingowolfau",
-    link: "https://www.roblox.com/users/9763303750/profile",
-    unimportant: true,
-  },
 ];
 
 export default function Contact() {
