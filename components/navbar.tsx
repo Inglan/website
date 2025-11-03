@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <div className="w-full">
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
-        <MenuLink href="/" className="border-l-0 border-r">
+        <MenuLink href="/" containerClassName="border-l-0 border-r">
           Ingo&apos;s Website
         </MenuLink>
         <div className="grow"></div>
@@ -35,15 +35,17 @@ function MenuLink({
   children,
   href,
   className,
+  containerClassName,
 }: {
   children: React.ReactNode;
   href: string;
   className?: string;
+  containerClassName?: string;
 }) {
   const pathname = usePathname();
 
   return (
-    <div className="border-l border-dashed">
+    <div className={clsx("border-l border-dashed", containerClassName)}>
       <Link href={href}>
         <motion.div
           className={clsx("h-full px-8 py-4 block w-fit", className)}
