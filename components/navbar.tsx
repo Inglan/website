@@ -55,7 +55,10 @@ function MenuLink({
     <div className={clsx("border-l border-dashed", containerClassName)}>
       <Link href={href}>
         <motion.div
-          className={clsx("h-full px-8 py-4 block w-fit", className)}
+          className={clsx(
+            "h-full px-8 py-4 w-fit flex justify-center items-center",
+            className,
+          )}
           animate={
             animation
               ? {
