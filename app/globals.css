@@ -42,7 +42,7 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-  --radius: 0.9rem;
+  --radius: 0rem;
   --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
   --tracking-tight: calc(var(--tracking-normal) - 0.025em);
   --tracking-wide: calc(var(--tracking-normal) + 0.025em);
@@ -69,7 +69,7 @@
 }
 
 :root {
-  --radius: 0.9rem;
+  --radius: 0rem;
   --background: oklch(0.9578 0.0058 264.5321);
   --foreground: oklch(0.4355 0.043 279.325);
   --card: oklch(1 0 0);
@@ -167,7 +167,7 @@
   --sidebar-border: oklch(0.4037 0.032 280.152);
   --sidebar-ring: oklch(0.7871 0.1187 304.7693);
   --destructive-foreground: oklch(0.2155 0.0254 284.0647);
-  --radius: 0.9rem;
+  --radius: 0rem;
   --font-sans: Geist Mono, monospace;
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: Geist Mono, monospace;
