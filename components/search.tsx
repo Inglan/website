@@ -19,13 +19,14 @@ export default function Search() {
   return (
     <>
       <CommandDialog open={searchOpen} onOpenChange={setSearchOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput placeholder="Search" />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+          <CommandGroup heading="Pages">
+            <CommandItem>Home</CommandItem>
+            <CommandItem>Projects</CommandItem>
+            <CommandItem>Blog</CommandItem>
+            <CommandItem>Contact</CommandItem>
           </CommandGroup>
         </CommandList>
       </CommandDialog>
