@@ -15,7 +15,7 @@ const menuItems = [
 
 export default function Navbar() {
   return (
-    <div className="w-full">
+    <div className="w-full sticky top-0 bg-background pt-4 z-50">
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
         <MenuLink
           href="/"

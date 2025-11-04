@@ -18,7 +18,7 @@ export default function RootLayout({
     <>
       <div
         vaul-drawer-wrapper=""
-        className="flex flex-col w-full bg-background min-h-screen p-4"
+        className="flex flex-col w-full bg-background min-h-screen p-4 pt-0"
       >
         {/*<Sidebar />*/}
         <Navbar />
