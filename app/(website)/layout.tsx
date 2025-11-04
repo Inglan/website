@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Sidebar from "@/components/sidebar";
 import Search from "@/components/search";
 import Navbar from "@/components/navbar";
+import Hotkeys from "@/lib/hotkeys";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Navbar />
         {children}
       </div>
+      <Hotkeys />
       <Search />
     </>
   );
