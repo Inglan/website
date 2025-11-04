@@ -26,11 +26,16 @@ export default function Navbar() {
           Ingo Wolf
         </MenuLink>
         <div className="grow"></div>
-        {menuItems.map((item) => (
-          <MenuLink key={item.url} href={item.url}>
-            {item.label}
-          </MenuLink>
-        ))}
+        <div className="hidden md:flex flex-row">
+          {menuItems.map((item) => (
+            <MenuLink key={item.url} href={item.url}>
+              {item.label}
+            </MenuLink>
+          ))}
+        </div>
+        <MenuLink containerClassName="md:hidden" onClick={() => {}}>
+          Menu
+        </MenuLink>
       </nav>
     </div>
   );
@@ -42,40 +47,51 @@ function MenuLink({
   className,
   containerClassName,
   animation = true,
+  onClick,
 }: {
   children: React.ReactNode;
-  href: string;
+  href?: string;
   className?: string;
   containerClassName?: string;
   animation?: boolean;
+  onClick?: () => void;
 }) {
   const pathname = usePathname();
 
+  const itemChildren = (
+    <motion.div
+      className={clsx(
+        "h-full px-8 py-4 w-fit flex justify-center items-center",
+        className,
+      )}
+      animate={
+        animation
+          ? {
+              color: pathname == href ? "var(--primary)" : "var(--foreground)",
+            }
+          : {}
+      }
+      whileHover={{
+        color: "var(--primary)",
+      }}
+      whileTap={{ filter: "brightness(0.5)" }}
+      transition={{ ease: NICE_EASE }}
+    >
+      {children}
+    </motion.div>
+  );
+
   return (
     <div className={clsx("border-l border-dashed", containerClassName)}>
-      <Link href={href}>
-        <motion.div
-          className={clsx(
-            "h-full px-8 py-4 w-fit flex justify-center items-center",
-            className,
-          )}
-          animate={
-            animation
-              ? {
-                  color:
-                    pathname == href ? "var(--primary)" : "var(--foreground)",
-                }
-              : {}
-          }
-          whileHover={{
-            color: "var(--primary)",
-          }}
-          whileTap={{ filter: "brightness(0.5)" }}
-          transition={{ ease: NICE_EASE }}
-        >
-          {children}
-        </motion.div>
-      </Link>
+      {href ? (
+        <Link href={href} onClick={onClick}>
+          {itemChildren}
+        </Link>
+      ) : (
+        <a className="inline cursor-pointer" onClick={onClick}>
+          {itemChildren}
+        </a>
+      )}
     </div>
   );
 }
