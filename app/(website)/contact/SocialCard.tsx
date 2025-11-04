@@ -19,7 +19,7 @@ export default function SocialCard({
       <div
         className={clsx(
           "text-2xl inline-flex gap-2 items-center",
-          unimportant && "text-foreground/50",
+          unimportant && "text-foreground/70",
         )}
       >
         {name}
@@ -27,7 +27,7 @@ export default function SocialCard({
       <div
         className={clsx(
           "text-xl inline-flex gap-2 items-center",
-          unimportant && "text-foreground/50",
+          unimportant && "text-foreground/70",
         )}
       >
         {username}
