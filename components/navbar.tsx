@@ -4,16 +4,9 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { NICE_EASE } from "@/lib/constants";
+import { MENU_ITEMS, NICE_EASE } from "@/lib/constants";
 import { Menu, Search } from "lucide-react";
 import { useUiState } from "@/lib/state";
-
-const menuItems = [
-  { url: "/", label: "Home" },
-  { url: "/projects", label: "Projects" },
-  { url: "/blog", label: "Blog" },
-  { url: "/contact", label: "Contact" },
-];
 
 export default function Navbar() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
@@ -31,7 +24,7 @@ export default function Navbar() {
         </MenuLink>
         <div className="grow"></div>
         <div className="hidden md:flex flex-row">
-          {menuItems.map((item) => (
+          {MENU_ITEMS.map((item) => (
             <MenuLink key={item.url} href={item.url}>
               {item.label}
             </MenuLink>
