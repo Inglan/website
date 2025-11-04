@@ -5,6 +5,7 @@ import Sidebar from "@/components/sidebar";
 import Search from "@/components/search";
 import Navbar from "@/components/navbar";
 import Hotkeys from "@/lib/hotkeys";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Navbar />
         {children}
       </div>
+      <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
       <Hotkeys />
       <Search />
     </>
