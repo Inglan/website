@@ -43,14 +43,8 @@ export default function Navbar() {
             setSearchOpen(true);
           }}
         >
-          <Search className="size-4" />
-        </MenuLink>
-        <MenuLink
-          className="px-6!"
-          containerClassName="md:hidden"
-          onClick={() => {}}
-        >
-          <Menu className="size-4" />
+          <Menu className="size-4 md:hidden" />
+          <Search className="size-4 md:block hidden" />
         </MenuLink>
       </nav>
     </div>
