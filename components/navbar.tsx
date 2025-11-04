@@ -5,6 +5,8 @@ import { motion } from "motion/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { NICE_EASE } from "@/lib/constants";
+import { Menu, Search } from "lucide-react";
+import { useUiState } from "@/lib/state";
 
 const menuItems = [
   { url: "/", label: "Home" },
@@ -14,13 +16,15 @@ const menuItems = [
 ];
 
 export default function Navbar() {
+  const setSearchOpen = useUiState((state) => state.setSearchOpen);
+
   return (
     <div className="w-full sticky top-0 bg-background pt-4 z-50">
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
         <MenuLink
           href="/"
           containerClassName="border-l-0 border-r"
-          className="text-xl"
+          className="text-xl py-0!"
           animation={false}
         >
           Ingo Wolf
@@ -33,8 +37,20 @@ export default function Navbar() {
             </MenuLink>
           ))}
         </div>
-        <MenuLink containerClassName="md:hidden" onClick={() => {}}>
-          Menu
+        <MenuLink
+          className="px-6!"
+          onClick={() => {
+            setSearchOpen(true);
+          }}
+        >
+          <Search className="size-4" />
+        </MenuLink>
+        <MenuLink
+          className="px-6!"
+          containerClassName="md:hidden"
+          onClick={() => {}}
+        >
+          <Menu className="size-4" />
         </MenuLink>
       </nav>
     </div>
