@@ -10,11 +10,11 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
-import { useAppState } from "@/lib/state";
+import { useUiState } from "@/lib/state";
 
 export default function Search() {
-  const searchOpen = useAppState((state) => state.searchOpen);
-  const setSearchOpen = useAppState((state) => state.setSearchOpen);
+  const searchOpen = useUiState((state) => state.searchOpen);
+  const setSearchOpen = useUiState((state) => state.setSearchOpen);
 
   return (
     <>

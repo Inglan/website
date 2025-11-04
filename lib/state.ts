@@ -1,11 +1,11 @@
 import { create } from "zustand";
 
-interface AppState {
+interface UiState {
   searchOpen: boolean;
   setSearchOpen: (value: boolean) => void;
 }
 
-export const useAppState = create<AppState>((set) => ({
+export const useUiState = create<UiState>((set) => ({
   searchOpen: false,
   setSearchOpen: (value) => set({ searchOpen: value }),
 }));
