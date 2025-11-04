@@ -23,8 +23,8 @@ export default function Navbar() {
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
         <MenuLink
           href="/"
-          containerClassName="border-l-0 border-r"
-          className="text-xl py-0!"
+          containerClassName="border-l-0"
+          className="text-xl py-4! px-4!"
           animation={false}
         >
           Ingo Wolf
