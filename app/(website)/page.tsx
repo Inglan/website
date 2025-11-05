@@ -1,4 +1,4 @@
-import { Building, ClockIcon, Earth, Mail } from "lucide-react";
+import { ArrowRight, Building, ClockIcon, Earth, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "@/components/custom-link";
 import Clock from "@/components/clock";
@@ -48,28 +48,47 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="p-4 flex flex-col gap-2">
-        <h1 className="text-primary text-4xl">Hello! I&apos;m Ingo Wolf!</h1>
-        <p className="text-xl">
-          I am a 15 year old tech nerd from Canberra, who listens to too much
-          music. I like building random stuff, usually with web technologies
-          using overkill tech stacks. I also like spinning up random docker
-          containers in{" "}
-          <Link href="https://notoverkill.com" target="_blank">
-            my homelab
-          </Link>{" "}
-          and reconfiguring my not overkill networking setup. And when I&apos;m
-          not doing any of that, I&apos;m probably doing schoolwork, reading, or
-          chatting on the{" "}
-          <Link
-            href="https://hackclub.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hack Club
-          </Link>{" "}
-          Slack.
-        </p>
+      <div className="flex flex-col">
+        <div className="p-4 flex flex-col gap-2 border-b border-dashed">
+          <h1 className="text-primary text-4xl">Hello! I&apos;m Ingo Wolf!</h1>
+          <p className="text-xl">
+            I am a 15 year old tech nerd from Canberra, who listens to too much
+            music. I like building random stuff, usually with web technologies
+            using overkill tech stacks. I also like spinning up random docker
+            containers in{" "}
+            <Link href="https://notoverkill.com" target="_blank">
+              my homelab
+            </Link>{" "}
+            and reconfiguring my not overkill networking setup. And when
+            I&apos;m not doing any of that, I&apos;m probably doing schoolwork,
+            reading, or chatting on the{" "}
+            <Link
+              href="https://hackclub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hack Club
+            </Link>{" "}
+            Slack.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 h-full">
+          {[
+            { text: "My Projects", link: "/projects" },
+            { text: "Blog", link: "/blog" },
+          ].map((item, index) => (
+            <div className="border-r border-dashed last:border-r-0" key={index}>
+              <Link
+                className="flex flex-row gap-2 items-center justify-center p-2 h-full w-full"
+                href={item.link}
+                key={index}
+              >
+                {item.text}
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
