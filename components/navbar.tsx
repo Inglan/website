@@ -62,28 +62,22 @@ function MenuLink({
 
   const isActive = animation && pathname === href;
 
-  const itemChildren = (
-    <div
-      className={clsx(
-        "h-full px-8 py-4 w-fit flex justify-center items-center duration-300 ease-out",
-        "hover:text-primary active:brightness-50",
-        isActive && "text-primary",
-        className,
-      )}
-    >
-      {children}
-    </div>
+  const linkClassName = clsx(
+    "h-full px-8 py-4 w-fit flex justify-center items-center duration-300 ease-out",
+    "hover:text-primary active:brightness-50",
+    isActive && "text-primary",
+    className,
   );
 
   return (
     <div className={clsx("border-l border-dashed", containerClassName)}>
       {href ? (
-        <Link href={href} onClick={onClick}>
-          {itemChildren}
+        <Link href={href} onClick={onClick} className={linkClassName}>
+          {children}
         </Link>
       ) : (
-        <a className="inline cursor-pointer" onClick={onClick}>
-          {itemChildren}
+        <a className={clsx("cursor-pointer", linkClassName)} onClick={onClick}>
+          {children}
         </a>
       )}
     </div>
