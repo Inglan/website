@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FormattedDate } from "./formatted-date";
+import { FormattedDateTime } from "./formatted-date";
 
 export default function PostCard({
   title,
@@ -19,7 +19,7 @@ export default function PostCard({
     >
       <h1 className="text-2xl">{title}</h1>
       <p className="text-foreground/75">
-        <FormattedDate date={date} />
+        <FormattedDateTime date={date} format="DATETIME" />
       </p>
       <p className="line-clamp-3">{excerpt}</p>
     </Link>
