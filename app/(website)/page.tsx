@@ -5,8 +5,8 @@ import Clock from "@/components/clock";
 
 export default function Home() {
   return (
-    <div className="w-full mx-auto flex flex-col md:flex-row h-fit border border-t-0 border-dashed max-w-4xl">
-      <div className="w-full md:w-0 min-w-60 md:border-r border-dashed">
+    <div className="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-dashed max-w-4xl">
+      <div className="w-full sm:w-0 min-w-60 sm:border-r border-dashed">
         <Image
           width={255}
           height={255}
@@ -40,7 +40,7 @@ export default function Home() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-row gap-2 items-center p-2 border-b border-dashed md:last:border-b-0"
+              className="flex flex-row gap-2 items-center p-2 border-b border-dashed sm:last:border-b-0"
             >
               <item.icon className="size-5" /> {item.content}
             </div>
@@ -71,13 +71,13 @@ export default function Home() {
             Slack.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 h-full">
           {[
             { text: "My Projects", link: "/projects" },
             { text: "Blog", link: "/blog" },
           ].map((item, index) => (
             <div
-              className="border-b md:border-b-0 md:border-r border-dashed last:border-0"
+              className="border-b sm:border-b-0 sm:border-r border-dashed last:border-0"
               key={index}
             >
               <Link
