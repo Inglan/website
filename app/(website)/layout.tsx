@@ -24,7 +24,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <div className="grow"></div>
-        <div className="max-w-4xl w-full mx-auto text-sm text-center text-foreground/75">
+        <div className="max-w-4xl w-full mx-auto text-sm text-center text-foreground/75 mt-4">
           This website is{" "}
           <Link href="https://github.com/Inglan/website" target="_blank">
             open source
