@@ -1,6 +1,7 @@
-import { Building, Building2, Earth, Mail } from "lucide-react";
+import { Building, Building2, ClockIcon, Earth, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "@/components/custom-link";
+import Clock from "@/components/clock";
 
 export default function Home() {
   return (
@@ -32,6 +33,10 @@ export default function Home() {
             {
               icon: Mail,
               content: <Link href="mailto:me@ingo.au">me@ingo.au</Link>,
+            },
+            {
+              icon: ClockIcon,
+              content: <Clock />,
             },
           ].map((item, index) => (
             <div
