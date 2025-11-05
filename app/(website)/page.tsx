@@ -51,7 +51,7 @@ export default function Home() {
         <div className="p-4 flex flex-col gap-2 border-b border-dashed">
           <h1 className="text-primary text-4xl">Hello! I&apos;m Ingo Wolf!</h1>
           <p className="text-xl">
-            I am a 15 year old tech nerd from Canberra, who listens to too much
+            I am a 15 year old tech nerd from Canberra who listens to too much
             music. I like building random stuff, usually with web technologies
             using overkill tech stacks. I also like spinning up random docker
             containers in{" "}
