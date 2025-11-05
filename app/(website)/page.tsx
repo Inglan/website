@@ -15,7 +15,6 @@ export default function Home() {
           src="/icons/main.svg"
         />
         <div className="flex flex-col">
-          <h1 className="text-2xl p-2 border-b border-dashed">Ingo Wolf</h1>
           {[
             { icon: Earth, content: <>Canberra, Australia</> },
             {
