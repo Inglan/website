@@ -47,12 +47,14 @@ export default function Home() {
         <h1 className="text-primary text-4xl">Hello! I&apos;m Ingo Wolf!</h1>
         <p className="text-xl">
           I am a 15 year old from Canberra. I like building random stuff,
-          usually with web technologies using overkill tech stacks. When
-          I&apos;m not building stuff, I&apos;m spinning up docker containers in{" "}
+          usually with web technologies using overkill tech stacks. I also like
+          spinning up random docker containers in{" "}
           <Link href="https://notoverkill.com" target="_blank">
             my homelab
           </Link>{" "}
-          and reconfiguring my 100% not overkill networking setup.
+          and reconfiguring my not overkill networking setup. And when I&apos;m
+          not doing any of that, I&apos;m probably doing schoolwork, reading, or
+          chatting on the Hack Club Slack.
         </p>
       </div>
     </div>
