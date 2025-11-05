@@ -40,7 +40,7 @@ export default function Home() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-row gap-2 items-center p-2 border-b border-dashed sm:last:border-b-0"
+              className="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0"
             >
               <item.icon className="size-5" /> {item.content}
             </div>
