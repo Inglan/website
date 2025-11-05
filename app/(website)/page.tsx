@@ -20,13 +20,13 @@ export default function Home() {
             {
               icon: Building,
               content: (
-                <a
+                <Link
                   href="https://cloudearth.au"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   Cloud Earth
-                </a>
+                </Link>
               ),
             },
             { icon: Mail, content: <a href="mailto:me@ingo.au">me@ingo.au</a> },
