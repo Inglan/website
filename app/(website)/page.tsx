@@ -45,9 +45,8 @@ export default function Home() {
         <p className="text-xl">
           I am a 15 year old from Canberra. I like building random stuff,
           usually with web technologies using overkill tech stacks. When
-          I&apos;m not building stuff, I&apos;m spinning up docker containers in
+          I&apos;m not building stuff, I&apos;m spinning up docker containers in{" "}
           <Link href="https://notoverkill.com" target="_blank">
-            {" "}
             my homelab
           </Link>{" "}
           and reconfiguring my 100% not overkill networking setup.
