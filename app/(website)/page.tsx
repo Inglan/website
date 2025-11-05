@@ -6,7 +6,7 @@ import Clock from "@/components/clock";
 export default function Home() {
   return (
     <div className="w-full mx-auto flex flex-col md:flex-row h-fit border border-t-0 border-dashed max-w-4xl">
-      <div className="w-full md:w-0 min-w-60 border-r border-dashed">
+      <div className="w-full md:w-0 min-w-60 md:border-r border-dashed">
         <Image
           width={255}
           height={255}
