@@ -71,10 +71,11 @@ export default function Home() {
             Slack.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 h-full">
+        <div className="grid grid-cols-1 sm:grid-cols-3 h-full">
           {[
-            { text: "My Projects", link: "/projects" },
+            { text: "Projects", link: "/projects" },
             { text: "Blog", link: "/blog" },
+            { text: "Contact", link: "/contact" },
           ].map((item, index) => (
             <div
               className="border-b sm:border-b-0 sm:border-r border-dashed last:border-0"
