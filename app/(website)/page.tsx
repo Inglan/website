@@ -60,7 +60,15 @@ export default function Home() {
           </Link>{" "}
           and reconfiguring my not overkill networking setup. And when I&apos;m
           not doing any of that, I&apos;m probably doing schoolwork, reading, or
-          chatting on the Hack Club Slack.
+          chatting on the{" "}
+          <Link
+            href="https://hackclub.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hack Club
+          </Link>{" "}
+          Slack.
         </p>
       </div>
     </div>
