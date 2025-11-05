@@ -12,8 +12,8 @@ export default function Home() {
           className="w-full aspect-square border-b border-dashed"
           src="/icons/main.svg"
         />
-        <div className="p-4 flex flex-col gap-2">
-          <h1 className="text-2xl">Ingo Wolf</h1>
+        <div className="flex flex-col">
+          <h1 className="text-2xl p-2 border-b border-dashed">Ingo Wolf</h1>
           {[
             { icon: Earth, content: <>Canberra, Australia</> },
             {
@@ -30,7 +30,10 @@ export default function Home() {
             },
             { icon: Mail, content: <a href="mailto:me@ingo.au">me@ingo.au</a> },
           ].map((item, index) => (
-            <div key={index} className="flex flex-row gap-2 items-center">
+            <div
+              key={index}
+              className="flex flex-row gap-2 items-center p-2 border-b border-dashed last:border-b-0"
+            >
               <item.icon className="size-5" /> {item.content}
             </div>
           ))}
