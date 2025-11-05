@@ -19,6 +19,10 @@ export default function Home() {
           {[
             { icon: Earth, content: <>Canberra, Australia</> },
             {
+              icon: ClockIcon,
+              content: <Clock />,
+            },
+            {
               icon: Building,
               content: (
                 <Link
@@ -33,10 +37,6 @@ export default function Home() {
             {
               icon: Mail,
               content: <Link href="mailto:me@ingo.au">me@ingo.au</Link>,
-            },
-            {
-              icon: ClockIcon,
-              content: <Clock />,
             },
           ].map((item, index) => (
             <div
