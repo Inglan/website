@@ -5,7 +5,7 @@ import { DateTime } from "luxon";
 
 export default function Clock() {
   const getTime = () =>
-    DateTime.now().setZone("Australia/Sydney").toFormat("HH:mm:ss");
+    DateTime.now().setZone("Australia/Sydney").toFormat("hh:mm:ss a");
 
   const [time, setTime] = useState(getTime());
 
