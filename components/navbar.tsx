@@ -64,7 +64,7 @@ function MenuLink({
 
   const linkClassName = clsx(
     "h-full px-8 py-4 w-fit flex justify-center items-center duration-300 ease-out",
-    "hover:text-primary active:brightness-50",
+    "hover:bg-card active:brightness-50",
     isActive && "text-primary",
     className,
   );
