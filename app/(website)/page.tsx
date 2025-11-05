@@ -1,10 +1,11 @@
 import { Building, Building2, Earth, Mail } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="w-full mx-auto flex flex-row h-fit border border-t-0 border-dashed max-w-4xl">
-      <div className="w-64 border-r border-dashed">
+      <div className="w-64 min-w-64 border-r border-dashed">
         <Image
           width={255}
           height={255}
@@ -39,7 +40,19 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="p-4"></div>
+      <div className="p-4 flex flex-col gap-2">
+        <h1 className="text-primary text-4xl">Hello! I&apos;m Ingo Wolf!</h1>
+        <p className="text-xl">
+          I am a 15 year old from Canberra. I like building random stuff,
+          usually with web technologies using overkill tech stacks. When
+          I&apos;m not building stuff, I&apos;m spinning up docker containers in
+          <Link href="https://notoverkill.com" target="_blank">
+            {" "}
+            my homelab
+          </Link>{" "}
+          and reconfiguring my 100% not overkill networking setup.
+        </p>
+      </div>
     </div>
   );
 }
