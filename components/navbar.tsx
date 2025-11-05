@@ -63,8 +63,8 @@ function MenuLink({
   const isActive = animation && pathname === href;
 
   const linkClassName = clsx(
-    "h-full px-8 py-4 w-fit flex justify-center items-center duration-300 ease-out",
-    "hover:bg-card active:brightness-50",
+    "h-full px-8 py-4 w-fit flex justify-center items-center duration-200 ease-out",
+    "hover:bg-card active:brightness-75",
     isActive && "text-primary",
     className,
   );
