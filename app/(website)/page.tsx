@@ -82,7 +82,7 @@ export default function Home() {
               key={index}
             >
               <Link
-                className="flex flex-row gap-2 items-center justify-center p-4 h-full w-full"
+                className="flex flex-row gap-2 items-center justify-center p-4 h-full w-full hover:bg-card duration-300 ease-out active:brightness-50"
                 href={item.link}
                 key={index}
               >
