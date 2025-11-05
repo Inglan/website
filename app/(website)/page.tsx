@@ -1,9 +1,10 @@
+import { Building, Building2, Earth, Mail } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="w-full mx-auto flex flex-row h-fit border border-t-0 border-dashed max-w-4xl">
-      <div className="w-52 border-r border-dashed">
+      <div className="w-64 border-r border-dashed">
         <Image
           width={255}
           height={255}
@@ -11,8 +12,28 @@ export default function Home() {
           className="w-full aspect-square border-b border-dashed"
           src="/icons/main.svg"
         />
-        <div className="p-4">
+        <div className="p-4 flex flex-col gap-2">
           <h1 className="text-2xl">Ingo Wolf</h1>
+          {[
+            { icon: Earth, content: <>Canberra, Australia</> },
+            {
+              icon: Building,
+              content: (
+                <a
+                  href="https://cloudearth.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cloud Earth
+                </a>
+              ),
+            },
+            { icon: Mail, content: <a href="mailto:me@ingo.au">me@ingo.au</a> },
+          ].map((item, index) => (
+            <div key={index} className="flex flex-row gap-2 items-center">
+              <item.icon className="size-5" /> {item.content}
+            </div>
+          ))}
         </div>
       </div>
       <div className="p-4"></div>
