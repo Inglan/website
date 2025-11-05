@@ -29,7 +29,10 @@ export default function Home() {
                 </Link>
               ),
             },
-            { icon: Mail, content: <a href="mailto:me@ingo.au">me@ingo.au</a> },
+            {
+              icon: Mail,
+              content: <Link href="mailto:me@ingo.au">me@ingo.au</Link>,
+            },
           ].map((item, index) => (
             <div
               key={index}
