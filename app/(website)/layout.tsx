@@ -1,7 +1,4 @@
-import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import Sidebar from "@/components/sidebar";
 import Search from "@/components/search";
 import Navbar from "@/components/navbar";
 import Hotkeys from "@/lib/hotkeys";

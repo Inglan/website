@@ -7,8 +7,6 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-  CommandSeparator,
-  CommandShortcut,
 } from "@/components/ui/command";
 import { MENU_ITEMS } from "@/lib/constants";
 import { useUiState } from "@/lib/state";
