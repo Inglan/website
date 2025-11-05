@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { MENU_ITEMS, NICE_EASE } from "@/lib/constants";
+import { MENU_ITEMS } from "@/lib/constants";
 import { Menu, Search } from "lucide-react";
 import { useUiState } from "@/lib/state";
 
@@ -61,27 +60,19 @@ function MenuLink({
 }) {
   const pathname = usePathname();
 
+  const isActive = animation && pathname === href;
+
   const itemChildren = (
-    <motion.div
+    <div
       className={clsx(
-        "h-full px-8 py-4 w-fit flex justify-center items-center",
+        "h-full px-8 py-4 w-fit flex justify-center items-center duration-300 ease-out",
+        "hover:text-primary active:brightness-50",
+        isActive && "text-primary",
         className,
       )}
-      animate={
-        animation
-          ? {
-              color: pathname == href ? "var(--primary)" : "var(--foreground)",
-            }
-          : {}
-      }
-      whileHover={{
-        color: "var(--primary)",
-      }}
-      whileTap={{ filter: "brightness(0.5)" }}
-      transition={{ ease: NICE_EASE }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 
   return (
