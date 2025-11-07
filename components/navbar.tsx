@@ -35,6 +35,7 @@ export default function Navbar() {
             setSearchOpen(true);
           }}
         >
+          <span className="sr-only">Menu</span>
           <Menu className="size-4 md:hidden" />
           <Search className="size-4 md:block hidden" />
         </MenuLink>
@@ -55,6 +56,7 @@ export function PostNavbar({ title }: { title: string }) {
           containerClassName="border-l-0"
           animation={false}
         >
+          <span className="sr-only">Back</span>
           <ArrowLeft className="size-4" />
         </MenuLink>
         <div className="grow flex items-center min-h-full py-4 px-2 text-xl line-clamp-1">
@@ -67,6 +69,7 @@ export function PostNavbar({ title }: { title: string }) {
             setSearchOpen(true);
           }}
         >
+          <span className="sr-only">Menu</span>
           <Menu className="size-4" />
         </MenuLink>
       </nav>
