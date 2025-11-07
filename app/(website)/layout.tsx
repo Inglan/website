@@ -20,8 +20,6 @@ export default function RootLayout({
         vaul-drawer-wrapper=""
         className="flex flex-col w-full bg-background min-h-screen p-4 pt-0"
       >
-        {/*<Sidebar />*/}
-        <Navbar />
         {children}
         <div className="grow"></div>
         <div className="max-w-4xl w-full mx-auto text-sm text-center text-foreground/75 mt-4">
