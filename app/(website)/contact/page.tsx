@@ -14,9 +14,19 @@ const contactMethods = [
     url: "mailto:me@ingo.au",
   },
   {
+    title: "Whatsapp",
+    subtitle: "Ingo Wolf",
+    url: "https://wa.me/qr/2I6NBPFBJV3UN1",
+  },
+  {
     title: "Discord",
     subtitle: "@ingo.au",
     url: "https://discord.com/users/907855965934714930",
+  },
+  {
+    title: "SMS (not recommended)",
+    subtitle: "+61435885392",
+    url: "sms:+61435885392",
   },
 ];
 
