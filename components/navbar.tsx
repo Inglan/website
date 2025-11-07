@@ -4,7 +4,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import { MENU_ITEMS } from "@/lib/constants";
-import { Menu, Search } from "lucide-react";
+import { ArrowLeft, Menu, Search } from "lucide-react";
 import { useUiState } from "@/lib/state";
 
 export default function Navbar() {
@@ -37,6 +37,37 @@ export default function Navbar() {
         >
           <Menu className="size-4 md:hidden" />
           <Search className="size-4 md:block hidden" />
+        </MenuLink>
+      </nav>
+    </div>
+  );
+}
+
+export function PostNavbar({ title }: { title: string }) {
+  const setSearchOpen = useUiState((state) => state.setSearchOpen);
+
+  return (
+    <div className="w-full sticky top-0 bg-background pt-4 z-50">
+      <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
+        <MenuLink
+          href="/"
+          className="px-6!"
+          containerClassName="border-l-0"
+          animation={false}
+        >
+          <ArrowLeft className="size-4" />
+        </MenuLink>
+        <div className="grow flex items-center min-h-full py-4 px-2 text-xl line-clamp-1">
+          {title}
+        </div>
+        <MenuLink
+          className="px-6!"
+          containerClassName="border-l-0"
+          onClick={() => {
+            setSearchOpen(true);
+          }}
+        >
+          <Menu className="size-4" />
         </MenuLink>
       </nav>
     </div>
