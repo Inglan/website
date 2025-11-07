@@ -50,7 +50,7 @@ export function PostNavbar({ title }: { title: string }) {
     <div className="w-full sticky top-0 bg-background pt-4 z-50">
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
         <MenuLink
-          href="/"
+          href="./"
           className="px-6!"
           containerClassName="border-l-0"
           animation={false}
