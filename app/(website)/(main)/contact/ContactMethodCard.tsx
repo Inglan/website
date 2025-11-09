@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import LinkCard from "./LinkCard";
 
 interface ContactMethodCardProps {
@@ -14,8 +15,10 @@ export default function ContactMethodCard({
   preferred = false,
 }: ContactMethodCardProps) {
   return (
-    <LinkCard href={url} span={preferred}>
-      <div className="text-2xl inline-flex gap-2 items-center">{title}</div>
+    <LinkCard href={url} className={clsx(preferred && "bg-card")}>
+      <div className="text-2xl inline-flex gap-2 items-center">
+        {title} {preferred ? "(Preferred)" : ""}
+      </div>
       <div className="text-xl inline-flex gap-2 items-center">{subtitle}</div>
     </LinkCard>
   );

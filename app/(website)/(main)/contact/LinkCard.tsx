@@ -10,9 +10,15 @@ interface LinkCardProps {
   href: string;
   children: ReactNode;
   span?: boolean;
+  className?: string;
 }
 
-export default function LinkCard({ href, children, span }: LinkCardProps) {
+export default function LinkCard({
+  href,
+  children,
+  span,
+  className,
+}: LinkCardProps) {
   return (
     <motion.div
       className={clsx(span && `col-span-2`)}
@@ -26,7 +32,10 @@ export default function LinkCard({ href, children, span }: LinkCardProps) {
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-4 border-b border-r border-dashed flex flex-col"
+        className={clsx(
+          "p-4 border-b border-r border-dashed flex flex-col",
+          className,
+        )}
       >
         {children}
       </Link>
