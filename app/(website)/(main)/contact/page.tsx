@@ -48,26 +48,9 @@ const socials = [
     link: "https://last.fm/user/ingoau",
   },
   {
-    name: "stats.fm",
-    username: "ingowolf",
-    link: "https://stats.fm/ingowolf",
-  },
-  {
     name: "Nitrotype",
     username: "ingowolf",
     link: "https://www.nitrotype.com/racer/ingowolf",
-  },
-  {
-    name: "Twitter",
-    username: "@IngoWolfAU",
-    link: "https://twitter.com/IngoWolfAU",
-    unimportant: true,
-  },
-  {
-    name: "Bluesky",
-    username: "@ingo.au",
-    link: "https://bsky.app/profile/ingo.au",
-    unimportant: true,
   },
 ];
 
@@ -92,8 +75,8 @@ export default function Contact() {
         <div className="flex flex-col border-b border-x p-4 border-dashed bg-card">
           <h2 className="text-4xl">Socials</h2>
           <div>
-            Under Australia&apos;s social media law, none of this apart from
-            Twitter and Bluesky (I actually use neither) is social media
+            Under Australia&apos;s social media law, none of this is social
+            media
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 border-l border-dashed">
