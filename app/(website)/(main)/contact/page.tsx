@@ -53,38 +53,9 @@ const socials = [
     link: "https://scrapbook.hackclub.com/ingo",
   },
   {
-    name: "Hack Club Slack",
-    username: "Ingo",
-    link: "https://hackclub.slack.com/team/U0923H02Y3B",
-  },
-  {
     name: "Nitrotype",
     username: "ingowolf",
     link: "https://www.nitrotype.com/racer/ingowolf",
-  },
-  {
-    name: "Youtube",
-    username: "@ingoau",
-    link: "https://youtube.com/@ingoau",
-    unimportant: true,
-  },
-  {
-    name: "Apple Music",
-    username: "ingo_wolf",
-    link: "https://music.apple.com/profile/ingo_wolf",
-    unimportant: true,
-  },
-  {
-    name: "Wikipedia",
-    username: "Ingowolfau",
-    link: "https://en.wikipedia.org/wiki/User:Ingowolfau",
-    unimportant: true,
-  },
-  {
-    name: "Samsung Members",
-    username: "ingowolf",
-    link: "https://r1.community.samsung.com/t5/user/viewprofilepage/user-id/162878944",
-    unimportant: true,
   },
   {
     name: "Twitter",
