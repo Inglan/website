@@ -107,7 +107,7 @@ export default function Contact() {
         <div className="w-full mx-auto flex h-fit p-4 border border-t-0 border-dashed">
           <h1 className="text-6xl text-primary">Contact</h1>
         </div>
-        <div className="grid grid-cols-2 border-l border-dashed">
+        <div className="grid grid-cols-1 md:grid-cols-2 border-l border-dashed">
           {contactMethods.map((method, index) => (
             <ContactMethodCard
               key={index}
