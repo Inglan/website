@@ -92,8 +92,8 @@ export default function Contact() {
         <div className="flex flex-col border-b border-x p-4 border-dashed bg-card">
           <h2 className="text-4xl">Socials</h2>
           <div>
-            (Under Australia&apos;s social media law, none of this apart from
-            Twitter and Bluesky is social media)
+            Under Australia&apos;s social media law, none of this apart from
+            Twitter and Bluesky (I actually use neither) is social media
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 border-l border-dashed">
