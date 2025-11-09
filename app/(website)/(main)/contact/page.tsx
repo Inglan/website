@@ -28,6 +28,16 @@ const contactMethods = [
 const socials = [
   { name: "GitHub", username: "@Inglan", link: "https://github.com/Inglan" },
   {
+    name: "Monkeytype",
+    username: "ingow",
+    link: "https://monkeytype.com/profile/ingow",
+  },
+  {
+    name: "Scrapbook",
+    username: "ingo",
+    link: "https://scrapbook.hackclub.com/ingo",
+  },
+  {
     name: "Spotify",
     username: "Ingo Wolf",
     link: "https://open.spotify.com/user/31fo6w35yvebzqgz53cczfuro3bi",
@@ -41,16 +51,6 @@ const socials = [
     name: "stats.fm",
     username: "ingowolf",
     link: "https://stats.fm/ingowolf",
-  },
-  {
-    name: "Monkeytype",
-    username: "ingow",
-    link: "https://monkeytype.com/profile/ingow",
-  },
-  {
-    name: "Scrapbook",
-    username: "ingo",
-    link: "https://scrapbook.hackclub.com/ingo",
   },
   {
     name: "Nitrotype",
@@ -91,7 +91,10 @@ export default function Contact() {
         </div>
         <div className="flex flex-col border-b border-x p-4 border-dashed bg-card">
           <h2 className="text-4xl">Socials</h2>
-          <div>(Sorted by order of importance)</div>
+          <div>
+            (Under Australia&apos;s social media law, none of this apart from
+            Twitter and Bluesky is social media)
+          </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 border-l border-dashed">
           {socials.map((social, index) => (
