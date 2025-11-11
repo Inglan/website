@@ -73,7 +73,7 @@ export default function Contact() {
           ))}
         </div>
         <div className="flex flex-col border-b border-x p-4 border-dashed bg-card">
-          <h2 className="text-4xl">Socials</h2>
+          <h2 className="text-4xl">(Not) Socials</h2>
           <div>
             Under Australia&apos;s social media law, none of this is social
             media
