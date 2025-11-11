@@ -86,7 +86,6 @@ export default function Contact() {
               name={social.name}
               username={social.username}
               link={social.link}
-              unimportant={social.unimportant}
             />
           ))}
         </div>
