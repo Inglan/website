@@ -33,10 +33,12 @@ export default async function PostPage({
   return (
     <>
       <PostNavbar title={post.title} />
-      <article className="max-w-4xl w-full mx-auto border border-t-0 border-dashed p-4">
-        <h1 className="text-4xl font-bold mb-8">{post.title}</h1>
-        <div className="prose">
+      <article className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
+        <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
+          <h1 className="text-6xl text-primary">{post.title}</h1>
           <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+        </div>
+        <div className="prose p-4">
           {Array.isArray(post.body) && (
             <PortableText
               components={{
