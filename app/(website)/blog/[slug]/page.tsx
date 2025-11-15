@@ -38,7 +38,7 @@ export default async function PostPage({
           <h1 className="text-6xl text-primary">{post.title}</h1>
           <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
         </div>
-        <div className="prose p-4 flex flex-col gap-2">
+        <div className="prose p-4">
           {Array.isArray(post.body) && (
             <PortableText
               components={{
