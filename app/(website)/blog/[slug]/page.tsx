@@ -11,6 +11,7 @@ import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import clsx from "clsx";
+import { notFound } from "next/navigation";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
@@ -29,6 +30,8 @@ export default async function PostPage({
     await params,
     options,
   );
+
+  if (!post) notFound();
 
   return (
     <>
