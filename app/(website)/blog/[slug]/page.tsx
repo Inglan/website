@@ -54,7 +54,7 @@ export default async function PostPage({
                         alt={value.alt || " "}
                         width={width}
                         height={height}
-                        className={clsx(!isInline && "w-full", "rounded-lg")}
+                        className={clsx(!isInline && "w-full")}
                         style={{
                           // Display alongside text if image appears inside a block text span
                           display: isInline ? "inline-block" : "block",
