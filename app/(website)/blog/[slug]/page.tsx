@@ -44,9 +44,11 @@ export default async function PostPage({
       <article className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
         <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
           <h1 className="text-6xl text-primary">{post.title}</h1>
-          <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
         </div>
         <div className="flex flex-row border-b border-dashed">
+          <div className="text-sm p-2 px-4 border-r border-dashed bg-muted">
+            {new Date(post.publishedAt).toLocaleDateString()}
+          </div>
           {post.categories.map((category: SanityDocument) => (
             <div
               key={category._id}
