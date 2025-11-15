@@ -19,20 +19,6 @@ export const postType = defineType({
       },
     }),
     defineField({
-      name: "mainImage",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-      fields: [
-        defineField({
-          name: "alt",
-          type: "string",
-          title: "Alternative text",
-        }),
-      ],
-    }),
-    defineField({
       name: "categories",
       type: "array",
       of: [
@@ -51,7 +37,6 @@ export const postType = defineType({
   preview: {
     select: {
       title: "title",
-      media: "mainImage",
     },
     prepare(selection) {
       return { ...selection };
