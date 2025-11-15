@@ -13,7 +13,12 @@ import Image from "next/image";
 import clsx from "clsx";
 import { notFound } from "next/navigation";
 
-const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
+const POST_QUERY = `*[_type == "post" && slug.current == "test-post-3"][0]{
+  ...,
+  categories[]->{
+    ...
+  }
+}`;
 
 const options: FilteredResponseQueryOptions = {
   next: { revalidate: 30 },
@@ -40,6 +45,16 @@ export default async function PostPage({
         <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
           <h1 className="text-6xl text-primary">{post.title}</h1>
           <p>Published: {new Date(post.publishedAt).toLocaleDateString()}</p>
+        </div>
+        <div className="flex flex-row border-b border-dashed">
+          {post.categories.map((category: SanityDocument) => (
+            <div
+              key={category._id}
+              className="text-sm p-2 px-4 border-r border-dashed"
+            >
+              {category.title}
+            </div>
+          ))}
         </div>
         <div className="prose max-w-full p-4">
           {Array.isArray(post.body) && (
