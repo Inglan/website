@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 import { MENU_ITEMS } from "@/lib/constants";
 import { ArrowLeft, Menu, Search } from "lucide-react";
 import { useUiState } from "@/lib/state";
+import { useScroll, useSpring } from "motion/react";
+import { motion } from "motion/react";
 
 export default function Navbar() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
@@ -46,10 +48,17 @@ export default function Navbar() {
 
 export function PostNavbar({ title }: { title: string }) {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 1000,
+    damping: 100,
+    restDelta: 0.001,
+    bounce: 0,
+  });
 
   return (
     <div className="w-full sticky top-0 bg-background pt-4 z-50">
-      <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
+      <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row relative">
         <MenuLink
           href="./"
           className="px-6!"
@@ -72,6 +81,10 @@ export function PostNavbar({ title }: { title: string }) {
           <span className="sr-only">Menu</span>
           <Menu className="size-4" />
         </MenuLink>
+        <motion.div
+          className="top-0 left-0 absolute w-full h-full bg-popover -z-10 origin-left "
+          style={{ scaleX }}
+        ></motion.div>
       </nav>
     </div>
   );
