@@ -37,6 +37,10 @@ export default {
             strong: {
               color: "var(--color-foreground)",
             },
+            blockquote: {
+              color: "var(--color-foreground)",
+              borderLeftColor: "var(--color-primary)",
+            },
           },
         },
       },
