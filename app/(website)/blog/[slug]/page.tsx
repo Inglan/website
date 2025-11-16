@@ -49,9 +49,9 @@ export default async function PostPage({
         <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
           <h1 className="text-6xl text-primary">{post.title}</h1>
         </div>
-        <div className="categories flex flex-row sm:hidden border-b border-dashed">
-          {post.categories &&
-            post.categories.map((category: SanityDocument) => (
+        {post.categories && (
+          <div className="categories flex flex-row sm:hidden border-b border-dashed">
+            {post.categories.map((category: SanityDocument) => (
               <div
                 key={category._id}
                 className="text-sm p-2 px-4 border-r border-dashed"
@@ -59,7 +59,8 @@ export default async function PostPage({
                 {category.title}
               </div>
             ))}
-        </div>
+          </div>
+        )}
         <div className="flex flex-row border-b border-dashed">
           <div className="text-sm p-2 px-4 border-r border-dashed bg-muted ">
             <FormattedDateTime date={post.publishedAt} format="DATETIME" />
