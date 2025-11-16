@@ -49,14 +49,15 @@ export default async function PostPage({
           <div className="text-sm p-2 px-4 border-r border-dashed bg-muted">
             {new Date(post.publishedAt).toLocaleDateString()}
           </div>
-          {post.categories.map((category: SanityDocument) => (
-            <div
-              key={category._id}
-              className="text-sm p-2 px-4 border-r border-dashed"
-            >
-              {category.title}
-            </div>
-          ))}
+          {post.categories &&
+            post.categories.map((category: SanityDocument) => (
+              <div
+                key={category._id}
+                className="text-sm p-2 px-4 border-r border-dashed"
+              >
+                {category.title}
+              </div>
+            ))}
         </div>
         <div className="prose max-w-full p-4">
           {Array.isArray(post.body) && (
