@@ -47,7 +47,7 @@ export default async function PostPage({
         <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
           <h1 className="text-6xl text-primary">{post.title}</h1>
         </div>
-        <div className="flex flex-row border-b border-dashed">
+        <div className="flex flex-row border-b border-dashed flex-wrap">
           <div className="text-sm p-2 px-4 border-r border-dashed bg-muted">
             {new Date(post.publishedAt).toLocaleDateString()}
           </div>
