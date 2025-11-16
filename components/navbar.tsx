@@ -18,7 +18,7 @@ export default function Navbar() {
         <MenuLink
           href="/"
           containerClassName="border-l-0"
-          className="text-xl py-4! px-4!"
+          className="text-xl py-4! px-4! active:font-medium font-bold min-w-36"
           animation={false}
         >
           Ingo Wolf
