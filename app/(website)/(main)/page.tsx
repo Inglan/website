@@ -40,7 +40,7 @@ export default function Home() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0"
+              className="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono"
             >
               <item.icon className="size-5" /> {item.content}
             </div>
@@ -49,7 +49,7 @@ export default function Home() {
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col border-b border-dashed">
-          <h1 className="text-primary text-6xl border-b border-dashed w-full p-4">
+          <h1 className="text-primary text-4xl lg:text-5xl border-b border-dashed w-full p-4 font-mono">
             Hello! I&apos;m Ingo Wolf!
           </h1>
           <p className="text-xl p-4">
