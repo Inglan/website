@@ -48,9 +48,11 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col">
-        <div className="p-4 flex flex-col gap-2 border-b border-dashed">
-          <h1 className="text-primary text-4xl">Hello! I&apos;m Ingo Wolf!</h1>
-          <p className="text-xl">
+        <div className="flex flex-col border-b border-dashed">
+          <h1 className="text-primary text-6xl border-b border-dashed w-full p-4">
+            Hello! I&apos;m Ingo Wolf!
+          </h1>
+          <p className="text-xl p-4">
             I am a 15 year old tech nerd from Canberra. I like building random
             projects, usually with web technologies, especially Next.js. I also
             like spinning up docker containers in{" "}
