@@ -8,7 +8,6 @@ import { toast } from "sonner";
 
 export default function PostShare({ post }: { post: SanityDocument }) {
   const [success, setSuccess] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [error, setError] = useState(false);
 
   return (
@@ -19,7 +18,6 @@ export default function PostShare({ post }: { post: SanityDocument }) {
         onClick={() => {
           setTimeout(() => {
             setSuccess(false);
-            setCopied(false);
             setError(false);
           }, 2000);
           if (!navigator.canShare || !navigator.share) {
@@ -29,7 +27,8 @@ export default function PostShare({ post }: { post: SanityDocument }) {
               return;
             }
             navigator.clipboard.writeText(location.href).then(() => {
-              setCopied(true);
+              setSuccess(true);
+              toast.success("Copied to clipboard");
             });
           } else {
             navigator
@@ -39,7 +38,8 @@ export default function PostShare({ post }: { post: SanityDocument }) {
               .then(() => {
                 setSuccess(true);
               })
-              .catch(() => {
+              .catch((error) => {
+                if (error == "AbortError: Share canceled") return;
                 setError(true);
                 toast.error("Failed to share");
               });
