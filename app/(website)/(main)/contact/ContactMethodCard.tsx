@@ -19,7 +19,9 @@ export default function ContactMethodCard({
       <div className="text-2xl inline-flex gap-2 items-center">
         {title} {preferred ? "(Preferred)" : ""}
       </div>
-      <div className="text-xl inline-flex gap-2 items-center">{subtitle}</div>
+      <div className="text-xl inline-flex gap-2 items-center font-mono">
+        {subtitle}
+      </div>
     </LinkCard>
   );
 }

@@ -26,7 +26,7 @@ export default function SocialCard({
       </div>
       <div
         className={clsx(
-          "text-xl inline-flex gap-2 items-center",
+          "text-xl inline-flex gap-2 items-center font-mono",
           unimportant && "text-foreground/70",
         )}
       >
