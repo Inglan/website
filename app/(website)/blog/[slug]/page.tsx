@@ -13,7 +13,7 @@ import Image from "next/image";
 import clsx from "clsx";
 import { notFound } from "next/navigation";
 
-const POST_QUERY = `*[_type == "post" && slug.current == "test-post-3"][0]{
+const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
   categories[]->{
     ...
