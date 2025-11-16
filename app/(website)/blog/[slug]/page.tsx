@@ -49,10 +49,7 @@ export default async function PostPage({
         <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
           <h1 className="text-6xl text-primary">{post.title}</h1>
         </div>
-        <div className="flex flex-row border-b border-dashed flex-wrap">
-          <div className="text-sm p-2 px-4 border-r border-dashed bg-muted">
-            <FormattedDateTime date={post.publishedAt} format="DATETIME" />
-          </div>
+        <div className="categories flex flex-row sm:hidden border-b border-dashed">
           {post.categories &&
             post.categories.map((category: SanityDocument) => (
               <div
@@ -62,8 +59,24 @@ export default async function PostPage({
                 {category.title}
               </div>
             ))}
+        </div>
+        <div className="flex flex-row border-b border-dashed">
+          <div className="text-sm p-2 px-4 border-r border-dashed bg-muted ">
+            <FormattedDateTime date={post.publishedAt} format="DATETIME" />
+          </div>
+          <div className="categories sm:flex flex-row hidden">
+            {post.categories &&
+              post.categories.map((category: SanityDocument) => (
+                <div
+                  key={category._id}
+                  className="text-sm p-2 px-4 border-r border-dashed"
+                >
+                  {category.title}
+                </div>
+              ))}
+          </div>
           <div className="grow"></div>
-          <ShareButton className="border-l border-dashed" />
+          <ShareButton className="sm:border-l border-dashed" />
         </div>
         <div className="prose max-w-full p-4">
           {Array.isArray(post.body) && (
