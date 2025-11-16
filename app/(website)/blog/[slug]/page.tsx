@@ -12,6 +12,8 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import clsx from "clsx";
 import { notFound } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Share } from "lucide-react";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -58,6 +60,11 @@ export default async function PostPage({
                 {category.title}
               </div>
             ))}
+          <div className="grow"></div>
+          <Button variant="ghost" className="border-l border-dashed">
+            <Share />
+            Share
+          </Button>
         </div>
         <div className="prose max-w-full p-4">
           {Array.isArray(post.body) && (
