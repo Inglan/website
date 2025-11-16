@@ -15,7 +15,7 @@ const iconAnimation = {
   transition: { ease: NICE_EASE },
 };
 
-export default function PostShare() {
+export default function PostShare({className}: {className?: string}) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
@@ -23,7 +23,7 @@ export default function PostShare() {
     <div>
       <Button
         variant="ghost"
-        className="border-l border-dashed"
+        className={className}
         onClick={() => {
           setTimeout(() => {
             setSuccess(false);
