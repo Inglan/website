@@ -5,16 +5,16 @@ import Clock from "@/components/clock";
 
 export default function Home() {
   return (
-    <div className="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-dashed max-w-4xl">
+    <div className="w-full mx-auto flex flex-col-reverse sm:flex-row h-fit border border-t-0 border-dashed max-w-4xl">
       <div className="w-full sm:w-0 min-w-60 sm:border-r border-dashed">
         <Image
           width={255}
           height={255}
           alt=""
-          className="w-full aspect-square border-b border-dashed"
+          className="w-full hidden sm:block aspect-square border-b border-dashed object-cover"
           src="/icons/main.svg"
         />
-        <div className="flex flex-col">
+        <div className="flex flex-col border-t sm:border-t-0 border-dashed">
           {[
             { icon: Earth, content: <>Canberra, Australia</> },
             {
