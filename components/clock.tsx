@@ -10,6 +10,9 @@ export default function Clock() {
   const [time, setTime] = useState("LO:AD:IN G");
 
   useEffect(() => {
+    setTimeout(() => {
+      setTime(getTime());
+    }, 0);
     const interval = setInterval(() => {
       setTime(getTime());
     }, 100);
