@@ -15,7 +15,7 @@ const iconAnimation = {
   transition: { ease: NICE_EASE },
 };
 
-export default function PostShare({ post }: { post: SanityDocument }) {
+export default function PostShare() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 

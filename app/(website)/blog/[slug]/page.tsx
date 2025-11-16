@@ -62,7 +62,7 @@ export default async function PostPage({
               </div>
             ))}
           <div className="grow"></div>
-          <PostShare post={post} />
+          <PostShare />
         </div>
         <div className="prose max-w-full p-4">
           {Array.isArray(post.body) && (
