@@ -15,6 +15,7 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Share } from "lucide-react";
 import ShareButton from "@/components/share-button";
+import { FormattedDateTime } from "@/components/formatted-date";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -50,7 +51,7 @@ export default async function PostPage({
         </div>
         <div className="flex flex-row border-b border-dashed flex-wrap">
           <div className="text-sm p-2 px-4 border-r border-dashed bg-muted">
-            {new Date(post.publishedAt).toLocaleDateString()}
+            <FormattedDateTime date={post.publishedAt} format="DATETIME" />
           </div>
           {post.categories &&
             post.categories.map((category: SanityDocument) => (
