@@ -5,6 +5,8 @@ import { Button } from "./ui/button";
 import { SanityDocument } from "sanity";
 import { useState } from "react";
 import { toast } from "sonner";
+import { motion, AnimatePresence } from "motion/react";
+import { NICE_EASE } from "@/lib/constants";
 
 export default function PostShare({ post }: { post: SanityDocument }) {
   const [success, setSuccess] = useState(false);
@@ -46,13 +48,39 @@ export default function PostShare({ post }: { post: SanityDocument }) {
           }
         }}
       >
-        {success ? (
-          <Check />
-        ) : error ? (
-          <TriangleAlert className="text-red-400" />
-        ) : (
-          <Share />
-        )}
+        <AnimatePresence mode="popLayout">
+          {success ? (
+            <motion.div
+              key="success"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ ease: NICE_EASE }}
+            >
+              <Check />
+            </motion.div>
+          ) : error ? (
+            <motion.div
+              key="error"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ ease: NICE_EASE }}
+            >
+              <TriangleAlert className="text-red-400" />
+            </motion.div>
+          ) : (
+            <motion.div
+              key="share"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ ease: NICE_EASE }}
+            >
+              <Share />
+            </motion.div>
+          )}
+        </AnimatePresence>
         Share
       </Button>
     </div>
