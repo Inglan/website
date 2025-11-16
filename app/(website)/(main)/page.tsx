@@ -59,7 +59,7 @@ export default function Home() {
             </Link>{" "}
             and reconfiguring my not at all overkill home network. And when
             I&apos;m not doing any of that, I&apos;m probably doing schoolwork,
-            reading, or chatting on the{" "}
+            reading, walking, or chatting on the{" "}
             <Link
               href="https://hackclub.com"
               target="_blank"
@@ -67,7 +67,7 @@ export default function Home() {
             >
               Hack Club
             </Link>{" "}
-            Slack. Right now, I am working on setting up a CMS for this website.
+            Slack.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
