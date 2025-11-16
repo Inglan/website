@@ -70,10 +70,10 @@ export default function Home() {
             Slack. Right now, I am working on setting up a CMS for this website.
           </p>
         </div>
-        <div className="grid grid-cols-1 disable-md:grid-cols-3 h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 h-full">
           {[
             // { text: "Projects", link: "/projects" },
-            // { text: "Blog", link: "/blog" },
+            { text: "Blog", link: "/blog" },
             { text: "Contact", link: "/contact" },
           ].map((item, index) => (
             <div
