@@ -15,7 +15,7 @@ const iconAnimation = {
   transition: { ease: NICE_EASE },
 };
 
-export default function ShareButton({className}: {className?: string}) {
+export default function ShareButton({ className }: { className?: string }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
@@ -55,7 +55,7 @@ export default function ShareButton({className}: {className?: string}) {
           }
         }}
       >
-        <AnimatePresence mode="popLayout">
+        <AnimatePresence mode="popLayout" initial={false}>
           {success ? (
             <motion.div key="success" {...iconAnimation}>
               <Check />
