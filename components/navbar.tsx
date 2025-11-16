@@ -68,8 +68,8 @@ export function PostNavbar({ title }: { title: string }) {
           <span className="sr-only">Back</span>
           <ArrowLeft className="size-4" />
         </MenuLink>
-        <div className="grow flex items-center min-h-full py-4 px-2 text-xl line-clamp-1">
-          {title}
+        <div className="grow flex items-center min-h-full py-4 px-2 text-xl">
+          <p className="line-clamp-1">{title}</p>
         </div>
         <MenuLink
           className="px-6!"
