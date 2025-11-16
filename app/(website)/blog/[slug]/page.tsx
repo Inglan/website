@@ -14,7 +14,7 @@ import clsx from "clsx";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Share } from "lucide-react";
-import PostShare from "@/components/post-share";
+import ShareButton from "@/components/share-button";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -62,7 +62,7 @@ export default async function PostPage({
               </div>
             ))}
           <div className="grow"></div>
-          <PostShare className="border-l border-dashed" />
+          <ShareButton className="border-l border-dashed" />
         </div>
         <div className="prose max-w-full p-4">
           {Array.isArray(post.body) && (

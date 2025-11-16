@@ -15,7 +15,7 @@ const iconAnimation = {
   transition: { ease: NICE_EASE },
 };
 
-export default function PostShare({className}: {className?: string}) {
+export default function ShareButton({className}: {className?: string}) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
 
