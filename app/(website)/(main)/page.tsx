@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="w-full mx-auto max-w-4xl border-x border-dashed p-4 bg-striped-gradient bg-size-[80px_80px] border-b"></div>
+      <div className="w-full mx-auto max-w-4xl border-x border-dashed h-10 bg-striped-gradient bg-size-[80px_80px] border-b"></div>
       <div className="w-full mx-auto grid grid-cols-3 max-w-4xl border-l border-dashed border-b">
         <div className="border-r border-dashed p-4">
           <h2 className="text-2xl text-primary">Web</h2>
