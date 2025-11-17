@@ -23,7 +23,7 @@ export default function Navbar() {
         >
           Ingo Wolf
         </MenuLink>
-        <div className="grow bg-[repeating-linear-gradient(45deg,var(--color-destructive-foreground)_0,var(--color-destructive-foreground)_30px,transparent_0,transparent_50%)] bg-size-[80px_80px] bg-fixed"></div>
+        <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
         <div className="hidden md:flex flex-row">
           {MENU_ITEMS.map((item) => (
             <MenuLink key={item.url} href={item.url}>

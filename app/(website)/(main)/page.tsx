@@ -57,7 +57,7 @@ export function Hero() {
       </div>
       <div className="flex flex-col">
         <div className="flex flex-col border-b border-dashed">
-          <h1 className="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-[repeating-linear-gradient(45deg,var(--color-destructive-foreground)_0,var(--color-destructive-foreground)_30px,transparent_0,transparent_50%)] bg-size-[80px_80px] bg-fixed">
+          <h1 className="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed">
             Hello, <br /> I&apos;m Ingo Wolf!
           </h1>
           <p className="text-xl p-4">

@@ -68,6 +68,14 @@
   --shadow-opacity: var(--shadow-opacity);
   --color-shadow-color: var(--shadow-color);
   --color-destructive-foreground: var(--destructive-foreground);
+
+  --background-image-striped-gradient: repeating-linear-gradient(
+    45deg,
+    var(--color-destructive-foreground) 0,
+    var(--color-destructive-foreground) 30px,
+    transparent 0,
+    transparent 50%
+  );
 }
 
 :root {
