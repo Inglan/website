@@ -17,13 +17,13 @@ export default function Navbar() {
       <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
         <MenuLink
           href="/"
-          containerClassName="border-l-0"
+          containerClassName="border-l-0 border-r"
           className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono"
           animation={false}
         >
           Ingo Wolf
         </MenuLink>
-        <div className="grow"></div>
+        <div className="grow bg-[repeating-linear-gradient(45deg,var(--color-destructive-foreground)_0,var(--color-destructive-foreground)_30px,transparent_0,transparent_50%)] bg-size-[80px_80px] bg-fixed"></div>
         <div className="hidden md:flex flex-row">
           {MENU_ITEMS.map((item) => (
             <MenuLink key={item.url} href={item.url}>
