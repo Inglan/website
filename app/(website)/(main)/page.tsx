@@ -8,15 +8,15 @@ export default function Home() {
     <>
       <Hero />
       <div className="w-full mx-auto max-w-4xl border-x border-dashed h-10 bg-striped-gradient bg-size-[80px_80px] border-b"></div>
-      <div className="w-full mx-auto grid grid-cols-3 max-w-4xl border-l border-dashed border-b">
-        <div className="border-r border-dashed p-4">
+      <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-3 max-w-4xl border-l border-dashed border-b">
+        <div className="border-r border-dashed p-4 border-b sm:border-b-0">
           <h2 className="text-2xl text-primary">Web</h2>
           <p>
             I build webapps for basically everything. If I have a problem, no
             matter how simple, a webapp can solve it.
           </p>
         </div>
-        <div className="border-r border-dashed p-4">
+        <div className="border-r border-dashed p-4 border-b sm:border-b-0">
           <h2 className="text-2xl text-primary">Infrastructure</h2>
           <p>
             I run about 30 Docker containers in my homelab which are behind a
