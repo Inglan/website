@@ -28,7 +28,7 @@ export default async function Blog() {
                 .map((c: { text?: string }) => c.text || "")
                 .join(""),
             )
-            .join("")}
+            .join(" ")}
         />
       ))}
     </div>
