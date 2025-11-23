@@ -63,7 +63,7 @@ export default async function PostPage({
           </div>
         )}
         <div className="flex flex-row border-b border-dashed">
-          <div className="text-sm p-2 px-4 border-r border-dashed bg-muted ">
+          <div className="text-sm p-2 px-4 border-r border-dashed bg-card">
             <FormattedDateTime date={post.publishedAt} format="DATETIME" />
           </div>
           <div className="categories sm:flex flex-row hidden">
