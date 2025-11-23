@@ -7,6 +7,7 @@ export default {
         DEFAULT: {
           css: {
             color: "var(--color-foreground)",
+            "--tw-prose-counters": "var(--color-foreground)",
             a: {
               color: "var(--color-primary)",
             },
