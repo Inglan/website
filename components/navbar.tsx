@@ -123,9 +123,12 @@ function MenuLink({
           {children}
         </Link>
       ) : (
-        <a className={clsx("cursor-pointer", linkClassName)} onClick={onClick}>
+        <button
+          className={clsx("cursor-pointer", linkClassName)}
+          onClick={onClick}
+        >
           {children}
-        </a>
+        </button>
       )}
     </div>
   );
