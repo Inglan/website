@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Share } from "lucide-react";
 import ShareButton from "@/components/share-button";
 import { FormattedDateTime } from "@/components/formatted-date";
+import CodeBlock from "@/components/code-block";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -84,6 +85,11 @@ export default async function PostPage({
             <PortableText
               components={{
                 types: {
+                  code: ({ value }) => {
+                    return (
+                      <CodeBlock language={value.language} code={value.code} />
+                    );
+                  },
                   image: ({ value, isInline }) => {
                     const { width, height } = getImageDimensions(value);
                     return (
