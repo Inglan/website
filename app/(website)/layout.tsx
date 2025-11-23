@@ -31,6 +31,7 @@ export default function RootLayout({
                 href="https://ctp-webr.ing/ingo/previous"
                 className="aspect-square h-full"
               >
+                <span className="sr-only">Previous</span>
                 <ArrowLeft />
               </Link>
             </Button>
@@ -39,6 +40,7 @@ export default function RootLayout({
             </Button>
             <Button variant="ghost" size="icon" asChild>
               <Link href="https://ctp-webr.ing/ingo/next">
+                <span className="sr-only">Next</span>
                 <ArrowRight />
               </Link>
             </Button>
