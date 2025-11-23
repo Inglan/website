@@ -41,6 +41,12 @@ export default {
               color: "var(--color-foreground)",
               borderLeftColor: "var(--color-primary)",
             },
+            code: {
+              color: "var(--color-foreground)",
+              backgroundColor: "var(--color-card)",
+              padding: "0.2em 0.4em",
+              borderRadius: "0.25rem",
+            },
           },
         },
       },
