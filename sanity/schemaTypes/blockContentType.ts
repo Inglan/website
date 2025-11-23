@@ -78,5 +78,8 @@ export const blockContentType = defineType({
         },
       ],
     }),
+    {
+      type: "code",
+    },
   ],
 });
