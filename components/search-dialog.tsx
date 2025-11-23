@@ -18,6 +18,7 @@ interface PostWithSlug extends SanityDocument {
   slug?: {
     current: string;
   };
+  body?: Array<{ children?: Array<{ text?: string }> }>;
 }
 
 interface SearchDialogProps {
@@ -80,20 +81,37 @@ export function SearchDialog({ posts }: SearchDialogProps) {
           ))}
         </CommandGroup>
         <CommandGroup heading="Posts">
-          {posts.map((post) => (
-            <CommandItem
-              className="cursor-pointer"
-              key={post._id}
-              onSelect={() => {
-                if (post.slug?.current) {
-                  router.push(`/blog/${post.slug.current}`);
-                  setSearchOpen(false);
-                }
-              }}
-            >
-              {post.title as string}
-            </CommandItem>
-          ))}
+          {posts.map((post) => {
+            const excerpt =
+              post.body
+                ?.map((b: { children?: Array<{ text?: string }> }) =>
+                  (b.children || [])
+                    .map((c: { text?: string }) => c.text || "")
+                    .join("")
+                )
+                .join(" ")
+                .split("\n")[0] || "";
+
+            return (
+              <CommandItem
+                className="cursor-pointer flex-col items-start gap-1"
+                key={post._id}
+                onSelect={() => {
+                  if (post.slug?.current) {
+                    router.push(`/blog/${post.slug.current}`);
+                    setSearchOpen(false);
+                  }
+                }}
+              >
+                <div className="font-medium">{post.title as string}</div>
+                {excerpt && (
+                  <div className="text-xs text-muted-foreground line-clamp-1">
+                    {excerpt}
+                  </div>
+                )}
+              </CommandItem>
+            );
+          })}
         </CommandGroup>
         <CommandGroup heading="Commands">
           {commands.map((command) => (
