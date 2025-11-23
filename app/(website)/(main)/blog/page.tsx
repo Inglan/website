@@ -7,6 +7,10 @@ const POSTS_QUERY = `*[
 ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, body}`;
 const options = { next: { revalidate: 30 } };
 
+export const metadata = {
+  title: "Blog",
+};
+
 export default async function Blog() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 

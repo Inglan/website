@@ -1,6 +1,10 @@
 import ContactMethodCard from "./ContactMethodCard";
 import SocialCard from "./SocialCard";
 
+export const metadata = {
+  title: "Contact",
+};
+
 const contactMethods = [
   {
     title: "Signal",

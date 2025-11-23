@@ -17,6 +17,7 @@ import { Share } from "lucide-react";
 import ShareButton from "@/components/share-button";
 import { FormattedDateTime } from "@/components/formatted-date";
 import CodeBlock from "@/components/code-block";
+import type { Metadata, ResolvingMetadata } from "next";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -24,6 +25,22 @@ const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
     ...
   }
 }`;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const post = await client.fetch<SanityDocument>(
+    POST_QUERY,
+    await params,
+    options,
+  );
+
+  return {
+    title: post.title,
+  };
+}
 
 const options: FilteredResponseQueryOptions = {
   next: { revalidate: 30 },
