@@ -13,6 +13,7 @@ import { useUiState } from "@/lib/state";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { SanityDocument } from "sanity";
+import { ArrowRight, Copy, Mail, MessageCircle } from "lucide-react";
 
 interface PostWithSlug extends SanityDocument {
   slug?: {
@@ -33,6 +34,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
   const commands = [
     {
       label: "Copy Email",
+      icon: <Copy />,
       onSelect: () => {
         navigator.clipboard.writeText("me@ingo.au");
         setSearchOpen(false);
@@ -41,6 +43,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
     },
     {
       label: "Email",
+      icon: <Mail />,
       onSelect: () => {
         location.href = "mailto:me@ingo.au";
         setSearchOpen(false);
@@ -48,9 +51,10 @@ export function SearchDialog({ posts }: SearchDialogProps) {
     },
     {
       label: "Signal",
+      icon: <MessageCircle />,
       onSelect: () => {
         window.open(
-          "https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
+          "https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB",
         );
         setSearchOpen(false);
       },
@@ -76,6 +80,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
                 setSearchOpen(false);
               }}
             >
+              <ArrowRight />
               {item.label}
             </CommandItem>
           ))}
@@ -87,14 +92,14 @@ export function SearchDialog({ posts }: SearchDialogProps) {
                 ?.map((b: { children?: Array<{ text?: string }> }) =>
                   (b.children || [])
                     .map((c: { text?: string }) => c.text || "")
-                    .join("")
+                    .join(""),
                 )
                 .join(" ")
                 .split("\n")[0] || "";
 
             return (
               <CommandItem
-                className="cursor-pointer flex-col items-start gap-1"
+                className="cursor-pointer"
                 key={post._id}
                 onSelect={() => {
                   if (post.slug?.current) {
@@ -103,12 +108,15 @@ export function SearchDialog({ posts }: SearchDialogProps) {
                   }
                 }}
               >
-                <div className="font-medium">{post.title as string}</div>
-                {excerpt && (
-                  <div className="text-xs text-muted-foreground line-clamp-1">
-                    {excerpt}
-                  </div>
-                )}
+                <ArrowRight />
+                <div className=" flex-col items-start gap-1">
+                  <div className="font-medium">{post.title as string}</div>
+                  {excerpt && (
+                    <div className="text-xs text-muted-foreground line-clamp-1">
+                      {excerpt}
+                    </div>
+                  )}
+                </div>
               </CommandItem>
             );
           })}
@@ -116,6 +124,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
         <CommandGroup heading="Commands">
           {commands.map((command) => (
             <CommandItem key={command.label} onSelect={command.onSelect}>
+              {command.icon}
               {command.label}
             </CommandItem>
           ))}
