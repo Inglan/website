@@ -2,6 +2,12 @@ import { ArrowRight, Building, ClockIcon, Earth, Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "@/components/custom-link";
 import Clock from "@/components/clock";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  description:
+    "I am a 15 year old tech nerd from Canberra. I like building random projects, usually with web technologies, especially Next.js.",
+};
 
 export default function Home() {
   return (
