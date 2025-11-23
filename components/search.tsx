@@ -12,6 +12,7 @@ import { MENU_ITEMS } from "@/lib/constants";
 import { useUiState } from "@/lib/state";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { DynamicSearchEntries } from "./dynamic-search-entries";
 
 export default function Search() {
   const searchOpen = useUiState((state) => state.searchOpen);
@@ -68,6 +69,9 @@ export default function Search() {
                 {item.label}
               </CommandItem>
             ))}
+          </CommandGroup>
+          <CommandGroup heading="Posts">
+            <DynamicSearchEntries />
           </CommandGroup>
           <CommandGroup heading="Commands">
             {commands.map((command) => (
