@@ -6,7 +6,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   description:
-    "I am a 15 year old tech nerd from Canberra. I like building random projects, usually with web technologies, especially Next.js.",
+    "I am a 16 year old tech nerd from Canberra. I like building random projects, usually with web technologies, especially Next.js.",
 };
 
 export default function Home() {
@@ -92,7 +92,7 @@ export function Hero() {
             Hello, <br /> I&apos;m Ingo Wolf!
           </h1>
           <p className="text-xl p-4">
-            I am a 15 year old tech nerd from Canberra. I like building random
+            I am a 16 year old tech nerd from Canberra. I like building random
             projects, usually with web technologies, especially Next.js. I also
             like spinning up docker containers in{" "}
             <Link href="https://notoverkill.com" target="_blank">
