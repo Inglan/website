@@ -19,10 +19,9 @@ export default function Navbar() {
         <MenuLink
           href="/"
           containerClassName="border-l-0 border-r"
-          className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono flex flex-rwo gap-2"
+          className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono"
           animation={false}
         >
-          <Image src="/3e16e4fedede7bc8.gif" width={30} height={20} alt="" />
           Ingo Wolf
         </MenuLink>
         <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
