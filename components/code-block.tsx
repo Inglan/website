@@ -23,7 +23,7 @@ export default async function CodeBlock({
           <div className="grow"></div>
           <CodeCopyButton code={code} />
         </div>
-        <pre className="px-4 p-2">{reactNode}</pre>
+        <pre className="px-4 p-2 overflow-auto">{reactNode}</pre>
       </div>
     </>
   );
