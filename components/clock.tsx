@@ -7,7 +7,7 @@ export default function Clock() {
   const getTime = () =>
     DateTime.now().setZone("Australia/Sydney").toFormat("hh:mm:ss a");
 
-  const [time, setTime] = useState("LO:AD:IN G");
+  const [time, setTime] = useState(getTime());
 
   useEffect(() => {
     setTimeout(() => {
