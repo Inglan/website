@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { GitBranch } from "lucide-react";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { motion, AnimatePresence, usePresenceData } from "motion/react";
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
@@ -226,22 +226,24 @@ export function Technologies() {
           ))}
         </div>
       </div>
-      <AnimatePresence mode="wait" initial={false} custom={direction}>
+      <AnimatePresence mode="popLayout" initial={false} custom={direction}>
         <Grid key={selectedCategory} selectedCategory={selectedCategory} />
       </AnimatePresence>
     </div>
   );
 }
 
-function Grid({
-  selectedCategory,
-}: {
-  selectedCategory: keyof typeof technologies;
-}) {
+const Grid = forwardRef(function Grid(
+  props: {
+    selectedCategory: keyof typeof technologies;
+  },
+  ref: React.ForwardedRef<HTMLDivElement>,
+) {
   const direction = usePresenceData();
 
   return (
     <motion.div
+      ref={ref}
       exit={{ opacity: 0, x: direction * -50 }}
       initial={{ opacity: 0, x: direction * 50 }}
       animate={{ opacity: 1, x: 0 }}
@@ -251,7 +253,7 @@ function Grid({
       }}
       className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed"
     >
-      {technologies[selectedCategory].items.map((item, index) => (
+      {technologies[props.selectedCategory].items.map((item, index) => (
         <div
           key={item.name}
           className={cn(
@@ -266,16 +268,16 @@ function Grid({
       <Placeholders
         cols={3}
         className="block md:hidden"
-        selectedCategory={selectedCategory}
+        selectedCategory={props.selectedCategory}
       />
       <Placeholders
         cols={5}
         className="md:block hidden"
-        selectedCategory={selectedCategory}
+        selectedCategory={props.selectedCategory}
       />
     </motion.div>
   );
-}
+});
 
 function Placeholders({
   cols,
