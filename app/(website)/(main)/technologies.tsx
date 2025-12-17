@@ -296,9 +296,14 @@ const Grid = forwardRef(function Grid(
         }
       }}
       ref={ref}
-      exit={{ opacity: 0, x: direction * -100 }}
-      initial={{ opacity: 0, x: direction * 100 }}
-      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: direction * -100, filter: "blur(10px)" }}
+      initial={{
+        opacity: 0,
+        x: direction * 100,
+        filter: "blur(10px)",
+        scale: 0.9,
+      }}
+      animate={{ opacity: 1, x: 0, filter: "blur(0px)", scale: 1 }}
       transition={{
         duration: 0.2,
         ease: NICE_EASE,
