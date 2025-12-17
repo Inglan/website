@@ -25,48 +25,7 @@ export default function Home() {
 
 export function Hero() {
   return (
-    <div className="w-full mx-auto flex flex-col-reverse sm:flex-row h-fit border border-t-0 border-dashed max-w-4xl">
-      <div className="w-full sm:w-0 min-w-64 sm:border-r border-dashed">
-        <Image
-          width={255}
-          height={255}
-          alt=""
-          className="w-full hidden sm:block aspect-square border-b border-dashed object-cover"
-          src="/icons/main.svg"
-        />
-        <div className="flex flex-col border-t sm:border-t-0 border-dashed">
-          {[
-            { icon: Earth, content: <>Canberra, Australia</> },
-            {
-              icon: ClockIcon,
-              content: <Clock />,
-            },
-            {
-              icon: Building,
-              content: (
-                <Link
-                  href="https://cloudearth.au"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Cloud Earth
-                </Link>
-              ),
-            },
-            {
-              icon: Mail,
-              content: <Link href="mailto:me@ingo.au">me@ingo.au</Link>,
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono"
-            >
-              <item.icon className="size-5" /> {item.content}
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl">
       <div className="flex flex-col">
         <div className="flex flex-col border-b border-dashed">
           <h1 className="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed">
@@ -110,6 +69,47 @@ export function Hero() {
                 {item.text}
                 <ArrowRight className="size-4" />
               </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="w-full sm:w-0 min-w-64 sm:border-l border-dashed">
+        <Image
+          width={255}
+          height={255}
+          alt=""
+          className="w-full hidden sm:block aspect-square border-b border-dashed object-cover"
+          src="/icons/main.svg"
+        />
+        <div className="flex flex-col border-t sm:border-t-0 border-dashed">
+          {[
+            { icon: Earth, content: <>Canberra, Australia</> },
+            {
+              icon: ClockIcon,
+              content: <Clock />,
+            },
+            {
+              icon: Building,
+              content: (
+                <Link
+                  href="https://cloudearth.au"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cloud Earth
+                </Link>
+              ),
+            },
+            {
+              icon: Mail,
+              content: <Link href="mailto:me@ingo.au">me@ingo.au</Link>,
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono"
+            >
+              <item.icon className="size-5" /> {item.content}
             </div>
           ))}
         </div>
