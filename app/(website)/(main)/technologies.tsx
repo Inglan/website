@@ -97,8 +97,8 @@ export function Technologies() {
               index % 2 === 0 ? "" : "bg-striped-gradient bg-size-[80px_80px]",
             )}
           >
-            <item.icon />
-            <span>{item.name}</span>
+            <item.icon className="size-10" />
+            <span className="text-lg">{item.name}</span>
           </div>
         ))}
         {Array(5 - (technologies[selectedCategory].items.length % 5))
