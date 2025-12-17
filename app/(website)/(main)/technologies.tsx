@@ -1,18 +1,43 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, GitBranch, GitCommitVertical } from "lucide-react";
+import { m } from "motion/react";
 import { Share_Tech_Mono } from "next/font/google";
 import Image from "next/image";
 import { useState } from "react";
-import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaNodeJs,
+  FaMicrosoft,
+} from "react-icons/fa";
 import {
   RiNextjsFill,
   RiTailwindCssFill,
   RiSvelteFill,
   RiJavascriptFill,
+  RiMicrosoftFill,
+  RiWindowsFill,
 } from "react-icons/ri";
-import { SiBun, SiDrizzle, SiTypescript } from "react-icons/si";
+import {
+  SiAuthentik,
+  SiBun,
+  SiDocker,
+  SiDrizzle,
+  SiFortinet,
+  SiGithubactions,
+  SiGnubash,
+  SiLinux,
+  SiNixos,
+  SiReactrouter,
+  SiSanity,
+  SiTraefikproxy,
+  SiTypescript,
+  SiUbiquiti,
+} from "react-icons/si";
+import { VscAzure } from "react-icons/vsc";
 
 const technologies = {
   frontend: {
@@ -39,16 +64,16 @@ const technologies = {
         icon: RiSvelteFill,
       },
       {
+        name: "React Router",
+        icon: SiReactrouter,
+      },
+      {
         name: "HTML",
         icon: FaHtml5,
       },
       {
         name: "CSS",
         icon: FaCss3,
-      },
-      {
-        name: "JavaScript",
-        icon: RiJavascriptFill,
       },
     ],
   },
@@ -74,6 +99,72 @@ const technologies = {
       {
         name: "TypeScript",
         icon: SiTypescript,
+      },
+      {
+        name: "Sanity CMS",
+        icon: SiSanity,
+      },
+    ],
+  },
+  infrastructure: {
+    title: "Infrastructure",
+    items: [
+      {
+        name: "Docker",
+        icon: SiDocker,
+      },
+      {
+        name: "Traefik",
+        icon: SiTraefikproxy,
+      },
+      {
+        name: "Linux",
+        icon: SiLinux,
+      },
+      {
+        name: "Github Actions",
+        icon: SiGithubactions,
+      },
+      {
+        name: "Nix",
+        icon: SiNixos,
+      },
+      {
+        name: "Bash",
+        icon: SiGnubash,
+      },
+      {
+        name: "Git",
+        icon: GitBranch,
+      },
+    ],
+  },
+  enterprise: {
+    title: "Enterprise",
+    items: [
+      {
+        name: "Entra ID",
+        icon: RiMicrosoftFill,
+      },
+      {
+        name: "Intune",
+        icon: RiMicrosoftFill,
+      },
+      {
+        name: "Microsoft 365",
+        icon: RiMicrosoftFill,
+      },
+      {
+        name: "Azure",
+        icon: VscAzure,
+      },
+      {
+        name: "UniFi",
+        icon: SiUbiquiti,
+      },
+      {
+        name: "Fortinet",
+        icon: SiFortinet,
       },
     ],
   },
