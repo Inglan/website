@@ -8,7 +8,7 @@ import { MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <div className="max-w-4xl w-full mx-auto text-sm border-b border-x border-dashed grid grid-cols-12">
+    <div className="max-w-4xl w-full mx-auto text-sm border-b border-l border-dashed grid grid-cols-10">
       <div className="flex flex-col border-r border-dashed col-span-4">
         <NextLink
           href="/"
@@ -52,7 +52,7 @@ export function Footer() {
         </div>
         <div className="h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10"></div>
       </div>
-      <div className="bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed col-span-2"></div>
+      <div className="bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed col-span-3"></div>
       <div className="flex flex-col col-span-3">
         <div className="flex-col grid grid-cols-2 h-fit">
           {[...MENU_ITEMS, ...OTHER_PAGES].map((item) => (
