@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { Share_Tech_Mono } from "next/font/google";
 import { useState } from "react";
 
 const technologies = {
@@ -92,6 +93,19 @@ export function Technologies() {
             <span>{item.name}</span>
           </div>
         ))}
+        {Array(5 - (technologies[selectedCategory].items.length % 5))
+          .fill(null)
+          .map((_, index) => (
+            <div
+              key={index}
+              className={cn(
+                "border-b border-r border-dashed",
+                (technologies[selectedCategory].items.length + index) % 2 === 0
+                  ? ""
+                  : "bg-striped-gradient bg-size-[80px_80px]",
+              )}
+            ></div>
+          ))}
       </div>
     </div>
   );
