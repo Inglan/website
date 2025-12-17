@@ -251,13 +251,13 @@ const Grid = forwardRef(function Grid(
         duration: 0.2,
         ease: NICE_EASE,
       }}
-      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed"
+      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed group"
     >
       {technologies[props.selectedCategory].items.map((item, index) => (
         <div
           key={item.name}
           className={cn(
-            "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed",
+            "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed group-hover:opacity-50 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200",
             index % 2 === 0 ? "" : "bg-striped-gradient bg-size-[80px_80px]",
           )}
         >
@@ -297,7 +297,7 @@ function Placeholders({
           <div
             key={index}
             className={cn(
-              "border-b border-r border-dashed",
+              "border-b border-r border-dashed group-hover:opacity-50 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200",
               (technologies[selectedCategory].items.length + index) % 2 === 0
                 ? ""
                 : "bg-striped-gradient bg-size-[80px_80px]",
