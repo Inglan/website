@@ -51,6 +51,17 @@ export function Technologies() {
           ))}
         </div>
       </div>
+      <div className="w-full grid grid-cols-5">
+        {technologies[selectedCategory].items.map((item) => (
+          <div
+            key={item.name}
+            className="flex flex-col gap-2 items-center justify-center aspect-square text-center"
+          >
+            {item.icon}
+            <span>{item.name}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
