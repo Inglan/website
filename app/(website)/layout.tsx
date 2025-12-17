@@ -19,9 +19,7 @@ export default function RootLayout({
         <StripedSeparator />
         <Footer />
       </div>
-      <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
       <Hotkeys />
-      <Search />
     </>
   );
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist_Mono, Jost, Nunito, Quicksand, Raleway } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import Search from "@/components/search";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -26,6 +28,8 @@ export default function RootLayout({
       <body className={`${jost.className} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" forcedTheme="dark">
           {children}
+          <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
+          <Search />
         </ThemeProvider>
       </body>
     </html>
