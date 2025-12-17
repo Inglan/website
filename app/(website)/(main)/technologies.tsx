@@ -4,6 +4,14 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { Share_Tech_Mono } from "next/font/google";
 import { useState } from "react";
+import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
+import {
+  RiNextjsFill,
+  RiTailwindCssFill,
+  RiSvelteFill,
+  RiJavascriptFill,
+} from "react-icons/ri";
+import { SiTypescript } from "react-icons/si";
 
 const technologies = {
   frontend: {
@@ -11,35 +19,35 @@ const technologies = {
     items: [
       {
         name: "React",
-        icon: <ArrowRight />,
+        icon: FaReact,
       },
       {
         name: "Next.js",
-        icon: <ArrowRight />,
+        icon: RiNextjsFill,
       },
       {
         name: "TypeScript",
-        icon: <ArrowRight />,
+        icon: SiTypescript,
       },
       {
         name: "Tailwind",
-        icon: <ArrowRight />,
+        icon: RiTailwindCssFill,
       },
       {
         name: "Svelte",
-        icon: <ArrowRight />,
+        icon: RiSvelteFill,
       },
       {
         name: "HTML",
-        icon: <ArrowRight />,
+        icon: FaHtml5,
       },
       {
         name: "CSS",
-        icon: <ArrowRight />,
+        icon: FaCss3,
       },
       {
         name: "JavaScript",
-        icon: <ArrowRight />,
+        icon: RiJavascriptFill,
       },
     ],
   },
@@ -48,7 +56,7 @@ const technologies = {
     items: [
       {
         name: "Node.js",
-        icon: <ArrowRight />,
+        icon: FaNodeJs,
       },
     ],
   },
@@ -89,7 +97,7 @@ export function Technologies() {
               index % 2 === 0 ? "" : "bg-striped-gradient bg-size-[80px_80px]",
             )}
           >
-            {item.icon}
+            <item.icon />
             <span>{item.name}</span>
           </div>
         ))}
