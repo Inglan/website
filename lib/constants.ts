@@ -8,3 +8,5 @@ export const MENU_ITEMS = [
   { url: "/blog", label: "Blog" },
   { url: "/contact", label: "Contact" },
 ];
+
+export const OTHER_PAGES = [{ url: "/guestbook", label: "Guestbook" }];
