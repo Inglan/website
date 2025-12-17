@@ -7,11 +7,11 @@ import { SiSignal } from "react-icons/si";
 
 export function Footer() {
   return (
-    <div className="max-w-4xl w-full mx-auto text-sm border-b border-x border-dashed grid grid-cols-5">
+    <div className="max-w-4xl w-full mx-auto text-sm border-b border-x border-dashed grid grid-cols-6">
       <div className="flex flex-col border-r border-dashed col-span-2">
         <NextLink
           href="/"
-          className="text-xl p-4 border-b border-dashed active:font-normal font-extrabold font-mono duration-200 ease-out hover:bg-card active:brightness-75"
+          className="flex text-xl p-4 border-b border-dashed active:font-normal font-extrabold font-mono duration-200 ease-out hover:bg-card active:brightness-75"
         >
           Ingo Wolf
         </NextLink>
@@ -43,7 +43,7 @@ export function Footer() {
           >
             <ArrowRight className="size-4" />
           </NextLink>
-          <div className="grow bg-striped-gradient bg-size-[80px_80px]"></div>
+          <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
         </div>
       </div>
       {/*<div className="flex flex-row w-fit items-center  mx-auto">
