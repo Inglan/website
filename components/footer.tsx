@@ -19,7 +19,7 @@ export function Footer() {
           <NextLink
             href="mailto:me@ingo.au"
             target="_blank"
-            className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
+            className="border-r border-b  border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
             <span className="sr-only">Email</span>
             <Mail className="size-4" />
@@ -27,7 +27,7 @@ export function Footer() {
           <NextLink
             href="https://github.com/Inglan"
             target="_blank"
-            className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
+            className="border-r border-b  border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
             <span className="sr-only">GitHub</span>
             <FaGithub className="size-4" />
@@ -35,21 +35,23 @@ export function Footer() {
           <NextLink
             href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
             target="_blank"
-            className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
+            className="border-r border-b  border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
             <span className="sr-only">Signal</span>
             <SiSignal className="size-4" />
           </NextLink>
           <NextLink
             href="/contact"
-            className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
+            className="border-r border-b  border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
             <span className="sr-only">Contact</span>
             <ArrowRight className="size-4" />
           </NextLink>
-          <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
+          <div className="border-b border-dashed grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
         </div>
+        <div className="h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10"></div>
       </div>
+      <div className="bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed"></div>
       {/*<div className="flex flex-row w-fit items-center  mx-auto">
         <Button variant="ghost" size="icon" asChild>
           <Link
