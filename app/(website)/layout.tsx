@@ -1,12 +1,7 @@
-import { Geist_Mono } from "next/font/google";
 import Search from "@/components/search";
 import Hotkeys from "@/lib/hotkeys";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/footer";
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-});
 
 export default function RootLayout({
   children,
