@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { SiSignal } from "react-icons/si";
+import { MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -52,6 +53,20 @@ export function Footer() {
         <div className="h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10"></div>
       </div>
       <div className="bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed"></div>
+      <div className="flex flex-col col-span-2">
+        <div className="flex-col grid grid-cols-2 h-fit">
+          {[...MENU_ITEMS, ...OTHER_PAGES].map((item) => (
+            <NextLink
+              key={item.url}
+              href={item.url}
+              className="w-full p-2 border-b border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
+            >
+              {item.label}
+            </NextLink>
+          ))}
+        </div>
+        <div className="h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10 border-r border-dashed"></div>
+      </div>
       {/*<div className="flex flex-row w-fit items-center  mx-auto">
         <Button variant="ghost" size="icon" asChild>
           <Link
