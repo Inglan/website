@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import { ArrowLeft, ArrowRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
+import { SiSignal } from "react-icons/si";
 
 export function Footer() {
   return (
@@ -25,6 +26,19 @@ export function Footer() {
             className="border-r border-dashed p-2 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
             <FaGithub className="size-4" />
+          </NextLink>
+          <NextLink
+            href="https://signal.me/#eu/aON_wvkns7bfeU-UAj_09B1Yym8WVC2QIWWV8rIhYZzPc2xGLUtBeLWMc9LJoWNB"
+            target="_blank"
+            className="border-r border-dashed p-2 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
+          >
+            <SiSignal className="size-4" />
+          </NextLink>
+          <NextLink
+            href="/contact"
+            className="border-r border-dashed p-2 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
+          >
+            <ArrowRight className="size-4" />
           </NextLink>
         </div>
       </div>
