@@ -170,6 +170,7 @@ function Placeholders({
   className: string;
   selectedCategory: keyof typeof technologies;
 }) {
+  if (technologies[selectedCategory].items.length % cols === 0) return;
   return (
     <>
       {Array(cols - (technologies[selectedCategory].items.length % cols))
