@@ -263,6 +263,7 @@ const Grid = forwardRef(function Grid(
     <motion.div
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
+      dragElastic={0.05}
       onDragEnd={(event, info) => {
         if (info.offset.x < -50) {
           const index = Object.keys(technologies).findIndex(
