@@ -4,6 +4,7 @@ import Link from "@/components/custom-link";
 import Clock from "@/components/clock";
 import { Metadata } from "next";
 import { Technologies } from "./technologies";
+import { StripedSeparator } from "@/components/striped-separator";
 
 export const metadata: Metadata = {
   description:
@@ -143,11 +144,5 @@ function Things() {
         </p>
       </div>
     </div>
-  );
-}
-
-function StripedSeparator() {
-  return (
-    <div className="w-full mx-auto max-w-4xl border-x border-dashed h-10 bg-striped-gradient bg-size-[80px_80px] border-b"></div>
   );
 }
