@@ -334,7 +334,6 @@ const Grid = forwardRef(function Grid(
       />
     </motion.div>
   );
-  d;
 });
 
 function Placeholders({
