@@ -21,6 +21,7 @@ export function Footer() {
             target="_blank"
             className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
+            <span className="sr-only">Email</span>
             <Mail className="size-4" />
           </NextLink>
           <NextLink
@@ -28,6 +29,7 @@ export function Footer() {
             target="_blank"
             className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
+            <span className="sr-only">GitHub</span>
             <FaGithub className="size-4" />
           </NextLink>
           <NextLink
@@ -35,12 +37,14 @@ export function Footer() {
             target="_blank"
             className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
+            <span className="sr-only">Signal</span>
             <SiSignal className="size-4" />
           </NextLink>
           <NextLink
             href="/contact"
             className="border-r border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
           >
+            <span className="sr-only">Contact</span>
             <ArrowRight className="size-4" />
           </NextLink>
           <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
