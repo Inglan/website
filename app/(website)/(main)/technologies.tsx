@@ -193,6 +193,19 @@ export function Technologies() {
     useState<keyof typeof technologies>("frontend");
   const [direction, setDirection] = useState<number>(1);
 
+  function setCategory(category: keyof typeof technologies) {
+    const index = Object.keys(technologies).findIndex((k) => k === category);
+    const currentIndex = Object.keys(technologies).findIndex(
+      (k) => k === selectedCategory,
+    );
+    if (index > currentIndex) {
+      setDirection(1);
+    } else if (index < currentIndex) {
+      setDirection(-1);
+    }
+    setSelectedCategory(category as keyof typeof technologies);
+  }
+
   return (
     <div className="w-full mx-auto max-w-4xl">
       <div className="w-full border-dashed overflow-auto border-x">
@@ -227,7 +240,11 @@ export function Technologies() {
         </div>
       </div>
       <AnimatePresence mode="popLayout" initial={false} custom={direction}>
-        <Grid key={selectedCategory} selectedCategory={selectedCategory} />
+        <Grid
+          key={selectedCategory}
+          selectedCategory={selectedCategory}
+          setCategory={setCategory}
+        />
       </AnimatePresence>
     </div>
   );
@@ -236,6 +253,7 @@ export function Technologies() {
 const Grid = forwardRef(function Grid(
   props: {
     selectedCategory: keyof typeof technologies;
+    setCategory: (category: keyof typeof technologies) => void;
   },
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
@@ -243,6 +261,39 @@ const Grid = forwardRef(function Grid(
 
   return (
     <motion.div
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={(event, info) => {
+        if (info.offset.x < -50) {
+          const index = Object.keys(technologies).findIndex(
+            (k) => k === props.selectedCategory,
+          );
+          if (index === Object.keys(technologies).length - 1) {
+            props.setCategory(
+              Object.keys(technologies)[0] as keyof typeof technologies,
+            );
+          } else {
+            props.setCategory(
+              Object.keys(technologies)[index + 1] as keyof typeof technologies,
+            );
+          }
+        } else if (info.offset.x > 50) {
+          const index = Object.keys(technologies).findIndex(
+            (k) => k === props.selectedCategory,
+          );
+          if (index === 0) {
+            props.setCategory(
+              Object.keys(technologies)[
+                Object.keys(technologies).length - 1
+              ] as keyof typeof technologies,
+            );
+          } else {
+            props.setCategory(
+              Object.keys(technologies)[index - 1] as keyof typeof technologies,
+            );
+          }
+        }
+      }}
       ref={ref}
       exit={{ opacity: 0, x: direction * -100 }}
       initial={{ opacity: 0, x: direction * 100 }}
@@ -277,6 +328,7 @@ const Grid = forwardRef(function Grid(
       />
     </motion.div>
   );
+  d;
 });
 
 function Placeholders({
