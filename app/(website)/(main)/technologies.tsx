@@ -58,8 +58,8 @@ export function Technologies() {
     useState<keyof typeof technologies>("frontend");
 
   return (
-    <div className="w-full mx-auto max-w-4xl border-x border-dashed border-b">
-      <div className="w-full border-b border-dashed overflow-auto">
+    <div className="w-full mx-auto max-w-4xl border-l border-dashed">
+      <div className="w-full border-b border-dashed overflow-auto border-r">
         <div className="flex flex-row">
           {Object.entries(technologies).map(([key, value]) => (
             <button
@@ -79,11 +79,11 @@ export function Technologies() {
           ))}
         </div>
       </div>
-      <div className="w-full grid grid-cols-5">
+      <div className="w-full grid grid-cols-6">
         {technologies[selectedCategory].items.map((item) => (
           <div
             key={item.name}
-            className="flex flex-col gap-2 items-center justify-center aspect-square text-center"
+            className="flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed"
           >
             {item.icon}
             <span>{item.name}</span>
