@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { GitBranch } from "lucide-react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence, usePresenceData } from "motion/react";
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
   RiNextjsFill,
@@ -27,6 +27,7 @@ import {
   SiUbiquiti,
 } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
+import { NICE_EASE } from "@/lib/constants";
 
 const technologies = {
   frontend: {
@@ -190,6 +191,7 @@ function ConvexIcon({ className }: { className?: string }) {
 export function Technologies() {
   const [selectedCategory, setSelectedCategory] =
     useState<keyof typeof technologies>("frontend");
+  const [direction, setDirection] = useState<number>(1);
 
   return (
     <div className="w-full mx-auto max-w-4xl border-l border-dashed">
@@ -204,17 +206,28 @@ export function Technologies() {
                 "hover:bg-card active:brightness-75",
                 selectedCategory === key ? "text-primary" : "",
               )}
-              onClick={() =>
-                setSelectedCategory(key as keyof typeof technologies)
-              }
+              onClick={() => {
+                const index = Object.keys(technologies).findIndex(
+                  (k) => k === key,
+                );
+                const currentIndex = Object.keys(technologies).findIndex(
+                  (k) => k === selectedCategory,
+                );
+                if (index > currentIndex) {
+                  setDirection(1);
+                } else if (index < currentIndex) {
+                  setDirection(-1);
+                }
+                setSelectedCategory(key as keyof typeof technologies);
+              }}
             >
               {value.title}
             </button>
           ))}
         </div>
       </div>
-      <AnimatePresence mode="wait">
-        <Grid selectedCategory={selectedCategory} />
+      <AnimatePresence mode="wait" initial={false} custom={direction}>
+        <Grid key={selectedCategory} selectedCategory={selectedCategory} />
       </AnimatePresence>
     </div>
   );
@@ -225,13 +238,18 @@ function Grid({
 }: {
   selectedCategory: keyof typeof technologies;
 }) {
+  const direction = usePresenceData();
+
   return (
     <motion.div
-      exit={{ opacity: 0 }}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, x: direction * -50 }}
+      initial={{ opacity: 0, x: direction * 50 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{
+        duration: 0.2,
+        ease: NICE_EASE,
+      }}
       className="w-full grid grid-cols-3 md:grid-cols-5"
-      key={selectedCategory}
     >
       {technologies[selectedCategory].items.map((item, index) => (
         <div
