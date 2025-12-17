@@ -111,7 +111,8 @@ function MenuLink({
 }) {
   const pathname = usePathname();
 
-  const isActive = animation && pathname === href;
+  const isActive =
+    animation && (pathname === href || (pathname === "/index" && href === "/"));
 
   const linkClassName = clsx(
     "h-full px-8 py-4 w-fit flex justify-center items-center duration-200 ease-out",
