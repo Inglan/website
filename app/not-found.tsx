@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function NotFound() {
@@ -8,6 +9,7 @@ export default function NotFound() {
         <h1 className="text-9xl">404</h1>
         <p className="text-2xl">Page not found</p>
       </div>
+      <Footer />
     </div>
   );
 }
