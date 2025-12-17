@@ -1,28 +1,16 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ArrowRight, GitBranch, GitCommitVertical } from "lucide-react";
-import { m } from "motion/react";
-import { Share_Tech_Mono } from "next/font/google";
-import Image from "next/image";
+import { GitBranch } from "lucide-react";
 import { useState } from "react";
-import {
-  FaReact,
-  FaHtml5,
-  FaCss3,
-  FaNodeJs,
-  FaMicrosoft,
-} from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
   RiNextjsFill,
   RiTailwindCssFill,
   RiSvelteFill,
-  RiJavascriptFill,
   RiMicrosoftFill,
-  RiWindowsFill,
 } from "react-icons/ri";
 import {
-  SiAuthentik,
   SiBun,
   SiDocker,
   SiDrizzle,
