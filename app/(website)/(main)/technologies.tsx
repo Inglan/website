@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { Share_Tech_Mono } from "next/font/google";
+import Image from "next/image";
 import { useState } from "react";
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
@@ -11,7 +12,7 @@ import {
   RiSvelteFill,
   RiJavascriptFill,
 } from "react-icons/ri";
-import { SiTypescript } from "react-icons/si";
+import { SiBun, SiDrizzle, SiTypescript } from "react-icons/si";
 
 const technologies = {
   frontend: {
@@ -55,12 +56,56 @@ const technologies = {
     title: "Backend",
     items: [
       {
+        name: "Bun",
+        icon: SiBun,
+      },
+      {
         name: "Node.js",
         icon: FaNodeJs,
+      },
+      {
+        name: "Convex",
+        icon: ConvexIcon,
+      },
+      {
+        name: "Drizzle ORM",
+        icon: SiDrizzle,
+      },
+      {
+        name: "TypeScript",
+        icon: SiTypescript,
       },
     ],
   },
 };
+
+function ConvexIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="184"
+      height="188"
+      viewBox="0 0 184 188"
+      version="1.1"
+      id="svg3"
+      fill="currentColor"
+    >
+      <defs id="defs3" />
+      <path
+        d="m 115.48354,146.56652 c 26.5102,-2.94493 51.50417,-17.07125 65.26566,-40.64821 -6.51737,58.31487 -70.2843,95.17466 -122.334559,72.54481 -4.796237,-2.07954 -8.924685,-5.53962 -11.75783,-9.98766 -11.697123,-18.36714 -15.542168,-41.73833 -10.017433,-62.94825 15.785001,27.2428 47.881238,43.94192 78.844162,41.03931 z"
+        id="path1"
+      />
+      <path
+        d="M 35.67155,88.415825 C 24.925473,113.24853 24.460093,142.32425 37.634496,166.25144 -8.7290369,131.37051 -8.2230868,56.725429 37.067838,22.193423 c 4.189156,-3.191703 9.167518,-5.086207 14.388713,-5.374425 21.471722,-1.132587 43.287555,7.1659 58.586599,22.63014 -31.084191,0.308794 -61.359036,20.220929 -74.3716,48.966687 z"
+        id="path2"
+      />
+      <path
+        d="M 125.03486,47.090049 C 109.35143,25.221827 84.803434,10.334169 57.908108,9.8811922 109.89722,-13.716776 173.84656,24.542362 180.80903,81.107349 c 0.64795,5.25082 -0.20284,10.604668 -2.53048,15.340635 -9.7133,19.726506 -27.72437,35.026136 -48.77084,40.688336 15.42075,-28.60143 13.51778,-63.544964 -4.47285,-90.046271 z"
+        id="path3"
+      />
+    </svg>
+  );
+}
 
 export function Technologies() {
   const [selectedCategory, setSelectedCategory] =
