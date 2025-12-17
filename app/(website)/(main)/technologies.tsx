@@ -146,33 +146,46 @@ export function Technologies() {
             <span className="text-lg">{item.name}</span>
           </div>
         ))}
-        {Array(3 - (technologies[selectedCategory].items.length % 3))
-          .fill(null)
-          .map((_, index) => (
-            <div
-              key={index}
-              className={cn(
-                "border-b border-r border-dashed block md:hidden",
-                (technologies[selectedCategory].items.length + index) % 2 === 0
-                  ? ""
-                  : "bg-striped-gradient bg-size-[80px_80px]",
-              )}
-            ></div>
-          ))}
-        {Array(5 - (technologies[selectedCategory].items.length % 5))
-          .fill(null)
-          .map((_, index) => (
-            <div
-              key={index}
-              className={cn(
-                "border-b border-r border-dashed md:block hidden",
-                (technologies[selectedCategory].items.length + index) % 2 === 0
-                  ? ""
-                  : "bg-striped-gradient bg-size-[80px_80px]",
-              )}
-            ></div>
-          ))}
+        <Placeholders
+          cols={3}
+          className="block md:hidden"
+          selectedCategory={selectedCategory}
+        />
+        <Placeholders
+          cols={5}
+          className="md:block hidden"
+          selectedCategory={selectedCategory}
+        />
       </div>
     </div>
+  );
+}
+
+function Placeholders({
+  cols,
+  className,
+  selectedCategory,
+}: {
+  cols: number;
+  className: string;
+  selectedCategory: keyof typeof technologies;
+}) {
+  return (
+    <>
+      {Array(cols - (technologies[selectedCategory].items.length % cols))
+        .fill(null)
+        .map((_, index) => (
+          <div
+            key={index}
+            className={cn(
+              "border-b border-r border-dashed",
+              (technologies[selectedCategory].items.length + index) % 2 === 0
+                ? ""
+                : "bg-striped-gradient bg-size-[80px_80px]",
+              className,
+            )}
+          ></div>
+        ))}
+    </>
   );
 }
