@@ -1,6 +1,19 @@
-export default function Header({ children }: { children?: React.ReactNode }) {
+import { cn } from "@/lib/utils";
+
+export default function Header({
+  children,
+  className,
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="w-full mx-auto flex h-fit p-4 border border-t-0 border-dashed">
+    <div
+      className={cn(
+        "w-full mx-auto flex h-fit p-4 border-b border-dashed",
+        className,
+      )}
+    >
       <h1 className="text-6xl text-primary font-mono">{children}</h1>
     </div>
   );

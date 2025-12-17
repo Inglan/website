@@ -63,7 +63,7 @@ export default function Contact() {
   return (
     <div className="max-w-4xl w-full mx-auto">
       <div>
-        <Header>Contact</Header>
+        <Header className="border-x">Contact</Header>
         <div className="grid grid-cols-1 md:grid-cols-2 border-l border-dashed">
           {contactMethods.map((method, index) => (
             <ContactMethodCard
