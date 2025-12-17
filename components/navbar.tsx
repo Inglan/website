@@ -12,7 +12,6 @@ import Image from "next/image";
 
 export default function Navbar() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
-  const pathname = usePathname();
 
   return (
     <div className="w-full sticky top-0 bg-background pt-4 z-50">
@@ -25,9 +24,7 @@ export default function Navbar() {
         >
           Ingo Wolf
         </MenuLink>
-        <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed">
-          {pathname}
-        </div>
+        <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
         <div className="hidden md:flex flex-row">
           {MENU_ITEMS.map((item) => (
             <MenuLink key={item.url} href={item.url}>
