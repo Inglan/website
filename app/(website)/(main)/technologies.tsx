@@ -12,6 +12,34 @@ const technologies = {
         name: "React",
         icon: <ArrowRight />,
       },
+      {
+        name: "Next.js",
+        icon: <ArrowRight />,
+      },
+      {
+        name: "TypeScript",
+        icon: <ArrowRight />,
+      },
+      {
+        name: "Tailwind",
+        icon: <ArrowRight />,
+      },
+      {
+        name: "Svelte",
+        icon: <ArrowRight />,
+      },
+      {
+        name: "HTML",
+        icon: <ArrowRight />,
+      },
+      {
+        name: "CSS",
+        icon: <ArrowRight />,
+      },
+      {
+        name: "JavaScript",
+        icon: <ArrowRight />,
+      },
     ],
   },
   backend: {
