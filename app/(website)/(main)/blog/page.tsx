@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import PostCard from "@/components/post-card";
 import { client } from "@/sanity/lib/client";
 import { SanityDocument } from "next-sanity";
@@ -16,6 +17,7 @@ export default async function Blog() {
 
   return (
     <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
+      <Header>Blog</Header>
       {posts.map((post, index) => (
         <PostCard
           key={index}
