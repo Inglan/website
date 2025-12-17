@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { GitBranch } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
   RiNextjsFill,
@@ -212,30 +213,39 @@ export function Technologies() {
           ))}
         </div>
       </div>
-      <div className="w-full grid grid-cols-3 md:grid-cols-5">
-        {technologies[selectedCategory].items.map((item, index) => (
-          <div
-            key={item.name}
-            className={cn(
-              "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed",
-              index % 2 === 0 ? "" : "bg-striped-gradient bg-size-[80px_80px]",
-            )}
-          >
-            <item.icon className="size-10" />
-            <span className="text-lg">{item.name}</span>
-          </div>
-        ))}
-        <Placeholders
-          cols={3}
-          className="block md:hidden"
-          selectedCategory={selectedCategory}
-        />
-        <Placeholders
-          cols={5}
-          className="md:block hidden"
-          selectedCategory={selectedCategory}
-        />
-      </div>
+      <AnimatePresence>
+        <motion.div
+          exit={{ opacity: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="w-full grid grid-cols-3 md:grid-cols-5"
+        >
+          {technologies[selectedCategory].items.map((item, index) => (
+            <div
+              key={item.name}
+              className={cn(
+                "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed",
+                index % 2 === 0
+                  ? ""
+                  : "bg-striped-gradient bg-size-[80px_80px]",
+              )}
+            >
+              <item.icon className="size-10" />
+              <span className="text-lg">{item.name}</span>
+            </div>
+          ))}
+          <Placeholders
+            cols={3}
+            className="block md:hidden"
+            selectedCategory={selectedCategory}
+          />
+          <Placeholders
+            cols={5}
+            className="md:block hidden"
+            selectedCategory={selectedCategory}
+          />
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }
