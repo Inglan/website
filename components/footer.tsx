@@ -8,7 +8,7 @@ import { MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <div className="max-w-4xl w-full mx-auto text-sm border-b border-l border-dashed grid grid-cols-9">
+    <div className="max-w-4xl w-full mx-auto text-sm border-b border-l border-dashed flex flex-row">
       <div className="flex flex-col border-r border-dashed col-span-3">
         <NextLink
           href="/"
@@ -48,12 +48,12 @@ export function Footer() {
             <span className="sr-only">Contact</span>
             <ArrowRight className="size-4" />
           </NextLink>
-          <div className="border-b border-dashed grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
+          <div className="border-b border-dashed grow bg-striped-gradient bg-size-[80px_80px] bg-fixed min-w-20"></div>
         </div>
         <div className="h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10"></div>
       </div>
-      <div className="bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed col-span-3"></div>
-      <div className="flex flex-col col-span-3">
+      <div className="bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed grow"></div>
+      <div className="flex flex-col min-w-64">
         <div className="flex-col grid grid-cols-2 h-fit">
           {[...MENU_ITEMS, ...OTHER_PAGES].map((item) => (
             <NextLink
