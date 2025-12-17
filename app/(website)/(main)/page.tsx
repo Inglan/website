@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "@/components/custom-link";
 import Clock from "@/components/clock";
 import { Metadata } from "next";
+import { Technologies } from "./technologies";
 
 export const metadata: Metadata = {
   description:
@@ -15,6 +16,8 @@ export default function Home() {
       <Hero />
       <StripedSeparator />
       <Things />
+      <StripedSeparator />
+      <Technologies />
     </>
   );
 }
