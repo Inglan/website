@@ -88,7 +88,7 @@ export function Technologies() {
           ))}
         </div>
       </div>
-      <div className="w-full grid grid-cols-5">
+      <div className="w-full grid grid-cols-3 md:grid-cols-5">
         {technologies[selectedCategory].items.map((item, index) => (
           <div
             key={item.name}
@@ -101,13 +101,26 @@ export function Technologies() {
             <span className="text-lg">{item.name}</span>
           </div>
         ))}
+        {Array(3 - (technologies[selectedCategory].items.length % 3))
+          .fill(null)
+          .map((_, index) => (
+            <div
+              key={index}
+              className={cn(
+                "border-b border-r border-dashed block md:hidden",
+                (technologies[selectedCategory].items.length + index) % 2 === 0
+                  ? ""
+                  : "bg-striped-gradient bg-size-[80px_80px]",
+              )}
+            ></div>
+          ))}
         {Array(5 - (technologies[selectedCategory].items.length % 5))
           .fill(null)
           .map((_, index) => (
             <div
               key={index}
               className={cn(
-                "border-b border-r border-dashed",
+                "border-b border-r border-dashed md:block hidden",
                 (technologies[selectedCategory].items.length + index) % 2 === 0
                   ? ""
                   : "bg-striped-gradient bg-size-[80px_80px]",
