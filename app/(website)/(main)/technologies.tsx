@@ -3,7 +3,13 @@
 import { cn } from "@/lib/utils";
 import { GitBranch } from "lucide-react";
 import { forwardRef, useState } from "react";
-import { motion, AnimatePresence, usePresenceData } from "motion/react";
+import {
+  motion,
+  AnimatePresence,
+  usePresenceData,
+  useMotionValue,
+  useTransform,
+} from "motion/react";
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
   RiNextjsFill,
@@ -258,13 +264,16 @@ const Grid = forwardRef(function Grid(
   ref: React.ForwardedRef<HTMLDivElement>,
 ) {
   const direction = usePresenceData();
+  const x = useMotionValue(0);
+  const rotate = useTransform(x, [-100, 0, 100], [-2, 0, 2], { clamp: false });
 
   return (
     <motion.div
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.05}
-      whileDrag={{ scale: 0.95, rotate: 0.5 }}
+      style={{ x, rotate }}
+      whileDrag={{ scale: 0.98 }}
       onDragEnd={(event, info) => {
         if (info.offset.x < -50) {
           const index = Object.keys(technologies).findIndex(
