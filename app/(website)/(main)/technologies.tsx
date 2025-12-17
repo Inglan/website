@@ -194,8 +194,8 @@ export function Technologies() {
   const [direction, setDirection] = useState<number>(1);
 
   return (
-    <div className="w-full mx-auto max-w-4xl border-l border-dashed">
-      <div className="w-full border-b border-dashed overflow-auto border-r">
+    <div className="w-full mx-auto max-w-4xl">
+      <div className="w-full border-dashed overflow-auto border-x">
         <div className="flex flex-row">
           {Object.entries(technologies).map(([key, value]) => (
             <button
@@ -249,7 +249,7 @@ function Grid({
         duration: 0.2,
         ease: NICE_EASE,
       }}
-      className="w-full grid grid-cols-3 md:grid-cols-5"
+      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed"
     >
       {technologies[selectedCategory].items.map((item, index) => (
         <div
