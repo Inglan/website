@@ -123,15 +123,16 @@ function Things() {
       <div className="border-r border-dashed p-4 border-b sm:border-b-0">
         <h2 className="text-2xl text-primary">Web</h2>
         <p>
-          I build webapps for basically everything. If I have a problem, no
-          matter how simple, a webapp can solve it.
+          I have built many websites for friends and community things, such as
+          Hack Club YSWSes. I also build web apps to solve my problems, and for
+          fun.
         </p>
       </div>
       <div className="border-r border-dashed p-4 border-b sm:border-b-0">
         <h2 className="text-2xl text-primary">Infrastructure</h2>
         <p>
-          I run about 30 Docker containers in my homelab which are behind a
-          traefik reverse proxy, and authenticate to everything with authentik.
+          I run and maintain about 40 Docker containers in my homelab which are
+          behind Traefik. I have also set up SSO to everything with authentik.
         </p>
       </div>
       <div className="border-r border-dashed p-4">
