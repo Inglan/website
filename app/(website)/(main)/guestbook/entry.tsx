@@ -61,6 +61,7 @@ export default function Entry({
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="ghost" size="icon">
+                  <span className="sr-only">Ban</span>
                   <Gavel />
                 </Button>
               </DialogTrigger>
@@ -117,6 +118,7 @@ export default function Entry({
                 });
               }}
             >
+              <span className="sr-only">Reset to pending</span>
               <Undo />
             </Button>
             <Button
@@ -130,6 +132,7 @@ export default function Entry({
                 });
               }}
             >
+              <span className="sr-only">Approve</span>
               <Check />
             </Button>
           </>
@@ -138,6 +141,7 @@ export default function Entry({
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="ghost" size="icon">
+                <span className="sr-only">Delete</span>
                 <Trash />
               </Button>
             </DialogTrigger>
