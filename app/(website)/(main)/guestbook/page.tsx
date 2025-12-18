@@ -67,7 +67,7 @@ export default function Page() {
             disabled={loading}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full h-full resize-none p-4"
+            className="w-full h-full resize-none p-4 outline-0"
             placeholder="Your message here"
           />
           <div className="border-t border-dashed w-full flex flex-row">
