@@ -139,10 +139,10 @@ function SignInButton({
           {
             loading: "Signing in...",
             success: "Redirecting...",
-            error: "Failed to sign in",
-            finally: () => {
+            error: () => {
               setLoading(false);
               setAuthLoading(false);
+              return "Failed to sign in";
             },
           },
         );
