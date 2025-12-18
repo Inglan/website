@@ -9,6 +9,7 @@ export default defineSchema({
       v.literal("pending"),
       v.literal("approved"),
       v.literal("rejected"),
+      v.literal("deleted"),
     ),
   })
     .index("by_user", ["userId"])
