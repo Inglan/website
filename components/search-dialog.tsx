@@ -8,12 +8,13 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { MENU_ITEMS } from "@/lib/constants";
+import { AUTH_PROVIDERS, MENU_ITEMS } from "@/lib/constants";
 import { useUiState } from "@/lib/state";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { SanityDocument } from "sanity";
-import { ArrowRight, Copy, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight, Copy, LogOut, Mail, MessageCircle } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
 
 interface PostWithSlug extends SanityDocument {
   slug?: {
@@ -30,8 +31,43 @@ export function SearchDialog({ posts }: SearchDialogProps) {
   const searchOpen = useUiState((state) => state.searchOpen);
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
   const router = useRouter();
+  const session = authClient.useSession();
+  const pathname = usePathname();
 
   const commands = [
+    ...(session.data?.user
+      ? [
+          {
+            label: "Sign out",
+            icon: <LogOut />,
+            onSelect: async () => {
+              setSearchOpen(false);
+              toast.promise(authClient.signOut(), {
+                loading: "Signing out...",
+                success: "Signed out",
+                error: "Failed to sign out",
+              });
+            },
+          },
+        ]
+      : AUTH_PROVIDERS.map((provider) => ({
+          label: `Sign in with ${provider.label}`,
+          icon: <provider.icon />,
+          onSelect: async () => {
+            setSearchOpen(false);
+            toast.promise(
+              authClient.signIn.social({
+                provider: provider.id,
+                callbackURL: pathname,
+              }),
+              {
+                loading: "Signing in...",
+                success: "Redirecting...",
+                error: "Failed to sign in",
+              },
+            );
+          },
+        }))),
     {
       label: "Copy Email",
       icon: <Copy />,
@@ -63,7 +99,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
 
   return (
     <CommandDialog
-      className="top-4 md:top-24 translate-y-0"
+      className="top-4 sm:top-24 translate-y-0 bottom-auto"
       open={searchOpen}
       onOpenChange={setSearchOpen}
     >
@@ -82,6 +118,14 @@ export function SearchDialog({ posts }: SearchDialogProps) {
             >
               <ArrowRight />
               {item.label}
+            </CommandItem>
+          ))}
+        </CommandGroup>
+        <CommandGroup heading="Commands">
+          {commands.map((command) => (
+            <CommandItem key={command.label} onSelect={command.onSelect}>
+              {command.icon}
+              {command.label}
             </CommandItem>
           ))}
         </CommandGroup>
@@ -120,14 +164,6 @@ export function SearchDialog({ posts }: SearchDialogProps) {
               </CommandItem>
             );
           })}
-        </CommandGroup>
-        <CommandGroup heading="Commands">
-          {commands.map((command) => (
-            <CommandItem key={command.label} onSelect={command.onSelect}>
-              {command.icon}
-              {command.label}
-            </CommandItem>
-          ))}
         </CommandGroup>
       </CommandList>
     </CommandDialog>

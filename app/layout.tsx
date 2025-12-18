@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Search from "@/components/search";
 import Hotkeys from "@/lib/hotkeys";
+import { ConvexClientProvider } from "./ConvexClientProvider";
+import ErrorParamHandler from "@/components/error-param-handler";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -27,12 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${jost.className} ${geistMono.variable} antialiased`}>
-        <ThemeProvider attribute="class" forcedTheme="dark">
-          {children}
-          <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
-          <Search />
-          <Hotkeys />
-        </ThemeProvider>
+        <ConvexClientProvider>
+          <ThemeProvider attribute="class" forcedTheme="dark">
+            {children}
+            <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
+            <Search />
+            <Hotkeys />
+            <ErrorParamHandler />
+          </ThemeProvider>
+        </ConvexClientProvider>
       </body>
     </html>
   );
