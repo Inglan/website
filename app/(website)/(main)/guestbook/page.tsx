@@ -85,6 +85,15 @@ export default function Page() {
               disabled={loading}
               variant="ghost"
               className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+              onClick={() => {
+                setLoading(true);
+                toast.promise(authClient.signOut(), {
+                  loading: "Signing out...",
+                  success: "Signed out",
+                  error: "Failed to sign out",
+                  finally: () => setLoading(false),
+                });
+              }}
             >
               <LogOut className="size-4" />
             </Button>
