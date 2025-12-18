@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Search from "@/components/search";
+import Hotkeys from "@/lib/hotkeys";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
           {children}
           <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
           <Search />
+          <Hotkeys />
         </ThemeProvider>
       </body>
     </html>

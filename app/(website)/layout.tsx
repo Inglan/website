@@ -19,7 +19,6 @@ export default function RootLayout({
         <StripedSeparator />
         <Footer />
       </div>
-      <Hotkeys />
     </>
   );
 }
