@@ -17,6 +17,7 @@ import { cn } from "@/lib/utils";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { AUTH_PROVIDERS } from "@/lib/constants";
+import { usePathname } from "next/navigation";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -120,6 +121,7 @@ function SignInButton({
   disabled?: boolean;
 }) {
   const [loading, setLoading] = useState(false);
+  const pathname = usePathname();
 
   return (
     <Button
@@ -132,6 +134,7 @@ function SignInButton({
         toast.promise(
           authClient.signIn.social({
             provider: provider.id,
+            callbackURL: pathname,
           }),
           {
             loading: "Signing in...",
