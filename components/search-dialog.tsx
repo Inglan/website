@@ -13,7 +13,8 @@ import { useUiState } from "@/lib/state";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { SanityDocument } from "sanity";
-import { ArrowRight, Copy, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight, Copy, LogOut, Mail, MessageCircle } from "lucide-react";
+import { authClient } from "@/lib/auth-client";
 
 interface PostWithSlug extends SanityDocument {
   slug?: {
@@ -30,8 +31,25 @@ export function SearchDialog({ posts }: SearchDialogProps) {
   const searchOpen = useUiState((state) => state.searchOpen);
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
   const router = useRouter();
+  const session = authClient.useSession();
 
   const commands = [
+    ...(session.data?.user
+      ? [
+          {
+            label: "Sign out",
+            icon: <LogOut />,
+            onSelect: async () => {
+              setSearchOpen(false);
+              toast.promise(authClient.signOut(), {
+                loading: "Signing out...",
+                success: "Signed out",
+                error: "Failed to sign out",
+              });
+            },
+          },
+        ]
+      : []),
     {
       label: "Copy Email",
       icon: <Copy />,
