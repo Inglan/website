@@ -49,7 +49,7 @@ export default function Entry({
         />
       </div>
       <div className="text-lg">{entry.message}</div>
-      {user?._id == entry.userId && (
+      {(user?._id == entry.userId || user?.role == "admin") && (
         <div className="flex flex-row absolute top-0 right-0">
           <Dialog>
             <DialogTrigger asChild>
