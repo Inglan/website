@@ -14,6 +14,8 @@ import { Spinner } from "@/components/ui/spinner";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "sonner";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -126,9 +128,23 @@ function SignInButton({
       variant="ghost"
       className="cursor-pointer px-4 py-2 first:border-l border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
       key={provider.id}
-      onClick={() => {
+      onClick={async () => {
         setLoading(true);
         setAuthLoading(true);
+        toast.promise(
+          authClient.signIn.social({
+            provider: provider.id,
+          }),
+          {
+            loading: "Signing in...",
+            success: "Redirecting...",
+            error: "Failed to sign in",
+            finally: () => {
+              setLoading(false);
+              setAuthLoading(false);
+            },
+          },
+        );
       }}
       disabled={loading || disabled}
     >
