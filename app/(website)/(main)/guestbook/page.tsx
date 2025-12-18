@@ -97,7 +97,7 @@ export default function Page() {
             >
               <LogOut className="size-4" />
             </Button>
-            <div className="grow"></div>
+            <div className="grow bg-striped-gradient bg-size-[80px_80px]"></div>
             <Button
               disabled={loading || message.length === 0}
               variant="ghost"
