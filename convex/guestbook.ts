@@ -31,6 +31,7 @@ export const get = query({
         message: entry.message,
         name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
         creationTime: entry._creationTime,
+        status: entry.status,
       })),
     );
   },
