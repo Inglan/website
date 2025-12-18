@@ -99,7 +99,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
 
   return (
     <CommandDialog
-      className="top-4 sm:top-24 translate-y-0"
+      className="top-4 sm:top-24 translate-y-0 bottom-auto"
       open={searchOpen}
       onOpenChange={setSearchOpen}
     >
