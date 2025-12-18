@@ -79,3 +79,24 @@ export const deleteEntry = mutation({
     await ctx.db.patch(args.id, { status: "deleted" });
   },
 });
+
+export const action = mutation({
+  args: {
+    id: v.id("guestbookEntries"),
+    status: v.union(v.literal("approved"), v.literal("rejected")),
+  },
+  handler: async (ctx, args) => {
+    const user = await authComponent.getAuthUser(ctx);
+    if (user === null) {
+      throw new Error("Unauthorized");
+    }
+    const entry = await ctx.db.get("guestbookEntries", args.id);
+    if (!entry) {
+      throw new Error("Entry not found");
+    }
+    if (user.role !== "admin") {
+      throw new Error("Unauthorized");
+    }
+    await ctx.db.patch(args.id, { status: args.status });
+  },
+});
