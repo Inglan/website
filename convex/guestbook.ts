@@ -47,14 +47,19 @@ export const get = query({
 
     return (
       await Promise.all(
-        entries.map(async (entry) => ({
-          id: entry._id,
-          message: entry.message,
-          name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
-          creationTime: entry._creationTime,
-          status: entry.status,
-          userId: entry.userId,
-        })),
+        entries.map(async (entry) => {
+          const user = await authComponent.getAnyUserById(ctx, entry.userId);
+
+          return {
+            id: entry._id,
+            message: entry.message,
+            name: user?.name,
+            creationTime: entry._creationTime,
+            status: entry.status,
+            userId: entry.userId,
+            userRole: user?.role,
+          };
+        }),
       )
     ).reverse();
   },
