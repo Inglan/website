@@ -14,7 +14,7 @@ export const add = mutation({
     ctx.db.insert("guestbookEntries", {
       userId: user._id,
       message: args.message,
-      status: "pending",
+      status: user.role === "admin" ? "approved" : "pending",
     });
   },
 });
