@@ -26,7 +26,15 @@ export const get = query({
       .query("guestbookEntries")
       .withIndex("by_status", (q) => q.eq("status", "approved"))
       .collect();
-    if (user) {
+
+    if (user?.role === "admin") {
+      entries.push(
+        ...(await ctx.db
+          .query("guestbookEntries")
+          .withIndex("by_status", (q) => q.eq("status", "pending"))
+          .collect()),
+      );
+    } else if (user) {
       entries.push(
         ...(await ctx.db
           .query("guestbookEntries")
