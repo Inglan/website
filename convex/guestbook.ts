@@ -36,6 +36,20 @@ export const get = query({
           .collect()),
       );
     }
+    if (user?.role === "admin") {
+      entries.push(
+        ...(await ctx.db
+          .query("guestbookEntries")
+          .withIndex("by_status", (q) => q.eq("status", "deleted"))
+          .collect()),
+      );
+      entries.push(
+        ...(await ctx.db
+          .query("guestbookEntries")
+          .withIndex("by_status", (q) => q.eq("status", "rejected"))
+          .collect()),
+      );
+    }
 
     return (
       await Promise.all(
