@@ -10,5 +10,7 @@ export default defineSchema({
       v.literal("approved"),
       v.literal("rejected"),
     ),
-  }),
+  })
+    .index("by_user", ["userId"])
+    .index("by_status", ["status"]),
 });
