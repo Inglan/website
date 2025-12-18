@@ -11,5 +11,6 @@ if (
     capture_exceptions: true, // This enables capturing exceptions using Error Tracking
     debug: process.env.NODE_ENV === "development",
     person_profiles: "always",
+    disable_surveys: true,
   });
 }
