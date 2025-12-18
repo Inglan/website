@@ -150,7 +150,7 @@ export default function Page() {
         </AuthLoading>
       </div>
 
-      <StripedSeparator />
+      <StripedSeparator className="border-x-0" />
 
       {entries
         ? entries?.map((entry) => <Entry entry={entry} key={entry.id} />)
