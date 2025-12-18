@@ -6,6 +6,7 @@ import {
   Authenticated,
   AuthLoading,
   Unauthenticated,
+  useMutation,
   useQuery,
 } from "convex/react";
 import Entry from "./entry";
@@ -52,7 +53,10 @@ function deterministicInt(input: string, min: number, max: number) {
 export default function Page() {
   const session = authClient.useSession();
   const entries = useQuery(api.guestbook.get);
+  const post = useMutation(api.guestbook.add);
   const [authLoading, setAuthLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
@@ -60,6 +64,9 @@ export default function Page() {
       <div className="flex flex-col items-center justify-center h-52 border-b border-dashed">
         <Authenticated>
           <textarea
+            disabled={loading}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
             className="w-full h-full resize-none p-4"
             placeholder="Your message here"
           />
@@ -68,12 +75,14 @@ export default function Page() {
               Posting as {session.data?.user.name}
             </div>
             <Button
+              disabled={loading}
               variant="ghost"
               className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
             >
               <Pencil className="size-4" />
             </Button>
             <Button
+              disabled={loading}
               variant="ghost"
               className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
             >
@@ -81,8 +90,23 @@ export default function Page() {
             </Button>
             <div className="grow"></div>
             <Button
+              disabled={loading || message.length === 0}
               variant="ghost"
               className="px-8 py-2 h-full flex items-center justify-center cursor-pointer border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+              onClick={async () => {
+                setLoading(true);
+                toast.promise(post({ message }), {
+                  loading: "Posting...",
+                  success: () => {
+                    setMessage("");
+                    return "Posted!";
+                  },
+                  error: "Failed to post",
+                  finally: () => {
+                    setLoading(false);
+                  },
+                });
+              }}
             >
               Post
             </Button>
