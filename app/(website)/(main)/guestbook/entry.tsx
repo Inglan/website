@@ -96,7 +96,7 @@ export default function Entry({
                         );
                       }}
                     >
-                      Delete
+                      Ban
                     </Button>
                   </DialogClose>
                 </DialogFooter>
