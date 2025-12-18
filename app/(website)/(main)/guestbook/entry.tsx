@@ -6,7 +6,7 @@ import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 import { useMutation, useQuery } from "convex/react";
 import { FunctionReturnType } from "convex/server";
-import { Check, Trash, Undo, X } from "lucide-react";
+import { Check, Gavel, Trash, Undo, X } from "lucide-react";
 
 import {
   Dialog,
@@ -19,6 +19,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import { authClient } from "@/lib/auth-client";
 
 export default function Entry({
   entry,
@@ -53,6 +54,30 @@ export default function Entry({
       <div className="flex flex-row absolute top-0 right-0">
         {user?.role == "admin" && (
           <>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                toast.promise(
+                  new Promise(async (resolve, reject) => {
+                    const response = await authClient.admin.banUser({
+                      userId: entry.userId,
+                    });
+                    if (response.error) {
+                      reject(response.error.message);
+                    }
+                    resolve(true);
+                  }),
+                  {
+                    loading: "Banning user...",
+                    success: "User banned",
+                    error: (error) => `Failed to ban user: ${error}`,
+                  },
+                );
+              }}
+            >
+              <Gavel />
+            </Button>
             <Button
               variant="ghost"
               size="icon"
