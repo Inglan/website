@@ -286,7 +286,6 @@ const Grid = forwardRef(function Grid(
         }
       }}
       onDragEnd={(event, info) => {
-        navigator.vibrate(10);
         if (info.offset.x < -50) {
           const index = Object.keys(technologies).findIndex(
             (k) => k === props.selectedCategory,
