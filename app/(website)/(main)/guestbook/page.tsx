@@ -86,7 +86,12 @@ export default function Page() {
               </Button>*/}
             </div>
             <div className="flex flex-row sm:border-0 border-b border-dashed">
-              <div className="border-r border-dashed px-4 py-2 sm:w-auto w-full">
+              <div
+                className={cn(
+                  "border-r border-dashed px-4 py-2 sm:w-auto w-full",
+                  session.data?.user.role === "admin" && "text-red-400",
+                )}
+              >
                 {session.data?.user.email}
               </div>
               <Button
