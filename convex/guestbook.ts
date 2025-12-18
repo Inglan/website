@@ -68,6 +68,6 @@ export const deleteEntry = mutation({
     if (entry.userId !== user._id) {
       throw new Error("Unauthorized");
     }
-    await ctx.db.delete("guestbookEntries", args.id);
+    await ctx.db.patch(args.id, { status: "deleted" });
   },
 });
