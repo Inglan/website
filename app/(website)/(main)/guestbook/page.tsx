@@ -41,36 +41,34 @@ export default function Page() {
   return (
     <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
       <Header>Guestbook</Header>
-      {!entries &&
-        Array(3)
-          .fill(null)
-          .map((_, skeletonIndex) => (
-            <div
-              className="flex flex-col gap-2 p-2 border-b border-dashed"
-              key={skeletonIndex}
-            >
-              <Skeleton className="w-[200px] h-8" />
-              {Array(3)
-                .fill(null)
-                .map((_, index) => {
-                  const width = deterministicInt(
-                    String(index + skeletonIndex),
-                    20,
-                    100,
-                  );
-                  return (
-                    <Skeleton
-                      className="h-6"
-                      style={{ maxWidth: `${width}%` }}
-                      key={index}
-                    />
-                  );
-                })}
-            </div>
-          ))}
-      {entries?.map((entry) => (
-        <Entry entry={entry} key={entry.id} />
-      ))}
+      {entries
+        ? entries?.map((entry) => <Entry entry={entry} key={entry.id} />)
+        : Array(3)
+            .fill(null)
+            .map((_, skeletonIndex) => (
+              <div
+                className="flex flex-col gap-2 p-2 border-b border-dashed"
+                key={skeletonIndex}
+              >
+                <Skeleton className="w-[200px] h-8" />
+                {Array(3)
+                  .fill(null)
+                  .map((_, index) => {
+                    const width = deterministicInt(
+                      String(index + skeletonIndex),
+                      20,
+                      100,
+                    );
+                    return (
+                      <Skeleton
+                        className="h-6"
+                        style={{ maxWidth: `${width}%` }}
+                        key={index}
+                      />
+                    );
+                  })}
+              </div>
+            ))}
     </div>
   );
 }
