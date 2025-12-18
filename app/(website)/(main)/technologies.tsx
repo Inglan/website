@@ -281,14 +281,14 @@ const Grid = forwardRef(function Grid(
       style={{ x, rotate }}
       whileDrag={{ scale: 0.98 }}
       onDrag={(event, info) => {
-        if (Math.abs(info.offset.x) > 50) {
+        if (Math.abs(info.offset.x) > 100) {
           setWillSwipe(true);
         } else {
           setWillSwipe(false);
         }
       }}
       onDragEnd={(event, info) => {
-        if (info.offset.x < -50) {
+        if (info.offset.x < -100) {
           const index = Object.keys(technologies).findIndex(
             (k) => k === props.selectedCategory,
           );
@@ -304,7 +304,7 @@ const Grid = forwardRef(function Grid(
               Object.keys(technologies)[index + 1] as keyof typeof technologies,
             );
           }
-        } else if (info.offset.x > 50) {
+        } else if (info.offset.x > 100) {
           const index = Object.keys(technologies).findIndex(
             (k) => k === props.selectedCategory,
           );
