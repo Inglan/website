@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { mutation } from "./_generated/server";
+import { mutation, query } from "./_generated/server";
 import { authComponent } from "./auth";
 
 export const add = mutation({
@@ -16,5 +16,15 @@ export const add = mutation({
       message: args.message,
       status: "pending",
     });
+  },
+});
+
+export const get = query({
+  handler: async (ctx) => {
+    const entries = await ctx.db
+      .query("guestbookEntries")
+      .withIndex("by_status", (q) => q.eq("status", "approved"))
+      .collect();
+    return entries;
   },
 });
