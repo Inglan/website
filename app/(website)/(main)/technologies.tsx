@@ -265,7 +265,7 @@ const Grid = forwardRef(function Grid(
 ) {
   const direction = usePresenceData();
   const x = useMotionValue(0);
-  const rotate = useTransform(x, [-100, 0, 100], [-2, 0, 2], { clamp: false });
+  const rotate = useTransform(x, [-100, 0, 100], [-3, 0, 3], { clamp: false });
 
   return (
     <motion.div
