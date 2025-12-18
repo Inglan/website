@@ -25,10 +25,12 @@ export const get = query({
       .query("guestbookEntries")
       .withIndex("by_status", (q) => q.eq("status", "approved"))
       .collect();
-    return entries.map(async (entry) => ({
-      id: entry._id,
-      message: entry.message,
-      name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
-    }));
+    return await Promise.all(
+      entries.map(async (entry) => ({
+        id: entry._id,
+        message: entry.message,
+        name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
+      })),
+    );
   },
 });
