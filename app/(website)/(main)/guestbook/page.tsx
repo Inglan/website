@@ -2,9 +2,15 @@
 
 import Header from "@/components/header";
 import { api } from "@/convex/_generated/api";
-import { useQuery } from "convex/react";
+import {
+  Authenticated,
+  AuthLoading,
+  Unauthenticated,
+  useQuery,
+} from "convex/react";
 import Entry from "./entry";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Spinner } from "@/components/ui/spinner";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -41,6 +47,33 @@ export default function Page() {
   return (
     <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
       <Header>Guestbook</Header>
+      <div className="flex items-center justify-center h-40 border-b">
+        <Authenticated>
+          <div></div>
+        </Authenticated>
+        <Unauthenticated>
+          <div className="flex flex-col gap-2 items-center justify-center w-full h-full bg-striped-gradient bg-size-[80px_80px]">
+            <h2 className="text-xl">Log in to post to the guestbook</h2>
+            <div className="flex flex-row items-center justify-center w-full border-y border-dashed">
+              {[
+                { label: "GitHub", id: "github" },
+                { label: "Google", id: "google" },
+              ].map((provider) => (
+                <button
+                  className="cursor-pointer px-4 py-2 first:border-l border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+                  key={provider.id}
+                >
+                  {provider.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </Unauthenticated>
+        <AuthLoading>
+          <Spinner />
+        </AuthLoading>
+      </div>
+
       {entries
         ? entries?.map((entry) => <Entry entry={entry} key={entry.id} />)
         : Array(3)
