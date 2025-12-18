@@ -8,10 +8,9 @@ export default function Entry({
   entry: FunctionReturnType<typeof api.guestbook.get>[number];
 }) {
   return (
-    <div key={entry.id}>
-      {entry.name}
-      <br />
-      {entry.message}
+    <div className="p-4 border-b border-dashed" key={entry.id}>
+      <div className="text-primary text-xl">{entry.name}</div>
+      <div className="text-lg">{entry.message}</div>
     </div>
   );
 }
