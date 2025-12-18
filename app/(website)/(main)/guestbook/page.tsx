@@ -70,42 +70,46 @@ export default function Page() {
             className="w-full h-full resize-none p-4 outline-0"
             placeholder="Your message here"
           />
-          <div className="border-t border-dashed w-full flex flex-row">
-            <div className="border-r border-dashed px-4 py-2">
-              Posting as{" "}
-              <span className="text-primary">{session.data?.user.name}</span>
+          <div className="border-t border-dashed w-full flex sm:flex-row flex-col">
+            <div className="flex flex-row sm:border-0 border-b border-dashed">
+              <div className="border-r border-dashed px-4 py-2 sm:w-auto w-full">
+                Posting as{" "}
+                <span className="text-primary">{session.data?.user.name}</span>
+              </div>
+              <Button
+                disabled={loading}
+                variant="ghost"
+                className="aspect-square h-full flex items-center justify-center cursor-pointer sm:border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+              >
+                <Pencil className="size-4" />
+              </Button>
             </div>
-            <Button
-              disabled={loading}
-              variant="ghost"
-              className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
-            >
-              <Pencil className="size-4" />
-            </Button>
-            <div className="border-r border-dashed px-4 py-2">
-              {session.data?.user.email}
+            <div className="flex flex-row sm:border-0 border-b border-dashed">
+              <div className="border-r border-dashed px-4 py-2 sm:w-auto w-full">
+                {session.data?.user.email}
+              </div>
+              <Button
+                disabled={loading}
+                variant="ghost"
+                className="aspect-square h-full flex items-center justify-center cursor-pointer sm:border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+                onClick={() => {
+                  setLoading(true);
+                  toast.promise(authClient.signOut(), {
+                    loading: "Signing out...",
+                    success: "Signed out",
+                    error: "Failed to sign out",
+                    finally: () => setLoading(false),
+                  });
+                }}
+              >
+                <LogOut className="size-4" />
+              </Button>
             </div>
-            <Button
-              disabled={loading}
-              variant="ghost"
-              className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
-              onClick={() => {
-                setLoading(true);
-                toast.promise(authClient.signOut(), {
-                  loading: "Signing out...",
-                  success: "Signed out",
-                  error: "Failed to sign out",
-                  finally: () => setLoading(false),
-                });
-              }}
-            >
-              <LogOut className="size-4" />
-            </Button>
-            <div className="grow bg-striped-gradient bg-size-[80px_80px]"></div>
+            <div className="hidden sm:block grow bg-striped-gradient bg-size-[80px_80px]"></div>
             <Button
               disabled={loading || message.length === 0}
               variant="ghost"
-              className="px-8 py-2 h-full flex items-center justify-center cursor-pointer border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+              className="px-8 py-2 sm:h-full flex items-center justify-center cursor-pointer sm:border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background border-0"
               onClick={async () => {
                 setLoading(true);
                 toast.promise(post({ message }), {
