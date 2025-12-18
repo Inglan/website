@@ -68,7 +68,6 @@ export default function Page() {
                 })}
             </div>
           ))}
-      {JSON.stringify(entries)}
       {entries?.map((entry) => (
         <Entry entry={entry} key={entry.id} />
       ))}
