@@ -18,6 +18,7 @@ import ShareButton from "@/components/share-button";
 import { FormattedDateTime } from "@/components/formatted-date";
 import CodeBlock from "@/components/code-block";
 import type { Metadata, ResolvingMetadata } from "next";
+import Header from "@/components/header";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   ...,
@@ -65,9 +66,7 @@ export default async function PostPage({
       <PostNavbar title={post.title} />
       <main>
         <article className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
-          <div className="w-full mx-auto flex h-fit p-4 border-b border-dashed flex-col gap-2">
-            <h1 className="text-6xl text-primary">{post.title}</h1>
-          </div>
+          <Header>{post.title}</Header>
           {post.categories && (
             <div className="categories flex flex-row sm:hidden border-b border-dashed">
               {post.categories.map((category: SanityDocument) => (
