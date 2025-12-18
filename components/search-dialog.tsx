@@ -8,7 +8,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { MENU_ITEMS } from "@/lib/constants";
+import { AUTH_PROVIDERS, MENU_ITEMS } from "@/lib/constants";
 import { useUiState } from "@/lib/state";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -49,7 +49,18 @@ export function SearchDialog({ posts }: SearchDialogProps) {
             },
           },
         ]
-      : []),
+      : AUTH_PROVIDERS.map((provider) => ({
+          label: `Sign in with ${provider.label}`,
+          icon: <provider.icon />,
+          onSelect: async () => {
+            setSearchOpen(false);
+            toast.promise(authClient.signIn.social({ provider: provider.id }), {
+              loading: "Signing in...",
+              success: "Redirecting...",
+              error: "Failed to sign in",
+            });
+          },
+        }))),
     {
       label: "Copy Email",
       icon: <Copy />,
