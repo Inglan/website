@@ -292,7 +292,7 @@ const Grid = forwardRef(function Grid(
             (k) => k === props.selectedCategory,
           );
           if (index === Object.keys(technologies).length - 1) {
-            navigator.vibrate([10, 10, 10]);
+            navigator.vibrate([10, 10, 10, 10, 10]);
             props.setCategory(
               Object.keys(technologies)[0] as keyof typeof technologies,
             );
@@ -306,7 +306,7 @@ const Grid = forwardRef(function Grid(
             (k) => k === props.selectedCategory,
           );
           if (index === 0) {
-            navigator.vibrate([10, 10, 10]);
+            navigator.vibrate([10, 10, 10, 10, 10]);
             props.setCategory(
               Object.keys(technologies)[
                 Object.keys(technologies).length - 1
