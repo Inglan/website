@@ -72,7 +72,8 @@ export default function Page() {
           />
           <div className="border-t border-dashed w-full flex flex-row">
             <div className="border-r border-dashed px-4 py-2">
-              Posting as {session.data?.user.name}
+              Posting as{" "}
+              <span className="text-primary">{session.data?.user.name}</span>
             </div>
             <Button
               disabled={loading}
