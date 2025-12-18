@@ -6,7 +6,7 @@ import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 import { useMutation, useQuery } from "convex/react";
 import { FunctionReturnType } from "convex/server";
-import { Check, Gavel, Trash, Undo, Verified, X } from "lucide-react";
+import { Check, Gavel, Shield, Trash, Undo, Verified, X } from "lucide-react";
 
 import {
   Dialog,
@@ -44,8 +44,9 @@ export default function Entry({
       {entry.status == "pending" && (
         <div className="text-sm text-neutral-400">Pending Approval</div>
       )}
-      <div className="text-primary text-xl flex flex-row gap-2">
-        {entry.name} {entry.userRole === "admin" ? <Verified /> : null}
+      <div className="text-primary text-xl flex flex-row gap-2 items-center">
+        {entry.name} {entry.verified ? <Verified className="size-5" /> : null}{" "}
+        {entry.userRole === "admin" ? <Shield className="size-5" /> : null}
       </div>
       <div className="text-sm">
         <FormattedDateTime

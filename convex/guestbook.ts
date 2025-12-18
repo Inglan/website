@@ -58,6 +58,7 @@ export const get = query({
             status: entry.status,
             userId: entry.userId,
             userRole: user?.role,
+            verified: user?.email === "me@ingo.au",
           };
         }),
       )
