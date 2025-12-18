@@ -46,6 +46,7 @@ function deterministicInt(input: string, min: number, max: number) {
 
 export default function Page() {
   const entries = useQuery(api.guestbook.get);
+  const [authLoading, setAuthLoading] = useState(false);
 
   return (
     <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
@@ -62,7 +63,12 @@ export default function Page() {
                 { label: "GitHub", id: "github" },
                 { label: "Google", id: "google" },
               ].map((provider) => (
-                <SignInButton key={provider.id} provider={provider} />
+                <SignInButton
+                  key={provider.id}
+                  provider={provider}
+                  setAuthLoading={setAuthLoading}
+                  disabled={authLoading}
+                />
               ))}
             </div>
           </div>
@@ -106,8 +112,12 @@ export default function Page() {
 
 function SignInButton({
   provider,
+  setAuthLoading,
+  disabled,
 }: {
   provider: { label: string; id: string };
+  setAuthLoading: (loading: boolean) => void;
+  disabled?: boolean;
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -118,8 +128,9 @@ function SignInButton({
       key={provider.id}
       onClick={() => {
         setLoading(true);
+        setAuthLoading(true);
       }}
-      disabled={loading}
+      disabled={loading || disabled}
     >
       <Spinner
         className={cn(
