@@ -103,6 +103,14 @@ export function SearchDialog({ posts }: SearchDialogProps) {
             </CommandItem>
           ))}
         </CommandGroup>
+        <CommandGroup heading="Commands">
+          {commands.map((command) => (
+            <CommandItem key={command.label} onSelect={command.onSelect}>
+              {command.icon}
+              {command.label}
+            </CommandItem>
+          ))}
+        </CommandGroup>
         <CommandGroup heading="Posts">
           {posts.map((post) => {
             const excerpt =
@@ -138,14 +146,6 @@ export function SearchDialog({ posts }: SearchDialogProps) {
               </CommandItem>
             );
           })}
-        </CommandGroup>
-        <CommandGroup heading="Commands">
-          {commands.map((command) => (
-            <CommandItem key={command.label} onSelect={command.onSelect}>
-              {command.icon}
-              {command.label}
-            </CommandItem>
-          ))}
         </CommandGroup>
       </CommandList>
     </CommandDialog>
