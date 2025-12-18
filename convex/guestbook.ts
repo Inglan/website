@@ -40,12 +40,6 @@ export const get = query({
       entries.push(
         ...(await ctx.db
           .query("guestbookEntries")
-          .withIndex("by_status", (q) => q.eq("status", "deleted"))
-          .collect()),
-      );
-      entries.push(
-        ...(await ctx.db
-          .query("guestbookEntries")
           .withIndex("by_status", (q) => q.eq("status", "rejected"))
           .collect()),
       );
