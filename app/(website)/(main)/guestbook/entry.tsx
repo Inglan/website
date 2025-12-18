@@ -45,8 +45,8 @@ export default function Entry({
         <div className="text-sm text-neutral-400">Pending Approval</div>
       )}
       <div className="text-primary text-xl flex flex-row gap-2 items-center">
-        {entry.name} {entry.verified ? <Verified className="size-5" /> : null}{" "}
-        {entry.userRole === "admin" ? <Shield className="size-5" /> : null}
+        {entry.name}{" "}
+        {entry.verified ? <Verified className="size-5" /> : null}{" "}
       </div>
       <div className="text-sm">
         <FormattedDateTime
