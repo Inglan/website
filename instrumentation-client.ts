@@ -12,5 +12,7 @@ if (
     debug: process.env.NODE_ENV === "development",
     person_profiles: "always",
     disable_surveys: true,
+    disable_external_dependency_loading: true,
+    disable_session_recording: true,
   });
 }
