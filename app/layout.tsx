@@ -6,7 +6,6 @@ import { Toaster } from "@/components/ui/sonner";
 import Search from "@/components/search";
 import Hotkeys from "@/lib/hotkeys";
 import { ConvexClientProvider } from "./ConvexClientProvider";
-import { Suspense } from "react";
 import ErrorParamHandler from "@/components/error-param-handler";
 
 const jost = Jost({
@@ -36,9 +35,7 @@ export default function RootLayout({
             <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
             <Search />
             <Hotkeys />
-            <Suspense fallback={null}>
-              <ErrorParamHandler />
-            </Suspense>
+            <ErrorParamHandler />
           </ThemeProvider>
         </ConvexClientProvider>
       </body>
