@@ -30,6 +30,7 @@ export const get = query({
         id: entry._id,
         message: entry.message,
         name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
+        creationTime: entry._creationTime,
       })),
     );
   },
