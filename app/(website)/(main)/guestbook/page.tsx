@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
+import { AUTH_PROVIDERS } from "@/lib/constants";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -61,11 +62,7 @@ export default function Page() {
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full bg-striped-gradient bg-size-[80px_80px]">
             <h2 className="text-xl">Log in to post to the guestbook</h2>
             <div className="flex flex-row items-center justify-center w-full border-y border-dashed">
-              {[
-                { label: "GitHub", id: "github" },
-                { label: "Google", id: "google" },
-                { label: "Discord", id: "discord" },
-              ].map((provider) => (
+              {AUTH_PROVIDERS.map((provider) => (
                 <SignInButton
                   key={provider.id}
                   provider={provider}

@@ -10,3 +10,9 @@ export const MENU_ITEMS = [
 ];
 
 export const OTHER_PAGES = [{ url: "/guestbook", label: "Guestbook" }];
+
+export const AUTH_PROVIDERS = [
+  { label: "GitHub", id: "github" },
+  { label: "Google", id: "google" },
+  { label: "Discord", id: "discord" },
+];
