@@ -6,7 +6,7 @@ import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 import { useMutation, useQuery } from "convex/react";
 import { FunctionReturnType } from "convex/server";
-import { Trash } from "lucide-react";
+import { Check, Trash, Undo, X } from "lucide-react";
 
 import {
   Dialog,
@@ -27,6 +27,7 @@ export default function Entry({
 }) {
   const user = useQuery(api.auth.getCurrentUser);
   const deleteEntry = useMutation(api.guestbook.deleteEntry);
+  const setStatus = useMutation(api.guestbook.setStatus);
 
   return (
     <div
@@ -49,8 +50,39 @@ export default function Entry({
         />
       </div>
       <div className="text-lg">{entry.message}</div>
-      {(user?._id == entry.userId || user?.role == "admin") && (
-        <div className="flex flex-row absolute top-0 right-0">
+      <div className="flex flex-row absolute top-0 right-0">
+        {user?.role == "admin" && (
+          <>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                setStatus({ id: entry.id, status: "pending" });
+              }}
+            >
+              <Undo />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                setStatus({ id: entry.id, status: "rejected" });
+              }}
+            >
+              <X />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => {
+                setStatus({ id: entry.id, status: "approved" });
+              }}
+            >
+              <Check />
+            </Button>
+          </>
+        )}
+        {(user?._id == entry.userId || user?.role == "admin") && (
           <Dialog>
             <DialogTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -88,8 +120,8 @@ export default function Entry({
               </DialogFooter>
             </DialogContent>
           </Dialog>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }
