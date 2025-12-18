@@ -115,7 +115,7 @@ function SignInButton({
   setAuthLoading,
   disabled,
 }: {
-  provider: { label: string; id: string };
+  provider: (typeof AUTH_PROVIDERS)[number];
   setAuthLoading: (loading: boolean) => void;
   disabled?: boolean;
 }) {
@@ -151,6 +151,9 @@ function SignInButton({
           "duration-200 absolute opacity-0",
           loading && "opacity-100",
         )}
+      />
+      <provider.icon
+        className={cn("duration-200 opacity-100", loading && "opacity-0")}
       />
       <span className={cn("duration-200 opacity-100", loading && "opacity-0")}>
         {provider.label}
