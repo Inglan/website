@@ -268,7 +268,9 @@ const Grid = forwardRef(function Grid(
   const rotate = useTransform(x, [-100, 0, 100], [-3, 0, 3], { clamp: false });
   const [willSwipe, setWillSwipe] = useState(false);
   useEffect(() => {
-    if (willSwipe == true) navigator.vibrate(10);
+    try {
+      if (willSwipe == true) navigator.vibrate(10);
+    } catch {}
   }, [willSwipe]);
 
   return (
@@ -291,7 +293,9 @@ const Grid = forwardRef(function Grid(
             (k) => k === props.selectedCategory,
           );
           if (index === Object.keys(technologies).length - 1) {
-            navigator.vibrate([10, 10, 10, 10, 10]);
+            try {
+              navigator.vibrate([10, 10, 10, 10, 10]);
+            } catch {}
             props.setCategory(
               Object.keys(technologies)[0] as keyof typeof technologies,
             );
@@ -305,7 +309,9 @@ const Grid = forwardRef(function Grid(
             (k) => k === props.selectedCategory,
           );
           if (index === 0) {
-            navigator.vibrate([10, 10, 10, 10, 10]);
+            try {
+              navigator.vibrate([10, 10, 10, 10, 10]);
+            } catch {}
             props.setCategory(
               Object.keys(technologies)[
                 Object.keys(technologies).length - 1
