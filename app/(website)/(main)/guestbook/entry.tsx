@@ -57,7 +57,11 @@ export default function Entry({
               variant="ghost"
               size="icon"
               onClick={() => {
-                setStatus({ id: entry.id, status: "pending" });
+                toast.promise(setStatus({ id: entry.id, status: "pending" }), {
+                  loading: "Updating status...",
+                  success: "Status updated",
+                  error: "Failed to update status",
+                });
               }}
             >
               <Undo />
@@ -66,7 +70,11 @@ export default function Entry({
               variant="ghost"
               size="icon"
               onClick={() => {
-                setStatus({ id: entry.id, status: "approved" });
+                toast.promise(setStatus({ id: entry.id, status: "approved" }), {
+                  loading: "Updating status...",
+                  success: "Status updated",
+                  error: "Failed to update status",
+                });
               }}
             >
               <Check />
