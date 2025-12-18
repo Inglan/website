@@ -77,13 +77,13 @@ export default function Page() {
                 Posting as{" "}
                 <span className="text-primary">{session.data?.user.name}</span>
               </div>
-              <Button
+              {/*<Button
                 disabled={loading}
                 variant="ghost"
                 className="aspect-square h-full flex items-center justify-center cursor-pointer sm:border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
               >
                 <Pencil className="size-4" />
-              </Button>
+              </Button>*/}
             </div>
             <div className="flex flex-row sm:border-0 border-b border-dashed">
               <div className="border-r border-dashed px-4 py-2 sm:w-auto w-full">
