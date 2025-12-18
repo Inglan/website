@@ -83,7 +83,12 @@ export const deleteEntry = mutation({
 export const setStatus = mutation({
   args: {
     id: v.id("guestbookEntries"),
-    status: v.union(v.literal("approved"), v.literal("rejected")),
+    status: v.union(
+      v.literal("pending"),
+      v.literal("approved"),
+      v.literal("rejected"),
+      v.literal("deleted"),
+    ),
   },
   handler: async (ctx, args) => {
     const user = await authComponent.getAuthUser(ctx);
