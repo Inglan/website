@@ -20,6 +20,7 @@ import { toast } from "sonner";
 import { AUTH_PROVIDERS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 import { LogOut, Pencil } from "lucide-react";
+import { StripedSeparator } from "@/components/striped-separator";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -148,6 +149,8 @@ export default function Page() {
           <Spinner />
         </AuthLoading>
       </div>
+
+      <StripedSeparator />
 
       {entries
         ? entries?.map((entry) => <Entry entry={entry} key={entry.id} />)
