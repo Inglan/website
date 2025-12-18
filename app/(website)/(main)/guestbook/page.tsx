@@ -11,6 +11,9 @@ import {
 import Entry from "./entry";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Spinner } from "@/components/ui/spinner";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -59,12 +62,7 @@ export default function Page() {
                 { label: "GitHub", id: "github" },
                 { label: "Google", id: "google" },
               ].map((provider) => (
-                <button
-                  className="cursor-pointer px-4 py-2 first:border-l border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
-                  key={provider.id}
-                >
-                  {provider.label}
-                </button>
+                <SignInButton key={provider.id} provider={provider} />
               ))}
             </div>
           </div>
@@ -103,5 +101,35 @@ export default function Page() {
               </div>
             ))}
     </div>
+  );
+}
+
+function SignInButton({
+  provider,
+}: {
+  provider: { label: string; id: string };
+}) {
+  const [loading, setLoading] = useState(false);
+
+  return (
+    <Button
+      variant="ghost"
+      className="cursor-pointer px-4 py-2 first:border-l border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+      key={provider.id}
+      onClick={() => {
+        setLoading(true);
+      }}
+      disabled={loading}
+    >
+      <Spinner
+        className={cn(
+          "duration-200 absolute opacity-0",
+          loading && "opacity-100",
+        )}
+      />
+      <span className={cn("duration-200 opacity-100", loading && "opacity-0")}>
+        {provider.label}
+      </span>
+    </Button>
   );
 }
