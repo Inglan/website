@@ -59,7 +59,7 @@ export default function Page() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
+    <div className="max-w-4xl w-full mx-auto border-x border-dashed">
       <Header>Guestbook</Header>
       <div className="flex flex-col items-center justify-center h-52 border-b border-dashed">
         <Authenticated>
