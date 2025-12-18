@@ -64,6 +64,7 @@ export default function Page() {
               {[
                 { label: "GitHub", id: "github" },
                 { label: "Google", id: "google" },
+                { label: "Discord", id: "discord" },
               ].map((provider) => (
                 <SignInButton
                   key={provider.id}
