@@ -80,7 +80,7 @@ export const deleteEntry = mutation({
   },
 });
 
-export const action = mutation({
+export const setStatus = mutation({
   args: {
     id: v.id("guestbookEntries"),
     status: v.union(v.literal("approved"), v.literal("rejected")),
