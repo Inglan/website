@@ -5,11 +5,7 @@ import { FunctionReturnType } from "convex/server";
 export default function Entry({
   entry,
 }: {
-  entry: {
-    id: string;
-    message: string;
-    name: string;
-  };
+  entry: FunctionReturnType<typeof api.guestbook.get>[number];
 }) {
   return (
     <div key={entry.id}>
