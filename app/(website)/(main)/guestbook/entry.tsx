@@ -4,9 +4,21 @@ import { FormattedDateTime } from "@/components/formatted-date";
 import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
-import { useQuery } from "convex/react";
+import { useMutation, useQuery } from "convex/react";
 import { FunctionReturnType } from "convex/server";
 import { Trash } from "lucide-react";
+
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { toast } from "sonner";
 
 export default function Entry({
   entry,
@@ -14,6 +26,7 @@ export default function Entry({
   entry: FunctionReturnType<typeof api.guestbook.get>[number];
 }) {
   const user = useQuery(api.auth.getCurrentUser);
+  const deleteEntry = useMutation(api.guestbook.deleteEntry);
 
   return (
     <div
@@ -38,9 +51,43 @@ export default function Entry({
       <div className="text-lg">{entry.message}</div>
       {user?._id == entry.userId && (
         <div className="flex flex-row absolute top-0 right-0">
-          <Button variant="ghost" size="icon">
-            <Trash />
-          </Button>
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Trash />
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="p-0 gap-0">
+              <DialogHeader className="p-4 border-b border-dashed">
+                <DialogTitle>Delete this post?</DialogTitle>
+              </DialogHeader>
+              <DialogFooter className="grid grid-cols-2 gap-0">
+                <DialogClose asChild>
+                  <Button
+                    variant="ghost"
+                    className="border-r border-dashed h-full p-2 duration-200 ease-out hover:bg-card active:brightness-75 cursor-pointer"
+                  >
+                    Cancel
+                  </Button>
+                </DialogClose>
+                <DialogClose asChild>
+                  <Button
+                    variant="destructive"
+                    className="border-r border-dashed h-full p-2 duration-200 ease-out active:brightness-75 cursor-pointer"
+                    onClick={() => {
+                      toast.promise(deleteEntry({ id: entry.id }), {
+                        loading: "Deleting...",
+                        success: "Post deleted!",
+                        error: "Failed to delete post",
+                      });
+                    }}
+                  >
+                    Delete
+                  </Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
       )}
     </div>
