@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/command";
 import { AUTH_PROVIDERS, MENU_ITEMS } from "@/lib/constants";
 import { useUiState } from "@/lib/state";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { SanityDocument } from "sanity";
 import { ArrowRight, Copy, LogOut, Mail, MessageCircle } from "lucide-react";
@@ -32,6 +32,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
   const router = useRouter();
   const session = authClient.useSession();
+  const pathname = usePathname();
 
   const commands = [
     ...(session.data?.user
@@ -54,11 +55,17 @@ export function SearchDialog({ posts }: SearchDialogProps) {
           icon: <provider.icon />,
           onSelect: async () => {
             setSearchOpen(false);
-            toast.promise(authClient.signIn.social({ provider: provider.id }), {
-              loading: "Signing in...",
-              success: "Redirecting...",
-              error: "Failed to sign in",
-            });
+            toast.promise(
+              authClient.signIn.social({
+                provider: provider.id,
+                callbackURL: pathname,
+              }),
+              {
+                loading: "Signing in...",
+                success: "Redirecting...",
+                error: "Failed to sign in",
+              },
+            );
           },
         }))),
     {
