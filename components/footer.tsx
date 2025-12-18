@@ -88,7 +88,7 @@ export function Footer() {
             <ArrowLeft className="size-4" />
           </Link>
           <Link
-            href="https://ctp-webr.ing/ingo/previous"
+            href="https://ctp-webr.ing"
             className="h-14 px-4 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-l border-dashed grow"
           >
             Catppuccin Webring
