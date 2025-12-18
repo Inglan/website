@@ -73,7 +73,7 @@ export const deleteEntry = mutation({
     if (!entry) {
       throw new Error("Entry not found");
     }
-    if (entry.userId !== user._id) {
+    if (entry.userId !== user._id && user.role !== "admin") {
       throw new Error("Unauthorized");
     }
     await ctx.db.patch(args.id, { status: "deleted" });
