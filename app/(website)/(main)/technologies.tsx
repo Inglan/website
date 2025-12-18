@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { GitBranch } from "lucide-react";
-import { forwardRef, useState } from "react";
+import { forwardRef, useEffect, useRef, useState } from "react";
 import {
   motion,
   AnimatePresence,
@@ -266,6 +266,10 @@ const Grid = forwardRef(function Grid(
   const direction = usePresenceData();
   const x = useMotionValue(0);
   const rotate = useTransform(x, [-100, 0, 100], [-3, 0, 3], { clamp: false });
+  const [willSwipe, setWillSwipe] = useState(false);
+  useEffect(() => {
+    if (willSwipe == true) navigator.vibrate(10);
+  }, [willSwipe]);
 
   return (
     <motion.div
@@ -274,12 +278,21 @@ const Grid = forwardRef(function Grid(
       dragElastic={0.05}
       style={{ x, rotate }}
       whileDrag={{ scale: 0.98 }}
+      onDrag={(event, info) => {
+        if (Math.abs(info.offset.x) > 50) {
+          setWillSwipe(true);
+        } else {
+          setWillSwipe(false);
+        }
+      }}
       onDragEnd={(event, info) => {
+        navigator.vibrate(10);
         if (info.offset.x < -50) {
           const index = Object.keys(technologies).findIndex(
             (k) => k === props.selectedCategory,
           );
           if (index === Object.keys(technologies).length - 1) {
+            navigator.vibrate([10, 10, 10]);
             props.setCategory(
               Object.keys(technologies)[0] as keyof typeof technologies,
             );
@@ -293,6 +306,7 @@ const Grid = forwardRef(function Grid(
             (k) => k === props.selectedCategory,
           );
           if (index === 0) {
+            navigator.vibrate([10, 10, 10]);
             props.setCategory(
               Object.keys(technologies)[
                 Object.keys(technologies).length - 1
