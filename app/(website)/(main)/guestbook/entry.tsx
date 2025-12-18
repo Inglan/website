@@ -54,30 +54,54 @@ export default function Entry({
       <div className="flex flex-row absolute top-0 right-0">
         {user?.role == "admin" && (
           <>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => {
-                toast.promise(
-                  new Promise(async (resolve, reject) => {
-                    const response = await authClient.admin.banUser({
-                      userId: entry.userId,
-                    });
-                    if (response.error) {
-                      reject(response.error.message);
-                    }
-                    resolve(true);
-                  }),
-                  {
-                    loading: "Banning user...",
-                    success: "User banned",
-                    error: (error) => `Failed to ban user: ${error}`,
-                  },
-                );
-              }}
-            >
-              <Gavel />
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Gavel />
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="p-0 gap-0">
+                <DialogHeader className="p-4 border-b border-dashed">
+                  <DialogTitle>Ban User</DialogTitle>
+                </DialogHeader>
+                <DialogFooter className="grid grid-cols-2 gap-0">
+                  <DialogClose asChild>
+                    <Button
+                      variant="ghost"
+                      className="border-r border-dashed h-full p-2 duration-200 ease-out hover:bg-card active:brightness-75 cursor-pointer"
+                    >
+                      Cancel
+                    </Button>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <Button
+                      variant="destructive"
+                      className="border-r border-dashed h-full p-2 duration-200 ease-out active:brightness-75 cursor-pointer"
+                      onClick={() => {
+                        toast.promise(
+                          new Promise(async (resolve, reject) => {
+                            const response = await authClient.admin.banUser({
+                              userId: entry.userId,
+                            });
+                            if (response.error) {
+                              reject(response.error.message);
+                            }
+                            resolve(true);
+                          }),
+                          {
+                            loading: "Banning user...",
+                            success: "User banned",
+                            error: (error) => `Failed to ban user: ${error}`,
+                          },
+                        );
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  </DialogClose>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
             <Button
               variant="ghost"
               size="icon"
