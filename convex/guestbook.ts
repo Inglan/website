@@ -50,3 +50,23 @@ export const get = query({
     ).reverse();
   },
 });
+
+export const deleteEntry = mutation({
+  args: {
+    id: v.id("guestbookEntries"),
+  },
+  handler: async (ctx, args) => {
+    const user = await authComponent.getAuthUser(ctx);
+    if (user === null) {
+      throw new Error("Unauthorized");
+    }
+    const entry = await ctx.db.get("guestbookEntries", args.id);
+    if (!entry) {
+      throw new Error("Entry not found");
+    }
+    if (entry.userId !== user._id) {
+      throw new Error("Unauthorized");
+    }
+    await ctx.db.delete("guestbookEntries", args.id);
+  },
+});
