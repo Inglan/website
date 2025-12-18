@@ -6,6 +6,7 @@ import { query } from "./_generated/server";
 import { betterAuth, type BetterAuthOptions } from "better-auth";
 import authConfig from "./auth.config";
 import authSchema from "./betterAuth/schema";
+import { admin } from "better-auth/plugins";
 
 const siteUrl = process.env.SITE_URL!;
 
@@ -45,6 +46,7 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) => {
     plugins: [
       // The Convex plugin is required for Convex compatibility
       convex({ authConfig }),
+      admin(),
     ],
   } satisfies BetterAuthOptions;
 };
