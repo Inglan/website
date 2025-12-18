@@ -18,6 +18,7 @@ import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { AUTH_PROVIDERS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
+import { LogOut, Pencil } from "lucide-react";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -49,15 +50,43 @@ function deterministicInt(input: string, min: number, max: number) {
 // End AI generated code
 
 export default function Page() {
+  const session = authClient.useSession();
   const entries = useQuery(api.guestbook.get);
   const [authLoading, setAuthLoading] = useState(false);
 
   return (
     <div className="max-w-4xl w-full mx-auto border border-t-0 border-dashed">
       <Header>Guestbook</Header>
-      <div className="flex items-center justify-center h-52 border-b border-dashed">
+      <div className="flex flex-col items-center justify-center h-52 border-b border-dashed">
         <Authenticated>
-          <div></div>
+          <textarea
+            className="w-full h-full resize-none p-4"
+            placeholder="Your message here"
+          />
+          <div className="border-t border-dashed w-full flex flex-row">
+            <div className="border-r border-dashed px-4 py-2">
+              Posting as {session.data?.user.name}
+            </div>
+            <Button
+              variant="ghost"
+              className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+            >
+              <Pencil className="size-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              className="aspect-square h-full flex items-center justify-center cursor-pointer border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+            >
+              <LogOut className="size-4" />
+            </Button>
+            <div className="grow"></div>
+            <Button
+              variant="ghost"
+              className="px-8 py-2 h-full flex items-center justify-center cursor-pointer border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+            >
+              Post
+            </Button>
+          </div>
         </Authenticated>
         <Unauthenticated>
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full bg-striped-gradient bg-size-[80px_80px]">
