@@ -45,6 +45,7 @@ export const get = query({
           name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
           creationTime: entry._creationTime,
           status: entry.status,
+          userId: entry.userId,
         })),
       )
     ).reverse();
