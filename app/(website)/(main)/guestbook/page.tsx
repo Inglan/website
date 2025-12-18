@@ -82,6 +82,9 @@ export default function Page() {
             >
               <Pencil className="size-4" />
             </Button>
+            <div className="border-r border-dashed px-4 py-2">
+              {session.data?.user.email}
+            </div>
             <Button
               disabled={loading}
               variant="ghost"
