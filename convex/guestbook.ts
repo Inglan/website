@@ -28,7 +28,7 @@ export const get = query({
     return entries.map(async (entry) => ({
       id: entry._id,
       message: entry.message,
-      user: await authComponent.getAnyUserById(ctx, entry.userId),
+      name: (await authComponent.getAnyUserById(ctx, entry.userId))?.name,
     }));
   },
 });
