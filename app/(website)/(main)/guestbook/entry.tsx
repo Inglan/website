@@ -66,15 +66,6 @@ export default function Entry({
               variant="ghost"
               size="icon"
               onClick={() => {
-                setStatus({ id: entry.id, status: "rejected" });
-              }}
-            >
-              <X />
-            </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => {
                 setStatus({ id: entry.id, status: "approved" });
               }}
             >

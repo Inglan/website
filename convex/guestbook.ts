@@ -36,14 +36,6 @@ export const get = query({
           .collect()),
       );
     }
-    if (user?.role === "admin") {
-      entries.push(
-        ...(await ctx.db
-          .query("guestbookEntries")
-          .withIndex("by_status", (q) => q.eq("status", "rejected"))
-          .collect()),
-      );
-    }
 
     return (
       await Promise.all(
@@ -86,7 +78,6 @@ export const setStatus = mutation({
     status: v.union(
       v.literal("pending"),
       v.literal("approved"),
-      v.literal("rejected"),
       v.literal("deleted"),
     ),
   },

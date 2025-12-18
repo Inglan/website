@@ -8,7 +8,6 @@ export default defineSchema({
     status: v.union(
       v.literal("pending"),
       v.literal("approved"),
-      v.literal("rejected"),
       v.literal("deleted"),
     ),
   })
