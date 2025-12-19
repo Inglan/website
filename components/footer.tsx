@@ -104,7 +104,14 @@ export function Footer() {
           </Link>
         </div>
       </div>
-      <div className="grid grid-cols-4 mx-auto pt-2 gap-2">
+      <div
+        className="grid grid-cols-4 mx-auto p-2 gap-2 mt-2"
+        style={{
+          boxShadow:
+            "0.5px 0.5px 0 0.5px black, inset 1px 1px #C2C6CA, inset -1px -1px #85898d, inset 2px 2px white",
+          background: "#c2c6ca",
+        }}
+      >
         {[
           {
             src: "/buttons/convex.gif",
