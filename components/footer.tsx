@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { SiSignal } from "react-icons/si";
 import { MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
+import Image from "next/image";
 
 export function Footer() {
   return (
@@ -146,10 +147,12 @@ export function Footer() {
           },
         ].map((button) => (
           <Link key={button.alt} href={button.href} target="_blank">
-            <img
+            <Image
               src={button.src}
               alt={button.alt}
               className="w-[88px] h-[31px]"
+              width={88}
+              height={31}
             />
           </Link>
         ))}
