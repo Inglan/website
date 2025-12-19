@@ -102,6 +102,58 @@ export function Footer() {
           </Link>
         </div>
       </div>
+      <div className="grid grid-cols-4 mx-auto pt-2 gap-2">
+        {[
+          {
+            src: "/buttons/convex.gif",
+            alt: "Convex",
+            href: "https://convex.dev",
+          },
+          {
+            src: "/buttons/ctp.webp",
+            alt: "Catppuccin",
+            href: "https://catppuccin.com",
+          },
+          {
+            src: "/buttons/github.png",
+            alt: "GitHub",
+            href: "https://github.com",
+          },
+          {
+            src: "/buttons/hackclub.gif",
+            alt: "Hack Club",
+            href: "https://hackclub.com",
+          },
+          {
+            src: "/buttons/next.gif",
+            alt: "Next.js",
+            href: "https://nextjs.org",
+          },
+          {
+            src: "/buttons/home-assistant.gif",
+            alt: "Home Assistant",
+            href: "https://home-assistant.io",
+          },
+          {
+            src: "/buttons/macosmade.gif",
+            alt: "Made with macos",
+            href: "https://apple.com",
+          },
+          {
+            src: "/buttons/neovim.gif",
+            alt: "Neovim",
+            href: "https://neovim.io",
+          },
+        ].map((button) => (
+          <Link key={button.alt} href={button.href} target="_blank">
+            <img
+              src={button.src}
+              alt={button.alt}
+              className="w-[88px] h-[31px]"
+            />
+          </Link>
+        ))}
+      </div>
     </>
   );
 }
