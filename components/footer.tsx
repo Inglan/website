@@ -156,6 +156,11 @@ export function Footer() {
             alt: "Slitro Studio",
             href: "https://site.slitrostudio.me/",
           },
+          {
+            src: "/buttons/ultrafastparrot.gif",
+            alt: "Ultrafastparrot Cult",
+            href: "https://ultrafastparrot.net",
+          },
         ].map((button) => (
           <Link key={button.alt} href={button.href} target="_blank">
             <Image
