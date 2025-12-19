@@ -6,6 +6,7 @@ import { FaGithub } from "react-icons/fa";
 import { SiSignal } from "react-icons/si";
 import { MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
 import Image from "next/image";
+import { m } from "motion/react";
 
 export function Footer() {
   return (
@@ -144,6 +145,16 @@ export function Footer() {
             src: "/buttons/neovim.gif",
             alt: "Neovim",
             href: "https://neovim.io",
+          },
+          {
+            src: "/buttons/codingcorner.png",
+            alt: "Coding Corner",
+            href: "https://codingcorner.dev",
+          },
+          {
+            src: "/buttons/slitro.png",
+            alt: "Slitro Studio",
+            href: "https://site.slitrostudio.me/",
           },
         ].map((button) => (
           <Link key={button.alt} href={button.href} target="_blank">
