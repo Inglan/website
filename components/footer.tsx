@@ -161,6 +161,11 @@ export function Footer() {
             alt: "Ultrafastparrot Cult",
             href: "https://ultrafastparrot.net",
           },
+          {
+            src: "/buttons/notoverkill.gif",
+            alt: "Notoverkill",
+            href: "https://notoverkill.com",
+          },
         ].map((button) => (
           <Link key={button.alt} href={button.href} target="_blank">
             <Image
