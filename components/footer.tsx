@@ -176,6 +176,7 @@ export function Footer() {
         ].map((button) => (
           <Link key={button.alt} href={button.href} target="_blank">
             <Image
+              loading="lazy"
               src={button.src}
               alt={button.alt}
               className="w-[88px] h-[31px]"
