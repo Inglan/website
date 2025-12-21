@@ -16,6 +16,7 @@ import { SanityDocument } from "sanity";
 import { ArrowRight, Copy, LogOut, Mail, MessageCircle } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import posthog from "posthog-js";
+import { useEffect, useState } from "react";
 
 interface PostWithSlug extends SanityDocument {
   slug?: {
@@ -34,6 +35,17 @@ export function SearchDialog({ posts }: SearchDialogProps) {
   const router = useRouter();
   const session = authClient.useSession();
   const pathname = usePathname();
+  const [linkedAccounts, setLinkedAccounts] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchLinkedAccounts = async () => {
+      const accounts = await authClient.listAccounts();
+      if (accounts.data) {
+        setLinkedAccounts(accounts.data.map((account) => account.providerId));
+      }
+    };
+    fetchLinkedAccounts();
+  }, [session]);
 
   const commands = [
     ...(session.data?.user
@@ -53,29 +65,53 @@ export function SearchDialog({ posts }: SearchDialogProps) {
               });
             },
           },
-          ...AUTH_PROVIDERS.map((provider) => ({
-            label: `Link ${provider.label}`,
-            icon: <provider.icon />,
-            onSelect: async () => {
-              setSearchOpen(false);
-              toast.promise(
-                provider.type == "social"
-                  ? authClient.linkSocial({
-                      provider: provider.id,
-                      callbackURL: pathname,
-                    })
-                  : authClient.oauth2.link({
-                      providerId: provider.id,
-                      callbackURL: pathname,
-                    }),
-                {
-                  loading: "Linking account...",
-                  success: "Redirecting...",
-                  error: "Failed to link account",
-                },
-              );
-            },
-          })),
+          ...AUTH_PROVIDERS.map((provider) => {
+            const linked = linkedAccounts.includes(provider.id);
+            return {
+              label: `${linked ? "Unlink" : "Link"} ${provider.label}`,
+              icon: <provider.icon />,
+              onSelect: async () => {
+                setSearchOpen(false);
+                toast.promise(
+                  new Promise((resolve, reject) => {
+                    if (linked) {
+                      authClient
+                        .unlinkAccount({
+                          providerId: provider.id,
+                        })
+                        .then((result) =>
+                          result.error ? reject(result.error) : resolve(null),
+                        );
+                    } else if (provider.type == "social") {
+                      authClient
+                        .linkSocial({
+                          provider: provider.id,
+                          callbackURL: pathname,
+                        })
+                        .then((result) =>
+                          result.error ? reject(result.error) : resolve(null),
+                        );
+                    } else {
+                      authClient.oauth2
+                        .link({
+                          providerId: provider.id,
+                          callbackURL: pathname,
+                        })
+                        .then((result) =>
+                          result.error ? reject(result.error) : resolve(null),
+                        );
+                    }
+                  }),
+                  {
+                    loading: `${linked ? "Unlinking" : "Linking"} account...`,
+                    success: `${linked ? "Unlinked account" : "Redirecting..."}`,
+                    error: (error) =>
+                      `${linked ? "Failed to unlink" : "Failed to link"} account: ${error.message}`,
+                  },
+                );
+              },
+            };
+          }),
         ]
       : AUTH_PROVIDERS.map((provider) => ({
           label: `Sign in with ${provider.label}`,
