@@ -62,6 +62,7 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) => {
             clientId: process.env.GITDOTGAY_CLIENT_ID!,
             clientSecret: process.env.GITDOTGAY_CLIENT_SECRET!,
             discoveryUrl: "https://git.gay/.well-known/openid-configuration",
+            scopes: ["openid", "read:user"],
           },
         ],
       }),
