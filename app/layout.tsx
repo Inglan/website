@@ -8,6 +8,7 @@ import Hotkeys from "@/lib/hotkeys";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import ErrorParamHandler from "@/components/error-param-handler";
 import { Suspense } from "react";
+import PosthogIdentify from "@/components/posthog-identify";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
             <Search />
             <Hotkeys />
+            <PosthogIdentify />
             <Suspense>
               <ErrorParamHandler />
             </Suspense>
