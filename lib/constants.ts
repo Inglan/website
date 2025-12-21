@@ -1,5 +1,5 @@
 import { Easing } from "motion";
-import { FaDiscord, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaDiscord, FaGit, FaGithub, FaGoogle } from "react-icons/fa";
 
 export const NICE_EASE: Easing | Easing[] = [0.165, 0.84, 0.44, 1.0];
 
@@ -16,5 +16,5 @@ export const AUTH_PROVIDERS = [
   { label: "GitHub", id: "github", icon: FaGithub, type: "social" },
   { label: "Google", id: "google", icon: FaGoogle, type: "social" },
   { label: "Discord", id: "discord", icon: FaDiscord, type: "social" },
-  { label: "git.gay", id: "gitdotgay", icon: FaDiscord, type: "oauth2" },
+  { label: "git.gay", id: "gitdotgay", icon: FaGit, type: "oauth2" },
 ];
