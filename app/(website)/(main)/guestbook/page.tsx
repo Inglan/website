@@ -22,6 +22,11 @@ import { usePathname } from "next/navigation";
 import { LogOut, Pencil } from "lucide-react";
 import { StripedSeparator } from "@/components/striped-separator";
 import posthog from "posthog-js";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -140,20 +145,31 @@ export default function Page() {
           </div>
         </Authenticated>
         <Unauthenticated>
-          <div className="flex flex-col gap-2 items-center justify-center w-full h-full bg-striped-gradient bg-size-[80px_80px]">
-            <h2 className="text-xl">Log in to post to the guestbook</h2>
-            <div className="overflow-y-auto w-full border-y border-dashed px-10">
-              <div className="flex flex-row mx-auto w-fit">
+          <div className="flex flex-col justify-center w-full h-full bg-striped-gradient bg-size-[80px_80px]">
+            <h2 className="text-xl ml-6 p-2 h-full border-l border-dashed flex items-end">
+              Log in to post to the guestbook
+            </h2>
+            <Carousel
+              className="w-full border-y border-dashed"
+              opts={{ skipSnaps: true }}
+            >
+              <CarouselContent className="px-10">
                 {AUTH_PROVIDERS.map((provider) => (
-                  <SignInButton
+                  <CarouselItem
                     key={provider.id}
-                    provider={provider}
-                    setAuthLoading={setAuthLoading}
-                    disabled={authLoading}
-                  />
+                    className="basis-auto pl-0 border-r first:border-l border-dashed"
+                  >
+                    <SignInButton
+                      key={provider.id}
+                      provider={provider}
+                      setAuthLoading={setAuthLoading}
+                      disabled={authLoading}
+                    />
+                  </CarouselItem>
                 ))}
-              </div>
-            </div>
+              </CarouselContent>
+            </Carousel>
+            <div className="h-full border-l border-dashed ml-6"></div>
           </div>
         </Unauthenticated>
         <AuthLoading>
@@ -210,7 +226,7 @@ function SignInButton({
   return (
     <Button
       variant="ghost"
-      className="cursor-pointer px-4 py-2 first:border-l border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+      className="cursor-pointer px-4 py-2 duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
       key={provider.id}
       onClick={async () => {
         setLoading(true);
