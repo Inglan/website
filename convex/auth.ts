@@ -68,6 +68,11 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) => {
         ],
       }),
     ],
+    account: {
+      accountLinking: {
+        allowDifferentEmails: true,
+      },
+    },
   } satisfies BetterAuthOptions;
 };
 
