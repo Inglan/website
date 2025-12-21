@@ -45,11 +45,37 @@ export function SearchDialog({ posts }: SearchDialogProps) {
               setSearchOpen(false);
               toast.promise(authClient.signOut(), {
                 loading: "Signing out...",
-                success: () => { posthog.reset(); return "Signed out" },
+                success: () => {
+                  posthog.reset();
+                  return "Signed out";
+                },
                 error: "Failed to sign out",
               });
             },
           },
+          ...AUTH_PROVIDERS.map((provider) => ({
+            label: `Link ${provider.label}`,
+            icon: <provider.icon />,
+            onSelect: async () => {
+              setSearchOpen(false);
+              toast.promise(
+                provider.type == "social"
+                  ? authClient.linkSocial({
+                      provider: provider.id,
+                      callbackURL: pathname,
+                    })
+                  : authClient.oauth2.link({
+                      providerId: provider.id,
+                      callbackURL: pathname,
+                    }),
+                {
+                  loading: "Linking account...",
+                  success: "Redirecting...",
+                  error: "Failed to link account",
+                },
+              );
+            },
+          })),
         ]
       : AUTH_PROVIDERS.map((provider) => ({
           label: `Sign in with ${provider.label}`,
