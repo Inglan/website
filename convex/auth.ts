@@ -57,6 +57,7 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) => {
               "https://auth.hackclub.com/.well-known/openid-configuration",
             scopes: ["openid", "profile", "email", "name"],
           },
+          // This was requested by someone lol
           {
             providerId: "gitdotgay",
             clientId: process.env.GITDOTGAY_CLIENT_ID!,
