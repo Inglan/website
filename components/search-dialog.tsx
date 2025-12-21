@@ -57,10 +57,15 @@ export function SearchDialog({ posts }: SearchDialogProps) {
           onSelect: async () => {
             setSearchOpen(false);
             toast.promise(
-              authClient.signIn.social({
-                provider: provider.id,
-                callbackURL: pathname,
-              }),
+              provider.type == "social"
+                ? authClient.signIn.social({
+                    provider: provider.id,
+                    callbackURL: pathname,
+                  })
+                : authClient.signIn.oauth2({
+                    providerId: provider.id,
+                    callbackURL: pathname,
+                  }),
               {
                 loading: "Signing in...",
                 success: "Redirecting...",
