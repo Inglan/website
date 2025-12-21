@@ -103,7 +103,10 @@ export default function Page() {
                   setLoading(true);
                   toast.promise(authClient.signOut(), {
                     loading: "Signing out...",
-                    success: () => { posthog.reset(); return "Signed out" },
+                    success: () => {
+                      posthog.reset();
+                      return "Signed out";
+                    },
                     error: "Failed to sign out",
                     finally: () => setLoading(false),
                   });
@@ -211,10 +214,15 @@ function SignInButton({
         setLoading(true);
         setAuthLoading(true);
         toast.promise(
-          authClient.signIn.social({
-            provider: provider.id,
-            callbackURL: pathname,
-          }),
+          provider.type == "social"
+            ? authClient.signIn.social({
+                provider: provider.id,
+                callbackURL: pathname,
+              })
+            : authClient.signIn.oauth2({
+                providerId: provider.id,
+                callbackURL: pathname,
+              }),
           {
             loading: "Signing in...",
             success: "Redirecting...",

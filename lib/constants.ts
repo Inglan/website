@@ -13,7 +13,8 @@ export const MENU_ITEMS = [
 export const OTHER_PAGES = [{ url: "/guestbook", label: "Guestbook" }];
 
 export const AUTH_PROVIDERS = [
-  { label: "GitHub", id: "github", icon: FaGithub },
-  { label: "Google", id: "google", icon: FaGoogle },
-  { label: "Discord", id: "discord", icon: FaDiscord },
+  { label: "GitHub", id: "github", icon: FaGithub, type: "social" },
+  { label: "Google", id: "google", icon: FaGoogle, type: "social" },
+  { label: "Discord", id: "discord", icon: FaDiscord, type: "social" },
+  { label: "git.gay", id: "gitdotgay", icon: FaDiscord, type: "oauth2" },
 ];
