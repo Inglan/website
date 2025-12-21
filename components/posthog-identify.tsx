@@ -8,10 +8,12 @@ export default function PosthogIdentify() {
   const session = authClient.useSession();
 
   useEffect(() => {
-    posthog.identify(session.data?.user.id, {
-      email: session.data?.user.email,
-      name: session.data?.user.name,
-    });
+    if (session.data?.user) {
+      posthog.identify(session.data?.user.id, {
+        email: session.data?.user.email,
+        name: session.data?.user.name,
+      });
+    }
   }, [session]);
 
   return null;
