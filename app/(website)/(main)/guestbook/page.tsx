@@ -142,15 +142,17 @@ export default function Page() {
         <Unauthenticated>
           <div className="flex flex-col gap-2 items-center justify-center w-full h-full bg-striped-gradient bg-size-[80px_80px]">
             <h2 className="text-xl">Log in to post to the guestbook</h2>
-            <div className="flex flex-row items-center justify-center w-full border-y border-dashed">
-              {AUTH_PROVIDERS.map((provider) => (
-                <SignInButton
-                  key={provider.id}
-                  provider={provider}
-                  setAuthLoading={setAuthLoading}
-                  disabled={authLoading}
-                />
-              ))}
+            <div className="overflow-y-auto w-full border-y border-dashed px-10">
+              <div className="flex flex-row mx-auto w-fit">
+                {AUTH_PROVIDERS.map((provider) => (
+                  <SignInButton
+                    key={provider.id}
+                    provider={provider}
+                    setAuthLoading={setAuthLoading}
+                    disabled={authLoading}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </Unauthenticated>
