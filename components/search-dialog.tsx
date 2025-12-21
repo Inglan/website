@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import { SanityDocument } from "sanity";
 import { ArrowRight, Copy, LogOut, Mail, MessageCircle } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
+import posthog from "posthog-js";
 
 interface PostWithSlug extends SanityDocument {
   slug?: {
@@ -44,7 +45,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
               setSearchOpen(false);
               toast.promise(authClient.signOut(), {
                 loading: "Signing out...",
-                success: "Signed out",
+                success: () => { posthog.reset(); return "Signed out" },
                 error: "Failed to sign out",
               });
             },

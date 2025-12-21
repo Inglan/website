@@ -21,6 +21,7 @@ import { AUTH_PROVIDERS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 import { LogOut, Pencil } from "lucide-react";
 import { StripedSeparator } from "@/components/striped-separator";
+import posthog from "posthog-js";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -102,7 +103,7 @@ export default function Page() {
                   setLoading(true);
                   toast.promise(authClient.signOut(), {
                     loading: "Signing out...",
-                    success: "Signed out",
+                    success: () => { posthog.reset(); return "Signed out" },
                     error: "Failed to sign out",
                     finally: () => setLoading(false),
                   });
