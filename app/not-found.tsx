@@ -9,7 +9,7 @@ export default function NotFound() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
 
   return (
-    <>
+    <div className="flex flex-col">
       <Navbar />
       <div className="w-full max-w-4xl mx-auto border-x border-b border-dashed py-20 flex flex-col items-center justify-center gap-8 bg-striped-gradient bg-size-[80px_80px] bg-fixed">
         <div className="flex flex-col items-center">
@@ -34,6 +34,6 @@ export default function NotFound() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
