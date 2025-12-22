@@ -47,7 +47,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
     fetchLinkedAccounts();
   }, [session]);
 
-  const commands = [
+  const accountCommands = [
     ...(session.data?.user
       ? [
           {
@@ -136,6 +136,9 @@ export function SearchDialog({ posts }: SearchDialogProps) {
             );
           },
         }))),
+  ];
+
+  const commands = [
     {
       label: "Copy Email",
       icon: <Copy />,
@@ -191,6 +194,14 @@ export function SearchDialog({ posts }: SearchDialogProps) {
         </CommandGroup>
         <CommandGroup heading="Commands">
           {commands.map((command) => (
+            <CommandItem key={command.label} onSelect={command.onSelect}>
+              {command.icon}
+              {command.label}
+            </CommandItem>
+          ))}
+        </CommandGroup>
+        <CommandGroup heading="Account">
+          {accountCommands.map((command) => (
             <CommandItem key={command.label} onSelect={command.onSelect}>
               {command.icon}
               {command.label}
