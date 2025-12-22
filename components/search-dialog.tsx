@@ -119,19 +119,31 @@ export function SearchDialog({ posts }: SearchDialogProps) {
           onSelect: async () => {
             setSearchOpen(false);
             toast.promise(
-              provider.type == "social"
-                ? authClient.signIn.social({
-                    provider: provider.id,
-                    callbackURL: pathname,
-                  })
-                : authClient.signIn.oauth2({
-                    providerId: provider.id,
-                    callbackURL: pathname,
-                  }),
+              new Promise((resolve, reject) => {
+                if (provider.type == "social") {
+                  authClient.signIn
+                    .social({
+                      provider: provider.id,
+                      callbackURL: pathname,
+                    })
+                    .then((result) =>
+                      result.error ? reject(result.error) : resolve(null),
+                    );
+                } else {
+                  authClient.signIn
+                    .oauth2({
+                      providerId: provider.id,
+                      callbackURL: pathname,
+                    })
+                    .then((result) =>
+                      result.error ? reject(result.error) : resolve(null),
+                    );
+                }
+              }),
               {
                 loading: "Signing in...",
                 success: "Redirecting...",
-                error: "Failed to sign in",
+                error: (error) => `Failed to sign in: ${error.message}`,
               },
             );
           },
