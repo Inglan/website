@@ -46,6 +46,10 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) => {
         clientId: process.env.VERCEL_CLIENT_ID!,
         clientSecret: process.env.VERCEL_CLIENT_SECRET!,
       },
+      gitlab: {
+        clientId: process.env.GITLAB_CLIENT_ID!,
+        clientSecret: process.env.GITLAB_CLIENT_SECRET!,
+      },
     },
     plugins: [
       // The Convex plugin is required for Convex compatibility
