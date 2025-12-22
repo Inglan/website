@@ -25,6 +25,7 @@
     "cmdk": "^1.1.1",
     "convex": "^1.31.2",
     "embla-carousel-react": "^8.6.0",
+    "embla-carousel-wheel-gestures": "^8.1.0",
     "hast-util-to-jsx-runtime": "^2.3.6",
     "install": "^0.13.0",
     "lucide-react": "^0.548.0",

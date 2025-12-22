@@ -27,6 +27,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -152,6 +153,7 @@ export default function Page() {
             <Carousel
               className="w-full border-y border-dashed"
               opts={{ skipSnaps: true }}
+              plugins={[WheelGesturesPlugin()]}
             >
               <CarouselContent className="px-10">
                 {AUTH_PROVIDERS.map((provider) => (
