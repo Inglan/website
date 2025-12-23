@@ -1,12 +1,18 @@
-import { createClient, type GenericCtx } from "@convex-dev/better-auth";
+import {
+  AuthFunctions,
+  createClient,
+  type GenericCtx,
+} from "@convex-dev/better-auth";
 import { convex } from "@convex-dev/better-auth/plugins";
-import { components } from "./_generated/api";
+import { components, internal } from "./_generated/api";
 import { DataModel } from "./_generated/dataModel";
 import { query } from "./_generated/server";
 import { betterAuth, type BetterAuthOptions } from "better-auth";
 import authConfig from "./auth.config";
 import authSchema from "./betterAuth/schema";
 import { admin, genericOAuth } from "better-auth/plugins";
+
+const authFunctions: AuthFunctions = internal.auth;
 
 const siteUrl = process.env.SITE_URL!;
 
@@ -15,9 +21,11 @@ const siteUrl = process.env.SITE_URL!;
 export const authComponent = createClient<DataModel, typeof authSchema>(
   components.betterAuth,
   {
+    authFunctions,
     local: {
       schema: authSchema,
     },
+    triggers: {},
   },
 );
 
@@ -101,3 +109,5 @@ export const getCurrentUser = query({
     return authComponent.safeGetAuthUser(ctx);
   },
 });
+
+export const { onCreate, onUpdate, onDelete } = authComponent.triggersApi();
