@@ -34,6 +34,12 @@ import {
 } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { NICE_EASE } from "@/lib/constants";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
 
 const technologies = {
   frontend: {
@@ -215,35 +221,38 @@ export function Technologies() {
   return (
     <div className="w-full mx-auto max-w-4xl">
       <div className="w-full border-dashed overflow-auto border-x">
-        <div className="flex flex-row">
-          {Object.entries(technologies).map(([key, value]) => (
-            <button
-              key={key}
-              className={cn(
-                "border-r border-dashed cursor-pointer",
-                "h-full px-8 py-4 w-fit flex justify-center items-center duration-200 ease-out",
-                "hover:bg-card active:brightness-75",
-                selectedCategory === key ? "text-primary" : "",
-              )}
-              onClick={() => {
-                const index = Object.keys(technologies).findIndex(
-                  (k) => k === key,
-                );
-                const currentIndex = Object.keys(technologies).findIndex(
-                  (k) => k === selectedCategory,
-                );
-                if (index > currentIndex) {
-                  setDirection(1);
-                } else if (index < currentIndex) {
-                  setDirection(-1);
-                }
-                setSelectedCategory(key as keyof typeof technologies);
-              }}
-            >
-              {value.title}
-            </button>
-          ))}
-        </div>
+        <Carousel opts={{ skipSnaps: true }} plugins={[WheelGesturesPlugin()]}>
+          <CarouselContent className="ml-0">
+            {Object.entries(technologies).map(([key, value]) => (
+              <CarouselItem key={key} className="basis-auto pl-0">
+                <button
+                  className={cn(
+                    "border-r border-dashed cursor-pointer",
+                    "h-full px-8 py-4 w-fit flex justify-center items-center duration-200 ease-out",
+                    "hover:bg-card active:brightness-75",
+                    selectedCategory === key ? "text-primary" : "",
+                  )}
+                  onClick={() => {
+                    const index = Object.keys(technologies).findIndex(
+                      (k) => k === key,
+                    );
+                    const currentIndex = Object.keys(technologies).findIndex(
+                      (k) => k === selectedCategory,
+                    );
+                    if (index > currentIndex) {
+                      setDirection(1);
+                    } else if (index < currentIndex) {
+                      setDirection(-1);
+                    }
+                    setSelectedCategory(key as keyof typeof technologies);
+                  }}
+                >
+                  {value.title}
+                </button>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
       <AnimatePresence mode="popLayout" initial={false} custom={direction}>
         <Grid
