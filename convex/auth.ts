@@ -81,6 +81,11 @@ export const createAuthOptions = (ctx: GenericCtx<DataModel>) => {
         allowDifferentEmails: true,
       },
     },
+    user: {
+      deleteUser: {
+        enabled: true,
+      },
+    },
   } satisfies BetterAuthOptions;
 };
 
