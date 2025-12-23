@@ -16,7 +16,7 @@ export default defineSchema({
     .index("by_status_user", ["status", "userId"]),
 
   networkIncidents: defineTable({
-    ip: v.string(),
+    ip: v.optional(v.string()),
     source: v.union(
       v.literal("intrusionPrevention"),
       v.literal("directIpAccess"),
