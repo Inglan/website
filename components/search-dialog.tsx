@@ -8,7 +8,7 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { AUTH_PROVIDERS, MENU_ITEMS } from "@/lib/constants";
+import { AUTH_PROVIDERS, MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
 import { useUiState } from "@/lib/state";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -190,7 +190,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Pages">
-          {MENU_ITEMS.map((item) => (
+          {[...MENU_ITEMS, ...OTHER_PAGES].map((item) => (
             <CommandItem
               className="cursor-pointer"
               key={item.url}
