@@ -5,6 +5,7 @@ import { api } from "@/convex/_generated/api";
 import {
   Authenticated,
   AuthLoading,
+  Preloaded,
   Unauthenticated,
   useMutation,
   useQuery,
@@ -59,7 +60,9 @@ function deterministicInt(input: string, min: number, max: number) {
 }
 // End AI generated code
 
-export default function Page() {
+export default function Page(props: {
+  preloadedEntries: Preloaded<typeof api.guestbook.get>;
+}) {
   const session = authClient.useSession();
   const entries = useQuery(api.guestbook.get);
   const post = useMutation(api.guestbook.add);
