@@ -11,6 +11,7 @@
 import type * as auth from "../auth.js";
 import type * as guestbook from "../guestbook.js";
 import type * as http from "../http.js";
+import type * as networkingIncidents from "../networkingIncidents.js";
 
 import type {
   ApiFromModules,
@@ -22,6 +23,7 @@ declare const fullApi: ApiFromModules<{
   auth: typeof auth;
   guestbook: typeof guestbook;
   http: typeof http;
+  networkingIncidents: typeof networkingIncidents;
 }>;
 
 /**
