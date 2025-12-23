@@ -14,4 +14,15 @@ export default defineSchema({
     .index("by_user", ["userId"])
     .index("by_status", ["status"])
     .index("by_status_user", ["status", "userId"]),
+
+  networkIncidents: defineTable({
+    ip: v.string(),
+    source: v.union(
+      v.literal("intrusionPrevention"),
+      v.literal("directIpAccess"),
+    ),
+    policy: v.optional(v.string()),
+    signature: v.optional(v.string()),
+    rawData: v.string(),
+  }),
 });
