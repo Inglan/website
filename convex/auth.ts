@@ -25,7 +25,20 @@ export const authComponent = createClient<DataModel, typeof authSchema>(
     local: {
       schema: authSchema,
     },
-    triggers: {},
+    triggers: {
+      user: {
+        onDelete: async (ctx, doc) => {
+          const guestbookEntries = await ctx.db
+            .query("guestbookEntries")
+            .withIndex("by_user", (q) => q.eq("userId", doc._id))
+            .collect();
+
+          for (const entry of guestbookEntries) {
+            await ctx.db.delete("guestbookEntries", entry._id);
+          }
+        },
+      },
+    },
   },
 );
 
