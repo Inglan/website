@@ -7,7 +7,7 @@ const http = httpRouter();
 authComponent.registerRoutes(http, createAuth);
 
 http.route({
-  path: "/networking/incidents/ips",
+  path: `/webhook/${process.env.WEBHOOK_SECRET}/networking/incidents/ips`,
   method: "POST",
   handler: createIncidentFromIPS,
 });
