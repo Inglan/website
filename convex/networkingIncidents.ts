@@ -3,7 +3,7 @@ import { httpAction, internalMutation } from "./_generated/server";
 import { internal } from "./_generated/api";
 
 export const createIncidentFromIPS = httpAction(async (ctx, request) => {
-  ctx.runMutation(internal.networkingIncidents.createIncident, {
+  await ctx.runMutation(internal.networkingIncidents.createIncident, {
     source: "intrusionPrevention",
     rawData: JSON.stringify(request),
   });
