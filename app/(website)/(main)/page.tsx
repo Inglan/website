@@ -20,6 +20,7 @@ export default function Home() {
       <Things />
       <StripedSeparator />
       <Technologies />
+      <StripedSeparator />
       <Hackatime />
     </>
   );
