@@ -5,6 +5,7 @@ import Clock from "@/components/clock";
 import { Metadata } from "next";
 import { Technologies } from "./technologies";
 import { StripedSeparator } from "@/components/striped-separator";
+import Hackatime from "./hackatime";
 
 export const metadata: Metadata = {
   description:
@@ -19,6 +20,7 @@ export default function Home() {
       <Things />
       <StripedSeparator />
       <Technologies />
+      <Hackatime />
     </>
   );
 }
