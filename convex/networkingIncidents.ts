@@ -5,7 +5,7 @@ import { internal } from "./_generated/api";
 export const createIncidentFromIPS = httpAction(async (ctx, request) => {
   await ctx.runMutation(internal.networkingIncidents.createIncident, {
     source: "intrusionPrevention",
-    rawData: JSON.stringify(request),
+    rawData: JSON.stringify(request.json()),
   });
   return new Response("yes", { status: 200 });
 });
