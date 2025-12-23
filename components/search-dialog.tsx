@@ -13,7 +13,14 @@ import { useUiState } from "@/lib/state";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { SanityDocument } from "sanity";
-import { ArrowRight, Copy, LogOut, Mail, MessageCircle } from "lucide-react";
+import {
+  ArrowRight,
+  Copy,
+  LogOut,
+  Mail,
+  MessageCircle,
+  Trash,
+} from "lucide-react";
 import { authClient } from "@/lib/auth-client";
 import posthog from "posthog-js";
 import { useEffect, useState } from "react";
@@ -36,6 +43,7 @@ export function SearchDialog({ posts }: SearchDialogProps) {
   const session = authClient.useSession();
   const pathname = usePathname();
   const [linkedAccounts, setLinkedAccounts] = useState<string[]>([]);
+  const [deletingAccount, setDeletingAccount] = useState(false);
 
   useEffect(() => {
     const fetchLinkedAccounts = async () => {
@@ -63,6 +71,26 @@ export function SearchDialog({ posts }: SearchDialogProps) {
                 },
                 error: "Failed to sign out",
               });
+            },
+          },
+          {
+            label:
+              "Delete Account" +
+              (deletingAccount ? " - PRESS AGAIN TO CONFIRM" : ""),
+            icon: <Trash />,
+            onSelect: async () => {
+              if (deletingAccount) {
+                toast.promise(authClient.deleteUser(), {
+                  loading: "Deleting account...",
+                  success: () => {
+                    posthog.reset();
+                    return "Account deleted";
+                  },
+                  error: "Failed to delete account",
+                });
+              } else {
+                setDeletingAccount(true);
+              }
             },
           },
           ...AUTH_PROVIDERS.map((provider) => {
