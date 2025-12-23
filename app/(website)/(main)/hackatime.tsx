@@ -5,20 +5,22 @@ export default function Hackatime() {
     {
       title: "Total Coding Time",
       value: "272h 38m",
-      className: "col-span-2 bg-striped-gradient bg-size-[80px_80px]",
+      className: "col-span-3 bg-striped-gradient bg-size-[80px_80px]",
     },
     {
       title: "This Week",
       value: "10h 45m",
+      className: "col-span-2",
     },
     {
       title: "Today",
       value: "1h 30m",
+      className: "col-span-2",
     },
   ];
   return (
     <div className="w-full mx-auto border-b border-dashed max-w-4xl">
-      <div className="grid grid-cols-4 border-l border-dashed">
+      <div className="grid grid-cols-7 border-l border-dashed">
         {quickStats.map((stat, index) => (
           <div
             key={index}
