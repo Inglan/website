@@ -1,10 +1,32 @@
 import { cn } from "@/lib/utils";
+import { DateTime } from "luxon";
 
 export default async function Hackatime() {
   const allTimeStatsRequest = await fetch(
     "https://hackatime.hackclub.com/api/v1/users/ingo/stats",
   );
   const allTimeStats = await allTimeStatsRequest.json();
+
+  // I hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones i hate timezones
+  const startOfToday = DateTime.now()
+    .setZone("Australia/Sydney")
+    .startOf("day")
+    .toUTC()
+    .toISO();
+
+  const endOfToday = DateTime.now()
+    .setZone("Australia/Sydney")
+    .startOf("day")
+    .plus({ hours: 24 })
+    .toUTC()
+    .toISO();
+
+  const date7DaysAgo = DateTime.now()
+    .setZone("Australia/Sydney")
+    .startOf("day")
+    .minus({ days: 6 })
+    .toUTC()
+    .toISO();
 
   const quickStats = [
     {
