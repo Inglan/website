@@ -110,7 +110,7 @@ export default async function Hackatime() {
             key={index}
             className={cn(
               stat.className,
-              "p-4 flex flex-col border-r border-dashed border-b",
+              "p-4 flex flex-col border-r border-dashed border-b h-28 items-center justify-center",
             )}
           >
             <div className="text-4xl text-primary">{stat.value}</div>
