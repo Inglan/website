@@ -87,7 +87,7 @@ export default async function Hackatime() {
           ) => (
             <div
               key={index}
-              className="flex flex-row border-r border-b border-dashed gap-2 items-center"
+              className="flex flex-row border-r border-b border-dashed gap-4 items-center"
             >
               <div className="size-14 bg-striped-gradient bg-size-[80px_80px] flex justify-center items-center text-xl border-r border-dashed">
                 {index + 1}
