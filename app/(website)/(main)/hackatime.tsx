@@ -1,6 +1,53 @@
 import { cn } from "@/lib/utils";
 import { DateTime } from "luxon";
 
+// Helper function to deduplicate and merge languages
+function deduplicateLanguages(
+  languages: Array<{
+    name: string;
+    total_seconds: number;
+    text: string;
+    hours: number;
+    minutes: number;
+    percent: number;
+    digital: string;
+  }>,
+) {
+  const languageMap = new Map();
+
+  // Combine duplicate languages
+  languages.forEach((lang) => {
+    const existing = languageMap.get(lang.name);
+    if (existing) {
+      existing.total_seconds += lang.total_seconds;
+    } else {
+      languageMap.set(lang.name, { ...lang });
+    }
+  });
+
+  // Convert back to array and recalculate percentages
+  const merged = Array.from(languageMap.values());
+  const totalSeconds = merged.reduce(
+    (sum, lang) => sum + lang.total_seconds,
+    0,
+  );
+
+  // Recalculate all fields based on new total_seconds
+  merged.forEach((lang) => {
+    lang.percent =
+      Math.round((lang.total_seconds / totalSeconds) * 100 * 100) / 100;
+    lang.hours = Math.floor(lang.total_seconds / 3600);
+    lang.minutes = Math.floor((lang.total_seconds % 3600) / 60);
+    const seconds = lang.total_seconds % 60;
+    lang.digital = `${String(lang.hours).padStart(2, "0")}:${String(lang.minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    lang.text =
+      lang.hours > 0 ? `${lang.hours}h ${lang.minutes}m` : `${lang.minutes}m`;
+  });
+
+  // Sort by total_seconds descending
+  return merged.sort((a, b) => b.total_seconds - a.total_seconds);
+}
+
 export default async function Hackatime() {
   const allTimeStatsRequest = await fetch(
     "https://hackatime.hackclub.com/api/v1/users/ingo/stats",
@@ -72,7 +119,7 @@ export default async function Hackatime() {
         ))}
       </div>
       <div className="grid grid-cols-2 border-l border-dashed">
-        {allTimeStats.data.languages.map(
+        {deduplicateLanguages(allTimeStats.data.languages).map(
           (
             lang: {
               name: string;
@@ -95,7 +142,7 @@ export default async function Hackatime() {
               <div className="w-full flex flex-row relative">
                 <div className="p-4 z-10">{lang.name}</div>
                 <div className="grow"></div>
-                <div className="p-4 z-10">{lang.percent}%</div>
+                <div className="p-4 z-10">{lang.percent.toFixed(2)}%</div>
                 <div
                   className="bg-card bg-striped-gradient bg-size-[80px_80px] absolute top-0 left-0 h-full z-0"
                   style={{
