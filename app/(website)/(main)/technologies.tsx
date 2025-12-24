@@ -352,7 +352,7 @@ const Grid = forwardRef(function Grid(
         <div
           key={item.name}
           className={cn(
-            "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed group-hover:opacity-50 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200",
+            "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed group-hover:opacity-75 group-active:opacity-100 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200 hover:border-border/75",
             index % 2 === 0 ? "" : "bg-striped-gradient bg-size-[80px_80px]",
           )}
         >
