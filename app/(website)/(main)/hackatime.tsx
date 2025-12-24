@@ -56,8 +56,8 @@ export default async function Hackatime() {
     },
   ];
   return (
-    <div className="w-full mx-auto border-b border-dashed max-w-4xl">
-      <div className="grid grid-cols-32 border-l border-dashed">
+    <div className="w-full mx-auto max-w-4xl">
+      <div className="grid grid-cols-32 border-l border-dashed border-b">
         {quickStats.map((stat, index) => (
           <div
             key={index}
@@ -70,6 +70,32 @@ export default async function Hackatime() {
             <div>{stat.title}</div>
           </div>
         ))}
+      </div>
+      <div className="grid grid-cols-2 border-l border-dashed">
+        {allTimeStats.data.languages.map(
+          (
+            lang: {
+              name: string;
+              total_seconds: number;
+              text: string;
+              hours: number;
+              minutes: number;
+              percent: number;
+              digital: string;
+            },
+            index: number,
+          ) => (
+            <div
+              key={index}
+              className="flex flex-row border-r border-b border-dashed gap-2 items-center"
+            >
+              <div className="size-14 bg-striped-gradient bg-size-[80px_80px] flex justify-center items-center text-xl border-r border-dashed">
+                {index + 1}
+              </div>
+              <div>{lang.name}</div>
+            </div>
+          ),
+        )}
       </div>
     </div>
   );
