@@ -28,6 +28,16 @@ export default async function Hackatime() {
     .toUTC()
     .toISO();
 
+  const dayStats = await fetch(
+    `https://hackatime.hackclub.com/api/v1/users/ingo/stats?start_date=${startOfToday}&end_date=${endOfToday}`,
+  );
+  const dayStatsData = await dayStats.json();
+
+  const weekStats = await fetch(
+    `https://hackatime.hackclub.com/api/v1/users/ingo/stats?start_date=${date7DaysAgo}&end_date=${endOfToday}`,
+  );
+  const weekStatsData = await weekStats.json();
+
   const quickStats = [
     {
       title: "Total Coding Time",
@@ -36,12 +46,12 @@ export default async function Hackatime() {
     },
     {
       title: "This Week",
-      value: "10h 45m",
+      value: weekStatsData.data.human_readable_total,
       className: "col-span-9",
     },
     {
       title: "Today",
-      value: "1h 30m",
+      value: dayStatsData.data.human_readable_total,
       className: "col-span-9",
     },
   ];
