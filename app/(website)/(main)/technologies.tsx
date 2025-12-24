@@ -228,7 +228,7 @@ export function Technologies() {
                 <button
                   className={cn(
                     "border-r border-dashed cursor-pointer",
-                    "h-full px-8 py-4 w-fit flex justify-center items-center duration-200 ease-out",
+                    "h-full px-10 py-4 w-fit flex justify-center items-center duration-200 ease-out",
                     "hover:bg-card active:brightness-75",
                     selectedCategory === key ? "text-primary" : "",
                   )}
