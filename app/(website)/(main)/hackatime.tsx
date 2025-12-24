@@ -87,12 +87,22 @@ export default async function Hackatime() {
           ) => (
             <div
               key={index}
-              className="flex flex-row border-r border-b border-dashed gap-4 items-center"
+              className="flex flex-row border-r border-b border-dashed items-center"
             >
-              <div className="size-14 bg-striped-gradient bg-size-[80px_80px] flex justify-center items-center text-xl border-r border-dashed">
+              <div className="size-14 flex justify-center items-center text-xl border-r border-dashed z-10 aspect-square bg-card">
                 {index + 1}
               </div>
-              <div>{lang.name}</div>
+              <div className="w-full flex flex-row relative">
+                <div className="p-4 z-10">{lang.name}</div>
+                <div className="grow"></div>
+                <div className="p-4 z-10">{lang.percent}%</div>
+                <div
+                  className="bg-card bg-striped-gradient bg-size-[80px_80px] absolute top-0 left-0 h-full z-0"
+                  style={{
+                    width: `${lang.percent}%`,
+                  }}
+                ></div>
+              </div>
             </div>
           ),
         )}
