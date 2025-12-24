@@ -1,10 +1,15 @@
 import { cn } from "@/lib/utils";
 
-export default function Hackatime() {
+export default async function Hackatime() {
+  const allTimeStatsRequest = await fetch(
+    "https://hackatime.hackclub.com/api/v1/users/ingo/stats",
+  );
+  const allTimeStats = await allTimeStatsRequest.json();
+
   const quickStats = [
     {
       title: "Total Coding Time",
-      value: "272h 38m",
+      value: allTimeStats.data.human_readable_total,
       className: "col-span-14 bg-striped-gradient bg-size-[80px_80px]",
     },
     {
