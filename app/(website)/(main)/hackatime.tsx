@@ -104,13 +104,13 @@ export default async function Hackatime() {
   ];
   return (
     <div className="w-full mx-auto max-w-4xl">
-      <div className="grid grid-cols-32 border-l border-dashed border-b">
+      <div className="grid grid-cols-1 md:grid-cols-32 border-l border-dashed">
         {quickStats.map((stat, index) => (
           <div
             key={index}
             className={cn(
               stat.className,
-              "p-4 flex flex-col border-r border-dashed",
+              "p-4 flex flex-col border-r border-dashed border-b",
             )}
           >
             <div className="text-4xl text-primary">{stat.value}</div>
@@ -118,7 +118,7 @@ export default async function Hackatime() {
           </div>
         ))}
       </div>
-      <div className="grid grid-cols-2 border-l border-dashed">
+      <div className="grid grid-cols-1 sm:grid-cols-2 border-l border-dashed">
         {deduplicateLanguages(allTimeStats.data.languages)
           .slice(0, 10)
           .map(
