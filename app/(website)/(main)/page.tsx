@@ -5,7 +5,7 @@ import Clock from "@/components/clock";
 import { Metadata } from "next";
 import { Technologies } from "./technologies";
 import { StripedSeparator } from "@/components/striped-separator";
-import Hackatime from "./hackatime";
+import Hackatime, { HackatimeSkeleton } from "./hackatime";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function Home() {
       <StripedSeparator />
       <Technologies />
       <StripedSeparator />
-      <Suspense>
+      <Suspense fallback={<HackatimeSkeleton />}>
         <Hackatime />
       </Suspense>
     </>
