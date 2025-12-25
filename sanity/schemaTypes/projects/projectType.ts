@@ -33,16 +33,6 @@ export const projectType = defineType({
       ],
     }),
     defineField({
-      name: "categories",
-      type: "array",
-      of: [
-        defineArrayMember({
-          type: "reference",
-          to: { type: "projectcategory" },
-        }),
-      ],
-    }),
-    defineField({
       name: "publishedAt",
       type: "datetime",
     }),
