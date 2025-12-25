@@ -6,7 +6,6 @@ export const projectId = assertValue(
 );
 
 const nextConfig: NextConfig = {
-  serverExternalPackages: ["jsdom", "isomorphic-dompurify"],
   images: {
     remotePatterns: [
       {
