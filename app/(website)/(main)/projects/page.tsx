@@ -43,13 +43,14 @@ export default async function Projects() {
               {project.title}
             </h2>
             <p className="p-4 border-b border-dashed">
-              {project.body
-                .map((b: { children?: { text?: string }[] }) =>
-                  (b.children || [])
-                    .map((c: { text?: string }) => c.text || "")
-                    .join(""),
-                )
-                .join(" ")}
+              {project.body &&
+                project.body
+                  .map((b: { children?: { text?: string }[] }) =>
+                    (b.children || [])
+                      .map((c: { text?: string }) => c.text || "")
+                      .join(""),
+                  )
+                  .join(" ")}
             </p>
             <div className="w-full flex flex-row">
               {project.links.map(
