@@ -9,7 +9,7 @@ import Link from "next/link";
 const POSTS_QUERY = `*[
   _type == "project"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, body, "mainImageUrl": mainImage.asset->url, links}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, body, "mainImageUrl": mainImage.asset->url, links}`;
 const options = { next: { revalidate: 30 } };
 
 export const metadata = {
@@ -39,15 +39,9 @@ export default async function Projects() {
               height={9 * 100}
               className="aspect-video w-full object-cover border-b border-dashed"
             />
-            <h2 className="w-full p-4 pb-0 text-2xl">{project.title}</h2>
-            <h3 className="border-b w-full border-dashed p-4 pt-0 text-sm">
-              {project.publishedAt && (
-                <FormattedDateTime
-                  date={project.publishedAt}
-                  format="DATETIME"
-                />
-              )}
-            </h3>
+            <h2 className="w-full p-4 text-2xl border-b border-dashed">
+              {project.title}
+            </h2>
             <p className="p-4 border-b border-dashed">
               {project.body
                 .map((b: { children?: { text?: string }[] }) =>
