@@ -194,12 +194,12 @@ export default async function Hackatime() {
                 <div className="size-14 flex justify-center items-center text-xl border-r border-dashed z-10 aspect-square bg-card">
                   {index + 1}
                 </div>
-                <div className="w-full flex flex-row relative">
+                <div className="w-full flex flex-row relative overflow-hidden">
                   <div className="p-4 z-10">{lang.name}</div>
                   <div className="grow"></div>
                   <div className="p-4 z-10">{lang.percent.toFixed(2)}%</div>
                   <div
-                    className="bg-card bg-striped-gradient bg-size-[80px_80px] absolute top-0 left-0 h-full z-0"
+                    className="bg-card bg-striped-gradient bg-size-[80px_80px] absolute top-0 left-0 h-full z-0 animate-in slide-in-from-left"
                     style={{
                       width: `${lang.percent}%`,
                     }}
