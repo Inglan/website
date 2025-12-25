@@ -1,13 +1,15 @@
 import { FormattedDateTime } from "@/components/formatted-date";
 import Header from "@/components/header";
 import PostCard from "@/components/post-card";
+import { Button } from "@/components/ui/button";
 import { client } from "@/sanity/lib/client";
 import { SanityDocument } from "next-sanity";
 import Image from "next/image";
+import Link from "next/link";
 const POSTS_QUERY = `*[
   _type == "project"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, body, "mainImageUrl": mainImage.asset->url}`;
+]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, body, "mainImageUrl": mainImage.asset->url, links}`;
 const options = { next: { revalidate: 30 } };
 
 export const metadata = {
@@ -55,6 +57,22 @@ export default async function Projects() {
                 )
                 .join(" ")}
             </p>
+            <div className="w-full flex flex-row">
+              {project.links.map(
+                (link: { title: string; url: string }, index: number) => (
+                  <Button
+                    key={index}
+                    variant="ghost"
+                    className="cursor-pointer px-4 py-2 duration-200 ease-out hover:bg-card active:brightness-75 bg-background border-r border-dashed"
+                    asChild
+                  >
+                    <Link href={link.url} target="_blank">
+                      {link.title}
+                    </Link>
+                  </Button>
+                ),
+              )}
+            </div>
           </div>
         ))}
       </div>
