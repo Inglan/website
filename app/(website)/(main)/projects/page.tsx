@@ -1,3 +1,4 @@
+import { FormattedDateTime } from "@/components/formatted-date";
 import Header from "@/components/header";
 import PostCard from "@/components/post-card";
 import { client } from "@/sanity/lib/client";
@@ -36,9 +37,15 @@ export default async function Projects() {
               height={9 * 100}
               className="aspect-video w-full object-cover border-b border-dashed"
             />
-            <h2 className="border-b w-full border-dashed p-4 text-2xl">
-              {project.title}
-            </h2>
+            <h2 className="w-full p-4 pb-0 text-2xl">{project.title}</h2>
+            <h3 className="border-b w-full border-dashed p-4 pt-0 text-sm">
+              {project.publishedAt && (
+                <FormattedDateTime
+                  date={project.publishedAt}
+                  format="DATETIME"
+                />
+              )}
+            </h3>
             <p className="p-4 border-b border-dashed">
               {project.body
                 .map((b: { children?: { text?: string }[] }) =>
