@@ -42,7 +42,7 @@ export default async function Projects() {
             <h2 className="w-full p-4 text-2xl border-b border-dashed">
               {project.title}
             </h2>
-            <p className="p-4 border-b border-dashed">
+            <p className="p-4">
               {project.body &&
                 project.body
                   .map((b: { children?: { text?: string }[] }) =>
@@ -52,7 +52,7 @@ export default async function Projects() {
                   )
                   .join(" ")}
             </p>
-            <div className="w-full flex flex-row">
+            <div className="w-full flex flex-row mt-auto border-t border-dashed">
               {project.links.map(
                 (link: { title: string; url: string }, index: number) => (
                   <Button
