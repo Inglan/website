@@ -3,6 +3,7 @@ import Header from "@/components/header";
 import PostCard from "@/components/post-card";
 import { Button } from "@/components/ui/button";
 import { client } from "@/sanity/lib/client";
+import { Metadata } from "next";
 import { SanityDocument } from "next-sanity";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +13,7 @@ const POSTS_QUERY = `*[
 ]|order(publishedAt desc)[0...12]{_id, title, slug, body, "mainImageUrl": mainImage.asset->url, links}`;
 const options = { next: { revalidate: 30 } };
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Projects",
 };
 
