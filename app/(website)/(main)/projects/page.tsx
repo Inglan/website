@@ -70,6 +70,9 @@ export default async function Projects() {
             </div>
           </div>
         ))}
+        {projects.length % 2 === 1 && (
+          <div className="bg-card bg-striped-gradient bg-size-[80px_80px] border-b border-r border-dashed"></div>
+        )}
       </div>
     </div>
   );
