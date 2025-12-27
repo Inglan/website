@@ -1,15 +1,23 @@
 "use server";
 
-import { preloadQuery } from "convex/nextjs";
-import { api } from "@/convex/_generated/api";
-import { Entries } from "./entries";
-import Page from "./content";
+import Header from "@/components/header";
+import PreloadedSection from "./preloaded-section";
+import { Suspense } from "react";
+import { Spinner } from "@/components/ui/spinner";
 
 export default async function PageWrapper() {
-  const preloadedEntries = await preloadQuery(api.guestbook.get, {});
   return (
-    <>
-      <Page preloadedEntries={preloadedEntries} />
-    </>
+    <div className="max-w-4xl w-full mx-auto border-x border-dashed">
+      <Header>Guestbook</Header>
+      <Suspense
+        fallback={
+          <div className="flex flex-col items-center justify-center h-96 border-b border-dashed bg-card">
+            <Spinner />
+          </div>
+        }
+      >
+        <PreloadedSection />
+      </Suspense>
+    </div>
   );
 }
