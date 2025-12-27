@@ -52,7 +52,9 @@ export function SearchDialog({ posts }: SearchDialogProps) {
         setLinkedAccounts(accounts.data.map((account) => account.providerId));
       }
     };
-    fetchLinkedAccounts();
+    if (session.data) {
+      fetchLinkedAccounts();
+    }
   }, [session]);
 
   const accountCommands = [
