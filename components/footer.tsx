@@ -97,11 +97,12 @@ export function Footer() {
           </Link>
           <Link
             href="https://ultrafastparrot.net/next/ingo"
-            className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-l border-dashed"
+            className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-x border-dashed"
           >
             <span className="sr-only">Next</span>
             <ArrowRight className="size-4" />
           </Link>
+          <div className="hidden sm:block aspect-square h-14 bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
           <Link
             href="https://ctp-webr.ing/ingo/previous"
             className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 sm:border-l border-dashed"
