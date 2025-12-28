@@ -30,6 +30,16 @@ import {
 } from "@/components/ui/carousel";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import { Entries } from "./entries";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 
 // Thanks to GPT-5.2 for this
 // String -> 32-bit seed (sync)
@@ -87,13 +97,41 @@ export default function Page(props: {
                 Posting as{" "}
                 <span className="text-primary">{session.data?.user.name}</span>
               </div>
-              {/*<Button
-                disabled={loading}
-                variant="ghost"
-                className="aspect-square h-full flex items-center justify-center cursor-pointer sm:border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
-              >
-                <Pencil className="size-4" />
-              </Button>*/}
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button
+                    disabled={loading}
+                    variant="ghost"
+                    className="aspect-square h-full flex items-center justify-center cursor-pointer sm:border-r border-dashed duration-200 ease-out hover:bg-card active:brightness-75 bg-background"
+                  >
+                    <Pencil className="size-4" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="p-0 gap-0">
+                  <DialogHeader className="p-4 border-b border-dashed">
+                    <DialogTitle>Change Name</DialogTitle>
+                  </DialogHeader>
+                  <Input className="bg-transparent! border-0 z-10" />
+                  <DialogFooter className="grid grid-cols-2 gap-0 border-t border-dashed">
+                    <DialogClose asChild>
+                      <Button
+                        variant="ghost"
+                        className="border-r border-dashed h-full p-2 duration-200 ease-out hover:bg-card active:brightness-75 cursor-pointer"
+                      >
+                        Cancel
+                      </Button>
+                    </DialogClose>
+                    <DialogClose asChild>
+                      <Button
+                        className="border-r border-dashed h-full p-2 duration-200 ease-out active:brightness-75 cursor-pointer"
+                        onClick={() => {}}
+                      >
+                        Save
+                      </Button>
+                    </DialogClose>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
             </div>
             <div className="flex flex-row sm:border-0 border-b border-dashed">
               <div
