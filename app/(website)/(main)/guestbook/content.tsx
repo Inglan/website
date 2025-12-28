@@ -111,14 +111,12 @@ export default function Page(props: {
                         Cancel
                       </Button>
                     </DialogClose>
-                    <DialogClose asChild>
-                      <Button
-                        className="border-r border-dashed h-full p-2 duration-200 ease-out active:brightness-75 cursor-pointer"
-                        onClick={() => {}}
-                      >
-                        Save
-                      </Button>
-                    </DialogClose>
+                    <Button
+                      className="border-r border-dashed h-full p-2 duration-200 ease-out active:brightness-75 cursor-pointer"
+                      onClick={handleNameChange}
+                    >
+                      Save
+                    </Button>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
