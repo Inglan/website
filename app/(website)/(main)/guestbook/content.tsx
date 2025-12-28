@@ -113,6 +113,11 @@ export default function Page(props: {
                     className="bg-transparent! border-0 z-10"
                     value={inputtedName}
                     onChange={(e) => setInputtedName(e.target.value)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        handleNameChange();
+                      }
+                    }}
                   />
                   <DialogFooter className="grid grid-cols-2 gap-0 border-t border-dashed">
                     <DialogClose asChild>
