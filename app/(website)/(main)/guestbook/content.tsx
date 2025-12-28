@@ -41,35 +41,6 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 
-// Thanks to GPT-5.2 for this
-// String -> 32-bit seed (sync)
-function xfnv1a(str: string) {
-  let h = 2166136261;
-  for (let i = 0; i < str.length; i++) {
-    h ^= str.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return h >>> 0;
-}
-
-// Seeded PRNG (sync). Returns a function rand() -> [0, 1)
-function mulberry32(seed: number) {
-  let t = seed >>> 0;
-  return function () {
-    t += 0x6d2b79f5;
-    let x = Math.imul(t ^ (t >>> 15), 1 | t);
-    x ^= x + Math.imul(x ^ (x >>> 7), 61 | x);
-    return ((x ^ (x >>> 14)) >>> 0) / 4294967296;
-  };
-}
-
-// Convenience: deterministic number in [min, max] from an input string
-function deterministicInt(input: string, min: number, max: number) {
-  const rand = mulberry32(xfnv1a(input));
-  return Math.floor(min + rand() * (max - min + 1));
-}
-// End AI generated code
-
 export default function Page(props: {
   preloadedEntries: Preloaded<typeof api.guestbook.get>;
 }) {
