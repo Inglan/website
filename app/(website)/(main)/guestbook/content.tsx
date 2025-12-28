@@ -45,7 +45,6 @@ export default function Page(props: {
   preloadedEntries: Preloaded<typeof api.guestbook.get>;
 }) {
   const session = authClient.useSession();
-  const entries = useQuery(api.guestbook.get);
   const post = useMutation(api.guestbook.add);
   const [authLoading, setAuthLoading] = useState(false);
   const [message, setMessage] = useState("");
