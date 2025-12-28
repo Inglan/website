@@ -55,6 +55,10 @@ export default function Page(props: {
 
   async function handleNameChange() {
     if (inputtedName !== session.data?.user.name) {
+      if (inputtedName.length === 0) {
+        toast.error("Name cannot be empty");
+        return;
+      }
       setNameChangeDialogLoading(true);
       await authClient.updateUser({ name: inputtedName });
       setNameChangeDialogLoading(false);
