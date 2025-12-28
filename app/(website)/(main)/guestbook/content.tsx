@@ -60,8 +60,12 @@ export default function Page(props: {
         return;
       }
       setNameChangeDialogLoading(true);
-      await authClient.updateUser({ name: inputtedName });
+      const { error } = await authClient.updateUser({ name: inputtedName });
       setNameChangeDialogLoading(false);
+      if (error) {
+        toast.error(error.message);
+        return;
+      }
     }
     setNameChangeDialogOpen(false);
   }
