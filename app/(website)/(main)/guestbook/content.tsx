@@ -53,10 +53,13 @@ export default function Page(props: {
   const [nameChangeDialogLoading, setNameChangeDialogLoading] = useState(false);
   const [inputtedName, setInputtedName] = useState("");
 
-  function handleNameChange() {
+  async function handleNameChange() {
     if (inputtedName !== session.data?.user.name) {
-      authClient.updateUser({ name: inputtedName });
+      setNameChangeDialogLoading(true);
+      await authClient.updateUser({ name: inputtedName });
+      setNameChangeDialogLoading(false);
     }
+    setNameChangeDialogOpen(false);
   }
 
   return (
