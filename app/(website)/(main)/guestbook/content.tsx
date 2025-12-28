@@ -118,6 +118,7 @@ export default function Page(props: {
                       onClick={handleNameChange}
                       disabled={nameChangeDialogLoading}
                     >
+                      {nameChangeDialogLoading && <Spinner />}
                       Save
                     </Button>
                   </DialogFooter>
