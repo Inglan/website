@@ -49,6 +49,8 @@ export default function Page(props: {
   const [authLoading, setAuthLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [nameChangeDialogOpen, setNameChangeDialogOpen] = useState(false);
+  const [inputtedName, setInputtedName] = useState("");
 
   return (
     <>
@@ -67,7 +69,15 @@ export default function Page(props: {
                 Posting as{" "}
                 <span className="text-primary">{session.data?.user.name}</span>
               </div>
-              <Dialog>
+              <Dialog
+                open={nameChangeDialogOpen}
+                onOpenChange={(open) => {
+                  setNameChangeDialogOpen(open);
+                  if (open) {
+                    setInputtedName(session.data?.user.name || "");
+                  }
+                }}
+              >
                 <DialogTrigger asChild>
                   <Button
                     disabled={loading}
@@ -81,7 +91,11 @@ export default function Page(props: {
                   <DialogHeader className="p-4 border-b border-dashed">
                     <DialogTitle>Change Name</DialogTitle>
                   </DialogHeader>
-                  <Input className="bg-transparent! border-0 z-10" />
+                  <Input
+                    className="bg-transparent! border-0 z-10"
+                    value={inputtedName}
+                    onChange={(e) => setInputtedName(e.target.value)}
+                  />
                   <DialogFooter className="grid grid-cols-2 gap-0 border-t border-dashed">
                     <DialogClose asChild>
                       <Button
