@@ -68,6 +68,7 @@ export default function Page(props: {
       }
     }
     setNameChangeDialogOpen(false);
+    toast.success("Name updated");
   }
 
   return (
