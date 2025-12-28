@@ -52,6 +52,12 @@ export default function Page(props: {
   const [nameChangeDialogOpen, setNameChangeDialogOpen] = useState(false);
   const [inputtedName, setInputtedName] = useState("");
 
+  function handleNameChange() {
+    if (inputtedName !== session.data?.user.name) {
+      authClient.updateUser({ name: inputtedName });
+    }
+  }
+
   return (
     <>
       <div className="flex flex-col items-center justify-center h-52 border-b border-dashed">
