@@ -50,6 +50,7 @@ export default function Page(props: {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [nameChangeDialogOpen, setNameChangeDialogOpen] = useState(false);
+  const [nameChangeDialogLoading, setNameChangeDialogLoading] = useState(false);
   const [inputtedName, setInputtedName] = useState("");
 
   function handleNameChange() {
@@ -107,6 +108,7 @@ export default function Page(props: {
                       <Button
                         variant="ghost"
                         className="border-r border-dashed h-full p-2 duration-200 ease-out hover:bg-card active:brightness-75 cursor-pointer"
+                        disabled={nameChangeDialogLoading}
                       >
                         Cancel
                       </Button>
@@ -114,6 +116,7 @@ export default function Page(props: {
                     <Button
                       className="border-r border-dashed h-full p-2 duration-200 ease-out active:brightness-75 cursor-pointer"
                       onClick={handleNameChange}
+                      disabled={nameChangeDialogLoading}
                     >
                       Save
                     </Button>
