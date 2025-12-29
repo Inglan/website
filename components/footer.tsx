@@ -82,6 +82,9 @@ export function Footer() {
         </div>
         <div className="grow"></div>
         <div className="flex flex-col bg-background sm:w-fit w-full">
+          <div className="sm:border-l border-b border-dashed bg-background p-2">
+            Webrings
+          </div>
           {[
             {
               name: "ultrafastparrot",
