@@ -346,7 +346,7 @@ const Grid = forwardRef(function Grid(
         duration: 0.2,
         ease: NICE_EASE,
       }}
-      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed group -my-px"
+      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed group -my-px bg-background"
     >
       {technologies[props.selectedCategory].items.map((item, index) => (
         <div
