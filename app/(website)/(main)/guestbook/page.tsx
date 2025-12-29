@@ -1,5 +1,3 @@
-"use server";
-
 import Header from "@/components/header";
 import PreloadedSection from "./preloaded-section";
 import { Suspense } from "react";
