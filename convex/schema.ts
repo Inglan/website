@@ -21,7 +21,7 @@ export default defineSchema({
       v.literal("intrusionPrevention"),
       v.literal("directIpAccess"),
     ),
-    details: v.string(),
+    details: v.optional(v.string()),
     rawData: v.string(),
   }),
 });
