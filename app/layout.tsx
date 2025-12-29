@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Jost, Nunito, Quicksand, Raleway } from "next/font/google";
+import { Geist_Mono, Jost } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";

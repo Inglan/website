@@ -1,23 +1,19 @@
 import {
-  FilteredResponseQueryOptions,
-  PortableText,
-  type SanityDocument,
+    FilteredResponseQueryOptions,
+    PortableText,
+    type SanityDocument,
 } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { PostNavbar } from "@/components/navbar";
-import { SanityImageSource } from "@sanity/image-url/lib/types/types";
-import imageUrlBuilder from "@sanity/image-url";
 import urlBuilder from "@sanity/image-url";
 import { getImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import clsx from "clsx";
 import { notFound } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { Share } from "lucide-react";
 import ShareButton from "@/components/share-button";
 import { FormattedDateTime } from "@/components/formatted-date";
 import CodeBlock from "@/components/code-block";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import Header from "@/components/header";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
