@@ -73,7 +73,7 @@ export function Footer() {
       </div>
       <div className="max-w-4xl w-full mx-auto flex border-b border-x border-dashed items-end bg-striped-gradient bg-size-[80px_80px] sm:flex-row flex-col-reverse">
         <div className="px-4 py-2 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t bg-background">
-          <span>
+          <span className="font-mono">
             This website is{" "}
             <Link href="https://github.com/Inglan/website" target="_blank">
               open source
@@ -82,7 +82,7 @@ export function Footer() {
         </div>
         <div className="grow"></div>
         <div className="flex flex-col bg-background sm:w-fit w-full">
-          <div className="sm:border-l border-b border-dashed bg-background p-2">
+          <div className="sm:border-l border-b border-dashed bg-background p-2 font-mono">
             Webrings
           </div>
           {[
