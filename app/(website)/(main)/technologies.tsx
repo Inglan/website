@@ -220,7 +220,7 @@ export function Technologies() {
 
   return (
     <div className="w-full mx-auto max-w-4xl">
-      <div className="w-full border-dashed overflow-auto border-x">
+      <div className="w-full border-dashed overflow-auto border-x border-b">
         <Carousel opts={{ skipSnaps: true }} plugins={[WheelGesturesPlugin()]}>
           <CarouselContent className="ml-0">
             {Object.entries(technologies).map(([key, value]) => (
@@ -261,6 +261,7 @@ export function Technologies() {
           setCategory={setCategory}
         />
       </AnimatePresence>
+      <div className="border-b border-dashed"></div>
     </div>
   );
 }
@@ -346,7 +347,7 @@ const Grid = forwardRef(function Grid(
         duration: 0.2,
         ease: NICE_EASE,
       }}
-      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed group"
+      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed group -my-px"
     >
       {technologies[props.selectedCategory].items.map((item, index) => (
         <div
