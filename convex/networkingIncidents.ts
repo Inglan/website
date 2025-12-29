@@ -22,6 +22,7 @@ export const createIncident = internalMutation({
     await ctx.db.insert("networkIncidents", {
       source: args.source,
       rawData: args.rawData,
+      details: "",
     });
   },
 });
