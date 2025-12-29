@@ -7,6 +7,7 @@ import { Technologies } from "./technologies";
 import { StripedSeparator } from "@/components/striped-separator";
 import Hackatime, { HackatimeSkeleton } from "./hackatime";
 import { Suspense } from "react";
+import IngoIcon from "@/lib/icons/ingo/icon";
 
 export const metadata: Metadata = {
   description:
@@ -80,13 +81,7 @@ export function Hero() {
         </div>
       </div>
       <div className="w-full sm:w-0 min-w-64 sm:border-l border-dashed">
-        <Image
-          width={255}
-          height={255}
-          alt=""
-          className="w-full hidden sm:block aspect-square border-b border-dashed object-cover"
-          src="/icons/main.svg"
-        />
+        <IngoIcon className="w-full h-fit border-t sm:border-t-0 sm:border-b border-dashed" />
         <div className="flex flex-col border-t sm:border-t-0 border-dashed">
           {[
             { icon: Earth, content: <>Canberra, Australia</> },
