@@ -124,7 +124,7 @@ export function Footer() {
                 className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
                 asChild
               >
-                <Link href={item.prev}>
+                <Link href={item.next}>
                   <span className="sr-only">Next</span>
                   <ArrowRight />
                 </Link>
