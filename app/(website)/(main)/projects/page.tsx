@@ -1,6 +1,4 @@
-import { FormattedDateTime } from "@/components/formatted-date";
 import Header from "@/components/header";
-import PostCard from "@/components/post-card";
 import { Button } from "@/components/ui/button";
 import { client } from "@/sanity/lib/client";
 import { Metadata } from "next";

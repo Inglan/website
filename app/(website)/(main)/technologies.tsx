@@ -2,42 +2,42 @@
 
 import { cn } from "@/lib/utils";
 import { GitBranch } from "lucide-react";
-import { forwardRef, useEffect, useRef, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import {
-  motion,
-  AnimatePresence,
-  usePresenceData,
-  useMotionValue,
-  useTransform,
+    motion,
+    AnimatePresence,
+    usePresenceData,
+    useMotionValue,
+    useTransform,
 } from "motion/react";
 import { FaReact, FaHtml5, FaCss3, FaNodeJs } from "react-icons/fa";
 import {
-  RiNextjsFill,
-  RiTailwindCssFill,
-  RiSvelteFill,
-  RiMicrosoftFill,
+    RiNextjsFill,
+    RiTailwindCssFill,
+    RiSvelteFill,
+    RiMicrosoftFill,
 } from "react-icons/ri";
 import {
-  SiBun,
-  SiDocker,
-  SiDrizzle,
-  SiFortinet,
-  SiGithubactions,
-  SiGnubash,
-  SiLinux,
-  SiNixos,
-  SiReactrouter,
-  SiSanity,
-  SiTraefikproxy,
-  SiTypescript,
-  SiUbiquiti,
+    SiBun,
+    SiDocker,
+    SiDrizzle,
+    SiFortinet,
+    SiGithubactions,
+    SiGnubash,
+    SiLinux,
+    SiNixos,
+    SiReactrouter,
+    SiSanity,
+    SiTraefikproxy,
+    SiTypescript,
+    SiUbiquiti,
 } from "react-icons/si";
 import { VscAzure } from "react-icons/vsc";
 import { NICE_EASE } from "@/lib/constants";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
+    Carousel,
+    CarouselContent,
+    CarouselItem,
 } from "@/components/ui/carousel";
 import WheelGesturesPlugin from "embla-carousel-wheel-gestures";
 

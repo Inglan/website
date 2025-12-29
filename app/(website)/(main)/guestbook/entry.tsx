@@ -6,21 +6,18 @@ import { api } from "@/convex/_generated/api";
 import { cn } from "@/lib/utils";
 import { useMutation, useQuery } from "convex/react";
 import { FunctionReturnType } from "convex/server";
-import { Check, Gavel, Shield, Trash, Undo, Verified, X } from "lucide-react";
+import { Check, Gavel, Trash, Undo, Verified } from "lucide-react";
 
 import {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
+    Dialog,
+    DialogClose,
+    DialogContent, DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
-import { CheckmarkIcon } from "@sanity/icons";
 
 export default function Entry({
   entry,

@@ -1,5 +1,4 @@
 import { ArrowRight, Building, ClockIcon, Earth, Mail } from "lucide-react";
-import Image from "next/image";
 import Link from "@/components/custom-link";
 import Clock from "@/components/clock";
 import { Metadata } from "next";

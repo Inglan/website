@@ -1,6 +1,5 @@
 "use client";
 
-import Header from "@/components/header";
 import { api } from "@/convex/_generated/api";
 import {
   Authenticated,
@@ -8,10 +7,7 @@ import {
   Preloaded,
   Unauthenticated,
   useMutation,
-  useQuery,
 } from "convex/react";
-import Entry from "./entry";
-import { Skeleton } from "@/components/ui/skeleton";
 import { Spinner } from "@/components/ui/spinner";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
