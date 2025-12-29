@@ -5,6 +5,12 @@ import PreloadedSection from "./preloaded-section";
 import { Suspense } from "react";
 import { Spinner } from "@/components/ui/spinner";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Guestbook",
+};
+
 export default async function PageWrapper() {
   return (
     <div className="max-w-4xl w-full mx-auto border-x border-dashed">
