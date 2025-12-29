@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import PostCard from "@/components/post-card";
 import { client } from "@/sanity/lib/client";
+import { Metadata } from "next";
 import { SanityDocument } from "next-sanity";
 const POSTS_QUERY = `*[
   _type == "post"
@@ -8,7 +9,7 @@ const POSTS_QUERY = `*[
 ]|order(publishedAt desc)[0...12]{_id, title, slug, publishedAt, body}`;
 const options = { next: { revalidate: 30 } };
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Blog",
 };
 

@@ -1,8 +1,9 @@
 import Header from "@/components/header";
 import ContactMethodCard from "./ContactMethodCard";
 import SocialCard from "./SocialCard";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact",
 };
 
