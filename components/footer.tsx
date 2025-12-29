@@ -71,8 +71,8 @@ export function Footer() {
           <div className="hidden sm:block h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10 border-r border-dashed"></div>
         </div>
       </div>
-      <div className="max-w-4xl w-full mx-auto flex border-b border-x border-dashed items-center bg-striped-gradient bg-size-[80px_80px]">
-        <div className="px-8 h-14 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t sm:border-t-0">
+      <div className="max-w-4xl w-full mx-auto flex border-b border-x border-dashed items-end bg-striped-gradient bg-size-[80px_80px]">
+        <div className="px-4 py-2 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t bg-background">
           <span>
             This website is{" "}
             <Link href="https://github.com/Inglan/website" target="_blank">
@@ -81,7 +81,7 @@ export function Footer() {
           </span>
         </div>
         <div className="grow"></div>
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-background">
           {[
             {
               name: "ultrafastparrot",
