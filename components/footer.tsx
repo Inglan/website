@@ -89,8 +89,17 @@ export function Footer() {
               next: "https://ultrafastparrot.net/next/ingo",
               prev: "https://ultrafastparrot.net/prev/ingo",
             },
+            {
+              name: "catppuccin",
+              url: "https://ctp-webr.ing/",
+              next: "https://ctp-webr.ing/ingo/next",
+              prev: "https://ctp-webr.ing/ingo/prev",
+            },
           ].map((item, index) => (
-            <div className="flex flex-row border-b border-dashed" key={index}>
+            <div
+              className="flex flex-row border-b border-dashed w-full last:border-0"
+              key={index}
+            >
               <Button
                 variant="ghost"
                 size="icon"
@@ -104,7 +113,7 @@ export function Footer() {
               </Button>
               <Button
                 variant="ghost"
-                className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
+                className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 grow"
                 asChild
               >
                 <Link href={item.url}>{item.name}</Link>
