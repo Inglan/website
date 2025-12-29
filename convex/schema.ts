@@ -1,6 +1,16 @@
 import { defineSchema, defineTable } from "convex/server";
 import { v } from "convex/values";
 
+export const networkIncidents = {
+  ip: v.optional(v.string()),
+  source: v.union(
+    v.literal("intrusionPrevention"),
+    v.literal("directIpAccess"),
+  ),
+  details: v.optional(v.string()),
+  rawData: v.string(),
+};
+
 export default defineSchema({
   guestbookEntries: defineTable({
     userId: v.string(),
@@ -15,13 +25,5 @@ export default defineSchema({
     .index("by_status", ["status"])
     .index("by_status_user", ["status", "userId"]),
 
-  networkIncidents: defineTable({
-    ip: v.optional(v.string()),
-    source: v.union(
-      v.literal("intrusionPrevention"),
-      v.literal("directIpAccess"),
-    ),
-    details: v.optional(v.string()),
-    rawData: v.string(),
-  }),
+  networkIncidents: defineTable(networkIncidents),
 });
