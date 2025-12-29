@@ -219,7 +219,7 @@ export function Technologies() {
   }
 
   return (
-    <div className="w-full mx-auto max-w-4xl">
+    <div className="w-full mx-auto max-w-4xl border-b">
       <div className="w-full border-dashed overflow-auto border-x border-b">
         <Carousel opts={{ skipSnaps: true }} plugins={[WheelGesturesPlugin()]}>
           <CarouselContent className="ml-0">
@@ -261,7 +261,6 @@ export function Technologies() {
           setCategory={setCategory}
         />
       </AnimatePresence>
-      <div className="border-b border-dashed"></div>
     </div>
   );
 }
