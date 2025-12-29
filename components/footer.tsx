@@ -81,7 +81,7 @@ export function Footer() {
           </span>
         </div>
         <div className="grow"></div>
-        <div className="flex flex-col bg-background">
+        <div className="flex flex-col bg-background sm:w-fit w-full">
           {[
             {
               name: "ultrafastparrot",
@@ -103,7 +103,7 @@ export function Footer() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
+                className="sm:border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
                 asChild
               >
                 <Link href={item.prev}>
