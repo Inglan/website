@@ -74,7 +74,7 @@ export function Footer() {
           <div className="hidden sm:block h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10 border-r border-dashed"></div>
         </div>
       </div>
-      <div className="max-w-4xl w-full mx-auto flex border-b border-x border-dashed items-end bg-striped-gradient bg-size-[80px_80px] bg-fixed sm:flex-row flex-col-reverse">
+      <div className="max-w-4xl w-full mx-auto flex border-b border-x border-dashed items-end bg-striped-gradient bg-size-[80px_80px] bg-fixed sm:flex-row flex-col-reverse pt-10 gap-10 sm:pt-0">
         <div className="px-4 py-2 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t bg-background">
           <span className="font-mono">
             This website is{" "}
@@ -83,9 +83,9 @@ export function Footer() {
             </Link>
           </span>
         </div>
-        <div className="grow"></div>
-        <div className="flex flex-col bg-background sm:w-fit w-full">
-          <div className="sm:border-l border-b border-dashed bg-background p-2 font-mono text-lg">
+        <div className="grow hidden md:block"></div>
+        <div className="flex flex-col bg-background sm:w-fit w-full border-b border-dashed sm:border-0">
+          <div className="sm:border-l border-b border-t sm:border-t-0 border-dashed bg-background p-2 font-mono text-lg">
             Webrings
           </div>
           {[
