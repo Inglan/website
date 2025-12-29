@@ -57,6 +57,9 @@ export function Footer() {
         </div>
         <div className="hidden sm:block bg-striped-gradient bg-size-[80px_80px] bg-fixed border-r border-dashed grow"></div>
         <div className="flex flex-col min-w-64">
+          <div className="border-r border-b border-dashed bg-background p-2 font-mono text-lg">
+            Pages
+          </div>
           <div className="flex-col grid grid-cols-2 h-fit">
             {[...MENU_ITEMS, ...OTHER_PAGES].map((item) => (
               <NextLink
