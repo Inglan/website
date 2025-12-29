@@ -1,6 +1,7 @@
 import { v } from "convex/values";
 import { httpAction, internalMutation } from "./_generated/server";
 import { internal } from "./_generated/api";
+import { networkIncidents } from "./schema";
 
 export const createIncidentFromIPS = httpAction(async (ctx, request) => {
   const body = await request.json();
@@ -11,18 +12,10 @@ export const createIncidentFromIPS = httpAction(async (ctx, request) => {
   return new Response("yes", { status: 200 });
 });
 export const createIncident = internalMutation({
-  args: {
-    source: v.union(
-      v.literal("intrusionPrevention"),
-      v.literal("directIpAccess"),
-    ),
-    rawData: v.string(),
-  },
+  args: networkIncidents,
   handler: async (ctx, args) => {
     await ctx.db.insert("networkIncidents", {
-      source: args.source,
-      rawData: args.rawData,
-      details: "",
+      ...args,
     });
   },
 });
