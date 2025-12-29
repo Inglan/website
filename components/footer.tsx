@@ -71,7 +71,7 @@ export function Footer() {
           <div className="hidden sm:block h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10 border-r border-dashed"></div>
         </div>
       </div>
-      <div className="max-w-4xl w-full mx-auto flex flex-col-reverse sm:flex-row border-b border-x border-dashed items-center">
+      <div className="max-w-4xl w-full mx-auto flex border-b border-x border-dashed items-center bg-striped-gradient bg-size-[80px_80px]">
         <div className="px-8 h-14 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t sm:border-t-0">
           <span>
             This website is{" "}
@@ -80,8 +80,51 @@ export function Footer() {
             </Link>
           </span>
         </div>
-        <div className="hidden sm:block grow h-14 bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
-        <div className="flex flex-row w-full sm:w-fit border-t sm:border-0 border-dashed">
+        <div className="grow"></div>
+        <div className="flex flex-col">
+          {[
+            {
+              name: "ultrafastparrot",
+              url: "https://ultrafastparrot.net",
+              next: "https://ultrafastparrot.net/next/ingo",
+              prev: "https://ultrafastparrot.net/prev/ingo",
+            },
+          ].map((item, index) => (
+            <div className="flex flex-row border-b border-dashed" key={index}>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
+                asChild
+              >
+                <Link href={item.prev}>
+                  <span className="sr-only">Previous</span>
+                  <ArrowLeft />
+                </Link>
+              </Button>
+              <Button
+                variant="ghost"
+                className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
+                asChild
+              >
+                <Link href={item.url}>{item.name}</Link>
+              </Button>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75"
+                asChild
+              >
+                <Link href={item.prev}>
+                  <span className="sr-only">Next</span>
+                  <ArrowRight />
+                </Link>
+              </Button>
+            </div>
+          ))}
+        </div>
+
+        {/*<div className="flex flex-row w-full sm:w-fit border-t sm:border-0 border-dashed">
           <Link
             href="https://ultrafastparrot.net/prev/ingo"
             className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 sm:border-l border-dashed"
@@ -125,7 +168,7 @@ export function Footer() {
             <span className="sr-only">Next</span>
             <ArrowRight className="size-4" />
           </Link>
-        </div>
+        </div>*/}
       </div>
       <div
         className="grid grid-cols-4 mx-auto p-2 gap-2 mt-4"
