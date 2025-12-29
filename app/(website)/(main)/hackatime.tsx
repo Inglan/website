@@ -141,17 +141,17 @@ export default async function Hackatime() {
   const quickStats = [
     {
       title: "Total Coding Time",
-      value: allTimeStats.data.human_readable_total,
+      value: allTimeStats.data.human_readable_total.replace(/\s*\d+s$/, ""),
       className: "col-span-14 bg-striped-gradient bg-size-[80px_80px]",
     },
     {
       title: "This Week",
-      value: weekStatsData.data.human_readable_total,
+      value: weekStatsData.data.human_readable_total.replace(/\s*\d+s$/, ""),
       className: "col-span-9",
     },
     {
       title: "Today",
-      value: dayStatsData.data.human_readable_total,
+      value: dayStatsData.data.human_readable_total.replace(/\s*\d+s$/, ""),
       className: "col-span-9",
     },
   ];
