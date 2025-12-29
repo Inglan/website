@@ -7,6 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Guestbook",
+  description: "Say hello :)",
 };
 
 export default async function PageWrapper() {

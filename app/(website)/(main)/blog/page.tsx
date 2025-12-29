@@ -11,6 +11,7 @@ const options = { next: { revalidate: 30 } };
 
 export const metadata: Metadata = {
   title: "Blog",
+  description: "My random rantings and stuff",
 };
 
 export default async function Blog() {
