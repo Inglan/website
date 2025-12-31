@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 
 export default function IPsList(props: {
   preloadedIPs: Preloaded<typeof api.networkingIncidents.get>;
@@ -18,7 +19,15 @@ export default function IPsList(props: {
     <Accordion type="multiple" className="border-b border-dashed">
       {ips.map((ip) => (
         <AccordionItem key={ip.ip} value={ip.ip} className="border-dashed">
-          <AccordionTrigger className="px-4">{ip.ip}</AccordionTrigger>
+          <AccordionTrigger className="px-4">
+            <div className="flex flex-row gap-2 items-center">
+              {ip.ip}{" "}
+              <Badge variant="outline">
+                {ip.incidents.length} incident
+                {ip.incidents.length === 1 ? "" : "s"}
+              </Badge>
+            </div>
+          </AccordionTrigger>
           <AccordionContent className="bg-card p-0">
             {ip.incidents.map((incident) => (
               <div
