@@ -80,7 +80,7 @@ export function Hero() {
         </div>
       </div>
       <div className="w-full sm:w-0 min-w-64 sm:border-l border-dashed">
-        <IngoIcon className="w-full h-fit border-t sm:border-t-0 sm:border-b border-dashed" />
+        <IngoIcon className="w-full h-fit border-b border-dashed hidden sm:block" />
         <div className="flex flex-col border-t sm:border-t-0 border-dashed">
           {[
             { icon: Earth, content: <>Canberra, Australia</> },
