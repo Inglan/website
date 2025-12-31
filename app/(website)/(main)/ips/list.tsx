@@ -21,7 +21,7 @@ export default function IPsList(props: {
     <Accordion type="multiple" className="border-b border-dashed">
       {ips.map((ip) => (
         <AccordionItem key={ip.ip} value={ip.ip} className="border-dashed">
-          <AccordionTrigger className="px-4 bg-card">
+          <AccordionTrigger className="px-4 bg-card no-underline! cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75">
             <div className="flex flex-row gap-2 items-center">
               {ip.ip}{" "}
               <Badge variant="outline">
