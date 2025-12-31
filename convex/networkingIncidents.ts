@@ -58,12 +58,7 @@ export const get = query({
       }
     });
 
-    return incidents.map((incident) => ({
-      id: incident._id,
-      source: incident.source,
-      ip: incident.ip,
-      details: incident.details,
-    }));
+    return ips;
   },
 });
 
