@@ -58,12 +58,29 @@ export default function IPsList(props: {
               <div
                 key={incident.id}
                 className={cn(
-                  "p-2 border-t border-dashed whitespace-pre-line wrap-anywhere",
+                  "p-2 border-t border-dashed whitespace-pre-line wrap-anywhere flex flex-col gap-1",
                   index % 2 === 0
                     ? "bg-striped-gradient bg-size-[80px_80px]"
                     : "",
                 )}
               >
+                <div className="text-lg">
+                  Flagged by{" "}
+                  {(() => {
+                    switch (incident.source) {
+                      case "intrusionPrevention":
+                        return "Intrusion prevention system";
+                      default:
+                        return incident.source;
+                    }
+                  })()}
+                </div>
+                <div className="text-xs text-muted-foreground">
+                  <FormattedDateTime
+                    format="DATETIME"
+                    date={new Date(incident._creationTime).toISOString()}
+                  />
+                </div>
                 {incident.details}
               </div>
             ))}
