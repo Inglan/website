@@ -28,6 +28,12 @@ export const createIncident = internalMutation({
 export const get = query({
   handler: async (ctx, args) => {
     const incidents = await ctx.db.query("networkIncidents").collect();
+
+    const ips: {
+      ip: string;
+      incidents: { id: string; source: string; details: string };
+    }[] = [];
+
     return incidents.map((incident) => ({
       id: incident._id,
       source: incident.source,
