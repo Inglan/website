@@ -21,21 +21,23 @@ export default function IPsList(props: {
     <Accordion type="multiple" className="border-b border-dashed">
       {ips.map((ip) => (
         <AccordionItem key={ip.ip} value={ip.ip} className="border-dashed">
-          <AccordionTrigger className="px-4 bg-card no-underline! cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75">
-            <div className="flex flex-row gap-2 items-center">
-              {ip.ip}{" "}
-              <Badge variant="outline">
-                {ip.incidents.length} incident
-                {ip.incidents.length === 1 ? "" : "s"}
-              </Badge>
-              <Badge variant="outline">
-                <FormattedDateTime
-                  format="DATETIME"
-                  date={new Date(ip.incidents[0]._creationTime).toISOString()}
-                />
-              </Badge>
-            </div>
-          </AccordionTrigger>
+          <div className="flex flex-row w-full [&>h3]:grow">
+            <AccordionTrigger className="px-4 bg-card no-underline! cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75">
+              <div className="flex flex-row gap-2 items-center">
+                {ip.ip}{" "}
+                <Badge variant="outline">
+                  {ip.incidents.length} incident
+                  {ip.incidents.length === 1 ? "" : "s"}
+                </Badge>
+                <Badge variant="outline">
+                  <FormattedDateTime
+                    format="DATETIME"
+                    date={new Date(ip.incidents[0]._creationTime).toISOString()}
+                  />
+                </Badge>
+              </div>
+            </AccordionTrigger>
+          </div>
           <AccordionContent className="p-0">
             {ip.incidents.map((incident, index) => (
               <div
