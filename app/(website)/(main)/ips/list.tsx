@@ -32,7 +32,7 @@ export default function IPsList(props: {
                   {ip.incidents.length} incident
                   {ip.incidents.length === 1 ? "" : "s"}
                 </Badge>
-                <Badge variant="outline">
+                <Badge variant="outline" className="hidden sm:block">
                   <FormattedDateTime
                     format="DATETIME"
                     date={new Date(ip.incidents[0]._creationTime).toISOString()}
