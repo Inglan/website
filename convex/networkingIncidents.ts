@@ -6,7 +6,7 @@ import { UniFiWebhookBody } from "./types";
 
 export const createIncidentFromIPS = httpAction(async (ctx, request) => {
   const body = (await request.json()) as UniFiWebhookBody;
-  if (body.severity > 7) {
+  if (body.severity > 7 && body.parameters.src) {
     await ctx.runMutation(internal.networkingIncidents.createIncident, {
       source: "intrusionPrevention",
       ip: body.parameters.src,
@@ -32,7 +32,7 @@ export const convert = internalMutation({
       await ctx.db.delete("networkIncidents", incident._id);
       const body = JSON.parse(incident.rawData) as UniFiWebhookBody;
 
-      if (body.severity > 7) {
+      if (body.severity > 7 && body.parameters.src) {
         ctx.db.insert("networkIncidents", {
           source: "intrusionPrevention",
           ip: body.parameters.src,
