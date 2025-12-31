@@ -34,7 +34,12 @@ export const get = query({
 
     const ips: {
       ip: string;
-      incidents: { id: string; source: string; details: string }[];
+      incidents: {
+        id: string;
+        source: string;
+        details: string;
+        _creationTime: number;
+      }[];
     }[] = [];
 
     incidents.forEach((incident) => {
@@ -46,6 +51,7 @@ export const get = query({
           id: incident._id,
           source: incident.source,
           details: incident.details || "",
+          _creationTime: incident._creationTime,
         });
       } else {
         ips.push({
@@ -55,6 +61,7 @@ export const get = query({
               id: incident._id,
               source: incident.source,
               details: incident.details || "",
+              _creationTime: incident._creationTime,
             },
           ],
         });
