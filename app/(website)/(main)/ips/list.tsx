@@ -15,7 +15,7 @@ export default function IPsList(props: {
   const ips = usePreloadedQuery(props.preloadedIPs);
 
   return (
-    <Accordion type="multiple">
+    <Accordion type="multiple" className="border-b border-dashed">
       {ips.map((ip) => (
         <AccordionItem key={ip.ip} value={ip.ip} className="border-dashed">
           <AccordionTrigger className="px-4">{ip.ip}</AccordionTrigger>
