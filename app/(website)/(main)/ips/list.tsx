@@ -19,7 +19,16 @@ export default function IPsList(props: {
       {ips.map((ip) => (
         <AccordionItem key={ip.ip} value={ip.ip} className="border-dashed">
           <AccordionTrigger className="px-4">{ip.ip}</AccordionTrigger>
-          <AccordionContent className="">{ip.ip}</AccordionContent>
+          <AccordionContent className="bg-card p-0">
+            {ip.incidents.map((incident) => (
+              <div
+                key={incident.id}
+                className="p-2 border-t border-dashed whitespace-pre"
+              >
+                {incident.details}
+              </div>
+            ))}
+          </AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
