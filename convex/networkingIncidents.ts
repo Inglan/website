@@ -24,3 +24,22 @@ export const createIncident = internalMutation({
     });
   },
 });
+
+export const convert = internalMutation({
+  handler: async (ctx) => {
+    const incidents = await ctx.db.query("networkIncidents").collect();
+    for (const incident of incidents) {
+      await ctx.db.delete("networkIncidents", incident._id);
+      const body = JSON.parse(incident.rawData) as UniFiWebhookBody;
+
+      if (body.severity > 7) {
+        ctx.db.insert("networkIncidents", {
+          source: "intrusionPrevention",
+          ip: body.parameters.src,
+          details: `${body.message}\nPolicy Name: ${body.parameters.UNIFIpolicyName}\nSignature: ${body.parameters.UNIFIipsSignature}`,
+          rawData: JSON.stringify(body),
+        });
+      }
+    }
+  },
+});
