@@ -1,5 +1,5 @@
 import { v } from "convex/values";
-import { httpAction, internalMutation } from "./_generated/server";
+import { httpAction, internalMutation, query } from "./_generated/server";
 import { internal } from "./_generated/api";
 import { networkIncidents } from "./schema";
 import { UniFiWebhookBody } from "./types";
@@ -22,6 +22,18 @@ export const createIncident = internalMutation({
     await ctx.db.insert("networkIncidents", {
       ...args,
     });
+  },
+});
+
+export const get = query({
+  handler: async (ctx, args) => {
+    const incidents = await ctx.db.query("networkIncidents").collect();
+    return incidents.map((incident) => ({
+      id: incident._id,
+      source: incident.source,
+      ip: incident.ip,
+      details: incident.details,
+    }));
   },
 });
 
