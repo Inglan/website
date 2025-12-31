@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { FormattedDateTime } from "@/components/formatted-date";
+import { cn } from "@/lib/utils";
 
 export default function IPsList(props: {
   preloadedIPs: Preloaded<typeof api.networkingIncidents.get>;
@@ -35,11 +36,16 @@ export default function IPsList(props: {
               </Badge>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="bg-card p-0">
-            {ip.incidents.map((incident) => (
+          <AccordionContent className="p-0">
+            {ip.incidents.map((incident, index) => (
               <div
                 key={incident.id}
-                className="p-2 border-t border-dashed whitespace-pre"
+                className={cn(
+                  "p-2 border-t border-dashed whitespace-pre",
+                  index % 2 === 0
+                    ? "bg-striped-gradient bg-size-[80px_80px]"
+                    : "",
+                )}
               >
                 {incident.details}
               </div>
