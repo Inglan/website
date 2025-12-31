@@ -8,5 +8,11 @@ export default function IPsList(props: {
 }) {
   const ips = usePreloadedQuery(props.preloadedIPs);
 
-  return <>{JSON.stringify(ips)}</>;
+  return (
+    <>
+      {ips.map((ip) => (
+        <div key={ip.ip}>{ip.ip}</div>
+      ))}
+    </>
+  );
 }
