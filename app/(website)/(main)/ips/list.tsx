@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { FormattedDateTime } from "@/components/formatted-date";
 
 export default function IPsList(props: {
   preloadedIPs: Preloaded<typeof api.networkingIncidents.get>;
@@ -25,6 +26,12 @@ export default function IPsList(props: {
               <Badge variant="outline">
                 {ip.incidents.length} incident
                 {ip.incidents.length === 1 ? "" : "s"}
+              </Badge>
+              <Badge variant="outline">
+                <FormattedDateTime
+                  format="DATETIME"
+                  date={new Date(ip.incidents[0]._creationTime).toISOString()}
+                />
               </Badge>
             </div>
           </AccordionTrigger>
