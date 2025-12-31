@@ -58,7 +58,7 @@ export default function IPsList(props: {
               <div
                 key={incident.id}
                 className={cn(
-                  "p-2 border-t border-dashed whitespace-pre",
+                  "p-2 border-t border-dashed whitespace-pre-line wrap-anywhere",
                   index % 2 === 0
                     ? "bg-striped-gradient bg-size-[80px_80px]"
                     : "",
