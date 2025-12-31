@@ -13,6 +13,7 @@ import { FormattedDateTime } from "@/components/formatted-date";
 import { cn } from "@/lib/utils";
 import { Clipboard } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export default function IPsList(props: {
   preloadedIPs: Preloaded<typeof api.networkingIncidents.get>;
@@ -40,6 +41,12 @@ export default function IPsList(props: {
               </div>
             </AccordionTrigger>
             <Button
+              onClick={() =>
+                toast.promise(navigator.clipboard.writeText(ip.ip), {
+                  success: "Copied!",
+                  error: "Failed to copy",
+                })
+              }
               className="border-l border-dashed h-12 w-12 cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75"
               variant="ghost"
             >
