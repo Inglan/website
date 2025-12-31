@@ -31,8 +31,32 @@ export const get = query({
 
     const ips: {
       ip: string;
-      incidents: { id: string; source: string; details: string };
+      incidents: { id: string; source: string; details: string }[];
     }[] = [];
+
+    incidents.forEach((incident) => {
+      const ip = incident.ip;
+      if (!ip) return;
+      const existingIp = ips.find((i) => i.ip === ip);
+      if (existingIp) {
+        existingIp.incidents.push({
+          id: incident._id,
+          source: incident.source,
+          details: incident.details || "",
+        });
+      } else {
+        ips.push({
+          ip,
+          incidents: [
+            {
+              id: incident._id,
+              source: incident.source,
+              details: incident.details || "",
+            },
+          ],
+        });
+      }
+    });
 
     return incidents.map((incident) => ({
       id: incident._id,
