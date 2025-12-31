@@ -13,7 +13,7 @@ export default function NotFound() {
       <Navbar />
       <div className="w-full max-w-4xl mx-auto border-x border-b border-dashed py-20 flex flex-col items-center justify-center gap-8 bg-striped-gradient bg-size-[80px_80px] bg-fixed">
         <div className="flex flex-col items-center">
-          <h1 className="text-9xl">404</h1>
+          <h1 className="text-9xl font-mono">404</h1>
           <p className="text-2xl">Page not found</p>
         </div>
         <div className="w-full border-y border-dashed flex justify-center">
