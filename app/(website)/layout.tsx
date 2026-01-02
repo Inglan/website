@@ -11,14 +11,9 @@ export default function RootLayout({
 }>) {
   return (
     <>
-      <div
-        vaul-drawer-wrapper=""
-        className="flex flex-col w-full bg-background min-h-screen px-4"
-      >
-        {children}
-        <StripedSeparator />
-        <Footer />
-      </div>
+      {children}
+      <StripedSeparator />
+      <Footer />
     </>
   );
 }
