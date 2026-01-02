@@ -141,7 +141,7 @@ export function Footer() {
       </div>{" "}
       <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4">
         <div
-          className="grid grid-cols-4 mx-auto p-2 gap-2 w-fit"
+          className="grid grid-cols-3 sm:grid-cols-4 mx-auto p-2 gap-2 w-fit"
           style={{
             boxShadow:
               "0.5px 0.5px 0 0.5px black, inset 1px 1px #C2C6CA, inset -1px -1px #85898d, inset 2px 2px white",
