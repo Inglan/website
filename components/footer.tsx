@@ -138,52 +138,6 @@ export function Footer() {
             </div>
           ))}
         </div>
-
-        {/*<div className="flex flex-row w-full sm:w-fit border-t sm:border-0 border-dashed">
-          <Link
-            href="https://ultrafastparrot.net/prev/ingo"
-            className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 sm:border-l border-dashed"
-          >
-            <span className="sr-only">Previous</span>
-            <ArrowLeft className="size-4" />
-          </Link>
-          <Link
-            href="https://ultrafastparrot.net"
-            className="h-14 px-4 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-l border-dashed grow"
-          >
-            ultrafastparrot
-          </Link>
-          <Link
-            href="https://ultrafastparrot.net/next/ingo"
-            className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-l border-dashed"
-          >
-            <span className="sr-only">Next</span>
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>
-        <div className="hidden sm:block aspect-square h-14 bg-striped-gradient bg-size-[80px_80px] bg-fixed border-l border-dashed"></div>
-        <div className="flex flex-row w-full sm:w-fit">
-          <Link
-            href="https://ctp-webr.ing/ingo/previous"
-            className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 sm:border-l border-dashed"
-          >
-            <span className="sr-only">Previous</span>
-            <ArrowLeft className="size-4" />
-          </Link>
-          <Link
-            href="https://ctp-webr.ing"
-            className="h-14 px-4 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-l border-dashed grow"
-          >
-            CTP
-          </Link>
-          <Link
-            href="https://ctp-webr.ing/ingo/next"
-            className="aspect-square h-14 flex items-center justify-center duration-200 ease-out hover:bg-card active:brightness-75 border-l border-dashed"
-          >
-            <span className="sr-only">Next</span>
-            <ArrowRight className="size-4" />
-          </Link>
-        </div>*/}
       </div>
       <div className="max-w-4xl w-full mx-auto border-x border-dashed px-4 py-8 bg-striped-gradient bg-size-[80px_80px] bg-fixed bg-card">
         <div
