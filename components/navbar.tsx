@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { MENU_ITEMS } from "@/lib/constants";
 import { ArrowLeft, Menu, Search } from "lucide-react";
 import { useUiState } from "@/lib/state";
-import { useScroll, useSpring } from "motion/react";
+import { useScroll, useSpring, useTransform } from "motion/react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -78,7 +78,7 @@ export default function Navbar() {
 
 export function PostNavbar({ title }: { title: string }) {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
-  const { scrollYProgress } = useScroll();
+  const { scrollYProgress, scrollY } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 1000,
     damping: 100,
@@ -86,8 +86,29 @@ export function PostNavbar({ title }: { title: string }) {
     bounce: 0,
   });
 
+  const navbarOpacity = useTransform(scrollY, [0, 49, 50], [0, 0, 1]);
+  const navbarY = useTransform(scrollY, [0, 49, 50], [-100, -100, 0]);
+  const animatedNavbarOpacity = useSpring(navbarOpacity, {
+    stiffness: 1000,
+    damping: 100,
+    restDelta: 0.001,
+    bounce: 0,
+  });
+  const animatedNavbarY = useSpring(navbarY, {
+    stiffness: 1000,
+    damping: 100,
+    restDelta: 0.001,
+    bounce: 0,
+  });
+
   return (
-    <div className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 sticky top-[calc((var(--spacing)*4)+1px)]">
+    <motion.div
+      style={{
+        opacity: animatedNavbarOpacity,
+        y: animatedNavbarY,
+      }}
+      className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 fixed top-[calc((var(--spacing)*4)+1px)]"
+    >
       <MenuLink
         href="/blog"
         className="px-6!"
@@ -114,7 +135,7 @@ export function PostNavbar({ title }: { title: string }) {
         className="top-0 left-0 absolute w-full h-full bg-popover -z-10 origin-left "
         style={{ scaleX }}
       ></motion.div>
-    </div>
+    </motion.div>
   );
 }
 
