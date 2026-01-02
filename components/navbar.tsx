@@ -102,40 +102,42 @@ export function PostNavbar({ title }: { title: string }) {
   });
 
   return (
-    <motion.div
-      style={{
-        opacity: animatedNavbarOpacity,
-        y: animatedNavbarY,
-      }}
-      className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 fixed top-[calc((var(--spacing)*4)+1px)]"
-    >
-      <MenuLink
-        href="/blog"
-        className="px-6!"
-        containerClassName="border-l-0"
-        animation={false}
-      >
-        <span className="sr-only">Back</span>
-        <ArrowLeft className="size-4" />
-      </MenuLink>
-      <div className="grow flex items-center min-h-full py-4 px-2 text-xl">
-        <p className="line-clamp-1">{title}</p>
-      </div>
-      <MenuLink
-        className="px-6!"
-        containerClassName="border-l-0"
-        onClick={() => {
-          setSearchOpen(true);
-        }}
-      >
-        <span className="sr-only">Menu</span>
-        <Menu className="size-4" />
-      </MenuLink>
+    <div className="fixed top-[calc((var(--spacing)*4)+1px)] w-full h-fit z-20 left-0 overflow-hidden pointer-events-none">
       <motion.div
-        className="top-0 left-0 absolute w-full h-full bg-popover -z-10 origin-left "
-        style={{ scaleX }}
-      ></motion.div>
-    </motion.div>
+        style={{
+          opacity: animatedNavbarOpacity,
+          y: animatedNavbarY,
+        }}
+        className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 relative pointer-events-auto"
+      >
+        <MenuLink
+          href="/blog"
+          className="px-6!"
+          containerClassName="border-l-0"
+          animation={false}
+        >
+          <span className="sr-only">Back</span>
+          <ArrowLeft className="size-4" />
+        </MenuLink>
+        <div className="grow flex items-center min-h-full py-4 px-2 text-xl">
+          <p className="line-clamp-1">{title}</p>
+        </div>
+        <MenuLink
+          className="px-6!"
+          containerClassName="border-l-0"
+          onClick={() => {
+            setSearchOpen(true);
+          }}
+        >
+          <span className="sr-only">Menu</span>
+          <Menu className="size-4" />
+        </MenuLink>
+        <motion.div
+          className="top-0 left-0 absolute w-full h-full bg-popover -z-10 origin-left "
+          style={{ scaleX }}
+        ></motion.div>
+      </motion.div>
+    </div>
   );
 }
 
