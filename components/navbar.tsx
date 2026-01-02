@@ -62,7 +62,7 @@ export function PostNavbar({ title }: { title: string }) {
   return (
     <div className="w-full sticky top-0 z-50">
       <div className="w-full max-w-4xl mx-auto pt-4 border-x border-dashed bg-striped-gradient bg-size-[80px_80px] bg-fixed bg-background">
-        <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row">
+        <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row relative bg-background">
           <MenuLink
             href="./"
             className="px-6!"
