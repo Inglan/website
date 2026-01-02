@@ -138,8 +138,8 @@ export function Footer() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="max-w-4xl w-full mx-auto border-x border-dashed px-4 py-8 bg-striped-gradient bg-size-[80px_80px] bg-fixed bg-card">
+      </div>{" "}
+      <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4">
         <div
           className="grid grid-cols-4 mx-auto p-2 gap-2 w-fit"
           style={{
