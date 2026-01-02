@@ -87,7 +87,7 @@ export function PostNavbar({ title }: { title: string }) {
   });
 
   return (
-    <nav className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 sticky top-[calc((var(--spacing)*4)+1px)]">
+    <div className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 sticky top-[calc((var(--spacing)*4)+1px)]">
       <MenuLink
         href="/blog"
         className="px-6!"
@@ -114,7 +114,7 @@ export function PostNavbar({ title }: { title: string }) {
         className="top-0 left-0 absolute w-full h-full bg-popover -z-10 origin-left "
         style={{ scaleX }}
       ></motion.div>
-    </nav>
+    </div>
   );
 }
 
