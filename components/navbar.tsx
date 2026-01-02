@@ -22,7 +22,7 @@ function NavbarContainer({
         <div className="bg-background max-w-4xl mx-auto border-x border-dashed">
           <div className="h-4 bg-striped-gradient bg-size-[80px_80px] bg-fixed opacity-25"></div>
         </div>
-        <div className="w-full border-y border-dashed">
+        <div className="w-full border-y border-dashed px-4">
           <nav className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background">
             {children}
           </nav>

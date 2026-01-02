@@ -10,7 +10,7 @@ import { m } from "motion/react";
 
 export function Footer() {
   return (
-    <>
+    <div className="px-4">
       <div className="max-w-4xl w-full mx-auto text-sm sm:border-b border-l border-dashed flex flex-col sm:flex-row">
         <div className="flex flex-col border-r border-dashed col-span-3">
           <NextLink
@@ -224,6 +224,6 @@ export function Footer() {
         </div>
       </div>
       <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed h-4"></div>
-    </>
+    </div>
   );
 }
