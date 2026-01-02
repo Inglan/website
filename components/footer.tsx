@@ -223,6 +223,7 @@ export function Footer() {
           ))}
         </div>
       </div>
+      <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed h-4"></div>
     </>
   );
 }
