@@ -1,8 +1,4 @@
-import Search from "@/components/search";
-import Hotkeys from "@/lib/hotkeys";
-import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/footer";
-import { StripedSeparator } from "@/components/striped-separator";
 import Navbar from "@/components/navbar";
 
 export default function RootLayout({
