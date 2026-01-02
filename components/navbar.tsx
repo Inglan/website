@@ -102,7 +102,7 @@ export function PostNavbar({ title }: { title: string }) {
   });
 
   return (
-    <div className="fixed top-[calc((var(--spacing)*4)+1px)] w-full h-fit z-20 left-0 overflow-hidden pointer-events-none">
+    <div className="fixed top-[calc((var(--spacing)*4)+1px)] w-full h-fit z-20 left-0 overflow-hidden pointer-events-none px-4">
       <motion.div
         style={{
           opacity: animatedNavbarOpacity,
