@@ -21,9 +21,11 @@ function NavbarContainer({
         <div className="w-full h-5 fixed top-0 left-[50%] -translate-x-1/2 px-4 max-w-4xl -z-10">
           <div className="w-full h-full bg-background"></div>
         </div>
-        <div className="max-w-4xl mx-auto px-4 w-full h-full">
-          <div className="bg-background border-x border-dashed">
-            <div className="h-4 bg-striped-gradient bg-size-[80px_80px] bg-fixed opacity-25"></div>
+        <div className="w-full px-4">
+          <div className="max-w-4xl mx-auto w-full h-full">
+            <div className="bg-background border-x border-dashed">
+              <div className="h-4 bg-striped-gradient bg-size-[80px_80px] bg-fixed opacity-25"></div>
+            </div>
           </div>
         </div>
         <div className="w-full border-y border-dashed px-4">
