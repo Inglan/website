@@ -29,37 +29,40 @@ function NavbarContainer({
 
 export default function Navbar() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
+  const pathname = usePathname();
 
-  return (
-    <NavbarContainer>
-      <MenuLink
-        href="/"
-        containerClassName="border-l-0 border-r"
-        className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono"
-        animation={false}
-      >
-        Ingo Wolf
-      </MenuLink>
-      <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
-      <div className="hidden md:flex flex-row">
-        {MENU_ITEMS.map((item) => (
-          <MenuLink key={item.url} href={item.url}>
-            {item.label}
-          </MenuLink>
-        ))}
-      </div>
-      <MenuLink
-        className="px-6!"
-        onClick={() => {
-          setSearchOpen(true);
-        }}
-      >
-        <span className="sr-only">Menu</span>
-        <Menu className="size-4 md:hidden" />
-        <Search className="size-4 md:block hidden" />
-      </MenuLink>
-    </NavbarContainer>
-  );
+  if (!pathname.startsWith("/blog/")) {
+    return (
+      <NavbarContainer>
+        <MenuLink
+          href="/"
+          containerClassName="border-l-0 border-r"
+          className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono"
+          animation={false}
+        >
+          Ingo Wolf
+        </MenuLink>
+        <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
+        <div className="hidden md:flex flex-row">
+          {MENU_ITEMS.map((item) => (
+            <MenuLink key={item.url} href={item.url}>
+              {item.label}
+            </MenuLink>
+          ))}
+        </div>
+        <MenuLink
+          className="px-6!"
+          onClick={() => {
+            setSearchOpen(true);
+          }}
+        >
+          <span className="sr-only">Menu</span>
+          <Menu className="size-4 md:hidden" />
+          <Search className="size-4 md:block hidden" />
+        </MenuLink>
+      </NavbarContainer>
+    );
+  }
 }
 
 export function PostNavbar({ title }: { title: string }) {

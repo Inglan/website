@@ -3,6 +3,7 @@ import Hotkeys from "@/lib/hotkeys";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer } from "@/components/footer";
 import { StripedSeparator } from "@/components/striped-separator";
+import Navbar from "@/components/navbar";
 
 export default function RootLayout({
   children,
@@ -11,6 +12,7 @@ export default function RootLayout({
 }>) {
   return (
     <div className="px-4">
+      <Navbar />
       <div className="max-w-4xl mx-auto w-full bg-background">{children}</div>
       <StripedSeparator />
       <Footer />
