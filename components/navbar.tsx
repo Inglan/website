@@ -17,8 +17,9 @@ function NavbarContainer({
 }>) {
   return (
     <div className="w-full sticky top-0 z-50">
-      <div className="w-full max-w-4xl mx-auto pt-4 border-x border-dashed bg-striped-gradient bg-size-[80px_80px] bg-fixed bg-background">
-        <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row bg-background">
+      <div className="w-full max-w-4xl mx-auto border-x border-dashed bg-background">
+        <div className="h-4 bg-striped-gradient bg-size-[80px_80px] bg-fixed opacity-25"></div>
+        <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row">
           {children}
         </nav>
       </div>
