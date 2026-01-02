@@ -78,7 +78,7 @@ export function PostNavbar({ title }: { title: string }) {
   return (
     <NavbarContainer>
       <MenuLink
-        href="./"
+        href="/blog"
         className="px-6!"
         containerClassName="border-l-0"
         animation={false}
