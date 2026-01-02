@@ -16,14 +16,19 @@ function NavbarContainer({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="w-full sticky top-0 z-50">
-      <div className="w-full max-w-4xl mx-auto border-x border-dashed bg-background">
-        <div className="h-4 bg-striped-gradient bg-size-[80px_80px] bg-fixed opacity-25"></div>
-        <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row">
-          {children}
-        </nav>
+    <>
+      <div className="w-full sticky top-0 z-50">
+        <div className="w-full h-5 fixed top-0 left-[50%] -translate-x-1/2 bg-background max-w-4xl -z-10"></div>
+        <div className="bg-background max-w-4xl mx-auto border-x border-dashed">
+          <div className="h-4 bg-striped-gradient bg-size-[80px_80px] bg-fixed opacity-25"></div>
+        </div>
+        <div className="w-full border-y border-dashed">
+          <nav className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background">
+            {children}
+          </nav>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
