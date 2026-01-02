@@ -11,10 +11,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="px-4">
+    <div className="px-4 min-h-screen flex flex-col">
       <Navbar />
       <div className="max-w-4xl mx-auto w-full bg-background">{children}</div>
-      <StripedSeparator />
+      <StripedSeparator className="grow" />
       <Footer />
       <div className="w-full h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed fixed top-0 left-0 -z-50 opacity-25"></div>
     </div>
