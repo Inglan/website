@@ -20,7 +20,7 @@ function NavbarContainer({
 }>) {
   return (
     <>
-      <div className={cn("w-full sticky top-0 z-50", className)}>
+      <div className={cn("w-full sticky top-0 z-20", className)}>
         <div className="w-full h-5 fixed top-0 left-[50%] -translate-x-1/2 px-4 max-w-4xl -z-10">
           <div className="w-full h-full bg-background"></div>
         </div>
@@ -87,7 +87,7 @@ export function PostNavbar({ title }: { title: string }) {
   });
 
   return (
-    <NavbarContainer>
+    <nav className="w-full max-w-4xl mx-auto border-x border-dashed flex flex-row bg-background z-50 sticky top-[calc((var(--spacing)*4)+1px)]">
       <MenuLink
         href="/blog"
         className="px-6!"
@@ -114,7 +114,7 @@ export function PostNavbar({ title }: { title: string }) {
         className="top-0 left-0 absolute w-full h-full bg-popover -z-10 origin-left "
         style={{ scaleX }}
       ></motion.div>
-    </NavbarContainer>
+    </nav>
   );
 }
 
