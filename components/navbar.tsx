@@ -9,15 +9,18 @@ import { useUiState } from "@/lib/state";
 import { useScroll, useSpring } from "motion/react";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 function NavbarContainer({
   children,
+  className,
 }: Readonly<{
   children: React.ReactNode;
+  className?: string;
 }>) {
   return (
     <>
-      <div className="w-full sticky top-0 z-50">
+      <div className={cn("w-full sticky top-0 z-50", className)}>
         <div className="w-full h-5 fixed top-0 left-[50%] -translate-x-1/2 px-4 max-w-4xl -z-10">
           <div className="w-full h-full bg-background"></div>
         </div>
