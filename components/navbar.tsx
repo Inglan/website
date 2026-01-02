@@ -14,35 +14,37 @@ export default function Navbar() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
 
   return (
-    <div className="w-full sticky top-0 bg-background pt-4 z-50">
-      <nav className="w-full max-w-4xl mx-auto border border-dashed flex flex-row">
-        <MenuLink
-          href="/"
-          containerClassName="border-l-0 border-r"
-          className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono"
-          animation={false}
-        >
-          Ingo Wolf
-        </MenuLink>
-        <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
-        <div className="hidden md:flex flex-row">
-          {MENU_ITEMS.map((item) => (
-            <MenuLink key={item.url} href={item.url}>
-              {item.label}
-            </MenuLink>
-          ))}
-        </div>
-        <MenuLink
-          className="px-6!"
-          onClick={() => {
-            setSearchOpen(true);
-          }}
-        >
-          <span className="sr-only">Menu</span>
-          <Menu className="size-4 md:hidden" />
-          <Search className="size-4 md:block hidden" />
-        </MenuLink>
-      </nav>
+    <div className="w-full sticky top-0 bg-background z-50">
+      <div className="w-full max-w-4xl mx-auto pt-4 border-x border-dashed bg-striped-gradient bg-size-[80px_80px] bg-fixed">
+        <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row">
+          <MenuLink
+            href="/"
+            containerClassName="border-l-0 border-r"
+            className="text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono"
+            animation={false}
+          >
+            Ingo Wolf
+          </MenuLink>
+          <div className="grow bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
+          <div className="hidden md:flex flex-row">
+            {MENU_ITEMS.map((item) => (
+              <MenuLink key={item.url} href={item.url}>
+                {item.label}
+              </MenuLink>
+            ))}
+          </div>
+          <MenuLink
+            className="px-6!"
+            onClick={() => {
+              setSearchOpen(true);
+            }}
+          >
+            <span className="sr-only">Menu</span>
+            <Menu className="size-4 md:hidden" />
+            <Search className="size-4 md:block hidden" />
+          </MenuLink>
+        </nav>
+      </div>
     </div>
   );
 }
