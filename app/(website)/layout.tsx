@@ -14,6 +14,7 @@ export default function RootLayout({
       {children}
       <StripedSeparator />
       <Footer />
+      <div className="w-full h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed fixed top-0 left-0 -z-10 opacity-25"></div>
     </>
   );
 }
