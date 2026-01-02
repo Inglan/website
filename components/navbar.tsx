@@ -14,8 +14,8 @@ export default function Navbar() {
   const setSearchOpen = useUiState((state) => state.setSearchOpen);
 
   return (
-    <div className="w-full sticky top-0 bg-background z-50">
-      <div className="w-full max-w-4xl mx-auto pt-4 border-x border-dashed bg-striped-gradient bg-size-[80px_80px] bg-fixed">
+    <div className="w-full sticky top-0 z-50">
+      <div className="w-full max-w-4xl mx-auto pt-4 border-x border-dashed bg-striped-gradient bg-size-[80px_80px] bg-fixed bg-background">
         <nav className="w-full max-w-4xl mx-auto border-y border-dashed flex flex-row">
           <MenuLink
             href="/"
