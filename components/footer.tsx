@@ -10,7 +10,8 @@ import { m } from "motion/react";
 
 export function Footer() {
   return (
-    <div className="px-4">
+    <div className="px-4 flex flex-col grow">
+      <div className="bg-background max-w-4xl mx-auto w-full flex grow bg-striped-gradient bg-size-[80px_80px] bg-fixed border-b border-x border-dashed min-h-10"></div>
       <div className="max-w-4xl w-full mx-auto text-sm sm:border-b border-l border-dashed flex flex-col sm:flex-row">
         <div className="flex flex-col border-r border-dashed col-span-3">
           <NextLink
@@ -139,7 +140,7 @@ export function Footer() {
           ))}
         </div>
       </div>{" "}
-      <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4 bg-background">
+      <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4">
         <div
           className="grid grid-cols-3 sm:grid-cols-4 mx-auto p-2 gap-2 w-fit"
           style={{
