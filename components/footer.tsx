@@ -146,7 +146,7 @@ export function Footer() {
       </div>
 
       <div className="border-t border-dashed w-full px-4">
-        <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4">
+        <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4 bg-background">
           <div
             className="grid grid-cols-3 sm:grid-cols-4 mx-auto p-2 gap-2 w-fit"
             style={{
