@@ -8,13 +8,13 @@ export default function Header({
   className?: string;
 }) {
   return (
-    <div
+    <header
       className={cn(
         "w-full mx-auto flex h-fit p-4 border-b border-dashed",
         className,
       )}
     >
       <h1 className="text-6xl text-primary font-mono">{children}</h1>
-    </div>
+    </header>
   );
 }

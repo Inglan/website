@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <div className="flex flex-col grow">
+    <footer className="flex flex-col grow">
       <div className="w-full px-4 grow min-h-10 flex flex-col">
         <div className="bg-background max-w-4xl mx-auto w-full flex grow bg-striped-gradient bg-size-[80px_80px] bg-fixed border-x border-dashed h-full"></div>
       </div>
@@ -233,6 +233,6 @@ export function Footer() {
       <div className="border-t border-dashed w-full px-4">
         <div className="max-w-4xl w-full mx-auto border-x border-dashed h-4"></div>
       </div>
-    </div>
+    </footer>
   );
 }

@@ -31,7 +31,7 @@ export default function Home() {
 
 export function Hero() {
   return (
-    <div className="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl">
+    <section className="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl">
       <div className="flex flex-col">
         <div className="flex flex-col border-b border-dashed">
           <h1 className="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed">
@@ -114,13 +114,13 @@ export function Hero() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 function Things() {
   return (
-    <div className="w-full mx-auto grid grid-cols-1 sm:grid-cols-3 max-w-4xl border-l border-dashed border-b">
+    <section className="w-full mx-auto grid grid-cols-1 sm:grid-cols-3 max-w-4xl border-l border-dashed border-b">
       <div className="border-r border-dashed p-4 border-b sm:border-b-0">
         <h2 className="text-2xl text-primary">Web</h2>
         <p>
@@ -143,6 +143,6 @@ function Things() {
           and force my family to use username/password auth.
         </p>
       </div>
-    </div>
+    </section>
   );
 }
