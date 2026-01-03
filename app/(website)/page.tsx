@@ -155,13 +155,14 @@ function GuestbookBanner() {
       <div className="absolute top-0 left-0 h-full w-8 border-r border-dashed"></div>
       <div className="absolute top-0 right-0 h-full w-8 border-l border-dashed"></div>
       <div className="bg-background flex flex-row">
-        <div className="p-4">Say Hello in my guestbook :)</div>
+        <div className="p-4 text-lg">Say Hello in my guestbook :)</div>
         <div className="grow"></div>
         <Link
           href="/guestbook"
-          className="px-8 flex items-center justify-center border-l border-dashed cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75"
+          className="px-8 flex items-center justify-center border-l border-dashed cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 gap-2"
         >
           Guestbook
+          <ArrowRight />
         </Link>
       </div>
     </div>
