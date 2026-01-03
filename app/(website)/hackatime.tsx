@@ -18,7 +18,7 @@ export function HackatimeSkeleton() {
   ];
 
   return (
-    <div className="w-full mx-auto max-w-4xl">
+    <section className="w-full mx-auto max-w-4xl">
       <div className="grid grid-cols-1 md:grid-cols-32 border-l border-dashed">
         {quickStats.map((stat, index) => (
           <div
@@ -50,7 +50,7 @@ export function HackatimeSkeleton() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -211,6 +211,6 @@ export default async function Hackatime() {
             ),
           )}
       </div>
-    </div>
+    </section>
   );
 }
