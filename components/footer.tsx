@@ -14,8 +14,8 @@ export function Footer() {
       <div className="w-full px-4 grow min-h-10 flex flex-col">
         <div className="bg-background max-w-4xl mx-auto w-full flex grow bg-striped-gradient bg-size-[80px_80px] bg-fixed border-x border-dashed h-full"></div>
       </div>
-      <div className="border-t border-dashed w-full px-4">
-        <div className="max-w-4xl w-full mx-auto text-sm border-l border-dashed flex flex-col sm:flex-row sm:border-b">
+      <div className="w-full px-4">
+        <div className="max-w-4xl w-full mx-auto text-sm border-l border-dashed flex flex-col sm:flex-row sm:border-b border-t">
           <div className="flex flex-col border-r border-dashed col-span-3">
             <NextLink
               href="/"
@@ -145,8 +145,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-dashed w-full px-4">
-        <div className="max-w-4xl w-full mx-auto border-x border-dashed p-4 bg-background">
+      <div className="w-full px-4">
+        <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background">
           <div
             className="grid grid-cols-3 sm:grid-cols-4 mx-auto p-2 gap-2 w-fit"
             style={{
