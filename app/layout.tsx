@@ -36,7 +36,6 @@ export default function RootLayout({
             {children}
             <Toaster position="top-right" offset={{ top: 16, right: 16 }} />
             <Search />
-            <Hotkeys />
             <PosthogIdentify />
             <Suspense>
               <ErrorParamHandler />
