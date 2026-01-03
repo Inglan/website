@@ -27,7 +27,7 @@ export default function Sidebar() {
   if (!pathname.startsWith("/studio")) {
     return (
       <>
-        <motion.div
+        <motion.nav
           initial={{
             x: -500,
             position: hideSidebar ? "fixed" : "sticky",
@@ -59,7 +59,7 @@ export default function Sidebar() {
               setMobileMenuOpen={setMobileMenuOpen}
             />
           ))}
-        </motion.div>
+        </motion.nav>
 
         <Drawer
           open={mobileMenuOpen}

@@ -27,7 +27,7 @@ export default async function Projects() {
       <Header className="border-r">Projects</Header>
       <div className="grid grid-cols-2">
         {projects.map((project, index) => (
-          <div
+          <article
             className="flex flex-col border-r border-b border-dashed"
             key={index}
           >
@@ -67,7 +67,7 @@ export default async function Projects() {
                 ),
               )}
             </div>
-          </div>
+          </article>
         ))}
         {projects.length % 2 === 1 && (
           <div className="bg-card bg-striped-gradient bg-size-[80px_80px] border-b border-r border-dashed"></div>
