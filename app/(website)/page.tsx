@@ -7,6 +7,7 @@ import { StripedSeparator } from "@/components/striped-separator";
 import Hackatime, { HackatimeSkeleton } from "./hackatime";
 import { Suspense } from "react";
 import IngoIcon from "@/lib/icons/ingo/icon";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   description:
@@ -38,9 +39,16 @@ export function Hero() {
             Hello, <br /> I&apos;m Ingo Wolf!
           </h1>
           <p className="text-xl p-4">
-            I am a 16 year old tech nerd from Canberra. I like building random
-            projects, usually with web technologies, especially Next.js. I also
-            like spinning up docker containers in{" "}
+            I am a 16 year old tech nerd from Canberra, Australia{" "}
+            <Image
+              src="/australiaparrot.gif"
+              width={24}
+              height={24}
+              alt="Australia Parrot"
+              className="inline align-baseline"
+            />
+            . I like building random projects, usually with web technologies,
+            especially Next.js. I also like spinning up docker containers in{" "}
             <Link href="https://notoverkill.com" target="_blank">
               my homelab
             </Link>{" "}
