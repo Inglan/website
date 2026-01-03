@@ -32,7 +32,7 @@ export function Footer() {
                 <Mail className="size-4" />
               </NextLink>
               <NextLink
-                href="https://github.com/Inglan"
+                href="https://github.com/ingoau"
                 target="_blank"
                 className="border-r border-b  border-dashed p-4 aspect-square w-fit flex justify-center items-center duration-200 ease-out hover:bg-card active:brightness-75"
               >
@@ -81,7 +81,7 @@ export function Footer() {
           <div className="px-4 py-2 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t bg-background">
             <span className="font-mono">
               This website is{" "}
-              <Link href="https://github.com/Inglan/website" target="_blank">
+              <Link href="https://github.com/ingoau/website" target="_blank">
                 open source
               </Link>
             </span>

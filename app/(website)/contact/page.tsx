@@ -33,7 +33,7 @@ const contactMethods = [
 ];
 
 const socials = [
-  { name: "GitHub", username: "@Inglan", link: "https://github.com/Inglan" },
+  { name: "GitHub", username: "@ingoau", link: "https://github.com/ingoau" },
   {
     name: "Monkeytype",
     username: "ingow",
