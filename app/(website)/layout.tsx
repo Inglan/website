@@ -10,7 +10,9 @@ export default function RootLayout({
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <div className="w-full px-4">
-        <div className="max-w-4xl mx-auto w-full bg-background">{children}</div>
+        <main className="max-w-4xl mx-auto w-full bg-background">
+          {children}
+        </main>
       </div>
       <Footer />
       <div className="w-full h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed fixed top-0 left-0 -z-50 opacity-25"></div>
