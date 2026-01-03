@@ -4,7 +4,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import Search from "@/components/search";
-import Hotkeys from "@/lib/hotkeys";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import ErrorParamHandler from "@/components/error-param-handler";
 import { Suspense } from "react";
