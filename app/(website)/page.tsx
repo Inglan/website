@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <StripedSeparator />
+      <GuestbookBanner />
       <Things />
       <StripedSeparator />
       <Technologies />
@@ -142,6 +142,27 @@ function Things() {
           I have set up VLANs in my home network for security and organization,
           and force my family to use username/password auth.
         </p>
+      </div>
+    </div>
+  );
+}
+
+function GuestbookBanner() {
+  return (
+    <div className="border-b border-x border-dashed p-8 relative bg-striped-gradient bg-size-[80px_80px] bg-fixed">
+      <div className="absolute top-0 left-0 w-full h-8 border-b border-dashed"></div>
+      <div className="absolute bottom-0 left-0 w-full h-8 border-t border-dashed"></div>
+      <div className="absolute top-0 left-0 h-full w-8 border-r border-dashed"></div>
+      <div className="absolute top-0 right-0 h-full w-8 border-l border-dashed"></div>
+      <div className="bg-background flex flex-row">
+        <div className="p-4">Say Hello in my guestbook :)</div>
+        <div className="grow"></div>
+        <Link
+          href="/guestbook"
+          className="px-8 flex items-center justify-center border-l border-dashed cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75"
+        >
+          Guestbook
+        </Link>
       </div>
     </div>
   );
