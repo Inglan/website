@@ -149,7 +149,7 @@ function Things() {
 
 function GuestbookBanner() {
   return (
-    <div className="border-b border-x border-dashed p-8 relative bg-striped-gradient bg-size-[80px_80px] bg-fixed">
+    <div className="border-b border-x border-dashed p-8 relative bg-striped-gradient bg-size-[80px_80px]">
       <div className="absolute top-0 left-0 w-full h-8 border-b border-dashed"></div>
       <div className="absolute bottom-0 left-0 w-full h-8 border-t border-dashed"></div>
       <div className="absolute top-0 left-0 h-full w-8 border-r border-dashed"></div>
