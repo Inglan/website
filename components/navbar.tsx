@@ -38,7 +38,7 @@ function NavbarContainer({
         </div>
       </div>
       <div className="h-[calc((var(--spacing)*20)-3px)] px-4">
-        <div className="max-w-4xl w-full mx-auto border-x h-full border-dashed border-b bg-accent bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
+        <div className="max-w-4xl w-full mx-auto border-x h-full border-dashed border-b bg-card bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
       </div>
     </>
   );
