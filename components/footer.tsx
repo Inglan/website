@@ -14,7 +14,7 @@ export function Footer() {
         <div className="bg-background max-w-4xl mx-auto w-full flex grow bg-striped-gradient bg-size-[80px_80px] bg-fixed border-x border-dashed h-full"></div>
       </div>
       <div className="w-full px-4">
-        <div className="max-w-4xl w-full mx-auto text-sm border-l border-dashed flex flex-col sm:flex-row sm:border-b border-t">
+        <div className="max-w-4xl w-full mx-auto text-sm border-l border-dashed flex flex-col sm:flex-row sm:border-b border-t bg-background">
           <div className="flex flex-col border-r border-dashed col-span-3">
             <NextLink
               href="/"
@@ -77,7 +77,7 @@ export function Footer() {
             <div className="hidden sm:block h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10 border-r border-dashed"></div>
           </div>
         </div>
-        <div className="max-w-4xl w-full mx-auto flex border-x border-dashed items-end bg-striped-gradient bg-size-[80px_80px] bg-fixed sm:flex-row flex-col-reverse pt-10 gap-10 sm:pt-0">
+        <div className="max-w-4xl w-full mx-auto flex border-x border-dashed items-end bg-striped-gradient bg-size-[80px_80px] bg-fixed sm:flex-row flex-col-reverse pt-10 gap-10 sm:pt-0 bg-background">
           <div className="px-4 py-2 sm:border-r border-dashed flex items-center justify-center w-full sm:w-fit border-t bg-background">
             <span className="font-mono">
               This website is{" "}
