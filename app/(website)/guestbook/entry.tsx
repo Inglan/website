@@ -9,12 +9,13 @@ import { FunctionReturnType } from "convex/server";
 import { Check, Gavel, Trash, Undo, Verified } from "lucide-react";
 
 import {
-    Dialog,
-    DialogClose,
-    DialogContent, DialogFooter,
-    DialogHeader,
-    DialogTitle,
-    DialogTrigger
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { authClient } from "@/lib/auth-client";
@@ -56,7 +57,7 @@ export default function Entry({
         {user?.role == "admin" && (
           <>
             <Dialog>
-              <DialogTrigger asChild>
+              <DialogTrigger haptic={true} asChild>
                 <Button variant="ghost" size="icon">
                   <span className="sr-only">Ban</span>
                   <Gavel />
@@ -136,7 +137,7 @@ export default function Entry({
         )}
         {(user?._id == entry.userId || user?.role == "admin") && (
           <Dialog>
-            <DialogTrigger asChild>
+            <DialogTrigger haptic={true} asChild>
               <Button variant="ghost" size="icon">
                 <span className="sr-only">Delete</span>
                 <Trash />
