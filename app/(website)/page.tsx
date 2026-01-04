@@ -163,7 +163,9 @@ function GuestbookBanner() {
       <div className="absolute top-0 left-0 h-full w-8 border-r border-dashed"></div>
       <div className="absolute top-0 right-0 h-full w-8 border-l border-dashed"></div>
       <div className="bg-background flex flex-col sm:flex-row">
-        <div className="p-4 text-lg">Say Hello in my guestbook :)</div>
+        <div className="p-4 text-lg text-center">
+          Say Hello in my guestbook :)
+        </div>
         <div className="grow"></div>
         <Link
           href="/guestbook"
