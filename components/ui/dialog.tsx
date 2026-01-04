@@ -13,14 +13,22 @@ function Dialog({
 }
 
 function DialogTrigger({
+  haptic,
   ...props
-}: React.ComponentProps<typeof DialogPrimitive.Trigger>) {
+}: React.ComponentProps<typeof DialogPrimitive.Trigger> & {
+  haptic?: boolean;
+}) {
   return (
     <DialogPrimitive.Trigger
       data-slot="dialog-trigger"
       {...props}
       onClick={(...functionProps) => {
         if (props.onClick) props.onClick(...functionProps);
+        if (haptic) {
+          try {
+            navigator.vibrate([10, 10, 10, 10, 10]);
+          } catch {}
+        }
       }}
     />
   );
