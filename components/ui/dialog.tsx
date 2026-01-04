@@ -26,7 +26,7 @@ function DialogTrigger({
         if (props.onClick) props.onClick(...functionProps);
         if (haptic) {
           try {
-            navigator.vibrate([10, 10, 10, 10, 10]);
+            navigator.vibrate([0, 100, 10, 10, 10]);
           } catch {}
         }
       }}
