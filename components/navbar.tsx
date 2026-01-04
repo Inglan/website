@@ -20,7 +20,7 @@ function NavbarContainer({
 }>) {
   return (
     <>
-      <div className={cn("w-full sticky top-0 z-20", className)}>
+      <div className={cn("w-full fixed top-0 z-20", className)}>
         <div className="w-full h-5 fixed top-0 left-[50%] -translate-x-1/2 px-4 max-w-4xl -z-10">
           <div className="w-full h-full bg-background"></div>
         </div>
@@ -36,6 +36,9 @@ function NavbarContainer({
             {children}
           </nav>
         </div>
+      </div>
+      <div className="h-20 px-4 pb-[2px]">
+        <div className="max-w-4xl w-full border-x h-full border-dashed border-b bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
       </div>
     </>
   );
