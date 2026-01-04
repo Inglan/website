@@ -37,7 +37,7 @@ function NavbarContainer({
           </nav>
         </div>
       </div>
-      <div className="h-20 px-4 pb-[2px]">
+      <div className="h-20 px-4 pb-[3px]">
         <div className="max-w-4xl w-full border-x h-full border-dashed border-b bg-striped-gradient bg-size-[80px_80px] bg-fixed"></div>
       </div>
     </>
