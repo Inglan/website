@@ -17,11 +17,9 @@ export const add = mutation({
       message: args.message,
       status: user.role === "admin" ? "approved" : "pending",
     });
-    if (user.role != "admin") {
-      ctx.scheduler.runAfter(0, internal.slack.send, {
-        message: "Someone posted a guestbook entry go review it <@U0923H02Y3B>",
-      });
-    }
+    ctx.scheduler.runAfter(0, internal.slack.send, {
+      message: "Someone posted a guestbook entry go review it <@U0923H02Y3B>",
+    });
   },
 });
 
