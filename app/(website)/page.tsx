@@ -37,6 +37,7 @@ export function Hero() {
         <div className="flex flex-col border-b border-dashed">
           <h1 className="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed">
             Hello, <br /> I&apos;m Ingo Wolf!
+            <span className="text-lg text-muted-foreground"> he/him</span>
           </h1>
           <p className="text-xl p-4">
             I am a 16 year old tech nerd from Canberra, Australia{" "}
