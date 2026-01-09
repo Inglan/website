@@ -12,6 +12,7 @@ import type * as auth from "../auth.js";
 import type * as guestbook from "../guestbook.js";
 import type * as http from "../http.js";
 import type * as networkingIncidents from "../networkingIncidents.js";
+import type * as slack from "../slack.js";
 import type * as types from "../types.js";
 
 import type {
@@ -25,6 +26,7 @@ declare const fullApi: ApiFromModules<{
   guestbook: typeof guestbook;
   http: typeof http;
   networkingIncidents: typeof networkingIncidents;
+  slack: typeof slack;
   types: typeof types;
 }>;
 
