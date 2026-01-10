@@ -25,12 +25,12 @@ export default async function Projects() {
   return (
     <div className="max-w-4xl w-full mx-auto border-l border-dashed">
       <Header className="border-r">Projects</Header>
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
         {projects.length % 2 === 1 && (
-          <div className="bg-card bg-striped-gradient bg-size-[80px_80px] border-b border-r border-dashed"></div>
+          <div className="bg-card bg-striped-gradient bg-size-[80px_80px] border-b border-r border-dashed hidden md:block"></div>
         )}
       </div>
     </div>
