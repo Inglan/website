@@ -31,9 +31,6 @@ export default async function ProjectCards() {
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
-        {projects.length % 2 === 1 && (
-          <div className="bg-card bg-striped-gradient bg-size-[80px_80px] border-b border-r border-dashed"></div>
-        )}
       </div>
       <div className="h-96 w-full absolute bottom-0 left-0 border-r border-dashed mask-t-from-0% mask-t-to-100% backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale"></div>
       <Link
