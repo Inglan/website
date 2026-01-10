@@ -45,7 +45,7 @@ export default async function ProjectCards() {
 
 export function ProjectCard({ project }: { project: SanityDocument }) {
   return (
-    <div className="flex flex-col border-r border-b border-dashed">
+    <div className="flex flex-col border-r border-b border-dashed md:nth-3:[&>p]:hidden md:nth-3:[&>div]:hidden last:[&>p]:hidden last:[&>div]:hidden">
       <Image
         src={project.mainImageUrl}
         alt={project.title}
