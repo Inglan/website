@@ -32,7 +32,7 @@ export default async function ProjectCards() {
           <ProjectCard key={index} project={project} />
         ))}
       </div>
-      <div className="h-96 w-full absolute bottom-0 left-0 border-r border-dashed mask-t-from-0% mask-t-to-100% backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale"></div>
+      <div className="h-96 w-full absolute bottom-0 left-0 border-r border-dashed mask-t-from-0% mask-t-to-100% backdrop-blur-lg backdrop-brightness-50 backdrop-grayscale pointer-events-none"></div>
       <Link
         href="/projects"
         className="h-20 w-full bg-background/50 backdrop-blur-sm absolute bottom-0 left-0 border-t border-b border-r border-dashed flex hover:bg-muted active:brightness-75 duration-200 justify-center items-center"
