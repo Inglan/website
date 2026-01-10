@@ -8,7 +8,7 @@ import Link from "next/link";
 const POSTS_QUERY = `*[
   _type == "project"
   && defined(slug.current)
-]|order(publishedAt desc)[0...12]{_id, title, slug, body, "mainImageUrl": mainImage.asset->url, links}`;
+]|order(publishedAt desc){_id, title, slug, body, "mainImageUrl": mainImage.asset->url, links}`;
 const options = { next: { revalidate: 30 } };
 
 export const metadata: Metadata = {
