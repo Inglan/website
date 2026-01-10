@@ -8,6 +8,7 @@ import Hackatime, { HackatimeSkeleton } from "./hackatime";
 import { Suspense } from "react";
 import IngoIcon from "@/lib/icons/ingo/icon";
 import Image from "next/image";
+import ProjectCards from "./project-cards";
 
 export const metadata: Metadata = {
   description:
@@ -26,6 +27,8 @@ export default function Home() {
       <Suspense fallback={<HackatimeSkeleton />}>
         <Hackatime />
       </Suspense>
+      <StripedSeparator />
+      <ProjectCards />
     </>
   );
 }
