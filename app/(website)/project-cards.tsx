@@ -24,7 +24,7 @@ export default async function ProjectCards() {
 
   return (
     <div className="max-w-4xl w-full mx-auto border-l border-dashed relative">
-      <div className="grid grid-cols-2">
+      <div className="grid md:grid-cols-2">
         {projects.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}
