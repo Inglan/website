@@ -27,50 +27,53 @@ export default async function Projects() {
       <Header className="border-r">Projects</Header>
       <div className="grid grid-cols-2">
         {projects.map((project, index) => (
-          <div
-            className="flex flex-col border-r border-b border-dashed"
-            key={index}
-          >
-            <Image
-              src={project.mainImageUrl}
-              alt={project.title}
-              width={16 * 100}
-              height={9 * 100}
-              className="aspect-video w-full object-cover border-b border-dashed"
-            />
-            <h2 className="w-full p-4 text-2xl border-b border-dashed">
-              {project.title}
-            </h2>
-            <p className="p-4">
-              {project.body &&
-                project.body
-                  .map((b: { children?: { text?: string }[] }) =>
-                    (b.children || [])
-                      .map((c: { text?: string }) => c.text || "")
-                      .join(""),
-                  )
-                  .join(" ")}
-            </p>
-            <div className="w-full flex flex-row mt-auto border-t border-dashed">
-              {project.links.map(
-                (link: { title: string; url: string }, index: number) => (
-                  <Button
-                    key={index}
-                    variant="ghost"
-                    className="cursor-pointer px-4 py-2 duration-200 ease-out hover:bg-card active:brightness-75 bg-background border-r border-dashed"
-                    asChild
-                  >
-                    <Link href={link.url} target="_blank">
-                      {link.title}
-                    </Link>
-                  </Button>
-                ),
-              )}
-            </div>
-          </div>
+          <ProjectCard key={index} project={project} />
         ))}
         {projects.length % 2 === 1 && (
           <div className="bg-card bg-striped-gradient bg-size-[80px_80px] border-b border-r border-dashed"></div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export function ProjectCard({ project }: { project: SanityDocument }) {
+  return (
+    <div className="flex flex-col border-r border-b border-dashed">
+      <Image
+        src={project.mainImageUrl}
+        alt={project.title}
+        width={16 * 100}
+        height={9 * 100}
+        className="aspect-video w-full object-cover border-b border-dashed"
+      />
+      <h2 className="w-full p-4 text-2xl border-b border-dashed">
+        {project.title}
+      </h2>
+      <p className="p-4">
+        {project.body &&
+          project.body
+            .map((b: { children?: { text?: string }[] }) =>
+              (b.children || [])
+                .map((c: { text?: string }) => c.text || "")
+                .join(""),
+            )
+            .join(" ")}
+      </p>
+      <div className="w-full flex flex-row mt-auto border-t border-dashed">
+        {project.links.map(
+          (link: { title: string; url: string }, index: number) => (
+            <Button
+              key={index}
+              variant="ghost"
+              className="cursor-pointer px-4 py-2 duration-200 ease-out hover:bg-card active:brightness-75 bg-background border-r border-dashed"
+              asChild
+            >
+              <Link href={link.url} target="_blank">
+                {link.title}
+              </Link>
+            </Button>
+          ),
         )}
       </div>
     </div>
