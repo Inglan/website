@@ -13,7 +13,7 @@ export default function ProjectPage({
 }) {
   return (
     <div className="flex-col p-8 absolute w-full h-screen flex items-center">
-      <div className="border border-dashed w-full max-w-2xl">
+      <div className="border border-b-0 border-dashed w-full max-w-2xl">
         <div className="p-4 border-b border-dashed flex flex-col gap-2">
           <p>
             <Link href="/">
@@ -30,7 +30,7 @@ export default function ProjectPage({
               href={link.url}
               className={cn(
                 buttonVariants({ variant: "ghost", size: "lg" }),
-                "border-b border-dashed last:border-0 hover:bg-muted active:brightness-75 duration-200 justify-start",
+                "border-b border-dashed hover:bg-muted active:brightness-75 duration-200 justify-start",
               )}
             >
               {link.icon}
