@@ -6,7 +6,7 @@ export default function XKCDPage() {
   return (
     <ProjectPage
       name="xkcd-webapp"
-      description="A web application that displays xkcd comics"
+      description="A webapp I made to read XKCD. It was my first project with a backend, which I used Convex for. This project took 11 hours of coding to make."
       links={[
         {
           title: "GitHub",
