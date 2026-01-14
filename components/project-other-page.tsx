@@ -20,7 +20,7 @@ export default function ProjectPage({
           </p>
           <h1 className="text-4xl lg:text-5xl text-primary">{name}</h1>
         </div>
-        <p className="border-b border-dashed">{description}</p>
+        <p className="border-b border-dashed p-4">{description}</p>
       </div>
     </div>
   );
