@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { buttonVariants } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 export default function ProjectPage({
   name,
@@ -21,6 +23,21 @@ export default function ProjectPage({
           <h1 className="text-4xl lg:text-5xl text-primary">{name}</h1>
         </div>
         <p className="border-b border-dashed p-4">{description}</p>
+        <div className="flex flex-col">
+          {links.map((link, index) => (
+            <Link
+              key={index}
+              href={link.url}
+              className={cn(
+                buttonVariants({ variant: "ghost", size: "lg" }),
+                "border-b border-dashed last:border-0 hover:bg-muted active:brightness-75 duration-200 justify-start",
+              )}
+            >
+              {link.icon}
+              {link.title}
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
