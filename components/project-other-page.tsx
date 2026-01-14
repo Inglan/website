@@ -14,7 +14,7 @@ export default function ProjectPage({
   return (
     <div className="flex-col p-8 absolute w-full h-screen flex items-center">
       <div className="border border-b-0 border-dashed w-full max-w-2xl">
-        <div className="p-4 border-b border-dashed flex flex-col gap-2">
+        <div className="p-4 border-b border-dashed flex flex-col gap-2 bg-card">
           <p>
             <Link href="/">
               <span className="text-primary">ingo.au</span>/
