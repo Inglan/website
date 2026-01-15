@@ -1,6 +1,11 @@
 import ProjectPage from "@/components/project-other-page";
 import { ExternalLink } from "lucide-react";
+import { Metadata } from "next";
 import { FaGithub } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "networkify",
+};
 
 export default function XKCDPage() {
   return (
