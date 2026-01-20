@@ -76,6 +76,8 @@
     transparent 0,
     transparent 50%
   );
+
+  --font-win: var(--font-win);
 }
 
 :root {

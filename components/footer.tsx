@@ -147,7 +147,7 @@ export function Footer() {
       </div>
 
       <div className="w-full px-4">
-        <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background font-[--win-font] text-black">
+        <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background text-black">
           <div
             className="p-2 gap-2 w-fit mx-auto"
             style={{
@@ -156,7 +156,7 @@ export function Footer() {
               background: "#c2c6ca",
             }}
           >
-            Buttons
+            <span className="font-win">Buttons</span>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 w-fit">
               {[
                 {

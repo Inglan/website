@@ -21,7 +21,7 @@ const geistMono = Geist_Mono({
 
 const winFont = localFont({
   src: "./W95FA.otf",
-  variable: "--win-font",
+  variable: "--font-win",
 });
 
 export const metadata: Metadata = {
