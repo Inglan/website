@@ -6,6 +6,8 @@ import { FaGithub } from "react-icons/fa";
 import { SiSignal } from "react-icons/si";
 import { MENU_ITEMS, OTHER_PAGES } from "@/lib/constants";
 import Image from "next/image";
+import { Button as WinButton } from "@react95/core";
+import "@react95/core/themes/win95.css";
 
 export function Footer() {
   return (
@@ -144,6 +146,7 @@ export function Footer() {
         </div>
       </div>
 
+      <WinButton>e</WinButton>
       <div className="w-full px-4">
         <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background">
           <div
