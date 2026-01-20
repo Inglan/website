@@ -146,7 +146,6 @@ export function Footer() {
         </div>
       </div>
 
-      <WinButton>e</WinButton>
       <div className="w-full px-4">
         <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background">
           <div
@@ -219,16 +218,18 @@ export function Footer() {
                 href: "https://notoverkill.com",
               },
             ].map((button) => (
-              <Link key={button.alt} href={button.href} target="_blank">
-                <Image
-                  loading="lazy"
-                  src={button.src}
-                  alt={button.alt}
-                  className="w-[88px] h-[31px]"
-                  width={88}
-                  height={31}
-                />
-              </Link>
+              <WinButton key={button.alt} className="p-0!">
+                <Link key={button.alt} href={button.href} target="_blank">
+                  <Image
+                    loading="lazy"
+                    src={button.src}
+                    alt={button.alt}
+                    className="w-[88px] h-[31px]"
+                    width={88}
+                    height={31}
+                  />
+                </Link>
+              </WinButton>
             ))}
           </div>
         </div>
