@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 });
 
 const winFont = localFont({
-  src: "./w95fa.woff2",
+  src: "./W95FA.otf",
   variable: "--win-font",
 });
 
