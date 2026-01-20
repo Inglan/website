@@ -157,7 +157,7 @@ export function Footer() {
             }}
           >
             <div className="flex flex-row pb-2">
-              <span className="text-lg">Buttons</span>
+              <span className="text-lg">88x31 Buttons</span>
               <div className="grow" />
               <Link href="/buttons/ingo.png" download>
                 <WinButton>Download My Button</WinButton>
