@@ -147,90 +147,93 @@ export function Footer() {
       </div>
 
       <div className="w-full px-4">
-        <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background">
+        <div className="max-w-4xl w-full mx-auto border-x border-t border-dashed p-4 bg-background font-[--win-font] text-black">
           <div
-            className="grid grid-cols-3 sm:grid-cols-4 mx-auto p-2 gap-2 w-fit"
+            className="p-2 gap-2 w-fit mx-auto"
             style={{
               boxShadow:
                 "0.5px 0.5px 0 0.5px black, inset 1px 1px #C2C6CA, inset -1px -1px #85898d, inset 2px 2px white",
               background: "#c2c6ca",
             }}
           >
-            {[
-              {
-                src: "/buttons/convex.gif",
-                alt: "Convex",
-                href: "https://convex.dev",
-              },
-              {
-                src: "/buttons/ctp.webp",
-                alt: "Catppuccin",
-                href: "https://catppuccin.com",
-              },
-              {
-                src: "/buttons/github.png",
-                alt: "GitHub",
-                href: "https://github.com",
-              },
-              {
-                src: "/buttons/hackclub.gif",
-                alt: "Hack Club",
-                href: "https://hackclub.com",
-              },
-              {
-                src: "/buttons/next.gif",
-                alt: "Next.js",
-                href: "https://nextjs.org",
-              },
-              {
-                src: "/buttons/home-assistant.gif",
-                alt: "Home Assistant",
-                href: "https://home-assistant.io",
-              },
-              {
-                src: "/buttons/macosmade.gif",
-                alt: "Made with macos",
-                href: "https://apple.com",
-              },
-              {
-                src: "/buttons/neovim.gif",
-                alt: "Neovim",
-                href: "https://neovim.io",
-              },
-              {
-                src: "/buttons/codingcorner.png",
-                alt: "Coding Corner",
-                href: "https://codingcorner.dev",
-              },
-              {
-                src: "/buttons/slitro.png",
-                alt: "Slitro Studio",
-                href: "https://site.slitrostudio.me/",
-              },
-              {
-                src: "/buttons/ultrafastparrot.gif",
-                alt: "Ultrafastparrot Cult",
-                href: "https://ultrafastparrot.net",
-              },
-              {
-                src: "/buttons/notoverkill.gif",
-                alt: "Notoverkill",
-                href: "https://notoverkill.com",
-              },
-            ].map((button) => (
-              <WinButton key={button.alt} className="p-0!" tabIndex={-1}>
-                <Link key={button.alt} href={button.href} target="_blank">
-                  <Image
-                    loading="lazy"
-                    src={button.src}
-                    alt={button.alt}
-                    className="w-[88px] h-[31px]"
-                    width={88}
-                    height={31}
-                  />
-                </Link>
-              </WinButton>
-            ))}
+            Buttons
+            <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 w-fit">
+              {[
+                {
+                  src: "/buttons/convex.gif",
+                  alt: "Convex",
+                  href: "https://convex.dev",
+                },
+                {
+                  src: "/buttons/ctp.webp",
+                  alt: "Catppuccin",
+                  href: "https://catppuccin.com",
+                },
+                {
+                  src: "/buttons/github.png",
+                  alt: "GitHub",
+                  href: "https://github.com",
+                },
+                {
+                  src: "/buttons/hackclub.gif",
+                  alt: "Hack Club",
+                  href: "https://hackclub.com",
+                },
+                {
+                  src: "/buttons/next.gif",
+                  alt: "Next.js",
+                  href: "https://nextjs.org",
+                },
+                {
+                  src: "/buttons/home-assistant.gif",
+                  alt: "Home Assistant",
+                  href: "https://home-assistant.io",
+                },
+                {
+                  src: "/buttons/macosmade.gif",
+                  alt: "Made with macos",
+                  href: "https://apple.com",
+                },
+                {
+                  src: "/buttons/neovim.gif",
+                  alt: "Neovim",
+                  href: "https://neovim.io",
+                },
+                {
+                  src: "/buttons/codingcorner.png",
+                  alt: "Coding Corner",
+                  href: "https://codingcorner.dev",
+                },
+                {
+                  src: "/buttons/slitro.png",
+                  alt: "Slitro Studio",
+                  href: "https://site.slitrostudio.me/",
+                },
+                {
+                  src: "/buttons/ultrafastparrot.gif",
+                  alt: "Ultrafastparrot Cult",
+                  href: "https://ultrafastparrot.net",
+                },
+                {
+                  src: "/buttons/notoverkill.gif",
+                  alt: "Notoverkill",
+                  href: "https://notoverkill.com",
+                },
+              ].map((button) => (
+                <WinButton key={button.alt} className="p-0!" tabIndex={-1}>
+                  <Link key={button.alt} href={button.href} target="_blank">
+                    <Image
+                      loading="lazy"
+                      src={button.src}
+                      alt={button.alt}
+                      className="w-[88px] h-[31px]"
+                      width={88}
+                      height={31}
+                    />
+                  </Link>
+                </WinButton>
+              ))}
+            </div>
           </div>
         </div>
       </div>
