@@ -218,7 +218,7 @@ export function Footer() {
                 href: "https://notoverkill.com",
               },
             ].map((button) => (
-              <WinButton key={button.alt} className="p-0!">
+              <WinButton key={button.alt} className="p-0!" tabIndex={-1}>
                 <Link key={button.alt} href={button.href} target="_blank">
                   <Image
                     loading="lazy"
