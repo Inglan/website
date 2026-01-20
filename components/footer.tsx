@@ -75,6 +75,9 @@ export function Footer() {
                   {item.label}
                 </NextLink>
               ))}
+              {([...MENU_ITEMS, ...OTHER_PAGES].length - 1) % 2 === 0 && (
+                <div className="border-r border-b bg-card border-dashed"></div>
+              )}
             </div>
             <div className="hidden sm:block h-full bg-striped-gradient bg-size-[80px_80px] bg-fixed min-h-10 border-r border-dashed"></div>
           </div>
