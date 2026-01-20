@@ -8,6 +8,7 @@ import { ConvexClientProvider } from "./ConvexClientProvider";
 import ErrorParamHandler from "@/components/error-param-handler";
 import { Suspense } from "react";
 import PosthogIdentify from "@/components/posthog-identify";
+import localFont from "next/font/local";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -16,6 +17,11 @@ const jost = Jost({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--geist-mono",
+});
+
+const winFont = localFont({
+  src: "./ms_sans_serif.woff2",
+  variable: "--win-font",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +35,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jost.className} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${jost.className} ${geistMono.variable} ${winFont.variable} antialiased`}
+      >
         <ConvexClientProvider>
           <ThemeProvider attribute="class" forcedTheme="dark">
             {children}
