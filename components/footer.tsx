@@ -156,7 +156,11 @@ export function Footer() {
               background: "#c2c6ca",
             }}
           >
-            Buttons
+            <div className="flex flex-row pb-2">
+              Buttons
+              <div className="grow" />
+              <WinButton>Download My Button</WinButton>
+            </div>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 w-fit">
               {[
                 {
