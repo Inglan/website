@@ -159,7 +159,9 @@ export function Footer() {
             <div className="flex flex-row pb-2">
               <span className="text-lg">Buttons</span>
               <div className="grow" />
-              <WinButton>Download My Button</WinButton>
+              <Link href="/buttons/ingo.png" download>
+                <WinButton>Download My Button</WinButton>
+              </Link>
             </div>
             <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 w-fit">
               {[
