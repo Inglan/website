@@ -9,6 +9,7 @@ import ErrorParamHandler from "@/components/error-param-handler";
 import { Suspense } from "react";
 import PosthogIdentify from "@/components/posthog-identify";
 import localFont from "next/font/local";
+import Script from "next/script";
 
 const jost = Jost({
   subsets: ["latin"],
@@ -35,6 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <Script src="https://pagering.gideon.sh/embed.js" defer />
       <body
         className={`${jost.className} ${geistMono.variable} ${winFont.variable} antialiased`}
       >
