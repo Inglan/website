@@ -109,6 +109,12 @@ export function Footer() {
                 next: "https://ctp-webr.ing/ingo/next",
                 prev: "https://ctp-webr.ing/ingo/prev",
               },
+              {
+                name: "page ring",
+                url: "https://pagering.gideon.sh/",
+                next: "https://pagering.gideon.sh/to/ingo/next",
+                prev: "https://pagering.gideon.sh/to/ingo/prev",
+              },
             ].map((item, index) => (
               <div
                 className="flex flex-row border-b border-dashed w-full last:border-0"
