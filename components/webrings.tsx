@@ -25,7 +25,17 @@ export default function Webrings() {
         },
         {
           name: "page ring",
-          onClick: () => window.pagering.open(),
+          onClick: () => {
+            if (
+              (window as Window & { pagering?: { open: () => void } }).pagering
+            ) {
+              (
+                window as Window & { pagering?: { open: () => void } }
+              ).pagering?.open();
+            } else {
+              location.href = "https://pagering.gideon.sh/";
+            }
+          },
           next: "https://pagering.gideon.sh/to/ingo/next",
           prev: "https://pagering.gideon.sh/to/ingo/prev",
         },
