@@ -111,7 +111,7 @@ export function Footer() {
               },
               {
                 name: "page ring",
-                url: "https://pagering.gideon.sh/",
+                onClick: () => window.pagering.open(),
                 next: "https://pagering.gideon.sh/to/ingo/next",
                 prev: "https://pagering.gideon.sh/to/ingo/prev",
               },
@@ -134,9 +134,16 @@ export function Footer() {
                 <Button
                   variant="ghost"
                   className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 grow"
+                  onClick={() => {
+                    if (item.onClick) item.onClick();
+                  }}
                   asChild
                 >
-                  <Link href={item.url}>{item.name}</Link>
+                  {item.url ? (
+                    <Link href={item.url}>{item.name}</Link>
+                  ) : (
+                    <span>{item.name}</span>
+                  )}
                 </Button>
                 <Button
                   variant="ghost"
