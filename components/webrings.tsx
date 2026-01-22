@@ -56,7 +56,7 @@ export default function Webrings() {
             {item.url ? (
               <Link href={item.url}>{item.name}</Link>
             ) : (
-              <span>{item.name}</span>
+              <span className="select-none">{item.name}</span>
             )}
           </Button>
           <Button
