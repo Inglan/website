@@ -47,7 +47,7 @@ export default function Webrings() {
           </Button>
           <Button
             variant="ghost"
-            className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 grow"
+            className="border-l border-dashed duration-200 ease-out hover:bg-card active:brightness-75 grow cursor-pointer"
             onClick={() => {
               if (item.onClick) item.onClick();
             }}
