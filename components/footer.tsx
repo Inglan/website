@@ -149,7 +149,7 @@ export function Footer() {
                 {
                   src: "/buttons/macosmade.gif",
                   alt: "Made with macos",
-                  href: "https://apple.com",
+                  href: "https://en.wikipedia.org/wiki/MacOS",
                 },
                 {
                   src: "/buttons/neovim.gif",
