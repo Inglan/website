@@ -116,3 +116,9 @@
         @apply bg-background text-foreground;
     }
 }
+
+@layer components {
+    .btn-interactive {
+        @apply hover:bg-muted active:brightness-75 duration-200;
+    }
+}
