@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
+    "@fontsource-variable/geist-mono": "^5.2.7",
+    "@fontsource-variable/jost": "^5.2.8",
     "@tailwindcss/vite": "^4.1.18",
     "@types/react": "^19.2.10",
     "@types/react-dom": "^19.2.3",
