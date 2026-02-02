@@ -19,11 +19,13 @@ export default defineConfig({
         provider: fontProviders.google(),
         name: "Geist Mono",
         cssVariable: "--font-geist-mono",
+        weights: ["100 900"],
       },
       {
         provider: fontProviders.google(),
         name: "Jost",
         cssVariable: "--font-jost",
+        weights: ["100 900"],
       },
     ],
   },
