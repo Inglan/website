@@ -1,3 +1,7 @@
+---
+import { NAVBAR_ITEMS } from "@/lib/constants";
+---
+
 <div>
     <div class="border-x p-2 w-full max-w-4xl mx-auto"></div>
     <div class="border-y">
@@ -9,7 +13,13 @@
                 Ingo Wolf
             </a>
             <div class="grow"></div>
-            <a href="/" class="menu-item btn-interactive">Home</a>
+            {
+                NAVBAR_ITEMS.map((item) => (
+                    <a href={item.url} class="menu-item btn-interactive">
+                        {item.label}
+                    </a>
+                ))
+            }
         </div>
     </div>
 </div>
