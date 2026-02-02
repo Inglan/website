@@ -5,8 +5,18 @@
             <a
                 href="/"
                 class="flex justify-center items-center border-r p-4 text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono btn-interactive"
-                >Ingo Wolf</a
             >
+                Ingo Wolf
+            </a>
+            <div class="grow"></div>
+            <a href="/" class="menu-item btn-interactive">Home</a>
         </div>
     </div>
 </div>
+
+<style>
+    @reference 'tailwindcss';
+    .menu-item {
+        @apply px-8 py-4 w-fit flex justify-center items-center border-l;
+    }
+</style>
