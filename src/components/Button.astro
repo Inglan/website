@@ -1,0 +1,8 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+type Props = JSX.ButtonHTMLAttributes;
+
+const props: Props = Astro.props;
+---
+
+<button {...props}></button>
