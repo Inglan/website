@@ -19,6 +19,10 @@ import { Font } from "astro:assets";
     </head>
     <body>
         <Navbar />
-        <slot />
+        <div class="w-full px-4">
+            <main class="max-w-4xl mx-auto w-full bg-background">
+                <slot />
+            </main>
+        </div>
     </body>
 </html>
