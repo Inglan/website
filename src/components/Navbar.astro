@@ -10,18 +10,22 @@ import { NAVBAR_ITEMS } from "@/lib/constants";
     </div>
     <div class="border-y px-4">
         <div class="border-x w-full max-w-4xl mx-auto flex flex-row">
-            <a
-                href="/"
-                class="flex justify-center items-center border-r p-4 text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono btn-interactive"
-            >
-                Ingo Wolf
-            </a>
+            <div class="border-r">
+                <a
+                    href="/"
+                    class="flex justify-center items-center p-4 text-xl py-4! px-4! active:font-normal font-extrabold min-w-36 font-mono btn-interactive"
+                >
+                    Ingo Wolf
+                </a>
+            </div>
             <div class="grow"></div>
             {
                 NAVBAR_ITEMS.map((item) => (
-                    <a href={item.url} class="menu-item btn-interactive">
-                        {item.label}
-                    </a>
+                    <div class="border-l">
+                        <a href={item.url} class="menu-item btn-interactive">
+                            {item.label}
+                        </a>
+                    </div>
                 ))
             }
         </div>
@@ -31,6 +35,6 @@ import { NAVBAR_ITEMS } from "@/lib/constants";
 <style>
     @reference 'tailwindcss';
     .menu-item {
-        @apply px-8 py-4 w-fit flex justify-center items-center border-l;
+        @apply px-8 py-4 w-fit flex justify-center items-center h-full;
     }
 </style>
