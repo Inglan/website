@@ -1,0 +1,98 @@
+<div
+    class="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl"
+>
+    <div class="flex flex-col">
+        <div class="flex flex-col border-b border-dashed">
+            <h1
+                class="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed"
+            >
+                Hello, <br /> I&apos;m Ingo Wolf!
+                <span class="text-lg text-muted-foreground"> he/him</span>
+            </h1>
+            <p class="text-xl p-4">
+                I am a 16 year old tech nerd from Canberra, Australia{" "}
+                <!-- <Image
+                    src="/australiaparrot.gif"
+                    width={24}
+                    height={24}
+                    alt="Australia Parrot"
+                    class="inline align-baseline"
+                /> -->
+                . I like building random projects, usually with web technologies,
+                especially Next.js. I also like spinning up docker containers in{
+                    " "
+                }
+                <a href="https://notoverkill.com" target="_blank">
+                    my homelab
+                </a>{" "}
+                and reconfiguring my not at all overkill home network. And when I&apos;m
+                not doing any of that, I&apos;m probably doing schoolwork, reading,
+                walking, or chatting on the{" "}
+                <a
+                    href="https://hackclub.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Hack Club
+                </a>{" "}
+                Slack.
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+            {
+                [
+                    // { text: "Projects", link: "/projects" },
+                    { text: "Blog", link: "/blog" },
+                    { text: "Contact", link: "/contact" },
+                ].map((item, index) => (
+                    <div class="border-b md:border-b-0 md:border-r border-dashed last:border-0">
+                        <a
+                            class="flex flex-row gap-2 items-center justify-center p-4 h-full w-full btn-interactive"
+                            href={item.link}
+                        >
+                            {item.text}
+                            <!-- <ArrowRight class="size-4" /> -->
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <div class="w-full sm:w-0 min-w-64 sm:border-l border-dashed">
+        <!-- <IngoIcon class="w-full h-fit border-b border-dashed hidden sm:block" /> -->
+        <div class="flex flex-col border-t sm:border-t-0 border-dashed">
+            <!-- {
+                [
+                    { icon: Earth, content: <>Canberra, Australia</> },
+                    {
+                        icon: ClockIcon,
+                        content: <Clock />,
+                    },
+                    {
+                        icon: Building,
+                        content: (
+                            <a
+                                href="https://cloudearth.au"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Cloud Earth
+                            </a>
+                        ),
+                    },
+                    {
+                        icon: Mail,
+                        content: <a href="mailto:me@ingo.au">me@ingo.au</a>,
+                    },
+                ].map((item, index) => (
+                    <div
+                        key={index}
+                        class="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono"
+                    >
+                        <item.icon class="size-5" /> {item.content}
+                    </div>
+                ))
+            } -->
+        </div>
+    </div>
+</div>
