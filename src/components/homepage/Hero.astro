@@ -1,3 +1,7 @@
+---
+import { Image } from 'astro:assets';
+import australiaParrot from "@/assets/australiaparrot.gif"
+---
 <div
     class="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl"
 >
@@ -11,13 +15,13 @@
             </h1>
             <p class="text-xl p-4">
                 I am a 16 year old tech nerd from Canberra, Australia{" "}
-                <!-- <Image
-                    src="/australiaparrot.gif"
-                    width={24}
-                    height={24}
+                <Image
+                    src={australiaParrot}
+                    width={48}
+                    height={48}
                     alt="Australia Parrot"
-                    class="inline align-baseline"
-                /> -->
+                    class="inline align-baseline size-6"
+                />{" "}
                 . I like building random projects, usually with web technologies,
                 especially Next.js. I also like spinning up docker containers in{
                     " "
