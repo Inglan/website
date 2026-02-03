@@ -7,12 +7,12 @@ import Clock from "@/components/homepage/Clock.astro";
 ---
 
 <div
-    class="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl"
+    class="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b max-w-4xl"
 >
     <div class="flex flex-col">
-        <div class="flex flex-col border-b border-dashed">
+        <div class="flex flex-col border-b">
             <h1
-                class="text-primary text-4xl/12 lg:text-5xl/15 border-b border-dashed w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed"
+                class="text-primary text-4xl/12 lg:text-5xl/15 border-b w-full p-4 font-mono bg-striped-gradient bg-size-[80px_80px] bg-fixed"
             >
                 Hello, <br /> I&apos;m Ingo Wolf!
                 <span class="text-lg text-muted-foreground"> he/him</span>
@@ -49,7 +49,7 @@ import Clock from "@/components/homepage/Clock.astro";
                     { text: "Blog", link: "/blog" },
                     { text: "Contact", link: "/contact" },
                 ].map((item, index) => (
-                    <div class="border-b md:border-b-0 md:border-r border-dashed last:border-0">
+                    <div class="border-b md:border-b-0 md:border-r last:border-0">
                         <a
                             class="flex flex-row gap-2 items-center justify-center p-4 h-full w-full btn-interactive"
                             href={item.link}
@@ -62,13 +62,13 @@ import Clock from "@/components/homepage/Clock.astro";
             }
         </div>
     </div>
-    <div class="w-full sm:w-0 min-w-64 sm:border-l border-dashed">
+    <div class="w-full sm:w-0 min-w-64 sm:border-l">
         <Image
             src={ingoIcon}
             alt="Ingo"
-            class="w-full h-fit border-b border-dashed hidden sm:block"
+            class="w-full h-fit border-b hidden sm:block"
         />
-        <div class="flex flex-col border-t sm:border-t-0 border-dashed">
+        <div class="flex flex-col border-t sm:border-t-0">
             {
                 [
                     { icon: Earth, content: <>Canberra, Australia</> },
@@ -97,7 +97,7 @@ import Clock from "@/components/homepage/Clock.astro";
                         content: <a href="mailto:me@ingo.au">me@ingo.au</a>,
                     },
                 ].map((item, index) => (
-                    <div class="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono">
+                    <div class="flex flex-row gap-2 items-center p-4 sm:p-2 border-b sm:last:border-b-0 font-mono">
                         <item.icon class="size-5" /> {item.content}
                     </div>
                 ))
