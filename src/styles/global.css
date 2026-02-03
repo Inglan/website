@@ -126,3 +126,7 @@
         @apply underline;
     }
 }
+
+@view-transition {
+    navigation: auto;
+}
