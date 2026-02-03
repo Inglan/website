@@ -3,22 +3,23 @@ import { ArrowRight } from "@lucide/astro";
 ---
 
 <div
-    class="border-b border-x border-dashed p-8 relative bg-striped-gradient bg-size-[80px_80px]"
+    class="border-b border-x p-8 relative bg-striped-gradient bg-size-[80px_80px]"
 >
-    <div class="absolute top-0 left-0 w-full h-8 border-b border-dashed"></div>
-    <div class="absolute bottom-0 left-0 w-full h-8 border-t border-dashed">
-    </div>
-    <div class="absolute top-0 left-0 h-full w-8 border-r border-dashed"></div>
-    <div class="absolute top-0 right-0 h-full w-8 border-l border-dashed"></div>
+    <div class="absolute top-0 left-0 w-full h-8 border-b"></div>
+    <div class="absolute bottom-0 left-0 w-full h-8 border-t"></div>
+    <div class="absolute top-0 left-0 h-full w-8 border-r"></div>
+    <div class="absolute top-0 right-0 h-full w-8 border-l"></div>
     <div class="bg-background flex flex-col sm:flex-row">
         <div class="p-4 text-lg text-center">Say Hello in my guestbook :)</div>
         <div class="grow"></div>
-        <a
-            href="/guestbook"
-            class="px-8 py-4 flex items-center justify-center border-t sm:border-t-0 sm:border-l border-dashed cursor-pointer duration-200 ease-out hover:bg-card active:brightness-75 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 gap-2"
-        >
-            Guestbook
-            <ArrowRight />
-        </a>
+        <div class="border-t sm:border-t-0 sm:border-l">
+            <a
+                href="/guestbook"
+                class="px-8 py-4 flex items-center justify-center btn-interactive [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 gap-2 h-full"
+            >
+                Guestbook
+                <ArrowRight />
+            </a>
+        </div>
     </div>
 </div>
