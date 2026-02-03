@@ -13,7 +13,9 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  prefetch: true,
+  prefetch: {
+    prefetchAll: true,
+  },
 
   integrations: [react()],
 
