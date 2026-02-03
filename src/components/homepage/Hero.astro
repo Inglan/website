@@ -1,8 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import australiaParrot from "@/assets/australiaparrot.gif"
-import ingoIcon from "@/assets/icon/main.svg"
+import { Image } from "astro:assets";
+import australiaParrot from "@/assets/australiaparrot.gif";
+import ingoIcon from "@/assets/icon/main.svg";
+import { ArrowRight } from "@lucide/astro";
 ---
+
 <div
     class="w-full mx-auto flex flex-col sm:flex-row h-fit border border-t-0 border-b-0 sm:border-b border-dashed max-w-4xl"
 >
@@ -34,8 +36,8 @@ import ingoIcon from "@/assets/icon/main.svg"
                 <a
                     href="https://hackclub.com"
                     target="_blank"
-                    rel="noopener noreferrer"
-                >Hack Club</a>
+                    rel="noopener noreferrer">Hack Club</a
+                >
                 Slack.
             </p>
         </div>
@@ -52,7 +54,7 @@ import ingoIcon from "@/assets/icon/main.svg"
                             href={item.link}
                         >
                             {item.text}
-                            <!-- <ArrowRight class="size-4" /> -->
+                            <ArrowRight class="size-4" />
                         </a>
                     </div>
                 ))
@@ -60,7 +62,11 @@ import ingoIcon from "@/assets/icon/main.svg"
         </div>
     </div>
     <div class="w-full sm:w-0 min-w-64 sm:border-l border-dashed">
-        <Image src={ingoIcon} alt="Ingo" class="w-full h-fit border-b border-dashed hidden sm:block" />
+        <Image
+            src={ingoIcon}
+            alt="Ingo"
+            class="w-full h-fit border-b border-dashed hidden sm:block"
+        />
         <div class="flex flex-col border-t sm:border-t-0 border-dashed">
             <!-- {
                 [
