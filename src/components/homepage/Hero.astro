@@ -2,7 +2,8 @@
 import { Image } from "astro:assets";
 import australiaParrot from "@/assets/australiaparrot.gif";
 import ingoIcon from "@/assets/icon/main.svg";
-import { ArrowRight,  Building, ClockIcon, Earth, Mail  } from "@lucide/astro";
+import { ArrowRight, Building, ClockIcon, Earth, Mail } from "@lucide/astro";
+import Clock from "@/components/homepage/Clock.astro";
 ---
 
 <div
@@ -73,7 +74,11 @@ import { ArrowRight,  Building, ClockIcon, Earth, Mail  } from "@lucide/astro";
                     { icon: Earth, content: <>Canberra, Australia</> },
                     {
                         icon: ClockIcon,
-                        content: <></>,
+                        content: (
+                            <>
+                                <Clock />
+                            </>
+                        ),
                     },
                     {
                         icon: Building,
@@ -92,9 +97,7 @@ import { ArrowRight,  Building, ClockIcon, Earth, Mail  } from "@lucide/astro";
                         content: <a href="mailto:me@ingo.au">me@ingo.au</a>,
                     },
                 ].map((item, index) => (
-                    <div
-                        class="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono"
-                    >
+                    <div class="flex flex-row gap-2 items-center p-4 sm:p-2 border-b border-dashed sm:last:border-b-0 font-mono">
                         <item.icon class="size-5" /> {item.content}
                     </div>
                 ))
