@@ -155,11 +155,11 @@
 
 @layer components {
     .btn-interactive {
-        @apply hover:bg-muted active:brightness-75 duration-200 no-underline;
+        @apply hover:bg-muted active:brightness-75 duration-200 no-underline text-foreground;
     }
 
     a {
-        @apply underline;
+        @apply underline text-primary;
     }
 
     .bg-striped-gradient {
