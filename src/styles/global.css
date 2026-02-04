@@ -133,6 +133,10 @@
     a {
         @apply underline;
     }
+
+    .bg-striped-gradient {
+        background-size: 80px 80px;
+    }
 }
 
 @view-transition {
