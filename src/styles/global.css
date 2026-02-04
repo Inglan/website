@@ -52,7 +52,7 @@
         transparent 0,
         transparent 50%
     );
-    --background-image-lines: repeating-linear-gradient(
+    --background-image-diagonal-lines: repeating-linear-gradient(
         -45deg,
         var(--destructive-foreground) 0,
         var(--destructive-foreground) 1px,
@@ -145,7 +145,7 @@
         background-size: 80px 80px;
     }
 
-    .bg-lines {
+    .bg-diagonal-lines {
         background-size: 10px 10px;
     }
 }
