@@ -52,6 +52,13 @@
         transparent 0,
         transparent 50%
     );
+    --background-image-lines: repeating-linear-gradient(
+        45deg,
+        var(--destructive-foreground) 0,
+        var(--destructive-foreground) 30px,
+        transparent 0,
+        transparent 50%
+    );
 }
 
 :root {
@@ -135,6 +142,10 @@
     }
 
     .bg-striped-gradient {
+        background-size: 80px 80px;
+    }
+
+    .bg-lines {
         background-size: 80px 80px;
     }
 }
