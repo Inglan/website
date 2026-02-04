@@ -55,7 +55,7 @@
     --background-image-lines: repeating-linear-gradient(
         45deg,
         var(--destructive-foreground) 0,
-        var(--destructive-foreground) 30px,
+        var(--destructive-foreground) 1px,
         transparent 0,
         transparent 50%
     );
@@ -146,7 +146,7 @@
     }
 
     .bg-lines {
-        background-size: 80px 80px;
+        background-size: 10px 10px;
     }
 }
 
