@@ -1,5 +1,6 @@
 ---
 import { NAVBAR_ITEMS } from "@/lib/constants";
+import SearchButton from "./SearchButton";
 ---
 
 <div>
@@ -28,13 +29,9 @@ import { NAVBAR_ITEMS } from "@/lib/constants";
                     </div>
                 ))
             }
+            <div class="border-l">
+                <SearchButton className="menu-item btn-interactive" />
+            </div>
         </div>
     </div>
 </div>
-
-<style>
-    @reference 'tailwindcss';
-    .menu-item {
-        @apply px-8 py-4 w-fit flex justify-center items-center h-full;
-    }
-</style>
