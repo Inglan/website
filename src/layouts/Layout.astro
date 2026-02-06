@@ -3,6 +3,7 @@ import "../styles/global.css";
 // import "@fontsource-variable/geist-mono"; import "@fontsource-variable/jost";
 import Navbar from "../components/Navbar.astro";
 import { Font } from "astro:assets";
+import Search from "../components/Search.tsx";
 ---
 
 <!doctype html>
@@ -19,6 +20,7 @@ import { Font } from "astro:assets";
     </head>
     <body>
         <Navbar />
+        <Search client:load />
         <div class="w-full px-4">
             <main class="max-w-5xl mx-auto w-full bg-background">
                 <slot />
