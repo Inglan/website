@@ -169,6 +169,9 @@
     .bg-diagonal-lines {
         background-size: 10px 10px;
     }
+    .menu-item {
+        @apply px-8 py-4 w-fit flex justify-center items-center h-full;
+    }
 }
 
 @view-transition {
