@@ -21,6 +21,7 @@ import Clock from "@/components/homepage/Clock.astro";
                 <p class="text-xl p-4">
                     I am a 16 year old tech nerd from Canberra, Australia{" "}
                     <Image
+                        loading="eager"
                         src={australiaParrot}
                         width={48}
                         height={48}
@@ -66,6 +67,7 @@ import Clock from "@/components/homepage/Clock.astro";
         </div>
         <div class="w-full sm:w-0 min-w-64 sm:border-l">
             <Image
+                loading="eager"
                 src={ingoIcon}
                 alt="Ingo"
                 class="w-full h-fit border-b hidden sm:block"
