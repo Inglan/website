@@ -12,12 +12,24 @@ import Clock from "@/components/homepage/Clock.astro";
     <div class="flex flex-col sm:flex-row border-x bg-background">
         <div class="flex flex-col">
             <div class="flex flex-col border-b">
-                <h1
-                    class="text-primary text-4xl/12 lg:text-5xl/15 border-b w-full p-4 font-mono from-destructive-foreground to-background bg-linear-to-br"
+                <div
+                    class="text-primary text-4xl/12 lg:text-5xl/15 border-b w-full p-4 font-mono from-destructive-foreground to-background bg-linear-to-br relative"
                 >
-                    Hello, <br /> I&apos;m Ingo Wolf!
-                    <span class="text-lg text-muted-foreground"> he/him</span>
-                </h1>
+                    <div
+                        class="z-10 relative flex flex-col sm:flex-row sm:items-end justify-between"
+                    >
+                        <h1 class="">
+                            Hello, <br /> I&apos;m Ingo Wolf!
+                        </h1>
+                        <span class="text-lg text-muted-foreground">
+                            he/him</span
+                        >
+                    </div>
+                    <div
+                        class="w-full h-full top-0 left-0 absolute [background-size:20px_20px] [background-image:radial-gradient(#45475A_1px,transparent_1px)] mask-linear-160 mask-linear-from-0% mask-linear-to-100% z-0"
+                    >
+                    </div>
+                </div>
                 <p class="text-xl p-4">
                     I am a 16 year old tech nerd from Canberra, Australia{" "}
                     <Image
