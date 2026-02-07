@@ -22,7 +22,7 @@ import SearchButton from "./SearchButton";
             <div class="grow bg-diagonal-lines bg-fixed self-stretch"></div>
             {
                 NAVBAR_ITEMS.map((item) => (
-                    <div class="border-l">
+                    <div class="border-l hidden md:block">
                         <a href={item.url} class="menu-item btn-interactive">
                             {item.label}
                         </a>
