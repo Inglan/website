@@ -151,6 +151,12 @@
     body {
         @apply bg-background text-foreground;
     }
+    ::view-transition {
+        pointer-events: none;
+    }
+    :root {
+        view-transition-name: none;
+    }
 }
 
 @layer components {
