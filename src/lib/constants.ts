@@ -6,9 +6,9 @@
 
 export const NAVBAR_ITEMS = [
   { url: "/", label: "Home" },
-  { url: "/projects", label: "Projects" },
-  { url: "/blog", label: "Blog" },
-  { url: "/contact", label: "Contact" },
+  { url: "/projects/", label: "Projects" },
+  { url: "/blog/", label: "Blog" },
+  { url: "/contact/", label: "Contact" },
 ];
 
 export const OTHER_PAGES = [{ url: "/guestbook", label: "Guestbook" }];
