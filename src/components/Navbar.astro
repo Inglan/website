@@ -29,11 +29,19 @@ const path = Astro.url.pathname;
                         <a
                             href={item.url}
                             class={cn(
-                                "menu-item btn-interactive",
+                                "menu-item btn-interactive flex flex-col",
                                 path === item.url && "text-primary",
                             )}
                         >
                             {item.label}
+                            {path === item.url ? (
+                                <div
+                                    style="view-transition-name: navbar-item"
+                                    class="border-b w-full"
+                                />
+                            ) : (
+                                <div class="border-b border-transparent w-full" />
+                            )}
                         </a>
                     </div>
                 ))
