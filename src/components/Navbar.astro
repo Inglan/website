@@ -1,6 +1,9 @@
 ---
 import { NAVBAR_ITEMS } from "@/lib/constants";
 import SearchButton from "./SearchButton";
+import { cn } from "@/lib/utils";
+
+const path = Astro.url.pathname;
 ---
 
 <div>
@@ -23,7 +26,13 @@ import SearchButton from "./SearchButton";
             {
                 NAVBAR_ITEMS.map((item) => (
                     <div class="border-l hidden md:block">
-                        <a href={item.url} class="menu-item btn-interactive">
+                        <a
+                            href={item.url}
+                            class={cn(
+                                "menu-item btn-interactive",
+                                path === item.url && "text-primary",
+                            )}
+                        >
                             {item.label}
                         </a>
                     </div>
