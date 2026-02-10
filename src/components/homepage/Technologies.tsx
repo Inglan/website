@@ -219,17 +219,16 @@ export default function Technologies() {
   }
 
   return (
-    <div className="w-full mx-auto max-w-5xl border-b border-dashed">
-      <div className="w-full border-dashed overflow-auto border-x border-b">
+    <div className="w-full mx-auto max-w-5xl border-b sm:px-10 bg-diagonal-lines sm:border-x">
+      <div className="w-full overflow-auto border-x border-b bg-background">
         <Carousel opts={{ skipSnaps: true }} plugins={[WheelGesturesPlugin()]}>
           <CarouselContent className="ml-0">
             {Object.entries(technologies).map(([key, value]) => (
               <CarouselItem key={key} className="basis-auto pl-0">
                 <button
                   className={cn(
-                    "border-r border-dashed cursor-pointer",
-                    "h-full px-10 py-4 w-fit flex justify-center items-center duration-200 ease-out",
-                    "hover:bg-card active:brightness-75",
+                    "border-r cursor-pointer",
+                    "h-full px-10 py-4 w-fit flex justify-center items-center btn-interactive",
                     selectedCategory === key ? "text-primary" : "",
                   )}
                   onClick={() => {
@@ -346,14 +345,14 @@ const Grid = forwardRef(function Grid(
         duration: 0.2,
         ease: NICE_EASE,
       }}
-      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t border-dashed group -my-px bg-background"
+      className="w-full grid grid-cols-3 md:grid-cols-5 border-l border-t group -my-px bg-background"
     >
       {technologies[props.selectedCategory].items.map((item, index) => (
         <div
           key={item.name}
           className={cn(
-            "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r border-dashed group-hover:opacity-75 group-active:opacity-100 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200 hover:border-border/75",
-            index % 2 === 0 ? "" : "bg-striped-gradient bg-size-[80px_80px]",
+            "flex flex-col gap-2 items-center justify-center aspect-square text-center border-b border-r group-hover:opacity-75 group-active:opacity-100 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200 hover:border-border/75",
+            index % 2 === 0 ? "" : "bg-diagonal-lines",
           )}
         >
           <item.icon className="size-10" />
@@ -392,10 +391,10 @@ function Placeholders({
           <div
             key={index}
             className={cn(
-              "border-b border-r border-dashed group-hover:opacity-50 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200",
+              "border-b border-r group-hover:opacity-50 group-hover:hover:opacity-100 group-hover:hover:bg-card duration-200",
               (technologies[selectedCategory].items.length + index) % 2 === 0
                 ? ""
-                : "bg-striped-gradient bg-size-[80px_80px]",
+                : "bg-diagonal-lines",
               className,
             )}
           ></div>
