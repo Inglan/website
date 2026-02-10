@@ -200,7 +200,7 @@ function ConvexIcon({ className }: { className?: string }) {
   );
 }
 
-export function Technologies() {
+export default function Technologies() {
   const [selectedCategory, setSelectedCategory] =
     useState<keyof typeof technologies>("frontend");
   const [direction, setDirection] = useState<number>(1);
