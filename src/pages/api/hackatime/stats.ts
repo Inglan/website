@@ -106,7 +106,7 @@ export const GET = (async () => {
     {
       title: "Total Coding Time",
       value: allTimeStats.data.human_readable_total.replace(/\s*\d+s$/, ""),
-      className: "col-span-14 bg-striped-gradient bg-size-[80px_80px]",
+      className: "col-span-14 bg-diagonal-lines",
     },
     {
       title: "This Week",
