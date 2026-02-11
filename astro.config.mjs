@@ -19,6 +19,8 @@ export default defineConfig({
 
   integrations: [react()],
 
+  compressHTML: true,
+
   experimental: {
     fonts: [
       {
