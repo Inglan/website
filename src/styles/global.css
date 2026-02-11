@@ -157,12 +157,12 @@
     html {
         overflow-x: hidden;
     }
-    ::view-transition {
+    /*::view-transition {
         pointer-events: none;
     }
     :root {
         view-transition-name: none;
-    }
+    }*/
 }
 
 @layer components {
@@ -186,6 +186,6 @@
     }
 }
 
-@view-transition {
+/*@view-transition {
     navigation: auto;
-}
+}*/
