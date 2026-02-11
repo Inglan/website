@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { useEffect, useState } from "react";
 
 function HackatimeSkeleton() {
   const quickStats = [
@@ -54,9 +55,21 @@ function HackatimeSkeleton() {
 }
 
 export default function Hackatime() {
-  return (
-    <>
-      <HackatimeSkeleton />
-    </>
-  );
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStats = async () => {
+      const statsRequest = await fetch("/api/hackatime/stats");
+      const stats = await statsRequest.json();
+      setLoading(false);
+    };
+
+    fetchStats();
+  }, []);
+
+  if (loading) {
+    return <HackatimeSkeleton />;
+  }
+
+  return <></>;
 }
