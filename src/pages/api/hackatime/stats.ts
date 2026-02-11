@@ -1,6 +1,23 @@
 import type { APIRoute } from "astro";
 import { DateTime } from "luxon";
 
+export type StatsResponse = {
+  quickStats: {
+    title: string;
+    value: string;
+    className: string;
+  }[];
+  languages: {
+    name: string;
+    total_seconds: number;
+    text: string;
+    hours: number;
+    minutes: number;
+    percent: number;
+    digital: string;
+  }[];
+};
+
 // Helper function to deduplicate and merge languages
 function deduplicateLanguages(
   languages: Array<{
@@ -106,6 +123,6 @@ export const GET = (async () => {
     JSON.stringify({
       quickStats,
       languages: deduplicateLanguages(allTimeStats.data.languages).slice(0, 10),
-    }),
+    } as StatsResponse),
   );
 }) satisfies APIRoute;
