@@ -1,5 +1,5 @@
 ---
-import { Search } from "@lucide/astro";
+import { Menu, Search } from "@lucide/astro";
 ---
 
 <div class="border-l w-fit">
@@ -7,8 +7,9 @@ import { Search } from "@lucide/astro";
         class="menu-item btn-interactive px-6 cursor-pointer"
         id="search-button"
     >
-        <Search class="size-4" />
-        <span class="sr-only"> Search </span>
+        <Search class="size-4 hidden md:block" />
+        <Menu class="size-4 md:hidden" />
+        <span class="sr-only">Menu</span>
     </button>
 </div>
 
