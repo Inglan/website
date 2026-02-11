@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export default function HackatimeSkeleton() {
+function HackatimeSkeleton() {
   const quickStats = [
     {
       title: "Total Coding Time",
@@ -53,6 +53,10 @@ export default function HackatimeSkeleton() {
   );
 }
 
-// export default function Hackatime() {
-//   return HackatimeSkeleton;
-// }
+export default function Hackatime() {
+  return (
+    <>
+      <HackatimeSkeleton />
+    </>
+  );
+}
