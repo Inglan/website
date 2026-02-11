@@ -5,7 +5,7 @@ import GuestbookBanner from "@/components/homepage/GuestbookBanner.astro";
 import Things from "@/components/homepage/Things.astro";
 import Separator from "@/components/Separator.astro";
 import Technologies from "@/components/homepage/Technologies";
-import Hackatime from "@/components/homepage/Hackatime";
+import Hackatime from "@/components/homepage/Hackatime.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,5 +18,5 @@ import Hackatime from "@/components/homepage/Hackatime";
     <Separator />
     <Technologies client:visible />
     <Separator />
-    <Hackatime client:visible />
+    <Hackatime server:defer />
 </Layout>
