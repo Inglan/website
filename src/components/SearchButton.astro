@@ -1,0 +1,20 @@
+---
+import { Search } from "@lucide/astro";
+---
+
+<div class="border-l w-fit">
+    <button
+        class="menu-item btn-interactive px-6 cursor-pointer"
+        id="search-button"
+    >
+        <Search class="size-4" />
+    </button>
+</div>
+
+<script>
+    import { isMenuOpen } from "@/lib/state";
+
+    document.getElementById("search-button")?.addEventListener("click", () => {
+        isMenuOpen.set(true);
+    });
+</script>

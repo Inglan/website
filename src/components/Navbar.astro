@@ -1,6 +1,6 @@
 ---
 import { NAVBAR_ITEMS } from "@/lib/constants";
-import SearchButton from "./SearchButton";
+import SearchButton from "./SearchButton.astro";
 import { cn } from "@/lib/utils";
 
 const path = Astro.url.pathname;
@@ -46,7 +46,7 @@ const path = Astro.url.pathname;
                     </div>
                 ))
             }
-            <SearchButton client:load />
+            <SearchButton />
         </div>
     </div>
 </div>
